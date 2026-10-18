@@ -1,0 +1,127 @@
+{
+ "examCode": "26A-A",
+ "examLabel": "מבחן סוף סמסטר א' תשפ\"ו, מועד א'",
+ "year": 2026,
+ "examDate": "12/02/2026",
+ "sourceFile": "calculus-2/26A exam.pdf",
+ "solutionFile": "calculus-2/26A corrected-solution.pdf",
+ "questions": [
+  {
+   "num": 1,
+   "kind": "computation",
+   "topic": "double_integrals",
+   "question": "החליפו את סדר האינטגרציה וחשבו את האינטגרל\n$$\\int_0^{\\sqrt{2}}\\left(\\int_0^{2-x^2}xe^{x^2}\\,dy\\right)dx$$",
+   "solution": "תחום האינטגרציה הוא $0\\le y\\le 2-x^2,\\ 0\\le x\\le\\sqrt{2}$.\nזה אותו דבר ש-$0\\le x\\le\\sqrt{2-y},\\ 0\\le y\\le 2$.\n![תחום האינטגרציה: מתחת לפרבולה y=2-x^2 ברביע הראשון](images/exams/26A-A-Q1a-region.png)\nאז\n$$\\int_0^{\\sqrt{2}}\\left(\\int_0^{2-x^2}xe^{x^2}dy\\right)dx=\\int_0^{2}\\left(\\int_0^{\\sqrt{2-y}}xe^{x^2}dx\\right)dy$$\n$$=\\int_0^{2}\\left(\\left.\\frac{e^{x^2}}{2}\\right|_0^{\\sqrt{2-y}}\\right)dy=\\int_0^{2}\\frac{1}{2}\\left(e^{2-y}-1\\right)dy=\\frac{1}{2}\\left.\\left(-e^{2-y}-y\\right)\\right|_0^2$$\n$$=\\frac{1}{2}\\left((-1-2)-(-e^2)\\right)=\\frac{e^2-3}{2}.$$",
+   "solutionSource": "official-pdf",
+   "official": true,
+   "confidence": "high",
+   "part": "א",
+   "points": 12
+  },
+  {
+   "num": 1,
+   "kind": "computation",
+   "topic": "limits_continuity",
+   "question": "בדקו האם הגבול הבא קיים\n$$\\lim_{(x,y)\\to(0,0)}\\frac{\\ln(1+xy)}{x^2+y^2}$$",
+   "solution": "בואו נבחן שני מסלולים:\n1) לפי ציר $x$ ($y=0$).\n2) לפי קו ישר $y=x$.\nהגבול לפי המסלול הראשון שווה ל-0:\n$$\\lim_{x\\to0}\\frac{\\ln 1}{x^2}=\\lim_{x\\to0}0=0$$\nהגבול לפי המסלול השני שווה ל-$\\frac{1}{2}$:\n$$\\lim_{x\\to0}\\frac{\\ln(1+x^2)}{2x^2}=\\frac{1}{2}$$\n$0\\ne\\frac{1}{2}$ אז הגבול $\\lim_{(x,y)\\to(0,0)}\\frac{\\ln(1+xy)}{x^2+y^2}$ לא קיים.",
+   "solutionSource": "official-pdf",
+   "official": true,
+   "confidence": "high",
+   "part": "ב",
+   "points": 13
+  },
+  {
+   "num": 2,
+   "kind": "computation",
+   "topic": "numeric_series",
+   "question": "בדקו התכנסות בהחלט, בתנאי או התבדרות של הטורים הבאים:\n$$\\sum_{n=1}^{\\infty}\\frac{2^n\\cos(n)}{3^n}$$\n$$\\sum_{n=1}^{\\infty}\\frac{\\cos(\\pi n)}{n}$$",
+   "solution": "**הטור הראשון.** נכתוב\n$$\\sum_{n=1}^{\\infty}\\left(\\frac{2}{3}\\right)^n\\cos n.$$\nהתכנסות בהחלט:\n$$\\left|\\left(\\frac{2}{3}\\right)^n\\cos n\\right|\\le\\left(\\frac{2}{3}\\right)^n$$\nו-$\\sum_{n=1}^{\\infty}\\left(\\frac{2}{3}\\right)^n$ הוא טור הנדסי עם מנה $0<2/3<1$, ולכן הוא מתכנס. לכן לפי משפט ההשוואה הטור המקורי מתכנס בהחלט.\n\n**הטור השני.** עבור הטור $\\sum_{n=1}^{\\infty}\\frac{\\cos(\\pi n)}{n}$ נשתמש ב-$\\cos(\\pi n)=(-1)^n$. אז\n$$\\sum_{n=1}^{\\infty}\\frac{\\cos(\\pi n)}{n}=\\sum_{n=1}^{\\infty}\\frac{(-1)^n}{n},$$\nטור הרמוני מתחלף הוא מתכנס לפי מבחן לייבניץ (האיברים $1/n$ יורדים מונוטונית ל-0). הוא אינו מתכנס במוחלט משום ש\n$$\\sum_{n=1}^{\\infty}\\left|\\frac{(-1)^n}{n}\\right|=\\sum_{n=1}^{\\infty}\\frac{1}{n}$$\nמתבדר. לכן הוא מתכנס בתנאי.",
+   "solutionSource": "official-pdf",
+   "official": true,
+   "confidence": "high",
+   "part": "א",
+   "points": 12
+  },
+  {
+   "num": 2,
+   "kind": "computation",
+   "topic": "partials_differentiability",
+   "question": "נתונה הפונקציה\n$$f(x,y)=\\begin{cases}\\dfrac{x^3+y^3}{2x^2+y^2}, & (x,y)\\neq(0,0)\\\\[2mm] 0, & (x,y)=(0,0)\\end{cases}$$\nהאם $f(x,y)$ דיפרנציאבילית ב-$(0,0)$?",
+   "solution": "נגזרות חלקיות בנקודה $(0,0)$:\n$$f_x(0,0)=\\lim_{h\\to0}\\frac{f(h,0)-0}{h}=\\lim_{h\\to0}\\frac{\\frac{h^3}{2h^2}}{h}=\\lim_{h\\to0}\\frac{h/2}{h}=\\frac{1}{2}.$$\n$$f_y(0,0)=\\lim_{h\\to0}\\frac{f(0,h)-0}{h}=\\lim_{h\\to0}\\frac{\\frac{h^3}{h^2}}{h}=\\lim_{h\\to0}\\frac{h}{h}=1.$$\nפונקציה דיפרנציאבילית אם\n$$\\frac{f(x,y)-\\left(\\frac{1}{2}x+y\\right)}{\\sqrt{x^2+y^2}}\\to0$$ כאשר $(x,y)\\to(0,0)$.\nלאורך הקו $y=x$:\n$$f(x,x)=\\frac{x^3+x^3}{2x^2+x^2}=\\frac{2x^3}{3x^2}=\\frac{2}{3}x,\\qquad\\frac{1}{2}x+y=\\frac{1}{2}x+x=\\frac{3}{2}x.$$\nאז\n$$\\frac{f(x,x)-\\left(\\frac{1}{2}x+x\\right)}{\\sqrt{x^2+x^2}}=\\frac{\\left(\\frac{2}{3}-\\frac{3}{2}\\right)x}{|x|\\sqrt{2}}=-\\frac{5}{6}\\,\\frac{x}{|x|\\sqrt{2}}=\\mp\\frac{5}{6\\sqrt{2}}\\ne0.$$\nבגלל שהגבול שונה מאפס (אפילו הוא לא קיים) הפונקציה $f(x,y)$ לא דיפרנציאבילית ב-$(0,0)$.",
+   "solutionSource": "official-pdf",
+   "official": true,
+   "confidence": "high",
+   "part": "ב",
+   "points": 13
+  },
+  {
+   "num": 3,
+   "kind": "computation",
+   "topic": "power_series",
+   "question": "ידוע שתחום ההתכנסות של הטור $\\sum_{n=0}^{\\infty}a_nx^n$ הוא $[-3,3)$. מצאו את תחום ההתכנסות של הטור\n$$\\sum_{n=0}^{\\infty}a_n(x+2)^n$$",
+   "solution": "בואו נכתוב $y=x+2$, מכיוון שהטור $\\sum_{n=0}^{\\infty}a_ny^n$ מתכנס עבור $-3\\le y<3$ הטור $\\sum_{n=0}^{\\infty}a_n(x+2)^n$ מתכנס עבור $-3\\le x+2<3$, כלומר $-5\\le x<1$.\nהתחום ההתכנסות הוא $[-5,1)$.",
+   "solutionSource": "official-pdf",
+   "official": true,
+   "confidence": "high",
+   "part": "א",
+   "points": 12
+  },
+  {
+   "num": 3,
+   "part": "ב",
+   "kind": "proof",
+   "topic": "chain_rule_identity",
+   "points": 13,
+   "question": "הוכיחו כי השוויון הבא מתקיים:\n$$u\\cdot\\frac{\\partial z}{\\partial u}-v\\cdot\\frac{\\partial z}{\\partial v}=z\\,\\frac{x^2}{v}$$\nכאשר: $y=\\dfrac{1}{v}$ , $x=\\sqrt{uv}$ , $z=e^{x^2y}$",
+   "hold": "the official solution's final line is z x^2/v^2, which disagrees with the printed right-hand side z x^2/v (sympy confirms the printed identity); needs Adir's decision"
+  },
+  {
+   "num": 4,
+   "kind": "computation",
+   "topic": "change_of_variables",
+   "question": "חשבו את האינטגרל $\\iint_D(x^2-y^2)\\,dx\\,dy$ כאשר $D$ חסום ע\"י הקווים הבאים: $y-x=1;\\ y=x;\\ xy=1;\\ xy=2$ $\\ (x>0,\\ y>0)$",
+   "solution": "נעשה החלפת משתנים הבאה:\n$$u=y-x,\\qquad 0\\le u\\le1$$\n$$v=xy,\\qquad 1\\le v\\le2$$\nהיעקוביאן ההפוך:\n$$\\frac{1}{J}=\\begin{vmatrix}u'_x&v'_x\\\\u'_y&v'_y\\end{vmatrix}=\\begin{vmatrix}-1&y\\\\1&x\\end{vmatrix}=-x-y=-(x+y)$$\n$$|J|=\\frac{1}{x+y}$$\n$$\\iint_D(x^2-y^2)\\,dx\\,dy=\\iint_D(x-y)(x+y)\\,dx\\,dy=\\int_1^2dv\\int_0^1(-u)\\,du$$\n$$=\\int_1^2\\left(\\left.-\\frac{u^2}{2}\\right|_0^1\\right)dv=\\int_1^2-\\frac{1}{2}\\,dv=\\left.-\\frac{v}{2}\\right|_1^2=-1+\\frac{1}{2}=-\\frac{1}{2}.$$",
+   "solutionSource": "official-pdf",
+   "official": true,
+   "confidence": "high",
+   "part": "א",
+   "points": 12
+  },
+  {
+   "num": 4,
+   "kind": "computation",
+   "topic": "absolute_extrema",
+   "question": "מצאו אקסטרמומים מוחלטים של הפונקציה\n$$f(x,y)=x^3+x^2-3x+y^2$$\nבמעגל\n$$x^2+y^2=4$$",
+   "solution": "נציב בפונקציה $y^2=4-x^2$ (מהמעגל $x^2+y^2=4$):\n$$f(x,y)=x^3+x^2-3x+\\underbrace{(4-x^2)}_{y^2}=4+x^3-3x$$\nויש למצוא מקסימום ומינימום מוחלטים לפונקציה\n$$\\tilde f(x)=4+x^3-3x$$\nבקטע הסגור $-2\\le x\\le2$.\nנבדוק את החשודות:\n* קצוות הקטע: $x=2,\\ x=-2$.\n* בתוך הקטע: $\\tilde f'(x)=3x^2-3=0$, כלומר $x=1,\\ x=-1$.\nנבדוק את ערכי הפונקציה בנקודות החשודות:\n$$\\tilde f(1)=2,\\quad\\tilde f(-1)=6,\\quad\\tilde f(2)=6,\\quad\\tilde f(-2)=2$$\nבנקודות $(-1,-\\sqrt{3}),\\ (2,0),\\ (-1,\\sqrt{3})$ מתקבל הערך $6$ (המקסימלי).\nבנקודות $(1,-\\sqrt{3}),\\ (1,\\sqrt{3}),\\ (-2,0)$ מתקבל הערך $2$ (המינימלי).",
+   "solutionSource": "official-pdf",
+   "official": true,
+   "confidence": "high",
+   "part": "ב",
+   "points": 13
+  },
+  {
+   "num": 5,
+   "kind": "computation",
+   "topic": "local_extrema",
+   "question": "מצאו וסווגו את נקודות האקסטרמום של הפונקציה:\n$$f(x,y)=(x-y)^3-3x-y^2+5y$$",
+   "solution": "$$\\begin{cases}f'_x=3(x-y)^2-3=3\\left((x-y)^2-1\\right)=0\\\\ f'_y=-3(x-y)^2-2y+5=0\\end{cases}$$\n$$\\begin{cases}(x-y)^2=1\\\\ -3-2y+5=0\\end{cases}\\qquad\\begin{cases}(x-1)^2=1\\\\ y=1\\end{cases}\\qquad\\begin{cases}x-1=\\pm1\\\\ y=1\\end{cases}$$\n$$\\begin{cases}x=2\\\\ y=1\\end{cases}\\qquad\\begin{cases}x=0\\\\ y=1\\end{cases}\\qquad M_1(2,1),\\ M_2(0,1)$$\n$$f''_{xx}=6(x-y),\\qquad f''_{xy}=-6(x-y),\\qquad f''_{yy}=6(x-y)-2$$\n$$\\Delta(2,1)=f''_{xx}(2,1)\\cdot f''_{yy}(2,1)-\\left(f''_{xy}(2,1)\\right)^2=6\\cdot4-6^2=-12<0$$\nלכן נקודת אוכף ב-$M_1(2,1)$.\n$$\\Delta(0,1)=-6\\cdot(-8)-36=12>0$$\n$$f''_{xx}(0,1)=-6<0$$\nלכן נקודת מקסימום מקומי ב-$M_2(0,1)$.",
+   "solutionSource": "official-pdf",
+   "official": true,
+   "confidence": "high",
+   "part": "א",
+   "points": 12
+  },
+  {
+   "num": 5,
+   "kind": "computation",
+   "topic": "taylor_maclaurin",
+   "question": "פתחו את הפונקציה $f(x)=\\dfrac{16-5x}{x^2-5x+6}$ לטור מקלורן. מהו תחום התכנסות הטור?\nהסיקו את הערך של $f^{(20)}(0)$.",
+   "solution": "$$f(x)=\\frac{16-5x}{x^2-5x+6}=\\frac{16-5x}{(x-2)(x-3)}$$\n$$\\frac{16-5x}{x^2-5x+6}=\\frac{A}{x-2}+\\frac{B}{x-3}$$\n$$16-5x=A(x-3)+B(x-2)$$\n$x=3$: $B=1$.\n$x=2$: $A=-6$.\n$$\\frac{16-5x}{x^2-5x+6}=\\frac{-6}{x-2}+\\frac{1}{x-3}$$\n$$\\frac{6}{2-x}=\\frac{6}{2\\left(1-\\frac{x}{2}\\right)}=3\\sum_{n=0}^{\\infty}\\left(\\frac{x}{2}\\right)^n=\\sum_{n=0}^{\\infty}\\frac{3x^n}{2^n},\\qquad|x|<2$$\n$$-\\frac{1}{3-x}=-\\frac{1}{3\\left(1-\\frac{x}{3}\\right)}=-\\frac{1}{3}\\sum_{n=0}^{\\infty}\\left(\\frac{x}{3}\\right)^n=\\sum_{n=0}^{\\infty}(-1)\\frac{x^n}{3^{n+1}},\\qquad|x|<3$$\n$$f(x)=\\sum_{n=0}^{\\infty}\\left(\\frac{3}{2^n}-\\frac{1}{3^{n+1}}\\right)x^n,\\qquad|x|<2$$\n$$a_{20}=\\frac{f^{(20)}(0)}{20!}\\ \\Rightarrow\\ f^{(20)}(0)=a_{20}\\cdot20!=20!\\left(\\frac{3}{2^{20}}-\\frac{1}{3^{21}}\\right)$$",
+   "solutionSource": "official-pdf",
+   "official": true,
+   "confidence": "high",
+   "part": "ב",
+   "points": 13
+  }
+ ]
+}

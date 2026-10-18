@@ -1,0 +1,105 @@
+[
+ {
+  "id": "26A-A-Q1a",
+  "description": "x in [0,sqrt2], 0<=y<=2-x^2 (also 0<=y<=2, 0<=x<=sqrt(2-y))",
+  "type": "simple",
+  "orderXY": {
+   "x": [
+    0,
+    "sqrt(2)"
+   ],
+   "y": [
+    0,
+    "2-x^2"
+   ]
+  },
+  "orderYX": {
+   "y": [
+    0,
+    2
+   ],
+   "x": [
+    0,
+    "sqrt(2-y)"
+   ]
+  },
+  "inequalities": [
+   "x>=0",
+   "y>=0",
+   "y<=2-x^2"
+  ],
+  "boundary_curves": [
+   "y=2-x^2",
+   "x=0",
+   "y=0"
+  ],
+  "vertices": [
+   [
+    0,
+    0
+   ],
+   [
+    "sqrt(2)",
+    0
+   ],
+   [
+    0,
+    2
+   ]
+  ],
+  "integrand": "x*exp(x^2)",
+  "value": "(e^2-3)/2"
+ },
+ {
+  "id": "26A-A-Q4a",
+  "description": "x>0,y>0 between y=x and y=x+1 and between xy=1 and xy=2",
+  "type": "curvilinear",
+  "inequalities": [
+   "x>0",
+   "y>0",
+   "y>=x",
+   "y<=x+1",
+   "x*y>=1",
+   "x*y<=2"
+  ],
+  "boundary_curves": [
+   "y=x",
+   "y=x+1",
+   "x*y=1",
+   "x*y=2"
+  ],
+  "substitution": {
+   "u": "y-x",
+   "v": "x*y",
+   "u_range": [
+    0,
+    1
+   ],
+   "v_range": [
+    1,
+    2
+   ],
+   "abs_jacobian_xy_over_uv": "1/(x+y)"
+  },
+  "vertices": [
+   [
+    1,
+    1
+   ],
+   [
+    "sqrt(2)",
+    "sqrt(2)"
+   ],
+   [
+    1,
+    2
+   ],
+   [
+    0.6180339887498949,
+    1.618033988749895
+   ]
+  ],
+  "integrand": "x^2-y^2",
+  "value": "-1/2"
+ }
+]

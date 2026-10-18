@@ -1,6 +1,6 @@
 # STATUS - calculus-2
 
-Resume here: phase 0 - not started
+Resume here: phase 2 - flagship 26A-A transcribed (9 of 10 items live, Q3b held); next: steps + refuter
 Opus sessions: 0 of 2
 Engine: open   Format: unknown   Cutoff: unknown
 
@@ -18,7 +18,7 @@ Gates 1, 2 and 7 always stop for Adir.
   - [ ] config.overlay.json written, app repo scaffolded (triage stays in the factory)
 - [ ] Phase 2 - flagship  (GATE 2: Adir tries it in the browser)
   - [ ] topic taxonomy chosen
-  - [ ] flagship sitting transcribed + validated
+  - [x] flagship sitting transcribed + validated (26A-A: 10 items, Q3b held, 43 sympy checks, regions.json + contours.json recorded)
   - [ ] steps (if open questions) + refuter pass
   - [ ] smoke / verify_dom green, running locally
   - [ ] Adir tried it
