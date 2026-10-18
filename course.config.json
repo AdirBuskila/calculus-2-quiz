@@ -1,0 +1,106 @@
+{
+  "slug": "calculus-2",
+  "titleHe": "אינפי 2",
+  "descriptionHe": "תרגול מבחנים - אינפי 2",
+  "accent": "#fca5a5",
+  "accent2": "#7c3aed",
+  "sourceFolder": "C:/Users/Adir/Desktop/BSC/שנה ב/סמסטר א/אינפי 2",
+  "topics": [
+    [
+      "improper_integrals",
+      "אינטגרל לא אמיתי"
+    ],
+    [
+      "functions_level_sets",
+      "פונקציות של כמה משתנים, קווי גובה ומשטחים"
+    ],
+    [
+      "limits_continuity",
+      "גבולות ורציפות בשני משתנים"
+    ],
+    [
+      "partials_differentiability",
+      "נגזרות חלקיות ודיפרנציאביליות"
+    ],
+    [
+      "chain_rule_identity",
+      "כלל השרשרת והוכחת זהויות"
+    ],
+    [
+      "gradient_directional",
+      "גרדיאנט, נגזרת כיוונית ומישור משיק"
+    ],
+    [
+      "implicit_function",
+      "פונקציה סתומה"
+    ],
+    [
+      "local_extrema",
+      "אקסטרמום מקומי וסיווג (הסיאן)"
+    ],
+    [
+      "absolute_extrema",
+      "אקסטרמום מוחלט ושיטת לגראנז'"
+    ],
+    [
+      "double_integrals",
+      "אינטגרל כפול וחילוף סדר אינטגרציה"
+    ],
+    [
+      "change_of_variables",
+      "שינוי משתנים (קוטבי וליניארי)"
+    ],
+    [
+      "numeric_series",
+      "טורים מספריים: התכנסות וסכום"
+    ],
+    [
+      "power_series",
+      "טורי חזקות: רדיוס ותחום"
+    ],
+    [
+      "taylor_maclaurin",
+      "טור מקלורן ונגזרות מסדר גבוה"
+    ]
+  ],
+  "briefs": [],
+  "needHelp": [
+    {
+      "id": "limits_diff",
+      "titleHe": "גבולות, רציפות ודיפרנציאביליות בשני משתנים",
+      "icon": "🧭",
+      "topic": "limits_continuity",
+      "entryLabelHe": "צריך עזרה בגבולות בשני משתנים?"
+    },
+    {
+      "id": "chain_rule",
+      "titleHe": "כלל השרשרת והוכחת זהויות",
+      "icon": "🔗",
+      "topic": "chain_rule_identity",
+      "entryLabelHe": "צריך עזרה בכלל השרשרת?"
+    },
+    {
+      "id": "double_int",
+      "titleHe": "אינטגרל כפול: תחום, חילוף סדר ושינוי משתנים",
+      "icon": "🔲",
+      "topic": "double_integrals",
+      "entryLabelHe": "צריך עזרה באינטגרל כפול?"
+    },
+    {
+      "id": "extrema",
+      "titleHe": "אקסטרמום: מקומי, מוחלט ולגראנז'",
+      "icon": "⛰️",
+      "topic": "absolute_extrema",
+      "entryLabelHe": "צריך עזרה באקסטרמום?"
+    },
+    {
+      "id": "series",
+      "titleHe": "טורים: התכנסות, רדיוס ומקלורן",
+      "icon": "∑",
+      "topic": "numeric_series",
+      "entryLabelHe": "צריך עזרה בטורים?"
+    }
+  ],
+  "storePrefix": "calculus-2",
+  "includeDrafts": false
+}
