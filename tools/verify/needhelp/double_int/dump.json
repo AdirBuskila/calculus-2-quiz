@@ -1,0 +1,767 @@
+{
+ "courseId": "double_int",
+ "levels": [
+  {
+   "id": "C01",
+   "order": 1,
+   "boss": false,
+   "questions": [
+    {
+     "id": "C01-Q1",
+     "question": "מהו התחום של האינטגרל $\\int_0^1\\int_{x^2}^{x} f\\,dy\\,dx$ ?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$0\\le x\\le 1,\\ x\\le y\\le x^2$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$0\\le x\\le 1,\\ x^2\\le y\\le x$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$0\\le x\\le 1,\\ x^2\\le y\\le 1$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$0\\le x\\le 1,\\ 0\\le y\\le x^2$"
+      }
+     ]
+    },
+    {
+     "id": "C01-Q2",
+     "step": {
+      "type": "numeric",
+      "prompt": "חשבו את $\\int_0^2\\int_0^x 1\\,dy\\,dx$, כלומר את שטח התחום $0\\le y\\le x\\le 2$. ענו כמספר."
+     }
+    },
+    {
+     "id": "C01-Q3",
+     "step": {
+      "type": "numeric",
+      "prompt": "חשבו את $\\int_0^2\\int_0^3 xy\\,dy\\,dx$ (תחום מלבני). ענו כמספר."
+     }
+    },
+    {
+     "id": "C01-Q4",
+     "question": "מהם הקודקודים של התחום $0\\le y\\le x\\le 2$ ?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$(0,0),\\ (2,0),\\ (0,2)$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$(0,0),\\ (0,2),\\ (2,2)$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$(0,0),\\ (2,0),\\ (2,2)$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$(0,0),\\ (2,2),\\ (4,0)$"
+      }
+     ]
+    },
+    {
+     "id": "C01-Q5",
+     "question": "איזה מהאינטגרלים הנשנים הבאים כתוב נכון (בלי גבול שתלוי במשתנה שאינו חיצוני)?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$\\int_0^{x}\\int_0^{1} f\\,dy\\,dx$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$\\int_0^1\\int_0^{y} f\\,dy\\,dx$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$\\int_0^1\\int_0^{x} f\\,dy\\,dx$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$\\int_0^{y}\\int_0^{1} f\\,dx\\,dy$"
+      }
+     ]
+    },
+    {
+     "id": "C01-Q6",
+     "step": {
+      "type": "findbug",
+      "prompt": "הפתרון של $\\int_0^1\\int_0^x (x+y)\\,dy\\,dx$ מוצג בארבע שורות. כל שורה נבחנת כאמירה בפני עצמה, ובדיוק אחת מהן שגויה מבחינה חשבונית. סמנו אותה.",
+      "lines": [
+       "$\\int_0^x (x+y)\\,dy=\\left[xy+\\tfrac{y^2}{2}\\right]_0^x$",
+       "$=x^2+\\tfrac{x^2}{2}=2x^2$",
+       "$\\int_0^1 \\tfrac{3x^2}{2}\\,dx=\\left[\\tfrac{x^3}{2}\\right]_0^1$",
+       "$=\\tfrac12$"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "C02",
+   "order": 2,
+   "boss": false,
+   "questions": [
+    {
+     "id": "C02-Q1",
+     "question": "התחום חסום בין הפרבולה $y=x^2$ לישר $y=x$. כיצד כותבים אותו כסוג I (פסים אנכיים)?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$0\\le x\\le 1,\\ x^2\\le y\\le 1$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$0\\le x\\le 1,\\ x\\le y\\le x^2$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$0\\le x\\le 1,\\ x^2\\le y\\le x$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$0\\le x\\le 1,\\ 0\\le y\\le x^2$"
+      }
+     ]
+    },
+    {
+     "id": "C02-Q2",
+     "step": {
+      "type": "numeric",
+      "prompt": "חשבו את שטח התחום שבין $y=x^2$ ל-$y=x$, כלומר $\\int_0^1\\int_{x^2}^{x}1\\,dy\\,dx$. ענו כמספר עשרוני."
+     }
+    },
+    {
+     "id": "C02-Q3",
+     "question": "כיצד כותבים את אותו תחום (בין $y=x^2$ ל-$y=x$) כסוג II (פסים אופקיים)?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$0\\le y\\le1,\\ \\sqrt y\\le x\\le y$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$0\\le y\\le1,\\ y\\le x\\le\\sqrt y$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$0\\le y\\le1,\\ y^2\\le x\\le y$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$0\\le y\\le1,\\ 0\\le x\\le\\sqrt y$"
+      }
+     ]
+    },
+    {
+     "id": "C02-Q4",
+     "question": "באינטגרל נשנה בסדר $dy\\,dx$ (האינטגרל הפנימי לפי $y$), הגבולות של האינטגרל החיצוני הם:",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "פונקציות של $y$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "מספרים קבועים"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "פונקציות של $x$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "תלויים באינטגרנד $f$"
+      }
+     ]
+    },
+    {
+     "id": "C02-Q5",
+     "step": {
+      "type": "order",
+      "prompt": "סדרו את שלבי החישוב של $\\int_0^1\\int_{x^2}^{x} y\\,dy\\,dx$.",
+      "lines": [
+       "$\\int_0^1\\tfrac{x^2-x^4}{2}\\,dx=\\tfrac12\\left(\\tfrac13-\\tfrac15\\right)$",
+       "$=\\tfrac1{15}$",
+       "$\\int_{x^2}^{x}y\\,dy=\\tfrac{x^2-x^4}{2}$"
+      ]
+     }
+    },
+    {
+     "id": "C02-Q6",
+     "step": {
+      "type": "numeric",
+      "prompt": "חשבו בפסים אופקיים את $\\int_0^1\\int_{y}^{\\sqrt y} x\\,dx\\,dy$ (אותו תחום, האינטגרנד $x$). ענו כמספר עשרוני."
+     }
+    }
+   ]
+  },
+  {
+   "id": "C03",
+   "order": 3,
+   "boss": false,
+   "questions": [
+    {
+     "id": "C03-Q1",
+     "question": "מהו האינטגרל המתקבל מחילוף הסדר ב-$\\int_0^1\\int_y^1 f(x,y)\\,dx\\,dy$ ?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$\\int_0^1\\int_x^1 f\\,dy\\,dx$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$\\int_0^1\\int_0^{1-x} f\\,dy\\,dx$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$\\int_0^1\\int_0^1 f\\,dy\\,dx$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$\\int_0^1\\int_0^x f\\,dy\\,dx$"
+      }
+     ]
+    },
+    {
+     "id": "C03-Q2",
+     "step": {
+      "type": "fillblank",
+      "prompt": "משלימים את חילוף הסדר של $\\int_0^2\\int_{x^2}^{4} f\\,dy\\,dx$. מה הגבול העליון של $x$ בסדר החדש?",
+      "options": [
+       {
+        "id": "a",
+        "type": "text",
+        "value": "$y^2$"
+       },
+       {
+        "id": "b",
+        "type": "text",
+        "value": "$\\sqrt y$"
+       },
+       {
+        "id": "c",
+        "type": "text",
+        "value": "$\\tfrac y2$"
+       },
+       {
+        "id": "d",
+        "type": "text",
+        "value": "$2$"
+       }
+      ],
+      "lines": [
+       "התחום הנתון הוא $0\\le x\\le 2$ ו-$x^2\\le y\\le 4$, ולכן $y$ נע מ-$0$ עד $4$.",
+       "בגובה $y$ קבוע, $x$ נע מ-$0$ עד הפרבולה, כלומר עד $x=$ ___"
+      ],
+      "blankIndex": 1
+     }
+    },
+    {
+     "id": "C03-Q3",
+     "step": {
+      "type": "findbug",
+      "prompt": "נתון $\\int_0^2\\int_{x^2}^{4}f\\,dy\\,dx$ ומוצגת הדרך להחליף סדר. כל שורה נבחנת כאמירה בפני עצמה, ובדיוק אחת מהן שגויה. סמנו אותה.",
+      "lines": [
+       "התחום: $0\\le x\\le 2$ ו-$x^2\\le y\\le 4$",
+       "לכן $y$ נע בין $0$ ל-$4$",
+       "עבור $y$ קבוע, $x$ נע מהציר $x=0$ עד הפרבולה $x=y^2$",
+       "לכן האינטגרל החדש הוא $\\int_0^4\\int_0^{\\sqrt y}f\\,dx\\,dy$"
+      ]
+     }
+    },
+    {
+     "id": "C03-Q4",
+     "step": {
+      "type": "numeric",
+      "prompt": "חשבו את $\\int_0^2\\int_{x^2}^{4} x\\,dy\\,dx$. ענו כמספר."
+     }
+    },
+    {
+     "id": "C03-Q5",
+     "question": "מהו הסדר ההפוך של $\\int_0^1\\int_x^{\\sqrt x} f\\,dy\\,dx$ ?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$\\int_0^1\\int_{y^2}^{y} f\\,dx\\,dy$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$\\int_0^1\\int_{y}^{y^2} f\\,dx\\,dy$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$\\int_0^1\\int_{y}^{\\sqrt y} f\\,dx\\,dy$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$\\int_0^1\\int_{y^2}^{\\sqrt y} f\\,dx\\,dy$"
+      }
+     ]
+    },
+    {
+     "id": "C03-Q6",
+     "step": {
+      "type": "numeric",
+      "prompt": "חשבו את שטח התחום $0\\le x\\le2,\\ x^2\\le y\\le4$ בסדר ההפוך: $\\int_0^4\\int_0^{\\sqrt y}1\\,dx\\,dy$. ענו כמספר עשרוני."
+     }
+    }
+   ]
+  },
+  {
+   "id": "C04",
+   "order": 4,
+   "boss": false,
+   "questions": [
+    {
+     "id": "C04-Q1",
+     "question": "נתון $\\int_0^1\\int_y^1 e^{x^2}\\,dx\\,dy$. מה נכון לעשות?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "לחשב ישירות את הפנימי: $\\int e^{x^2}dx$ היא פונקציה אלמנטרית"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "להחליף סדר ל-$\\int_0^1\\int_0^{y}e^{x^2}\\,dx\\,dy$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "לוותר, כי אי אפשר לחשב את האינטגרל"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "להחליף סדר ל-$\\int_0^1\\int_0^{x}e^{x^2}\\,dy\\,dx$"
+      }
+     ]
+    },
+    {
+     "id": "C04-Q2",
+     "step": {
+      "type": "numeric",
+      "prompt": "חשבו את $\\int_0^2\\int_{y/2}^{1} e^{x^2}\\,dx\\,dy$ (רמז: שרטטו, והחליפו סדר). ענו כמספר עשרוני."
+     }
+    },
+    {
+     "id": "C04-Q3",
+     "step": {
+      "type": "numeric",
+      "prompt": "חשבו את $\\int_0^\\pi\\int_x^\\pi \\dfrac{\\sin y}{y}\\,dy\\,dx$ (הפנימי לפי $y$ בלתי אפשרי). ענו כמספר."
+     }
+    },
+    {
+     "id": "C04-Q4",
+     "step": {
+      "type": "order",
+      "prompt": "סדרו את שלבי החישוב של $\\int_0^1\\int_x^{1} e^{y^2}\\,dy\\,dx$.",
+      "lines": [
+       "מחליפים סדר: $\\int_0^1\\int_0^{y}e^{y^2}\\,dx\\,dy$",
+       "הפנימי: $\\int_0^{y}e^{y^2}\\,dx=ye^{y^2}$",
+       "$\\int_0^1ye^{y^2}\\,dy=\\left[\\tfrac{e^{y^2}}{2}\\right]_0^1$",
+       "$=\\tfrac{e-1}{2}$",
+       "התחום הוא $0\\le x\\le y\\le1$"
+      ]
+     }
+    },
+    {
+     "id": "C04-Q5",
+     "step": {
+      "type": "numeric",
+      "prompt": "חשבו את $\\int_0^1\\int_x^{1} \\sin\\left(y^2\\right)\\,dy\\,dx$. ענו כמספר עשרוני."
+     }
+    },
+    {
+     "id": "C04-Q6",
+     "question": "איזה מהאינטגרלים הבאים אפשר לחשב בסדר הנתון, בלי להחליף סדר?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$\\int_0^1\\int_x^{1} e^{y^2}\\,dy\\,dx$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$\\int_0^1\\int_y^{1} \\sin\\left(x^2\\right)\\,dx\\,dy$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$\\int_0^1\\int_0^{x} e^{x^2}\\,dy\\,dx$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$\\int_0^\\pi\\int_y^{\\pi} \\dfrac{\\sin x}{x}\\,dx\\,dy$"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C05",
+   "order": 5,
+   "boss": false,
+   "questions": [
+    {
+     "id": "C05-Q1",
+     "question": "המשולש בעל הקודקודים $(-1,0)$, $(1,0)$, $(0,1)$ נסרק בפסים אנכיים ($dy\\,dx$). כמה אינטגרלים נדרשים?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "אינטגרל אחד, כי יש רק שני גבולות"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "שלושה אינטגרלים, אחד לכל קודקוד"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "שני אינטגרלים, כי הגבול העליון משנה נוסחה ב-$x=0$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "אי אפשר לסרוק את התחום בפסים אנכיים"
+      }
+     ]
+    },
+    {
+     "id": "C05-Q2",
+     "step": {
+      "type": "numeric",
+      "prompt": "חשבו את השטח של אותו משולש באינטגרל האחד: $\\int_0^1\\int_{y-1}^{1-y}1\\,dx\\,dy$. ענו כמספר."
+     }
+    },
+    {
+     "id": "C05-Q3",
+     "question": "מהו האינטגרל האחד השווה ל-$\\int_0^1\\int_0^{x}f\\,dy\\,dx+\\int_1^2\\int_0^{2-x}f\\,dy\\,dx$ ?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$\\int_0^1\\int_y^{2-y}f\\,dx\\,dy$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$\\int_0^1\\int_{2-y}^{y}f\\,dx\\,dy$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$\\int_0^2\\int_y^{2-y}f\\,dx\\,dy$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$\\int_0^1\\int_0^{2}f\\,dx\\,dy$"
+      }
+     ]
+    },
+    {
+     "id": "C05-Q4",
+     "step": {
+      "type": "numeric",
+      "prompt": "חשבו את $\\int_0^1\\int_0^{x}y\\,dy\\,dx+\\int_1^2\\int_0^{2-x}y\\,dy\\,dx$ בעזרת האינטגרל האחד $\\int_0^1\\int_y^{2-y}y\\,dx\\,dy$. ענו כמספר עשרוני."
+     }
+    },
+    {
+     "id": "C05-Q5",
+     "step": {
+      "type": "findbug",
+      "prompt": "נתון $\\int_0^1\\int_y^{2-y}f\\,dx\\,dy$. מוצגת הדרך לכתוב אותו בפסים אנכיים. כל שורה נבחנת כאמירה בפני עצמה, ובדיוק אחת מהן שגויה. סמנו אותה.",
+      "lines": [
+       "התחום: $0\\le y\\le1$ ו-$y\\le x\\le2-y$",
+       "הקודקודים: $(0,0)$, $(2,0)$, $(1,1)$",
+       "עבור $0\\le x\\le1$ הגבול העליון של $y$ הוא $y=1$",
+       "עבור $1\\le x\\le2$ הגבול העליון של $y$ הוא $y=2-x$",
+       "לכן האינטגרל הוא $\\int_0^1\\int_0^{x}f\\,dy\\,dx+\\int_1^2\\int_0^{2-x}f\\,dy\\,dx$"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "C06",
+   "order": 6,
+   "boss": false,
+   "questions": [
+    {
+     "id": "C06-Q1",
+     "question": "מהם הגבולות בקואורדינטות קוטביות של חצי הדיסק $x^2+y^2\\le9,\\ y\\ge0$ ?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$0\\le r\\le9,\\ 0\\le\\theta\\le\\pi$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$0\\le r\\le3,\\ 0\\le\\theta\\le2\\pi$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$0\\le r\\le3,\\ -\\tfrac\\pi2\\le\\theta\\le\\tfrac\\pi2$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$0\\le r\\le3,\\ 0\\le\\theta\\le\\pi$"
+      }
+     ]
+    },
+    {
+     "id": "C06-Q2",
+     "step": {
+      "type": "numeric",
+      "prompt": "חשבו את $\\iint_{x^2+y^2\\le1}\\left(x^2+y^2\\right)dA$ בקואורדינטות קוטביות. ענו כמספר עשרוני."
+     }
+    },
+    {
+     "id": "C06-Q3",
+     "question": "בהחלפה לקואורדינטות קוטביות, $dx\\,dy$ הופך ל:",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$r^2\\,dr\\,d\\theta$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$r\\,dr\\,d\\theta$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$dr\\,d\\theta$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$\\tfrac1r\\,dr\\,d\\theta$"
+      }
+     ]
+    },
+    {
+     "id": "C06-Q4",
+     "step": {
+      "type": "numeric",
+      "prompt": "חשבו את שטח הטבעת ברביע הראשון $1\\le x^2+y^2\\le4,\\ x\\ge0,\\ y\\ge0$. ענו כמספר עשרוני."
+     }
+    },
+    {
+     "id": "C06-Q5",
+     "question": "מהי המשוואה בקואורדינטות קוטביות של המעגל $x^2+y^2=4x$ ?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$r=4$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$r=2\\cos\\theta$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$r=4\\sin\\theta$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$r=4\\cos\\theta$"
+      }
+     ]
+    },
+    {
+     "id": "C06-Q6",
+     "step": {
+      "type": "order",
+      "prompt": "סדרו את שלבי החישוב של $\\iint_D xy\\,dA$ כאשר $D$ הוא הרבע של הדיסק $x^2+y^2\\le4$ ברביע הראשון.",
+      "lines": [
+       "$\\iint_D xy\\,dA=\\int_0^{\\pi/2}\\int_0^2 r^2\\cos\\theta\\sin\\theta\\cdot r\\,dr\\,d\\theta$",
+       "האינטגרל מתפצל: $\\int_0^2r^3\\,dr\\cdot\\int_0^{\\pi/2}\\sin\\theta\\cos\\theta\\,d\\theta$",
+       "$=4\\cdot\\tfrac12$",
+       "$=2$",
+       "מציבים $x=r\\cos\\theta,\\ y=r\\sin\\theta$ ו-$dA=r\\,dr\\,d\\theta$; התחום: $0\\le r\\le2,\\ 0\\le\\theta\\le\\tfrac\\pi2$"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "C07",
+   "order": 7,
+   "boss": false,
+   "questions": [
+    {
+     "id": "C07-Q1",
+     "step": {
+      "type": "numeric",
+      "prompt": "נבחרו $u=y-x$ ו-$v=y+2x$. מהו $\\left|\\dfrac{\\partial(x,y)}{\\partial(u,v)}\\right|$ ? ענו כמספר עשרוני."
+     }
+    },
+    {
+     "id": "C07-Q2",
+     "question": "התחום ברביע הראשון חסום על ידי $y=x$, $y=2x$, $xy=1$ ו-$xy=4$. איזו הצבה הופכת אותו למלבן?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$u=x+y,\\ v=x-y$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$u=y-x,\\ v=xy$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$u=x^2+y^2,\\ v=\\dfrac yx$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$u=\\dfrac yx,\\ v=xy$"
+      }
+     ]
+    },
+    {
+     "id": "C07-Q3",
+     "step": {
+      "type": "numeric",
+      "prompt": "עם $u=\\dfrac yx$ ו-$v=xy$ מתקבל $\\left|\\dfrac{\\partial(u,v)}{\\partial(x,y)}\\right|=2u$. מהו $\\left|\\dfrac{\\partial(x,y)}{\\partial(u,v)}\\right|$ בנקודה שבה $u=2$ ? ענו כמספר עשרוני."
+     }
+    },
+    {
+     "id": "C07-Q4",
+     "step": {
+      "type": "numeric",
+      "prompt": "חשבו את שטח התחום $1\\le\\tfrac yx\\le2,\\ 1\\le xy\\le4$ כאינטגרל $\\int_1^2\\int_1^4\\dfrac1{2u}\\,dv\\,du$. ענו כמספר עשרוני."
+     }
+    },
+    {
+     "id": "C07-Q5",
+     "question": "נבחרו $u=x+y$ ו-$v=x-y$, ומתקבל $\\dfrac{\\partial(u,v)}{\\partial(x,y)}=-2$. איך נראה אלמנט השטח $dA$ באינטגרל החדש?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$-2\\,du\\,dv$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$2\\,du\\,dv$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$-\\tfrac12\\,du\\,dv$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$\\tfrac12\\,du\\,dv$"
+      }
+     ]
+    },
+    {
+     "id": "C07-Q6",
+     "step": {
+      "type": "findbug",
+      "prompt": "מוצג החישוב של $\\iint_D(x+y)\\,dA$ על התחום $1\\le x+y\\le3,\\ 0\\le x-y\\le2$. כל שורה נבחנת כאמירה בפני עצמה, ובדיוק אחת מהן שגויה. סמנו אותה.",
+      "lines": [
+       "$u=x+y,\\ v=x-y$, והתחום החדש: $1\\le u\\le3,\\ 0\\le v\\le2$",
+       "$\\left|\\dfrac{\\partial(u,v)}{\\partial(x,y)}\\right|=\\left|\\begin{vmatrix}1&1\\\\1&-1\\end{vmatrix}\\right|=2$",
+       "לכן $dA=2\\,du\\,dv$",
+       "$\\iint_D(x+y)\\,dA=\\tfrac12\\int_1^3u\\,du\\int_0^2dv$",
+       "$=\\tfrac12\\cdot4\\cdot2=4$"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "C08",
+   "order": 8,
+   "boss": true,
+   "questions": [
+    {
+     "id": "bank:26A-A-Q1a",
+     "bankId": "26A-A-Q1a"
+    },
+    {
+     "id": "bank:25A-A-Q4a",
+     "bankId": "25A-A-Q4a"
+    },
+    {
+     "id": "bank:23A-C-Q4a",
+     "bankId": "23A-C-Q4a"
+    },
+    {
+     "id": "bank:23A-C-Q1a",
+     "bankId": "23A-C-Q1a"
+    },
+    {
+     "id": "bank:22A-B-Q1b",
+     "bankId": "22A-B-Q1b"
+    },
+    {
+     "id": "bank:26A-A-Q4a",
+     "bankId": "26A-A-Q4a"
+    }
+   ]
+  }
+ ]
+}
