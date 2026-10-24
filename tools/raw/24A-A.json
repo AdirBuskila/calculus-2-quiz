@@ -1,0 +1,130 @@
+{
+ "examCode": "24A-A",
+ "examLabel": "מבחן סוף סמסטר א' תשפ\"ד, מועד א'",
+ "year": 2024,
+ "examDate": "04/04/2024",
+ "sourceFile": "calculus-2/24A-A questions 4.4.2024.pdf",
+ "solutionFile": "calculus-2/24A-A answers 4.4.2024 (worked answers)",
+ "questions": [
+  {
+   "num": 1,
+   "kind": "computation",
+   "topic": "limits_continuity",
+   "question": "נתונה פונקציה\n$$f(x,y)=\\begin{cases}\\dfrac{x^3y-xy^3}{x^2+y^2}, & (x,y)\\neq(0,0)\\\\[2mm] 0, & (x,y)=(0,0)\\end{cases}$$\nהאם היא רציפה בנקודה $(x,y)=(0,0)$? נמקו את תשובתכם.",
+   "solution": "נעבור לקואורדינטות קוטביות:\n$$\\lim_{(x,y)\\to(0,0)}\\frac{x^3y-xy^3}{x^2+y^2}=\\lim_{r\\to0}\\frac{r^4\\left(\\cos^3\\theta\\sin\\theta-\\cos\\theta\\sin^3\\theta\\right)}{r^2}$$\n$$=\\lim_{r\\to0}r^2\\left(\\cos^3\\theta\\sin\\theta-\\cos\\theta\\sin^3\\theta\\right)=0$$\n(אפס כפול פונקציה חסומה).\n$$\\lim_{(x,y)\\to(0,0)}f(x,y)=0=f(0,0)$$\nערך הגבול ב-$(0,0)$ שווה לערך הפונקציה ב-$(0,0)$, ולכן הפונקציה **רציפה** ב-$(0,0)$.",
+   "solutionSource": "student-solution",
+   "official": false,
+   "confidence": "high",
+   "part": "א",
+   "points": 12
+  },
+  {
+   "num": 1,
+   "kind": "computation",
+   "topic": "gradient_directional",
+   "question": "מצאו את הכיוון בו קצב ההשתנות של הפונקציה $f(x,y)=2e^{-x^2}+e^{-3y^2}$ בנקודה $(1,0)$ הוא מקסימלי. נמקו את תשובתכם.",
+   "solution": "הכיוון בו קצב ההשתנות של הפונקציה הוא מקסימלי בנקודה $(1,0)$ הוא כיוון הגרדיאנט בנקודה $(1,0)$.\n$$\\nabla f(x,y)=(f'_x,f'_y)=\\left(-4x\\cdot e^{-x^2},\\ -6y\\,e^{-3y^2}\\right)$$\n$$\\nabla f(1,0)=\\left(-\\frac{4}{e},0\\right)$$\nנימוק:\n$$\\frac{\\partial f(x,y)}{\\partial\\vec u}=\\left|\\nabla f(x,y)\\right|\\cdot\\cos\\delta$$\nכאשר $\\delta$ היא הזווית בין הוקטור $\\vec u$ לבין הגרדיאנט.\nמכאן בכיוון הגרדיאנט מתקבל הערך המקסימלי של הנגזרת הכיוונית. לכן הכיוון המבוקש הוא כיוון $\\left(-\\frac{4}{e},0\\right)$, כלומר הוקטור היחידה $(-1,0)$.",
+   "solutionSource": "student-solution",
+   "official": false,
+   "confidence": "high",
+   "part": "ב",
+   "points": 13
+  },
+  {
+   "num": 2,
+   "kind": "computation",
+   "topic": "numeric_series",
+   "question": "בדקו התכנסות בהחלט, בתנאי או התבדרות של הטורים הבאים:\n$$\\sum_{n=1}^{\\infty}(-1)^n\\sin\\frac{1}{\\sqrt{n}}$$\n$$\\sum_{n=1}^{\\infty}(-1)^n\\left(\\sqrt{n}-\\sqrt{n-1}\\right)$$",
+   "solution": "**הטור הראשון.** נבדוק את ההתכנסות בהחלט:\n$$\\sum_{n=1}^{\\infty}\\left|(-1)^n\\sin\\frac{1}{\\sqrt{n}}\\right|=\\sum_{n=1}^{\\infty}\\sin\\frac{1}{\\sqrt{n}}\\sim\\frac{1}{\\sqrt{n}}=b_n$$\n$$\\lim_{n\\to\\infty}\\frac{a_n}{b_n}=\\lim_{n\\to\\infty}\\frac{\\sin\\frac{1}{\\sqrt{n}}}{\\frac{1}{\\sqrt{n}}}=1$$\nהטור $\\sum b_n$ מתבדר כטור הרמוני מוכלל עם $p=\\frac{1}{2}<1$, לכן לפי מבחן ההשוואה הטור המקורי אינו מתכנס בהחלט.\nנבדוק את ההתכנסות בתנאי: $\\sum_{n=1}^{\\infty}(-1)^n\\sin\\frac{1}{\\sqrt{n}}$. לפי מבחן לייבניץ נבדוק את הסדרה $\\{a_n\\}=\\left\\{\\sin\\frac{1}{\\sqrt{n}}\\right\\}$.\nהסדרה מונוטונית יורדת: $y=\\sin x$ היא פונקציה מונוטונית עולה בקטע $\\left[0,\\frac{\\pi}{2}\\right]$ ומתקיים $\\frac{1}{\\sqrt{n+1}}<\\frac{1}{\\sqrt{n}}$, לכן $\\sin\\frac{1}{\\sqrt{n+1}}<\\sin\\frac{1}{\\sqrt{n}}$.\nהסדרה $\\{a_n\\}$ שואפת לאפס:\n$$\\lim_{n\\to\\infty}\\sin\\frac{1}{\\sqrt{n}}=\\sin0=0$$\nלכן לפי מבחן לייבניץ הטור מתכנס $\\Rightarrow$ הטור המקורי **מתכנס בתנאי**.\n\n**הטור השני.** $\\sum_{n=1}^{\\infty}(-1)^n\\left(\\sqrt{n}-\\sqrt{n-1}\\right)$. נבדוק את ההתכנסות בהחלט של הטור:\n$$\\sum_{n=1}^{\\infty}\\left|(-1)^n\\frac{1}{\\sqrt{n}+\\sqrt{n-1}}\\right|=\\sum_{n=1}^{\\infty}\\frac{1}{\\sqrt{n}+\\sqrt{n-1}}\\sim\\sum\\frac{1}{\\sqrt{n}}=\\sum b_n$$\nלפי מבחן ההשוואה, נקבל\n$$\\lim_{n\\to\\infty}\\frac{a_n}{b_n}=\\lim_{n\\to\\infty}\\frac{\\frac{1}{\\sqrt{n}+\\sqrt{n-1}}}{\\frac{1}{\\sqrt{n}}}=\\lim_{n\\to\\infty}\\frac{\\sqrt{n}}{\\sqrt{n}+\\sqrt{n-1}}=\\lim_{n\\to\\infty}\\frac{1}{1+\\sqrt{1-\\frac{1}{n}}}=\\frac{1}{2}.$$\nהטורים מתבדרים ביחד, לכן אין התכנסות בהחלט.\nנבדוק את ההתכנסות בתנאי: $\\sum_{n=1}^{\\infty}(-1)^n\\frac{1}{\\sqrt{n}+\\sqrt{n-1}}$. נסמן $\\{a_n\\}=\\left\\{\\frac{1}{\\sqrt{n}+\\sqrt{n-1}}\\right\\}$, הסדרה מונוטונית יורדת:\n$$a_{n+1}=\\frac{1}{\\sqrt{n+1}+\\sqrt{n}}<\\frac{1}{\\sqrt{n}+\\sqrt{n-1}}=a_n$$\n$$\\lim_{n\\to\\infty}a_n=\\lim_{n\\to\\infty}\\frac{1}{\\sqrt{n+1}+\\sqrt{n}}=0$$\nלכן לפי מבחן לייבניץ הטור המקורי **מתכנס בתנאי**.",
+   "solutionSource": "student-solution",
+   "official": false,
+   "confidence": "high",
+   "part": "א",
+   "points": 12
+  },
+  {
+   "num": 2,
+   "kind": "computation",
+   "topic": "partials_differentiability",
+   "question": "נתונה הפונקציה\n$$f(x,y)=\\begin{cases}xy\\cdot\\dfrac{x^2-y^2}{x^2+y^2}, & (x,y)\\neq(0,0)\\\\[2mm] 0, & (x,y)=(0,0)\\end{cases}$$\nמצאו את $f'_x(0,0)$ ו-$f'_y(0,0)$. האם $f(x,y)$ דיפרנציאבילית ב-$(0,0)$?",
+   "solution": "$$f'_x(0,0)=\\lim_{\\Delta x\\to0}\\frac{f(0+\\Delta x,0)-f(0,0)}{\\Delta x}=\\lim_{\\Delta x\\to0}\\frac{\\Delta x\\cdot0\\cdot\\frac{\\Delta x^2-0^2}{\\Delta x^2+0^2}-0}{\\Delta x}=\\lim_{\\Delta x\\to0}\\frac{0}{\\Delta x}=0$$\nבאופן דומה $f'_y(0,0)=0$.\nנבדוק את ההגדרה של דיפרנציאביליות:\n$$\\Delta f(0,0)=\\Delta x\\cdot\\Delta y\\,\\frac{\\Delta x^2-\\Delta y^2}{\\Delta x^2+\\Delta y^2}$$\n$$\\Delta f(0,0)=f'_x(0,0)\\cdot\\Delta x+f'_y(0,0)\\cdot\\Delta y+\\varepsilon\\sqrt{\\Delta x^2+\\Delta y^2}\\qquad(f'_x(0,0)=0,\\ f'_y(0,0)=0)$$\nאפשר לכתוב\n$$\\Delta x\\,\\Delta y\\,\\frac{\\Delta x^2-\\Delta y^2}{\\Delta x^2+\\Delta y^2}=\\varepsilon\\sqrt{\\Delta x^2+\\Delta y^2}\\ \\Rightarrow$$\n$$\\lim_{\\substack{\\Delta x\\to0\\\\ \\Delta y\\to0}}\\varepsilon(\\Delta x,\\Delta y)=\\lim_{\\substack{\\Delta x\\to0\\\\ \\Delta y\\to0}}\\frac{\\Delta x\\cdot\\Delta y\\left(\\Delta x^2-\\Delta y^2\\right)}{\\left(\\Delta x^2+\\Delta y^2\\right)^{3/2}}=$$\nנציב $\\{\\Delta x=\\rho\\cos\\theta,\\ \\Delta y=\\rho\\sin\\theta\\}$:\n$$=\\lim_{\\rho\\to0}\\frac{\\rho^4\\cos\\theta\\sin\\theta\\left(\\cos^2\\theta-\\sin^2\\theta\\right)}{\\left(\\rho^2\\right)^{3/2}}=\\lim_{\\rho\\to0}\\rho\\,\\frac{1}{2}\\sin2\\theta\\cdot\\cos2\\theta=\\lim_{\\rho\\to0}\\rho\\,\\frac{1}{4}\\sin4\\theta=0$$\n(אפס כפול פונקציה חסומה).\nלכן הפונקציה $f(x,y)$ **דיפרנציאבילית** ב-$(0,0)$.",
+   "solutionSource": "student-solution",
+   "official": false,
+   "confidence": "high",
+   "part": "ב",
+   "points": 13
+  },
+  {
+   "num": 3,
+   "kind": "computation",
+   "topic": "power_series",
+   "question": "עבור אילו ערכי $x$ הטור מתכנס (מצאו רדיוס התכנסות ותחום התכנסות).\n$$\\sum_{n=1}^{\\infty}\\frac{2^n(x+1)^n}{n^2+1}$$",
+   "solution": "בוא נכתוב $s=x+1$ וננתח את הטור $\\sum_{n=1}^{\\infty}\\frac{2^n}{n^2+1}s^n$. אזי $a_n=\\dfrac{2^n}{n^2+1}$,\n$$R=\\lim_{n\\to\\infty}\\left|\\frac{a_n}{a_{n+1}}\\right|=\\frac{2^n}{n^2+1}\\cdot\\frac{(n+1)^2+1}{2^{n+1}}=\\frac{1}{2}\\cdot\\frac{n^2+2n+2}{n^2+1}=\\frac{1}{2}$$\nלכן הטור מתכנס כאשר $s\\in\\left(-\\frac{1}{2},\\frac{1}{2}\\right)$.\nכאשר $s=-\\frac{1}{2}$ מקבלים הטור\n$$\\sum_{n=1}^{\\infty}\\frac{2^n}{n^2+1}\\left(-\\frac{1}{2}\\right)^n$$\nושימוש במשפט לייבניץ הטור מתכנס. עכשיו, עבור $s=\\frac{1}{2}$ מקבלים הטור\n$$\\sum_{n=1}^{\\infty}\\frac{2^n}{n^2+1}\\frac{1}{2^n}=\\sum_{n=1}^{\\infty}\\frac{1}{n^2+1}$$\nמאז $\\frac{1}{n^2+1}\\le\\frac{1}{n^2}$ אנו מסיקים שהטור מתכנס. אזי התחום התכנסות של הטור $\\sum_{n=1}^{\\infty}\\frac{2^n}{n^2+1}s^n$ הוא $\\left[-\\frac{1}{2},\\frac{1}{2}\\right]$ וזה מרמז על כך התחום התכנסות של הטור המקורי הוא $\\left[-\\frac{3}{2},-\\frac{1}{2}\\right]$.",
+   "solutionSource": "student-solution",
+   "official": false,
+   "confidence": "high",
+   "part": "א",
+   "points": 12
+  },
+  {
+   "num": 3,
+   "kind": "proof",
+   "topic": "chain_rule_identity",
+   "question": "הוכיחו שהפונקציה $u=x^kF\\left(\\dfrac{z}{x};\\dfrac{y}{x}\\right)$ כאשר $F$ בעלת נגזרות חלקיות ורציפות מקיימת את המשוואה $x\\dfrac{\\partial u}{\\partial x}+y\\dfrac{\\partial u}{\\partial y}+z\\dfrac{\\partial u}{\\partial z}=ku$.",
+   "solution": "$F=F(s,t)$ כאשר $s(x,y,z)=\\dfrac{z}{x},\\quad t(x,y,z)=\\dfrac{y}{x}$.\n$$\\frac{\\partial s}{\\partial x}=-\\frac{z}{x^2};\\quad\\frac{\\partial s}{\\partial y}=0;\\quad\\frac{\\partial s}{\\partial z}=\\frac{1}{x};$$\n$$\\frac{\\partial t}{\\partial x}=-\\frac{y}{x^2};\\quad\\frac{\\partial t}{\\partial y}=\\frac{1}{x};\\quad\\frac{\\partial t}{\\partial z}=0;$$\n$\\Longrightarrow$\n$$\\frac{\\partial F}{\\partial x}=\\frac{\\partial F}{\\partial s}\\frac{\\partial s}{\\partial x}+\\frac{\\partial F}{\\partial t}\\frac{\\partial t}{\\partial x}=\\frac{\\partial F}{\\partial s}\\left(-\\frac{z}{x^2}\\right)+\\frac{\\partial F}{\\partial t}\\left(-\\frac{y}{x^2}\\right)=-\\frac{1}{x^2}\\left(\\frac{\\partial F}{\\partial s}z+\\frac{\\partial F}{\\partial t}y\\right);$$\n$$\\frac{\\partial F}{\\partial y}=\\frac{\\partial F}{\\partial s}\\frac{\\partial s}{\\partial y}+\\frac{\\partial F}{\\partial t}\\frac{\\partial t}{\\partial y}=\\frac{\\partial F}{\\partial s}\\cdot0+\\frac{\\partial F}{\\partial t}\\frac{1}{x}=\\frac{1}{x}\\frac{\\partial F}{\\partial t};$$\n$$\\frac{\\partial F}{\\partial z}=\\frac{\\partial F}{\\partial s}\\frac{\\partial s}{\\partial z}+\\frac{\\partial F}{\\partial t}\\frac{\\partial t}{\\partial z}=\\frac{\\partial F}{\\partial s}\\frac{1}{x}+\\frac{\\partial F}{\\partial t}\\cdot0=\\frac{1}{x}\\frac{\\partial F}{\\partial s};$$\n$\\Longrightarrow$\n$$\\frac{\\partial u}{\\partial x}=kx^{k-1}F\\left(\\frac{z}{x},\\frac{y}{x}\\right)+x^k\\frac{\\partial F}{\\partial x}=kx^{k-1}F\\left(\\frac{z}{x},\\frac{y}{x}\\right)-x^{k-2}\\left(\\frac{\\partial F}{\\partial s}z+\\frac{\\partial F}{\\partial t}y\\right);$$\n$$\\frac{\\partial u}{\\partial y}=x^k\\frac{\\partial F}{\\partial y}=x^k\\frac{1}{x}\\frac{\\partial F}{\\partial t}=x^{k-1}\\frac{\\partial F}{\\partial t};$$\n$$\\frac{\\partial u}{\\partial z}=x^k\\frac{\\partial F}{\\partial z}=x^k\\frac{1}{x}\\frac{\\partial F}{\\partial s}=x^{k-1}\\frac{\\partial F}{\\partial s};$$\n$\\Longrightarrow$\n$$x\\frac{\\partial u}{\\partial x}+y\\frac{\\partial u}{\\partial y}+z\\frac{\\partial u}{\\partial z}=x\\left(kx^{k-1}F\\left(\\frac{z}{x},\\frac{y}{x}\\right)-x^{k-2}z\\frac{\\partial F}{\\partial s}-x^{k-2}y\\frac{\\partial F}{\\partial t}\\right)+$$\n$$+\\ yx^{k-1}\\frac{\\partial F}{\\partial t}+zx^{k-1}\\frac{\\partial F}{\\partial s}=kx^kF\\left(\\frac{z}{x},\\frac{y}{x}\\right)=ku.$$",
+   "solutionSource": "student-solution",
+   "official": false,
+   "confidence": "high",
+   "part": "ב",
+   "points": 13
+  },
+  {
+   "num": 4,
+   "kind": "computation",
+   "topic": "numeric_series",
+   "question": "חשבו את סכום הטור\n$$\\sum_{n=1}^{\\infty}\\frac{1}{n^2+6n+8}$$",
+   "solution": "נציג את הטור בצורה\n$$\\sum_{n=1}^{\\infty}\\frac{1}{(n+2)(n+4)}=\\frac{1}{2}\\sum_{n=1}^{\\infty}\\left[\\frac{1}{n+2}-\\frac{1}{n+4}\\right].$$\nאז סדרת הסכומים החלקיים שלו תתנהג באופן הבא:\n$$S_n=\\frac{1}{2}\\sum_{k=1}^{n}\\left[\\frac{1}{k+2}-\\frac{1}{k+4}\\right]=\\frac{1}{2}\\left[\\left(\\frac{1}{3}-\\frac{1}{5}\\right)+\\left(\\frac{1}{4}-\\frac{1}{6}\\right)+\\left(\\frac{1}{5}-\\frac{1}{7}\\right)+\\left(\\frac{1}{6}-\\frac{1}{8}\\right)+\\left(\\frac{1}{7}-\\frac{1}{9}\\right)+\\cdots+\\left(\\frac{1}{n+2}-\\frac{1}{n+4}\\right)\\right]$$\n$$=\\frac{1}{2}\\left(\\frac{1}{3}+\\frac{1}{4}-\\frac{1}{n+3}-\\frac{1}{n+4}\\right)=\\frac{1}{2}\\left(\\frac{7}{12}-\\frac{2n+7}{(n+3)(n+4)}\\right)$$\n$$\\Rightarrow\\ S=\\lim_{n\\to\\infty}S_n=\\frac{7}{24}$$",
+   "solutionSource": "student-solution",
+   "official": false,
+   "confidence": "high",
+   "part": "א",
+   "points": 12
+  },
+  {
+   "num": 4,
+   "kind": "computation",
+   "topic": "absolute_extrema",
+   "question": "מצאו אקסטרמומים מוחלטים של הפונקציה $f(x,y)=x\\cdot y$ תחת האילוץ $x^2+y^2=2$",
+   "solution": "נגדיר את האילוץ כ-$g(x,y)=x^2+y^2=2$ ונבנה מערכת של לגרנז' המתאימה לבעיה הזאת:\n$$\\begin{cases}f(x,y)=xy\\to\\min/\\max\\\\ g(x,y)=x^2+y^2=2\\end{cases}\\Leftarrow\\begin{cases}\\nabla f(x,y)=\\lambda\\nabla g(x,y)\\\\ g(x,y)=x^2+y^2=2\\end{cases}\\Leftarrow\\begin{cases}y=2\\lambda x\\\\ x=2\\lambda y\\\\ x^2+y^2=2\\end{cases}$$\nברור שאם $\\lambda=0$, אז $x=y=0$ והאילוץ לא יכול להתקיים. לכן, $\\lambda\\neq0$ ואז\n$$\\begin{cases}\\dfrac{y}{2x}=\\lambda\\\\[2mm] \\dfrac{x}{2y}=\\lambda\\end{cases}\\Rightarrow\\frac{y}{2x}=\\frac{x}{2y}\\Rightarrow x^2=y^2.$$\nאם נציב את הקשר הזה באילוץ, אז נקבל $x^2+x^2=2\\Rightarrow x^2=1\\Rightarrow x=\\pm1$ ומכאן גם $y=\\pm1$.\nכתוצאה מכך, נקבל 4 נקודות חשודות: $(1,1),(1,-1),(-1,1),(-1,-1)$ ולכן\n$$\\begin{cases}f(1,1)=f(-1,-1)=1=f_{max}\\\\ f(1,-1)=f(-1,1)=-1=f_{min}\\end{cases}$$",
+   "solutionSource": "student-solution",
+   "official": false,
+   "confidence": "high",
+   "part": "ב",
+   "points": 13
+  },
+  {
+   "num": 5,
+   "kind": "computation",
+   "topic": "local_extrema",
+   "question": "מצאו וסווגו את נקודות האקסטרמום של הפונקציה:\n$$f(x,y)=x^3+8y^3-6xy+1$$",
+   "solution": "$$\\begin{cases}f'_x=3x^2-6y=0\\\\ f'_y=24y^2-6x=0\\end{cases}\\Rightarrow\\begin{cases}x=4y^2\\\\ 3\\cdot(4y^2)^2-6y=0\\Rightarrow y\\left(8y^3-1\\right)=0\\end{cases}$$\nנקודות קריטיות:\n$$\\begin{cases}y_1=0\\Rightarrow x_1=0\\\\ y_2=\\frac{1}{2}\\Rightarrow x_2=1\\end{cases}$$\n$$f''_{xx}=6x,\\quad f''_{xy}=f''_{yx}=-6,\\quad f''_{yy}=48y$$\nבנקודה $(0,0)$: $\\Delta=f''_{xx}\\cdot f''_{yy}-\\left(f''_{xy}\\right)^2=-36<0$.\nאז $(0,0)$ היא **נקודת אוכף**.\nבנקודה $\\left(1,\\frac{1}{2}\\right)$: $\\Delta=f''_{xx}\\cdot f''_{yy}-\\left(f''_{xy}\\right)^2=6\\cdot24-36>0$, $f''_{xx}=6>0$.\nאז $\\left(1,\\frac{1}{2}\\right)$ היא **נקודת מינימום**.",
+   "solutionSource": "student-solution",
+   "official": false,
+   "confidence": "high",
+   "part": "א",
+   "points": 12
+  },
+  {
+   "num": 5,
+   "kind": "computation",
+   "topic": "taylor_maclaurin",
+   "question": "פתחו את הפונקציה $f(x)=\\dfrac{1}{1-3x^2}$ לטור מקלורן. מהו תחום התכנסות הטור?\nהסיקו את הערך של $f^{(5)}(0)$.",
+   "solution": "$$f(x)=\\frac{1}{1-3x^2}=\\sum_{n=0}^{\\infty}\\left(3x^2\\right)^n=\\sum_{n=0}^{\\infty}3^nx^{2n}$$\nהטור מתכנס עבור $\\left|3x^2\\right|<1\\iff|x|^2<\\frac{1}{3}\\iff|x|<\\frac{1}{\\sqrt{3}}$.\nעבור $3x^2=1\\iff x=\\frac{1}{\\sqrt{3}}$ הטור מתבדר.\nעבור $3x^2=1\\iff x=-\\frac{1}{\\sqrt{3}}$ הטור מתבדר.\n$$f(x)=\\sum_{n=0}^{\\infty}\\frac{f^{(n)}(0)}{n!}x^n=\\sum_{n=0}^{\\infty}c_nx^n$$\n(ישנן חזקות זוגיות בלבד) $0=5!\\,c_5=f^{(5)}(0)$.",
+   "solutionSource": "student-solution",
+   "official": false,
+   "confidence": "high",
+   "part": "ב",
+   "points": 13
+  }
+ ]
+}

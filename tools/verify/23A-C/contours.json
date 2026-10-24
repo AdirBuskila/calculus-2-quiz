@@ -1,0 +1,75 @@
+[
+ {
+  "id": "23A-C-Q4b",
+  "f": "x^2+y^2+4*x*y",
+  "constraint": null,
+  "kind": "closed_region",
+  "region": "x>=0, y>=0, y<=sqrt(3)*x, x^2+y^2<=1",
+  "domain": [
+   [
+    -0.2,
+    1.2
+   ],
+   [
+    -0.2,
+    1.2
+   ]
+  ],
+  "critical_points": [
+   {
+    "x": 0,
+    "y": 0,
+    "f": 0,
+    "role": "provisional min (vertex)"
+   },
+   {
+    "x": "1/sqrt(2)",
+    "y": "1/sqrt(2)",
+    "f": 3,
+    "role": "provisional max (arc)"
+   },
+   {
+    "x": 1,
+    "y": 0,
+    "f": 1,
+    "role": "boundary vertex"
+   },
+   {
+    "x": "1/2",
+    "y": "sqrt(3)/2",
+    "f": "1+sqrt(3)",
+    "role": "boundary vertex"
+   }
+  ]
+ },
+ {
+  "id": "23A-C-Q5a",
+  "f": "(x^2-2*y^2)*exp(x-y)",
+  "constraint": null,
+  "kind": "unconstrained",
+  "domain": [
+   [
+    -8,
+    3
+   ],
+   [
+    -6,
+    3
+   ]
+  ],
+  "critical_points": [
+   {
+    "x": 0,
+    "y": 0,
+    "f": 0,
+    "role": "provisional, unclassified here"
+   },
+   {
+    "x": -4,
+    "y": -2,
+    "f": 1.0826822658929016,
+    "role": "provisional, unclassified here"
+   }
+  ]
+ }
+]

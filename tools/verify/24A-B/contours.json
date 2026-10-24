@@ -1,0 +1,165 @@
+[
+ {
+  "id": "24A-B-Q4b",
+  "f": "2*x^4+y^4-x^2-2*y^2",
+  "constraint": "x^2+y^2=2",
+  "kind": "closed_region",
+  "region": "x^2+y^2<=2",
+  "domain": [
+   [
+    -1.7,
+    1.7
+   ],
+   [
+    -1.7,
+    1.7
+   ]
+  ],
+  "critical_points": [
+   {
+    "x": "sqrt(2)",
+    "y": 0,
+    "f": 6,
+    "role": "abs max"
+   },
+   {
+    "x": "-sqrt(2)",
+    "y": 0,
+    "f": 6,
+    "role": "abs max"
+   },
+   {
+    "x": 0.5,
+    "y": 1,
+    "f": -1.125,
+    "role": "abs min"
+   },
+   {
+    "x": 0.5,
+    "y": -1,
+    "f": -1.125,
+    "role": "abs min"
+   },
+   {
+    "x": -0.5,
+    "y": 1,
+    "f": -1.125,
+    "role": "abs min"
+   },
+   {
+    "x": -0.5,
+    "y": -1,
+    "f": -1.125,
+    "role": "abs min"
+   },
+   {
+    "x": 0,
+    "y": 0,
+    "f": 0,
+    "role": "interior critical"
+   },
+   {
+    "x": 0,
+    "y": 1,
+    "f": -1,
+    "role": "interior critical"
+   },
+   {
+    "x": 0,
+    "y": -1,
+    "f": -1,
+    "role": "interior critical"
+   },
+   {
+    "x": 0.5,
+    "y": 0,
+    "f": -0.125,
+    "role": "interior critical"
+   },
+   {
+    "x": -0.5,
+    "y": 0,
+    "f": -0.125,
+    "role": "interior critical"
+   },
+   {
+    "x": 0,
+    "y": "sqrt(2)",
+    "f": 0,
+    "role": "boundary critical"
+   },
+   {
+    "x": 0,
+    "y": "-sqrt(2)",
+    "f": 0,
+    "role": "boundary critical"
+   },
+   {
+    "x": "1/sqrt(2)",
+    "y": "sqrt(3/2)",
+    "f": -0.75,
+    "role": "boundary critical"
+   },
+   {
+    "x": "1/sqrt(2)",
+    "y": "-sqrt(3/2)",
+    "f": -0.75,
+    "role": "boundary critical"
+   },
+   {
+    "x": "-1/sqrt(2)",
+    "y": "sqrt(3/2)",
+    "f": -0.75,
+    "role": "boundary critical"
+   },
+   {
+    "x": "-1/sqrt(2)",
+    "y": "-sqrt(3/2)",
+    "f": -0.75,
+    "role": "boundary critical"
+   }
+  ]
+ },
+ {
+  "id": "24A-B-Q5a",
+  "f": "(3-x)*(3-y)*(x+y-3)",
+  "constraint": null,
+  "kind": "unconstrained",
+  "domain": [
+   [
+    -1,
+    4.5
+   ],
+   [
+    -1,
+    4.5
+   ]
+  ],
+  "critical_points": [
+   {
+    "x": 0,
+    "y": 3,
+    "f": 0,
+    "role": "saddle"
+   },
+   {
+    "x": 3,
+    "y": 0,
+    "f": 0,
+    "role": "saddle"
+   },
+   {
+    "x": 3,
+    "y": 3,
+    "f": 0,
+    "role": "saddle"
+   },
+   {
+    "x": 2,
+    "y": 2,
+    "f": 1,
+    "role": "local max"
+   }
+  ]
+ }
+]

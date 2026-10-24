@@ -1,0 +1,100 @@
+{
+ "examCode": "23A-C",
+ "examLabel": "מבחן סוף סמסטר א' תשפ\"ג, מועד ג'",
+ "year": 2023,
+ "examDate": "27/04/2023",
+ "sourceFile": "calculus-2/23A-C exam 27.4.23.pdf",
+ "solutionFile": "none (no key exists for this sitting)",
+ "questions": [
+  {
+   "num": 1,
+   "part": "א",
+   "kind": "computation",
+   "topic": "double_integrals",
+   "points": 12,
+   "question": "מצאו שטח של צורה מישורית המוגבלת בין שני המעגלים:\n$$x^2+y^2=2x,\\quad x^2+y^2=4x$$",
+   "hold": "no-key"
+  },
+  {
+   "num": 1,
+   "part": "ב",
+   "kind": "computation",
+   "topic": "gradient_directional",
+   "points": 13,
+   "question": "נתונה הפונקציה $f(x,y,z)=x^2y\\sqrt{z}$. פי כמה קצב שינוי הפונקציה בנקודה $(2,1,1)$ בכיוון של הוקטור $\\vec u=\\vec i+2\\vec j+2\\vec k$ קטן מקצב השינוי המקסימלי של הפונקציה בנקודה זו?",
+   "hold": "no-key"
+  },
+  {
+   "num": 2,
+   "part": "א",
+   "kind": "computation",
+   "topic": "numeric_series",
+   "points": 12,
+   "question": "בדקו התכנסות בהחלט, בתנאי או התבדרות של הטורים הבאים:\n$$\\sum_{n=1}^{\\infty}\\frac{2^n\\cos n}{3^n}$$\n$$\\sum_{n=1}^{\\infty}\\arctan^n\\!\\left(\\frac{n+2}{n+3}\\right)$$",
+   "hold": "no-key"
+  },
+  {
+   "num": 2,
+   "part": "ב",
+   "kind": "computation",
+   "topic": "partials_differentiability",
+   "points": 13,
+   "question": "נתונה הפונקציה\n$$f(x,y)=\\begin{cases}\\dfrac{x^3+y^3}{2x^2+y^2}, & (x,y)\\neq(0,0)\\\\[2mm] 0, & (x,y)=(0,0)\\end{cases}$$\nהאם $f(x,y)$ דיפרנציאבילית ב-$(0,0)$?",
+   "hold": "no-key"
+  },
+  {
+   "num": 3,
+   "part": "א",
+   "kind": "computation",
+   "topic": "power_series",
+   "points": 12,
+   "question": "עבור אילו ערכי $x$ הטור מתכנס (מצאו רדיוס התכנסות ותחום התכנסות):\n$$\\sum_{n=1}^{\\infty}x^n\\,\\frac{1}{2^n+3^n}$$",
+   "hold": "no-key"
+  },
+  {
+   "num": 3,
+   "part": "ב",
+   "kind": "proof",
+   "topic": "chain_rule_identity",
+   "points": 13,
+   "question": "הראו כי הפונקציה $z=y\\cdot g\\left(x^2-y^2\\right)$ כאשר $g(t)$ גזירה עבור כל $t$ ו-$x,y\\neq0$ מקיימת את המשוואה:\n$$\\frac{1}{x}\\cdot\\frac{\\partial z}{\\partial x}+\\frac{1}{y}\\cdot\\frac{\\partial z}{\\partial y}=\\frac{z}{y^2}.$$",
+   "hold": "no-key"
+  },
+  {
+   "num": 4,
+   "part": "א",
+   "kind": "computation",
+   "topic": "double_integrals",
+   "points": 12,
+   "question": "החליפו את סדר האינטגרציה באינטגרל\n$$\\int_{-4}^{0}dx\\int_{0}^{\\sqrt{x+4}}f(x,y)\\,dy+\\int_{0}^{2}dx\\int_{0}^{2-x}f(x,y)\\,dy$$",
+   "hold": "no-key"
+  },
+  {
+   "num": 4,
+   "part": "ב",
+   "kind": "computation",
+   "topic": "absolute_extrema",
+   "points": 13,
+   "question": "מצאו אקסטרמומים מוחלטים של הפונקציה $f(x,y)=x^2+y^2+4xy$ בתחום המוגבל ע\"י $x^2+y^2=1,\\ \\ y=0,\\ \\ y=\\sqrt{3}x$ ברביע הראשון $(x\\ge0,\\ y\\ge0)$.",
+   "hold": "no-key"
+  },
+  {
+   "num": 5,
+   "part": "א",
+   "kind": "computation",
+   "topic": "local_extrema",
+   "points": 12,
+   "question": "מצאו וסווגו את נקודות האקסטרמום של הפונקציה:\n$$f(x,y)=\\left(x^2-2y^2\\right)e^{x-y}$$",
+   "hold": "no-key"
+  },
+  {
+   "num": 5,
+   "part": "ב",
+   "kind": "computation",
+   "topic": "taylor_maclaurin",
+   "points": 13,
+   "question": "פתחו את הפונקציה $f(x)=\\dfrac{1}{x^2+x-2}$ לטור מקלורן. מהו תחום התכנסות הטור?\nהסיקו את הערך של $f^{(10)}(0)$.",
+   "hold": "no-key"
+  }
+ ]
+}

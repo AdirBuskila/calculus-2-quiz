@@ -1,0 +1,91 @@
+[
+ {
+  "id": "23A-C-Q1a",
+  "description": "plane region between the circles x^2+y^2=2x (inside) and x^2+y^2=4x (outside); tangent at the origin",
+  "type": "annular",
+  "inequalities": [
+   "x^2+y^2>=2*x",
+   "x^2+y^2<=4*x"
+  ],
+  "boundary_curves": [
+   "x^2+y^2=2*x",
+   "x^2+y^2=4*x"
+  ],
+  "polar": {
+   "theta": [
+    "-pi/2",
+    "pi/2"
+   ],
+   "r": [
+    "2*cos(theta)",
+    "4*cos(theta)"
+   ]
+  },
+  "area": "3*pi",
+  "note": "unofficial value (no key)"
+ },
+ {
+  "id": "23A-C-Q4a",
+  "description": "region of the sum of two integrals: -4<=x<=0, 0<=y<=sqrt(x+4) and 0<=x<=2, 0<=y<=2-x",
+  "type": "simple",
+  "orderXY": {
+   "pieces": [
+    {
+     "x": [
+      -4,
+      0
+     ],
+     "y": [
+      0,
+      "sqrt(x+4)"
+     ]
+    },
+    {
+     "x": [
+      0,
+      2
+     ],
+     "y": [
+      0,
+      "2-x"
+     ]
+    }
+   ]
+  },
+  "orderYX": {
+   "y": [
+    0,
+    2
+   ],
+   "x": [
+    "y^2-4",
+    "2-y"
+   ]
+  },
+  "inequalities": [
+   "y>=0",
+   "x>=y^2-4",
+   "x<=2-y"
+  ],
+  "boundary_curves": [
+   "y=0",
+   "x=y^2-4",
+   "x+y=2"
+  ],
+  "vertices": [
+   [
+    -4,
+    0
+   ],
+   [
+    2,
+    0
+   ],
+   [
+    0,
+    2
+   ]
+  ],
+  "integrand": "f(x,y)"
+ }
+]

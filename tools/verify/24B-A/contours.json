@@ -1,0 +1,69 @@
+[
+ {
+  "id": "24B-A-Q3c",
+  "f": "2*x^2-y^2+1",
+  "constraint": null,
+  "kind": "unconstrained",
+  "domain": [
+   [
+    -3,
+    3
+   ],
+   [
+    -3,
+    3
+   ]
+  ],
+  "critical_points": [
+   {
+    "x": 0,
+    "y": 0,
+    "f": 1,
+    "role": "saddle"
+   }
+  ]
+ },
+ {
+  "id": "24B-A-Q3d",
+  "f": "2*x^2-y^2+1",
+  "constraint": "(x-1)^2+y^2=1",
+  "kind": "closed_region",
+  "region": "(x-1)^2+y^2<=1",
+  "domain": [
+   [
+    -1,
+    3
+   ],
+   [
+    -2,
+    2
+   ]
+  ],
+  "critical_points": [
+   {
+    "x": 2,
+    "y": 0,
+    "f": 9,
+    "role": "abs max"
+   },
+   {
+    "x": "1/3",
+    "y": "sqrt(5)/3",
+    "f": "2/3",
+    "role": "abs min"
+   },
+   {
+    "x": "1/3",
+    "y": "-sqrt(5)/3",
+    "f": "2/3",
+    "role": "abs min"
+   },
+   {
+    "x": 0,
+    "y": 0,
+    "f": 1,
+    "role": "boundary point"
+   }
+  ]
+ }
+]
