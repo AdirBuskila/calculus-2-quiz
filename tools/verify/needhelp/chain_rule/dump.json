@@ -1,0 +1,754 @@
+{
+ "courseId": "chain_rule",
+ "levels": [
+  {
+   "id": "C01",
+   "order": 1,
+   "boss": false,
+   "questions": [
+    {
+     "id": "C01-Q1",
+     "question": "נתון $z=g(x^2-y^2)$ ונסמן $t=x^2-y^2$. מהו $t_y$ ?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$-2y$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$2y$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$-2y^2$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$-2x$"
+      }
+     ]
+    },
+    {
+     "id": "C01-Q2",
+     "question": "נתון $z=\\dfrac{y}{3x}+g(xy)$ ונסמן $t=xy$. כמה מסלולים בעץ התלויות מובילים מ-$z$ אל $y$, כלומר כמה מחוברים יש ב-$z_y$ ?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$2$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$1$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$3$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$0$"
+      }
+     ]
+    },
+    {
+     "id": "C01-Q3",
+     "step": {
+      "type": "numeric",
+      "prompt": "נתון $t=xy^2$. חשבו את $t_y$ בנקודה $(2,3)$."
+     }
+    },
+    {
+     "id": "C01-Q4",
+     "question": "נתון $z=g\\!\\left(\\dfrac{x}{y}\\right)$ ונסמן $t=\\dfrac xy$. מהו $t_y$ ?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$-\\dfrac{x}{y^2}$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$\\dfrac1y$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$-\\dfrac1y$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$\\dfrac{x}{y^2}$"
+      }
+     ]
+    },
+    {
+     "id": "C01-Q5",
+     "question": "נתון $z=g(t)$ עם $t=\\cos(x-y)$. מהו $t_y$ ?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$\\sin(x-y)$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$-\\sin(x-y)$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$\\cos(x-y)$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$-\\cos(x-y)$"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C02",
+   "order": 2,
+   "boss": false,
+   "questions": [
+    {
+     "id": "C02-Q1",
+     "question": "נתון $z=g(x^2+y^2)$. מהו $z_x$ ?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$2x\\,g'(x^2+y^2)$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$g'(2x)$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$2x\\,g(x^2+y^2)$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$g'(x^2+y^2)$"
+      }
+     ]
+    },
+    {
+     "id": "C02-Q2",
+     "step": {
+      "type": "numeric",
+      "prompt": "תהי $z=g(xy)$ כאשר $g(t)=t^3$. חשבו את $z_x$ בנקודה $(1,2)$."
+     }
+    },
+    {
+     "id": "C02-Q3",
+     "question": "נתון $z=g\\!\\left(\\dfrac{x}{y}\\right)$. מהו $z_y$ ?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$-\\dfrac{x}{y^2}\\,g'\\!\\left(\\dfrac xy\\right)$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$\\dfrac1y\\,g'\\!\\left(\\dfrac xy\\right)$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$-\\dfrac{x}{y^2}\\,g\\!\\left(\\dfrac xy\\right)$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$-\\dfrac{x}{y^2}\\,g'\\!\\left(-\\dfrac{x}{y^2}\\right)$"
+      }
+     ]
+    },
+    {
+     "id": "C02-Q4",
+     "step": {
+      "type": "findbug",
+      "prompt": "הפתרון הבא מחשב את $z_x$ ו-$z_y$ עבור $z=g(x^2y)$. באיזו שורה כתוב משהו שאינו נכון לגבי הפונקציה $z$ ?",
+      "lines": [
+       "נסמן $t=x^2y$, ולכן $z=g(t)$.",
+       "$t_x=2xy$ וגם $t_y=x^2$.",
+       "$z_x=g'(t)\\cdot2xy$",
+       "$z_y=g'(t)\\cdot2xy$"
+      ]
+     }
+    },
+    {
+     "id": "C02-Q5",
+     "step": {
+      "type": "numeric",
+      "prompt": "תהי $z=g(x^2-3y)$ כאשר $g(t)=t^2$. חשבו את $z_y$ בנקודה $(2,1)$."
+     }
+    },
+    {
+     "id": "C02-Q6",
+     "question": "נתון $z=g(t)$ עם $t=t(x,y)$ כלשהו (ו-$g$ גזירה). איזו משוואה מתקיימת תמיד?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$z_x\\,t_y=z_y\\,t_x$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$z_x\\,t_x=z_y\\,t_y$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$z_x=z_y$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$z_x+z_y=g'(t)$"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C03",
+   "order": 3,
+   "boss": false,
+   "questions": [
+    {
+     "id": "C03-Q1",
+     "question": "נתון $z=y\\,g(t)$ עם $t=x^2-y^2$. מהו $z_y$ ?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$g(t)-2y^2\\,g'(t)$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$-2y^2\\,g'(t)$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$g(t)+2y^2\\,g'(t)$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$g(t)-2y\\,g'(t)$"
+      }
+     ]
+    },
+    {
+     "id": "C03-Q2",
+     "question": "נתון $z=y\\,g(t)$ עם $t=x^2-y^2$. מהו $z_x$ ?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$2xy\\,g'(t)$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$g(t)+2xy\\,g'(t)$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$2x\\,g'(t)$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$2xy\\,g(t)$"
+      }
+     ]
+    },
+    {
+     "id": "C03-Q3",
+     "step": {
+      "type": "numeric",
+      "prompt": "תהי $z=x\\,g(xy)$ כאשר $g(t)=t^2$. חשבו את $z_x$ בנקודה $(1,2)$."
+     }
+    },
+    {
+     "id": "C03-Q4",
+     "step": {
+      "type": "findbug",
+      "prompt": "הפתרון הבא עוסק ב-$z=x\\,g(xy)$. באיזו שורה כתוב משהו שאינו נכון לגבי הפונקציה $z$ ?",
+      "lines": [
+       "נסמן $t=xy$. אז $z=x\\,g(t)$, $t_x=y$ וגם $t_y=x$.",
+       "$z_x=x\\,g'(t)\\cdot y$",
+       "$z_y=x\\,g'(t)\\cdot x=x^2g'(t)$",
+       "$x\\,z_x-y\\,z_y=x\\,g(t)=z$"
+      ]
+     }
+    },
+    {
+     "id": "C03-Q5",
+     "question": "נתון $z=x\\,g(xy)$. מהו $x\\,z_x-y\\,z_y$ ?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$z$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$0$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$2z$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$x\\,g'(xy)$"
+      }
+     ]
+    },
+    {
+     "id": "C03-Q6",
+     "step": {
+      "type": "numeric",
+      "prompt": "תהי $z=\\dfrac{y}{3x}+g(xy)$ כאשר $g(t)=t^2$. חשבו את $z_y$ בנקודה $(1,1)$. (תשובה עשרונית, דיוק $0.01$.)"
+     }
+    }
+   ]
+  },
+  {
+   "id": "C04",
+   "order": 4,
+   "boss": false,
+   "questions": [
+    {
+     "id": "C04-Q1",
+     "step": {
+      "type": "order",
+      "prompt": "סדרו את הוכחת הזהות $x\\,z_x+y\\,z_y=2z$ עבור $z=x^2g\\!\\left(\\dfrac yx\\right)$.",
+      "lines": [
+       "גוזרים: $z_x=2x\\,g(t)-y\\,g'(t)$ וגם $z_y=x\\,g'(t)$.",
+       "מציבים באגף שמאל: $x\\,z_x+y\\,z_y=2x^2g(t)-xy\\,g'(t)+xy\\,g'(t)$.",
+       "המחוברים עם $g'$ מתבטלים ונשאר $2x^2g(t)=2z$, כנדרש.",
+       "נסמן $t=\\dfrac yx$. אז $z=x^2g(t)$, $t_x=-\\dfrac{y}{x^2}$ ו-$t_y=\\dfrac1x$."
+      ]
+     }
+    },
+    {
+     "id": "C04-Q2",
+     "question": "נתון $z=g(x^2+y^2)$. איזו משוואה מתקיימת עבור כל $g$ גזירה?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$y\\,z_x-x\\,z_y=0$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$x\\,z_x+y\\,z_y=0$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$x\\,z_x-y\\,z_y=0$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$y\\,z_x+x\\,z_y=0$"
+      }
+     ]
+    },
+    {
+     "id": "C04-Q3",
+     "step": {
+      "type": "findbug",
+      "prompt": "ההוכחה הבאה מראה ש-$z=g(x^2+y^2)$ מקיימת $y\\,z_x-x\\,z_y=0$. באיזו שורה כתוב משהו שאינו נכון לגבי הפונקציה $z$ ?",
+      "lines": [
+       "נסמן $t=x^2+y^2$. אז $t_x=2x$ ו-$t_y=2y$.",
+       "$z_x=2x\\,g'(t)$ וגם $z_y=2y\\,g(t)$",
+       "$y\\,z_x-x\\,z_y=2xy\\,g'(t)-2xy\\,g'(t)$",
+       "לכן $y\\,z_x-x\\,z_y=0$."
+      ]
+     }
+    },
+    {
+     "id": "C04-Q4",
+     "step": {
+      "type": "numeric",
+      "prompt": "נתון $z=x^3g\\!\\left(\\dfrac{y}{x^2}\\right)$. נמצא $k$ שעבורו $x\\,z_x+2y\\,z_y=k\\,z$ לכל $g$. מהו $k$ ?"
+     }
+    },
+    {
+     "id": "bank:25A-A-Q3b",
+     "bankId": "25A-A-Q3b"
+    }
+   ]
+  },
+  {
+   "id": "C05",
+   "order": 5,
+   "boss": false,
+   "questions": [
+    {
+     "id": "C05-Q1",
+     "question": "נתון $z=g(t)$ עם $t=x^2+y^2$. מהו $z_{xx}$ ?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$4x^2\\,g''(t)+2\\,g'(t)$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$4x^2\\,g''(t)$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$2x\\,g''(t)+2\\,g'(t)$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$2\\,g''(t)$"
+      }
+     ]
+    },
+    {
+     "id": "C05-Q2",
+     "step": {
+      "type": "numeric",
+      "prompt": "תהי $z=g(xy)$ כאשר $g(t)=t^3$. חשבו את $z_{xy}$ בנקודה $(1,2)$."
+     }
+    },
+    {
+     "id": "C05-Q3",
+     "question": "נתון $z=g(x-y)$. מהו $z_{xx}+2z_{xy}+z_{yy}$ ?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$0$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$4\\,g''(t)$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$2\\,g''(t)$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$g'(t)$"
+      }
+     ]
+    },
+    {
+     "id": "C05-Q4",
+     "step": {
+      "type": "findbug",
+      "prompt": "החישוב הבא מחשב את $z_{xx}$ עבור $z=g(x^2+y^2)$. באיזו שורה כתוב משהו שאינו נכון לגבי הפונקציה $z$ ?",
+      "lines": [
+       "נסמן $t=x^2+y^2$. אז $z_x=2x\\,g'(t)$.",
+       "$z_{xx}=2x\\,g''(t)$",
+       "$z_{xx}=2\\,g'(t)+4x^2\\,g''(t)$"
+      ]
+     }
+    },
+    {
+     "id": "C05-Q5",
+     "question": "נתון $z=g(2x+3y)$. איזו משוואה מתקיימת לכל $g$ גזירה פעמיים?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$9\\,z_{xx}-4\\,z_{yy}=0$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$3\\,z_{xx}-2\\,z_{yy}=0$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$z_{xx}-z_{yy}=0$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$2\\,z_{xx}-3\\,z_{yy}=0$"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C06",
+   "order": 6,
+   "boss": false,
+   "questions": [
+    {
+     "id": "C06-Q1",
+     "question": "נתון $g=f(u,v)$ עם $u=x+y$ ו-$v=xy$. מהו $g_x$ ?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$f_u+y\\,f_v$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$f_u+x\\,f_v$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$f_u+f_v$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$y\\,f_u+f_v$"
+      }
+     ]
+    },
+    {
+     "id": "C06-Q2",
+     "question": "נתון $g=f(u,v)$ עם $u=x^2-y$ ו-$v=xy$. מהו $g_y$ ?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$-f_u+x\\,f_v$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$f_u+x\\,f_v$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$-2y\\,f_u+x\\,f_v$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$-f_u+y\\,f_v$"
+      }
+     ]
+    },
+    {
+     "id": "C06-Q3",
+     "step": {
+      "type": "numeric",
+      "prompt": "תהי $f(u,v)=u\\,v^2$ ו-$g(x,y)=f(x+y,\\,x-y)$. חשבו את $g_x$ בנקודה $(2,1)$ בעזרת כלל השרשרת."
+     }
+    },
+    {
+     "id": "C06-Q4",
+     "step": {
+      "type": "findbug",
+      "prompt": "נתון $g(x,y,z)=f(xy,\\;z^2-x)$ ו-$f$ כללית. באיזו שורה כתוב משהו שאינו נכון לגבי הפונקציה $g$ ?",
+      "lines": [
+       "נסמן $u=xy$ ו-$v=z^2-x$.",
+       "$g_x=y\\,f_u-f_v$",
+       "$g_z=2z\\,f_u$",
+       "$g_y=x\\,f_u$"
+      ]
+     }
+    },
+    {
+     "id": "C06-Q5",
+     "question": "נתון $z=f(u,v)$ עם $u=xy$ ו-$v=\\dfrac xy$. מהו $x\\,z_x+y\\,z_y$ ?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$2u\\,f_u$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$2v\\,f_v$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$u\\,f_u+v\\,f_v$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$0$"
+      }
+     ]
+    },
+    {
+     "id": "C06-Q6",
+     "question": "נתון $z=e^{xy}$ עם $x=uv$ ו-$y=\\dfrac1u$. מהו $z_u$ ?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$0$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$\\dfrac{v}{u}\\,e^{v}$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$-\\dfrac{v}{u}\\,e^{v}$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$e^{v}$"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C07",
+   "order": 7,
+   "boss": false,
+   "questions": [
+    {
+     "id": "C07-Q1",
+     "step": {
+      "type": "numeric",
+      "prompt": "נתון $z=u^2+3uv$ עם $u=x^2y$ ו-$v=x-y$. חשבו את $z_x$ בנקודה $(1,1)$."
+     }
+    },
+    {
+     "id": "C07-Q2",
+     "step": {
+      "type": "numeric",
+      "prompt": "באותה פונקציה ($z=u^2+3uv$, $u=x^2y$, $v=x-y$) חשבו את $z_y$ בנקודה $(1,1)$."
+     }
+    },
+    {
+     "id": "C07-Q3",
+     "step": {
+      "type": "numeric",
+      "prompt": "נתון ש-$f(x,y)$ דיפרנציאבילית, $f(t^2,3t)=5$ לכל $t$, ו-$f_x(4,6)=3$. חשבו את $f_y(4,6)$."
+     }
+    },
+    {
+     "id": "C07-Q4",
+     "question": "נתון $w=x^3F\\!\\left(\\dfrac zx,\\dfrac yx\\right)$ עם $F$ גזירה. מהו $x\\,w_x+y\\,w_y+z\\,w_z$ ?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$3w$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$w$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$x^3$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$0$"
+      }
+     ]
+    },
+    {
+     "id": "C07-Q5",
+     "step": {
+      "type": "findbug",
+      "prompt": "ההוכחה הבאה עוסקת ב-$w=x^kF(s,t)$ עם $s=\\dfrac zx$ ו-$t=\\dfrac yx$. באיזו שורה כתוב משהו שאינו נכון לגבי הפונקציה $w$ ?",
+      "lines": [
+       "$s_x=-\\dfrac{z}{x^2}$ וגם $t_x=-\\dfrac{y}{x^2}$.",
+       "$w_x=x^k\\left(F_s\\,s_x+F_t\\,t_x\\right)$",
+       "$w_y=x^{k-1}F_t$ וגם $w_z=x^{k-1}F_s$.",
+       "$x\\,w_x+y\\,w_y+z\\,w_z=k\\,x^kF-x^{k-1}\\left(zF_s+yF_t\\right)+x^{k-1}\\left(yF_t+zF_s\\right)$"
+      ]
+     }
+    },
+    {
+     "id": "bank:24A-A-Q3b",
+     "bankId": "24A-A-Q3b"
+    }
+   ]
+  },
+  {
+   "id": "C08",
+   "order": 8,
+   "boss": true,
+   "questions": [
+    {
+     "id": "bank:22A-A-Q1b",
+     "bankId": "22A-A-Q1b"
+    },
+    {
+     "id": "bank:25A-B-Q3b",
+     "bankId": "25A-B-Q3b"
+    },
+    {
+     "id": "bank:23A-A-Q3b",
+     "bankId": "23A-A-Q3b"
+    },
+    {
+     "id": "bank:26A-A-Q3b",
+     "bankId": "26A-A-Q3b"
+    },
+    {
+     "id": "bank:24B-B-Q4a",
+     "bankId": "24B-B-Q4a"
+    },
+    {
+     "id": "bank:24S-A-Q4a",
+     "bankId": "24S-A-Q4a"
+    }
+   ]
+  }
+ ]
+}
