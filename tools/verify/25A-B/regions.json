@@ -1,0 +1,115 @@
+[
+ {
+  "id": "25A-B-Q2b",
+  "description": "parallelogram between y=1+x, y=4+x, y=8-2x, y=6-2x",
+  "type": "parallelogram",
+  "inequalities": [
+   "y-x>=1",
+   "y-x<=4",
+   "y+2*x>=6",
+   "y+2*x<=8"
+  ],
+  "boundary_curves": [
+   "y=x+1",
+   "y=x+4",
+   "y=8-2*x",
+   "y=6-2*x"
+  ],
+  "substitution": {
+   "u": "y-x",
+   "v": "y+2*x",
+   "u_range": [
+    1,
+    4
+   ],
+   "v_range": [
+    6,
+    8
+   ],
+   "abs_jacobian_xy_over_uv": "1/3"
+  },
+  "vertices": [
+   [
+    "5/3",
+    "8/3"
+   ],
+   [
+    "7/3",
+    "10/3"
+   ],
+   [
+    "4/3",
+    "16/3"
+   ],
+   [
+    "2/3",
+    "14/3"
+   ]
+  ],
+  "integrand": "(y-x)/(2*x+y)",
+  "value": "(5/2)*ln(4/3)"
+ },
+ {
+  "id": "25A-B-Q4a",
+  "description": "two iterated integrals = one region: x in [-4,2], y>=0, x>=y^2-4, x+y<=2",
+  "type": "swap",
+  "orderXY": {
+   "pieces": [
+    {
+     "x": [
+      -4,
+      0
+     ],
+     "y": [
+      0,
+      "sqrt(x+4)"
+     ]
+    },
+    {
+     "x": [
+      0,
+      2
+     ],
+     "y": [
+      0,
+      "2-x"
+     ]
+    }
+   ]
+  },
+  "orderYX": {
+   "y": [
+    0,
+    2
+   ],
+   "x": [
+    "y^2-4",
+    "2-y"
+   ]
+  },
+  "inequalities": [
+   "y>=0",
+   "x>=y^2-4",
+   "x+y<=2"
+  ],
+  "boundary_curves": [
+   "x=y^2-4",
+   "y=2-x",
+   "y=0"
+  ],
+  "vertices": [
+   [
+    -4,
+    0
+   ],
+   [
+    0,
+    2
+   ],
+   [
+    2,
+    0
+   ]
+  ]
+ }
+]

@@ -1,0 +1,31 @@
+[
+ {
+  "id": "24B-B-Q3d",
+  "description": "triangle D={-2<=y<=x<=1}",
+  "type": "triangle",
+  "inequalities": [
+   "y>=-2",
+   "y<=x",
+   "x<=1"
+  ],
+  "boundary_curves": [
+   "x=1",
+   "y=-2",
+   "y=x"
+  ],
+  "vertices": [
+   [
+    1,
+    1
+   ],
+   [
+    1,
+    -2
+   ],
+   [
+    -2,
+    -2
+   ]
+  ]
+ }
+]

@@ -39,4 +39,26 @@ Open questions for Adir. One entry per item; the orchestrator moves it to Resolv
 - 22A-B Q1a p.1: df/dx written for df/dz. 22A-B Q2a p.2: second series printed with 2^n+1 in the heading, exam has 2^(n+1); exponent 2 for 3.
 - 22A-A Q1b p.1: "+y^2" for "+2y/3". 22A-A Q2b p.3: division by h dropped in f_x(0,0). 22A-A Q3a p.4: "decreasing from n=2" should be n=4.
 
+### 24B-B p.3-4 Q3d - key's boundary line and critical-point name are wrong
+- Path: calculus-2 typed solution for sitting 24B-B (question embedded), pages 3-4
+- Page: 4
+- Question: the key writes f(1,y) = 1-2(y+1)-2+3 = -2y (true value 2-2y) and says (0,0) is the unique critical point (part c found (0,-1)). The final max 6 at (1,-2) and min 0 at (1,1) are correct (sympy + grid).
+- Needed: say whether to ship with a labelled correction (suggested) or keep held.
+- Status: hold
+
+### 24B-B p.5 Q4b - key's convergence domain has the wrong left endpoint
+- Path: calculus-2 typed solution for sitting 24B-B (question embedded), pages 5-6
+- Page: 6
+- Question: the key ends with domain [-1/2; 3/2), but |x-1|<1/2 gives endpoints 1/2 and 3/2 (x=1/2 converges by Leibniz, x=3/2 diverges), so the domain is [1/2, 3/2). Its text also calls the x=3/2 series convergent.
+- Needed: confirm shipping the corrected domain [1/2, 3/2) with a labelled correction.
+- Status: hold
+
+### 25A-B Q2b, Q3b, Q5b - key typos shipped with a labelled correction (FYI)
+- Q2b p.3: inverse map printed y=(1/3)(v+1t), should be (v+2t); Jacobian and answer fine. Q3b p.4: dt/dx written for dt/dy. Q5b p.7: decimal 1.71166 should be 1.7104 (exact 3325/1944).
+- Status: shipped-with-fix (prefix "תיקון לפתרון שבקובץ")
+
+### 24S-A all items - no answer key
+- The exam file for sitting 24S-A has no solution. All 10 items held "no-key" for the solver (sympy workings in tools/verify/24S-A/workings.json are not a key).
+- Status: hold
+
 ## Resolved

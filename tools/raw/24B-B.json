@@ -1,0 +1,172 @@
+{
+ "examCode": "24B-B",
+ "examLabel": "מבחן סוף סמסטר ב' תשפ\"ד, מועד ב'",
+ "year": 2024,
+ "examDate": "30/07/2024",
+ "sourceFile": "calculus-2/24B-B typed solution with embedded questions.pdf",
+ "solutionFile": "calculus-2/24B-B typed solution with embedded questions.pdf",
+ "questions": [
+  {
+   "num": 1,
+   "kind": "computation",
+   "topic": "partials_differentiability",
+   "question": "נתונה הפונקציה:\n$$f(x,y)=\\begin{cases}\\dfrac{x^3y}{x^2+y^2}, & (x,y)\\neq(0,0)\\\\[2mm] 0, & (x,y)=(0,0)\\end{cases}$$\nמצאו את $f'_x(1,0)$ ו-$f'_y(1,0)$.",
+   "solution": "סביב נקודה $(1,0)$:\n$$f'_x(x,y)=\\frac{3x^2y(x^2+y^2)-2x^4y}{(x^2+y^2)^2},\\qquad f'_x(1,0)=0$$\n$$f'_y(x,y)=\\frac{x^3(x^2+y^2)-2y^2x^3}{(x^2+y^2)^2},\\qquad f'_y(1,0)=1$$",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "part": "א",
+   "points": 7
+  },
+  {
+   "num": 1,
+   "kind": "computation",
+   "topic": "partials_differentiability",
+   "question": "נתונה הפונקציה:\n$$f(x,y)=\\begin{cases}\\dfrac{x^3y}{x^2+y^2}, & (x,y)\\neq(0,0)\\\\[2mm] 0, & (x,y)=(0,0)\\end{cases}$$\nמצאו את $f'_x(0,0)$ ו-$f'_y(0,0)$.",
+   "solution": "$$f'_x(0,0)=\\lim_{h\\to0}\\frac{f(0+h,0)-f(0,0)}{h}=0.$$\n$$f'_y(0,0)=\\lim_{h\\to0}\\frac{f(0,0+h)-f(0,0)}{h}=0.$$",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "part": "ב",
+   "points": 7
+  },
+  {
+   "num": 1,
+   "kind": "computation",
+   "topic": "partials_differentiability",
+   "question": "נתונה הפונקציה:\n$$f(x,y)=\\begin{cases}\\dfrac{x^3y}{x^2+y^2}, & (x,y)\\neq(0,0)\\\\[2mm] 0, & (x,y)=(0,0)\\end{cases}$$\nהאם $f(x,y)$ דיפרנציאבילית ב-$(0,0)$? האם $f(x,y)$ רציפה ב-$(0,0)$?",
+   "solution": "נבדוק דיפרנציאביליות\n$$\\lim_{(\\Delta x,\\Delta y)\\to(0,0)}\\frac{f(0+\\Delta x,0+\\Delta y)-f(0,0)-f'_x(0,0)\\Delta x-f'_y(0,0)\\Delta y}{\\sqrt{\\Delta x^2+\\Delta y^2}}$$\n$$=\\lim_{(\\Delta x,\\Delta y)\\to(0,0)}\\frac{\\frac{\\Delta x^3\\Delta y}{\\Delta x^2+\\Delta y^2}}{\\sqrt{\\Delta x^2+\\Delta y^2}}=$$\n$$(\\Delta x=r\\cos\\varphi,\\ \\Delta y=r\\sin\\varphi)$$\n$$=\\lim_{r\\to0}\\frac{r^4\\cos^3\\varphi\\sin\\varphi}{r^3}=\\lim_{r\\to0}r\\cos^3\\varphi\\sin\\varphi=0,$$\n(כי $|\\cos^3\\varphi\\sin\\varphi|\\le1$ חסומה ו-$r\\to0$)\nלפי ההגדרה של דיפרנציאביליות $f(x,y)$ דיפרנציאבילית בנקודה $(0,0)$.\nולכן $f(x,y)$ רציפה בנקודה $(0,0)$.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "part": "ג",
+   "points": 11
+  },
+  {
+   "num": 2,
+   "kind": "computation",
+   "topic": "numeric_series",
+   "question": "בדקו התכנסות בהחלט, בתנאי או התבדרות של הטור הבא:\n$$\\sum_{n=1}^{\\infty}\\frac{\\cos(\\pi n)\\cdot(n^2+3\\ln n)}{(n+1)(n+2)}.$$",
+   "solution": "נסמן\n$$a_n:=\\frac{\\cos(\\pi n)\\cdot(n^2+3\\ln n)}{(n+1)(n+2)}$$\n$$|a_n|=\\frac{n^2+3\\ln n}{(n+1)(n+2)}$$\n$$\\lim_{n\\to\\infty}|a_n|=\\lim_{n\\to\\infty}\\frac{n^2+3\\ln n}{(n+1)(n+2)}=\\lim_{n\\to\\infty}\\frac{1+\\frac{3\\ln n}{n}}{1+\\frac3n+\\frac{2}{n^2}}=1\\not\\to0$$\nלכן גם $\\lim_{n\\to\\infty}a_n\\not\\to0$\nתנאי הכרחי להתכנסות טורים לא מתקיים, אזי **טור מתבדר**",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "part": "א",
+   "points": 10
+  },
+  {
+   "num": 2,
+   "kind": "computation",
+   "topic": "numeric_series",
+   "question": "בדקו התכנסות בהחלט, בתנאי או התבדרות של הטור הבא:\n$$\\sum_{n=1}^{\\infty}(-1)^n\\frac{1+\\frac{1}{\\sqrt n}}{n^3};$$",
+   "solution": "נסמן $a_n:=(-1)^n\\dfrac{1+\\frac{1}{\\sqrt n}}{n^3}$\n$$0\\le|a_n|=\\frac{1+\\frac{1}{\\sqrt n}}{n^3}\\le\\frac{2}{n^3}$$\n$\\sum_{n=1}^{\\infty}\\frac{1}{n^3}$ מתכנס, לכן, לפי משפט ההשוואה, הטור $\\sum_{n=1}^{\\infty}|a_n|$ גם מתכנס, מקבלים שהטור $\\sum(-1)^n\\frac{1+\\frac{1}{\\sqrt n}}{n^3}$ **מתכנס בהחלט**.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "part": "ב",
+   "points": 15
+  },
+  {
+   "num": 3,
+   "kind": "computation",
+   "topic": "gradient_directional",
+   "question": "נתונה הפונקציה: $f(x,y)=x^2-2x(y+1)+3$.\nמצאו את הכיוון בו קצב ההשתנות של הפונקציה $f(x,y)$ בנקודה $(2,-1)$ הוא מקסימלי.",
+   "solution": "$$\\nabla f(x,y)=(2x-2(y+1),-2x);$$\nקצב ההשתנות של הפונקציה מקסימלי בכיוון של גרדיינט הפונקציה בנקודה:\n$$\\nabla f(2,-1)=(4,-4)$$",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "part": "א",
+   "points": 4
+  },
+  {
+   "num": 3,
+   "kind": "computation",
+   "topic": "gradient_directional",
+   "question": "נתונה הפונקציה: $f(x,y)=x^2-2x(y+1)+3$.\nמצאו את הנגזרת הכיוונית של הפונקציה $f(x,y)$ בנקודה $(2,-1)$ בכיוון $(-3,4)$.",
+   "solution": "$$\\vec a=(-3,4)$$\n$$\\|\\vec a\\|=\\sqrt{9+16}=5,$$\nוקטור יחידה שמתארת אותו כיוון הוא\n$$\\vec a^0=\\left(-\\frac35,\\frac45\\right)$$\nלכן\n$$\\frac{\\partial f}{\\partial\\vec a}(2,-1)=\\vec\\nabla f(2,-1)\\cdot\\vec a^0=4\\cdot\\left(-\\frac35\\right)-4\\cdot\\frac45=-\\frac{28}{5}=-5.6$$",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "part": "ב",
+   "points": 4
+  },
+  {
+   "num": 3,
+   "kind": "computation",
+   "topic": "local_extrema",
+   "question": "נתונה הפונקציה: $f(x,y)=x^2-2x(y+1)+3$.\nמצאו את כל הנקודות הקריטיות של $f(x,y)$ וסווגו אותן.",
+   "solution": "נקודות קריטיות:\n$$\\nabla f(x,y)=0,$$\n$$x=0,\\ y=-1,$$\n$$A=f''_{xx}(0,-1)=2,\\quad B=f''_{xy}(0,-1)=-2,\\quad C=f''_{yy}(0,-1)=0,$$\n$$\\Delta=AC-B^2=-4<0,$$\nאז **נקודה $(0,-1)$ היא נקודת אוכף** (ואינה נקודת קיצון מקומי).",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "part": "ג",
+   "points": 7
+  },
+  {
+   "num": 3,
+   "part": "ד",
+   "kind": "computation",
+   "topic": "absolute_extrema",
+   "points": 10,
+   "question": "נתונה הפונקציה: $f(x,y)=x^2-2x(y+1)+3$.\nמצאו את הערך המינימלי והערך המקסימלי של הפונקציה $f(x,y)$ בתחום\n$D=\\{(x,y):-2\\le y\\le x\\le1\\}$.",
+   "hold": "the official key's edge line f(1,y) = 1-2(y+1)-2+3 = -2y is wrong (true value 2-2y) and its text calls (0,0) the unique critical point (it is (0,-1)); the final max 6 and min 0 are correct (sympy); needs Adir's decision how to ship"
+  },
+  {
+   "num": 4,
+   "kind": "computation",
+   "topic": "chain_rule_identity",
+   "question": "חשבו את $\\dfrac{\\partial z}{\\partial x},\\dfrac{\\partial z}{\\partial y}$ בנקודה $x_0=\\pi,\\ y_0=-\\pi$ כאשר\n$$z(u,v)=2uv+3v^2;$$\n$$u=\\cos(x-3y);$$\n$$v(\\pi,-\\pi)=2,\\quad v'_x(\\pi,-\\pi)=5,\\quad v'_y(\\pi,-\\pi)=4.$$",
+   "solution": "$$z'_x=z'_u\\cdot u'_x+z'_v\\cdot v'_x=2v\\cdot u'_x+(2u+6v)\\cdot v'_x$$\n$$z'_y=z'_u\\cdot u'_y+z'_v\\cdot v'_y=2v\\cdot u'_y+(2u+6v)\\cdot v'_y$$\n$$u'_x=-\\sin(x-3y),\\quad u'_y=3\\sin(x-3y)$$\nבנקודה $x_0=\\pi,\\ y_0=-\\pi$:\n$$u(\\pi,-\\pi)=1,\\quad u'_x(\\pi,-\\pi)=u'_y(\\pi,-\\pi)=0$$\n$$z'_x(\\pi,-\\pi)=4\\cdot0+14\\cdot5=70$$\n$$z'_y(\\pi,-\\pi)=4\\cdot0+14\\cdot4=56$$",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "part": "א",
+   "points": 10
+  },
+  {
+   "num": 4,
+   "part": "ב",
+   "kind": "computation",
+   "topic": "power_series",
+   "points": 15,
+   "question": "עבור אילו ערכי $x$ הטור מתכנס (מצאו רדיוס התכנסות ותחום התכנסות):\n$$\\sum_{n=1}^{\\infty}\\frac{2^n}{\\sqrt{n+4}}(x-1)^n.$$",
+   "hold": "the official key's final domain [-1/2; 3/2) has the wrong left endpoint (its own endpoint work gives [1/2, 3/2)) and its text says the x=3/2 series converges; needs Adir's decision"
+  },
+  {
+   "num": 5,
+   "kind": "computation",
+   "topic": "taylor_maclaurin",
+   "question": "נתונה הפונקציה $f(x)=\\ln(6x^2+5x+1)$.\nפתחו את הפונקציה $f(x)$ לטור מקלורן.",
+   "solution": "$$f(x)=\\ln(6x^2+5x+1)=\\ln\\left((3x+1)(2x+1)\\right)=\\ln(3x+1)+\\ln(2x+1).$$\nעבור $-1<3x\\le1$\n$$\\ln(3x+1)=\\sum_{n=1}^{\\infty}\\frac{(-1)^{n+1}}{n}(3x)^n$$\nעבור $-1<2x\\le1$\n$$\\ln(2x+1)=\\sum_{n=1}^{\\infty}\\frac{(-1)^{n+1}}{n}(2x)^n$$\nלכן עבור $-1/3<x\\le1/3$\n$$f(x)=\\sum_{n=1}^{\\infty}\\frac{(-1)^{n+1}(3x)^n}{n}+\\sum_{n=1}^{\\infty}\\frac{(-1)^{n+1}(2x)^n}{n}=\\sum_{n=1}^{\\infty}\\frac{(-1)^{n+1}\\left(3^n+2^n\\right)}{n}x^n$$",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "part": "א",
+   "points": 8
+  },
+  {
+   "num": 5,
+   "kind": "computation",
+   "topic": "power_series",
+   "question": "נתונה הפונקציה $f(x)=\\ln(6x^2+5x+1)$.\nמהו תחום ההתכנסות של הטור מהסעיף (א)?",
+   "solution": "תחום ההתכנסות הוא $\\left(-\\frac13,\\frac13\\right]$:\n$$\\frac1R=\\lim_{n\\to\\infty}\\sqrt[n]{\\frac{3^n+2^n}{n}}=\\lim_{n\\to\\infty}3\\cdot\\frac{\\sqrt[n]{1+\\left(\\frac23\\right)^n}}{\\sqrt[n]{n}}=3.$$",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "part": "ב",
+   "points": 8
+  },
+  {
+   "num": 5,
+   "kind": "computation",
+   "topic": "taylor_maclaurin",
+   "question": "נתונה הפונקציה $f(x)=\\ln(6x^2+5x+1)$.\nהסיקו את הערך של $f^{(5)}(0)$.",
+   "solution": "$$\\frac{f^{(n)}(0)}{n!}=\\frac{(-1)^{n+1}\\left(3^n+2^n\\right)}{n}$$\n$$\\frac{f^{(5)}(0)}{5!}=\\frac{(-1)^{5+1}\\left(3^5+2^5\\right)}{5}=\\frac{275}{5}=55$$\n$$f^{(5)}(0)=55\\cdot5!=6600.$$",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "part": "ג",
+   "points": 7
+  }
+ ]
+}

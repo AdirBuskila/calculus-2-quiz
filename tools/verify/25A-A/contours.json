@@ -1,0 +1,80 @@
+[
+ {
+  "id": "25A-A-Q1b",
+  "f": "y^4-x^4",
+  "constraint": "x^2+y^2=9",
+  "kind": "lagrange",
+  "domain": [
+   [
+    -4,
+    4
+   ],
+   [
+    -4,
+    4
+   ]
+  ],
+  "critical_points": [
+   {
+    "x": 0,
+    "y": 3,
+    "f": 81,
+    "role": "abs max"
+   },
+   {
+    "x": 0,
+    "y": -3,
+    "f": 81,
+    "role": "abs max"
+   },
+   {
+    "x": 3,
+    "y": 0,
+    "f": -81,
+    "role": "abs min"
+   },
+   {
+    "x": -3,
+    "y": 0,
+    "f": -81,
+    "role": "abs min"
+   },
+   {
+    "x": 0,
+    "y": 0,
+    "f": 0,
+    "role": "interior critical point (not extremum)"
+   }
+  ]
+ },
+ {
+  "id": "25A-A-Q4b",
+  "f": "(x^2-2*y^2)*exp(x-y)",
+  "constraint": null,
+  "kind": "unconstrained",
+  "domain": [
+   [
+    -7,
+    3
+   ],
+   [
+    -5,
+    3
+   ]
+  ],
+  "critical_points": [
+   {
+    "x": 0,
+    "y": 0,
+    "f": 0,
+    "role": "saddle"
+   },
+   {
+    "x": -4,
+    "y": -2,
+    "f": 1.0826822658929016,
+    "role": "local max"
+   }
+  ]
+ }
+]

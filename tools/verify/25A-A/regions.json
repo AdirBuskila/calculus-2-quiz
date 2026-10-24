@@ -1,0 +1,103 @@
+[
+ {
+  "id": "25A-A-Q2b",
+  "description": "square (rotated) with vertices (0,1),(1,0),(2,1),(1,2)",
+  "type": "parallelogram",
+  "inequalities": [
+   "x+y>=1",
+   "x+y<=3",
+   "y-x<=1",
+   "y-x>=-1"
+  ],
+  "boundary_curves": [
+   "y=1-x",
+   "y=3-x",
+   "y=x+1",
+   "y=x-1"
+  ],
+  "substitution": {
+   "u": "x-y",
+   "v": "x+y",
+   "u_range": [
+    -1,
+    1
+   ],
+   "v_range": [
+    1,
+    3
+   ],
+   "abs_jacobian_xy_over_uv": "1/2"
+  },
+  "vertices": [
+   [
+    0,
+    1
+   ],
+   [
+    1,
+    0
+   ],
+   [
+    2,
+    1
+   ],
+   [
+    1,
+    2
+   ]
+  ],
+  "integrand": "(x-y)*exp(x^2-y^2)",
+  "value": "sinh(3)/3-sinh(1)"
+ },
+ {
+  "id": "25A-A-Q4a",
+  "description": "int_0^1 int_y^1 sin(pi x^2/2) dx dy: triangle 0<=y<=x<=1",
+  "type": "simple",
+  "orderYX": {
+   "y": [
+    0,
+    1
+   ],
+   "x": [
+    "y",
+    1
+   ]
+  },
+  "orderXY": {
+   "x": [
+    0,
+    1
+   ],
+   "y": [
+    0,
+    "x"
+   ]
+  },
+  "inequalities": [
+   "y>=0",
+   "y<=x",
+   "x<=1"
+  ],
+  "boundary_curves": [
+   "y=x",
+   "x=1",
+   "y=0"
+  ],
+  "vertices": [
+   [
+    0,
+    0
+   ],
+   [
+    1,
+    0
+   ],
+   [
+    1,
+    1
+   ]
+  ],
+  "integrand": "sin(pi*x^2/2)",
+  "value": "1/pi"
+ }
+]

@@ -1,0 +1,74 @@
+[
+ {
+  "id": "25A-B-Q1b",
+  "f": "x*y",
+  "constraint": "x^2+y^2=2",
+  "kind": "lagrange",
+  "domain": [
+   [
+    -2,
+    2
+   ],
+   [
+    -2,
+    2
+   ]
+  ],
+  "critical_points": [
+   {
+    "x": 1,
+    "y": 1,
+    "f": 1,
+    "role": "abs max"
+   },
+   {
+    "x": -1,
+    "y": -1,
+    "f": 1,
+    "role": "abs max"
+   },
+   {
+    "x": 1,
+    "y": -1,
+    "f": -1,
+    "role": "abs min"
+   },
+   {
+    "x": -1,
+    "y": 1,
+    "f": -1,
+    "role": "abs min"
+   }
+  ]
+ },
+ {
+  "id": "25A-B-Q4b",
+  "f": "x^3+8*y^3-6*x*y+1",
+  "constraint": null,
+  "kind": "unconstrained",
+  "domain": [
+   [
+    -1.5,
+    2
+   ],
+   [
+    -1,
+    1.5
+   ]
+  ],
+  "critical_points": [
+   {
+    "x": 0,
+    "y": 0,
+    "f": 1,
+    "role": "saddle"
+   },
+   {
+    "x": 1,
+    "y": 0.5,
+    "f": 0,
+    "role": "local min"
+   }
+  ]
+ }
+]
