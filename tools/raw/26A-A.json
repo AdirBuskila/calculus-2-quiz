@@ -68,12 +68,15 @@
   },
   {
    "num": 3,
-   "part": "ב",
    "kind": "proof",
    "topic": "chain_rule_identity",
-   "points": 13,
    "question": "הוכיחו כי השוויון הבא מתקיים:\n$$u\\cdot\\frac{\\partial z}{\\partial u}-v\\cdot\\frac{\\partial z}{\\partial v}=z\\,\\frac{x^2}{v}$$\nכאשר: $y=\\dfrac{1}{v}$ , $x=\\sqrt{uv}$ , $z=e^{x^2y}$",
-   "hold": "the official solution's final line is z x^2/v^2, which disagrees with the printed right-hand side z x^2/v (sympy confirms the printed identity); needs Adir's decision"
+   "solution": "**הפתרון הרשמי עם תיקון:** בשורה האחרונה של הפתרון הרשמי נכתב $e^{x^2y}\\frac{x^2}{v^2}=z\\frac{x^2}{v^2}$, וזו טעות בצמצום: $x^2v\\,e^{x^2y}\\frac{1}{v^2}=e^{x^2y}\\frac{x^2}{v}$, כלומר מתקבל בדיוק אגף ימין של השוויון שבשאלה. יתר השורות כבפתרון הרשמי.\n$$\\frac{\\partial x}{\\partial u}=\\frac{v}{2\\sqrt{uv}};\\qquad\\frac{\\partial x}{\\partial v}=\\frac{u}{2\\sqrt{uv}};\\qquad\\frac{\\partial y}{\\partial u}=0;\\qquad\\frac{\\partial y}{\\partial v}=-\\frac{1}{v^2};$$\n$$\\frac{\\partial z}{\\partial x}=2xye^{x^2y};\\qquad\\frac{\\partial z}{\\partial y}=x^2e^{x^2y};$$\nלכן\n$$\\frac{\\partial z}{\\partial u}=\\frac{\\partial z}{\\partial x}\\frac{\\partial x}{\\partial u}+\\frac{\\partial z}{\\partial y}\\frac{\\partial y}{\\partial u}=2xye^{x^2y}\\frac{v}{2\\sqrt{uv}}+x^2e^{x^2y}\\cdot0=2xye^{x^2y}\\frac{v}{2\\sqrt{uv}};$$\n$$\\frac{\\partial z}{\\partial v}=\\frac{\\partial z}{\\partial x}\\frac{\\partial x}{\\partial v}+\\frac{\\partial z}{\\partial y}\\frac{\\partial y}{\\partial v}=2xye^{x^2y}\\frac{u}{2\\sqrt{uv}}-x^2e^{x^2y}\\frac{1}{v^2}$$\nומכאן\n$$u\\frac{\\partial z}{\\partial u}-v\\frac{\\partial z}{\\partial v}=2xye^{x^2y}\\frac{uv}{2\\sqrt{uv}}-2xye^{x^2y}\\frac{uv}{2\\sqrt{uv}}+x^2v\\,e^{x^2y}\\frac{1}{v^2}=$$\n$$=e^{x^2y}\\frac{x^2}{v}=z\\,\\frac{x^2}{v}.$$",
+   "solutionSource": "solved",
+   "official": false,
+   "confidence": "high",
+   "part": "ב",
+   "points": 13
   },
   {
    "num": 4,

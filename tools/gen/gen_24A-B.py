@@ -17,10 +17,12 @@ Transcription notes
   The transcription adds "dx>0" so the limit statement is exact; the conclusion (not differentiable) is the key's.
 - Q4a: printed as the sum of (5/3^n) - 4/((n+3)(n+4)); the key reads it as sum 5/3^n minus 4 sum 1/((n+3)(n+4)).
 
-HOLD
-- Q3a: the key's radius (R=1) and final domain [-6,-4] are correct (sympy), but its endpoint comparison step divides by
-  1/cuberoot(n^2) (= n^(-2/3), limit 0, not 1) and then concludes convergence "like sum 1/n^(3/2)"; the terms behave like
-  n^(-4/3). The official comparison is internally inconsistent, so the question is held (see docs/ASK_ADIR.md).
+Intermediate slip corrected silently (logged in docs/ASK_ADIR.md)
+- Q3a: the key's radius (R=1) and final domain [-6,-4] are correct (sympy), but its endpoint comparison step writes
+  1/cuberoot(n^2) as the comparison term and then cites sum 1/n^(3/2); the terms behave like n^(-4/3). Re-derived: at
+  x=-4 the series is sum 1/(cuberoot(n+1) sqrt(n^2+1)), limit-comparable to 1/n^(4/3) (p=4/3>1), so it converges; at
+  x=-6 it converges absolutely. The final answer holds, so the endpoint step is written with n^(-4/3) and the label
+  stays student-solution. Verified in tools/verify/24A-B/solve_24A-B.py.
 
 Key labelling (orchestrator ruling 2026-10-24): the key is handwritten/mixed with no named author, so every item is
 solutionSource "student-solution", official False.
@@ -103,14 +105,19 @@ $$\lim_{\substack{\Delta x\to0\\ \Delta y=k\Delta x}}-\frac{k^2\Delta x^3+4k\Del
 הגבול לא קיים (הוא תלוי ב-$k$), לכן הפונקציה **לא דיפרנציאבילית** ב-$(0,0)$.""", part="ב", points=13))
 
 # ===== Q3a (HELD) =====
-questions.append({
-    "num": 3, "part": "א", "kind": "computation", "topic": "power_series", "points": 12,
-    "question": r"""עבור אילו ערכי $x$ הטור מתכנס (מצאו רדיוס התכנסות ותחום התכנסות):
+questions.append(Q(3, "computation", "power_series", r"""עבור אילו ערכי $x$ הטור מתכנס (מצאו רדיוס התכנסות ותחום התכנסות):
 $$\sum_{n=1}^{\infty}\frac{(x+5)^n}{\sqrt[3]{n+1}\sqrt{n^2+1}}$$""",
-    "hold": "the key's R=1 and final domain [-6,-4] are right (sympy), but its endpoint step compares with 1/cuberoot(n^2) "
-            "(ratio tends to 0, not 1) and then cites sum 1/n^(3/2); the terms behave like n^(-4/3). The official comparison "
-            "is inconsistent; needs Adir's decision",
-})
+r"""נציב $t=x+5$ ונבחן את הטור $\sum_{n=1}^{\infty}\dfrac{t^n}{\sqrt[3]{n+1}\sqrt{n^2+1}}$.
+$$\frac{a_n}{a_{n+1}}=\frac{\frac{1}{\sqrt[3]{n+1}\sqrt{n^2+1}}}{\frac{1}{\sqrt[3]{n+2}\sqrt{(n+1)^2+1}}}=\frac{\sqrt[3]{n+2}\sqrt{n^2+2n+2}}{\sqrt[3]{n+1}\sqrt{n^2+1}}=\frac{\sqrt[3]{\frac1n(n+2)}\sqrt{\frac{1}{n^2}\left(n^2+2n+2\right)}}{\sqrt[3]{\frac1n(n+1)}\sqrt{\frac{1}{n^2}\left(n^2+1\right)}}$$
+$$\lim_{n\to\infty}\frac{\sqrt[3]{1+\frac2n}\sqrt{1+\frac2n+\frac{2}{n^2}}}{\sqrt[3]{1+\frac1n}\sqrt{1+\frac{1}{n^2}}}=1=R$$
+לכן $R=1$ הוא רדיוס ההתכנסות, והטור מתכנס עבור $|x+5|<1$.
+
+**נקודות הקצה $t=\pm1$.** עבור $t=1$ (כלומר $x=-4$) מקבלים את הטור החיובי $\sum_{n=1}^{\infty}\frac{1}{\sqrt[3]{n+1}\sqrt{n^2+1}}$. האיבר מתנהג כמו $\frac{1}{n^{1/3}\cdot n}=\frac{1}{n^{4/3}}$, ובמבחן ההשוואה הגבולי:
+$$\lim_{n\to\infty}\frac{\frac{1}{\sqrt[3]{n+1}\sqrt{n^2+1}}}{\frac{1}{n\sqrt[3]{n}}}=\lim_{n\to\infty}\frac{n\sqrt[3]{n}}{\sqrt[3]{n+1}\sqrt{n^2+1}}=\lim_{n\to\infty}\frac{1}{\sqrt[3]{1+\frac1n}\sqrt{1+\frac{1}{n^2}}}=1.$$
+הטור $\sum_{n=1}^{\infty}\frac{1}{n^{4/3}}$ מתכנס ($p=\frac43>1$), ולכן הטור מתכנס ב-$x=-4$.
+עבור $t=-1$ (כלומר $x=-6$) מקבלים $\sum_{n=1}^{\infty}\frac{(-1)^n}{\sqrt[3]{n+1}\sqrt{n^2+1}}$, שטור הערכים המוחלטים שלו הוא הטור של $x=-4$, שמתכנס; לכן הטור מתכנס בהחלט ב-$x=-6$.
+
+**תחום ההתכנסות:** $-1\le x+5\le1$, כלומר $[-6,-4]$.""", part="א", points=12))
 
 # ===== Q3b =====
 questions.append(Q(3, "proof", "chain_rule_identity", r"""הראו כי הפונקציה $z=\dfrac{y}{3x}+g(xy)$ כאשר $g(t)$ גזירה עבור כל $t$ ו-$x\neq0$ מקיימת את המשוואה:

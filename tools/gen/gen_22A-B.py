@@ -7,9 +7,9 @@ of 5 (per-part points are not printed on this exam, so none are stored). Solutio
 (pages 1-4), Q4 on a tablet (pages 5-6), Q5 on squared paper (pages 7-8). Author unclear; handwritten keys accepted by
 the orchestrator. Exam header (lecturer names) not transcribed. No handwriting is cropped.
 
-HOLD
-- Q3a: the solution file has no solution for it (page 4 starts with Q3b). Held, reason no-key; the verify script
-  computes R=3 and the endpoints as a hint for the solver.
+Solved by the solver (no key)
+- Q3a: the solution file has no solution for it (page 4 starts with Q3b). Written by the solver: solutionSource
+  "solved", official False. Verified in tools/verify/22A-B/solve_22A-B.py (sympy + numeric partial sums).
 
 Slips in intermediate lines of the key, corrected (logged in docs/ASK_ADIR.md):
 - Q1a: the third partial derivative is printed as df/dx; it is df/dz.
@@ -88,13 +88,30 @@ $$=\lim_{(h,k)\to(0,0)}\frac{\frac{h^3+k^3-h^3-hk^2-kh^2-k^3}{h^2+k^2}}{\sqrt{h^
 $$-\lim_{h\to0^+}\frac{h^3+h^3}{\left(2h^2\right)^{3/2}}=-\lim_{h\to0^+}\frac{2h^3}{2^{3/2}h^3}=-\frac{2}{2^{3/2}}\neq0$$
 לכן הפונקציה אינה דיפרנציאבילית ב-$(0,0)$.""", part="ב"))
 
-# ===== Q3a (HELD: no key) =====
-questions.append({
-    "num": 3, "part": "א", "kind": "computation", "topic": "power_series",
-    "question": r"""עבור אילו ערכי $x$ הטור מתכנס (מצאו רדיוס התכנסות ותחום התכנסות):
+# ===== Q3a (no key; solver) =====
+questions.append(Q(3, "computation", "power_series", r"""עבור אילו ערכי $x$ הטור מתכנס (מצאו רדיוס התכנסות ותחום התכנסות):
 $$\sum_{n=1}^{\infty}\frac{n}{\left(n^2+1\right)\cdot3^n}\,x^n$$""",
-    "hold": "no-key: the solution file for this sitting has no solution for Q3a (its page 4 starts with Q3b)",
-})
+r"""נסמן $a_n=\dfrac{n}{\left(n^2+1\right)3^n}$.
+**רדיוס ההתכנסות.**
+$$\left|\frac{a_{n+1}}{a_n}\right|=\frac{n+1}{\left((n+1)^2+1\right)3^{n+1}}\cdot\frac{\left(n^2+1\right)3^n}{n}=\frac{1}{3}\cdot\frac{n+1}{n}\cdot\frac{n^2+1}{(n+1)^2+1}\xrightarrow[n\to\infty]{}\frac{1}{3}$$
+לכן $R=3$: הטור מתכנס בהחלט עבור $|x|<3$ ומתבדר עבור $|x|>3$.
+
+**נקודת הקצה $x=3$.** מקבלים
+$$\sum_{n=1}^{\infty}\frac{n}{\left(n^2+1\right)3^n}\,3^n=\sum_{n=1}^{\infty}\frac{n}{n^2+1}.$$
+זה טור חיובי, ובמבחן ההשוואה הגבולי עם $b_n=\frac{1}{n}$:
+$$\lim_{n\to\infty}\frac{\frac{n}{n^2+1}}{\frac{1}{n}}=\lim_{n\to\infty}\frac{n^2}{n^2+1}=1.$$
+הטור ההרמוני $\sum\frac{1}{n}$ מתבדר, ולכן גם הטור מתבדר ב-$x=3$.
+
+**נקודת הקצה $x=-3$.** מקבלים
+$$\sum_{n=1}^{\infty}(-1)^n\frac{n}{n^2+1}.$$
+זה טור מחליף סימן עם $c_n=\frac{n}{n^2+1}>0$:
+* $c_n\to0$.
+* $c_n$ יורדת: עבור $g(t)=\frac{t}{t^2+1}$ מתקיים $g'(t)=\frac{1-t^2}{\left(t^2+1\right)^2}\le0$ לכל $t\ge1$.
+
+לכן לפי משפט לייבניץ הטור מתכנס ב-$x=-3$ (בתנאי בלבד, כי טור הערכים המוחלטים הוא הטור של $x=3$, שמתבדר).
+
+**תשובה:** רדיוס ההתכנסות $R=3$, ותחום ההתכנסות $[-3,3)$.""", part="א",
+    solutionSource="solved", official=False))
 
 # ===== Q3b =====
 questions.append(Q(3, "computation", "implicit_function", r"""נתונה המשוואה $z^3-3xyz=4$

@@ -18,7 +18,8 @@ Open questions for Adir. One entry per item; the orchestrator moves it to Resolv
 - Page: 5
 - Question: the exam asks to prove u z_u - v z_v = z x^2/v. The official solution's computation reaches e^{x^2 y} x^2/v (sympy confirms the printed identity), but its last line reads "= z x^2/v^2". The key's final line contradicts the question.
 - Needed: confirm the printed RHS z x^2/v is right (then ship with the official computation and the last line corrected), or say which version is intended.
-- Status: hold
+- Solver: the penultimate line x^2 v e/v^2 is right; the concluding line simplifies it to x^2/v^2, so the proof as printed concludes a false identity. For a proof the conclusion is the final answer, so treated as a wrong final answer: last line fixed to z x^2/v, solved, official:false, prefix "הפתרון הרשמי עם תיקון" (tools/verify/26A-A/solve_26A-A.py).
+- Status: resolved by solver, pending refuter
 
 ### 22A-A p.7 Q4b - official maximum is wrong (boundary endpoints missed)
 - Path: calculus-2 solution for sitting 22A-A, pages 6-7
@@ -32,7 +33,8 @@ Open questions for Adir. One entry per item; the orchestrator moves it to Resolv
 - Page: 4
 - Question: Q3a (series n/((n^2+1)3^n) x^n) has no solution. Held with reason no-key; route to the solver (verify script hints R=3).
 - Needed: solver.
-- Status: hold
+- Solver: R=3; x=3 diverges (limit comparison with 1/n), x=-3 converges conditionally (Leibniz, n/(n^2+1) decreasing for n>=1); domain [-3,3). Solved, official:false (tools/verify/22A-B/solve_22A-B.py).
+- Status: resolved by solver, pending refuter
 
 ### Slips corrected in the keys (intermediate lines, no student-facing label)
 - 23A-A Q3b p.7: f_t written for f_u. 23A-A Q5a p.11: critical point (6,-6) later written (-6,6). 23A-A Q5b p.12: convergence domain |x|<2 never stated (added).
@@ -44,14 +46,16 @@ Open questions for Adir. One entry per item; the orchestrator moves it to Resolv
 - Page: 4
 - Question: the key writes f(1,y) = 1-2(y+1)-2+3 = -2y (true value 2-2y) and says (0,0) is the unique critical point (part c found (0,-1)). The final max 6 at (1,-2) and min 0 at (1,1) are correct (sympy + grid).
 - Needed: say whether to ship with a labelled correction (suggested) or keep held.
-- Status: hold
+- Solver: intermediate slip with a correct final answer, so fixed silently (f(1,y)=2-2y, critical point (0,-1) with f=3 listed), label kept lecturer-solution (tools/verify/24B-B/solve_24B-B.py).
+- Status: resolved by solver, pending refuter
 
 ### 24B-B p.5 Q4b - key's convergence domain has the wrong left endpoint
 - Path: calculus-2 typed solution for sitting 24B-B (question embedded), pages 5-6
 - Page: 6
 - Question: the key ends with domain [-1/2; 3/2), but |x-1|<1/2 gives endpoints 1/2 and 3/2 (x=1/2 converges by Leibniz, x=3/2 diverges), so the domain is [1/2, 3/2). Its text also calls the x=3/2 series convergent.
 - Needed: confirm shipping the corrected domain [1/2, 3/2) with a labelled correction.
-- Status: hold
+- Solver: wrong final answer, so minimal fix (x=3/2 diverges, domain [1/2, 3/2)), solved, official:false, prefix "הפתרון הרשמי עם תיקון" (tools/verify/24B-B/solve_24B-B.py).
+- Status: resolved by solver, pending refuter
 
 ### 25A-B Q2b, Q3b, Q5b - key typos shipped with a labelled correction (FYI)
 - Q2b p.3: inverse map printed y=(1/3)(v+1t), should be (v+2t); Jacobian and answer fine. Q3b p.4: dt/dx written for dt/dy. Q5b p.7: decimal 1.71166 should be 1.7104 (exact 3325/1944).
@@ -67,7 +71,8 @@ Open questions for Adir. One entry per item; the orchestrator moves it to Resolv
 - Page: 6-7
 - Question: the key gets R=1 and the domain [-6,-4], both correct (sympy). But the endpoint step divides by 1/cuberoot(n^2) (ratio tends to 0, not 1) and then cites sum 1/n^(3/2); the terms really behave like n^(-4/3).
 - Needed: allow shipping the question with the correct comparison (n^(-4/3), p>1) in place of the key's step, or keep it held.
-- Status: hold
+- Solver: re-derived: at x=-4 the terms are limit-comparable to n^(-4/3) (ratio -> 1), p=4/3>1, converges; x=-6 converges absolutely. The final answer [-6,-4] holds, so the step was fixed silently; label kept student-solution (tools/verify/24A-B/solve_24A-B.py).
+- Status: resolved by solver, pending refuter
 
 ### 23A-C all items - no answer key
 - The exam file for sitting 23A-C (27.4.23) has no solution. All 10 items solved by the solver (solved, official:false), every computation checked in tools/verify/23A-C/solve_23A-C.py (sympy + numeric).

@@ -13,13 +13,13 @@ Transcription notes
 - Q3a: the key only gives the gradient at (2,-1) and says the rate is maximal in its direction; transcribed as is.
 - Q5: the three parts (a, b, c) are separate items; the key solves a and b together and then c.
 
-HOLD (see docs/ASK_ADIR.md)
-- Q3d: the key's boundary line for the edge x=1 reads f(1,y) = 1-2(y+1)-2+3 = -2y, but the true value is 2-2y
-  (sympy); the key also says "(0,0) is the unique critical point" where part (c) found (0,-1). The final values
-  (max 6 at B(1,-2), min 0 at A(1,1)) are correct (sympy + dense grid). Held until Adir decides how to ship it.
-- Q4b: the key's final domain "[-1/2; 3/2)" has the wrong left endpoint: the radius is 1/2 about x=1, and the key's own
-  endpoint work (x=1/2 converges by Leibniz, x=3/2 diverges) gives [1/2, 3/2). Its text for x=3/2 also says the
-  series converges while the final answer excludes 3/2. Held.
+Solver decisions (docs/ASK_ADIR.md; tools/verify/24B-B/solve_24B-B.py, sympy + dense grid + partial sums)
+- Q3d (intermediate slip, final answer right): the key's edge line f(1,y) = 1-2(y+1)-2+3 = -2y is corrected silently to
+  1-2(y+1)+3 = 2-2y, and "(0,0) is the unique critical point" to (0,-1) (part c). The interior point (0,-1), f=3, is
+  listed with the candidates. Max 6 at B(1,-2) and min 0 at A(1,1) are the key's. Label kept (lecturer-solution).
+- Q4b (wrong final answer): the key's final domain "[-1/2; 3/2)" has the wrong left endpoint (1 - 1/2 = 1/2), and its
+  x=3/2 line says the series converges, although 1/sqrt(n+4) ~ 1/sqrt(n) diverges. Minimal fix: x=3/2 diverges,
+  domain [1/2, 3/2). solutionSource "solved", official False, prefix "הפתרון הרשמי עם תיקון".
 
 Checks (tools/verify/24B-B/check.py, sympy + numeric): all other answers match the key.
 """
@@ -103,14 +103,29 @@ $$A=f''_{xx}(0,-1)=2,\quad B=f''_{xy}(0,-1)=-2,\quad C=f''_{yy}(0,-1)=0,$$
 $$\Delta=AC-B^2=-4<0,$$
 אז **נקודה $(0,-1)$ היא נקודת אוכף** (ואינה נקודת קיצון מקומי).""", part="ג", points=7))
 
-questions.append({
-    "num": 3, "part": "ד", "kind": "computation", "topic": "absolute_extrema", "points": 10,
-    "question": F3 + r"""מצאו את הערך המינימלי והערך המקסימלי של הפונקציה $f(x,y)$ בתחום
+questions.append(Q(3, "computation", "absolute_extrema", F3 + r"""מצאו את הערך המינימלי והערך המקסימלי של הפונקציה $f(x,y)$ בתחום
 $D=\{(x,y):-2\le y\le x\le1\}$.""",
-    "hold": "the official key's edge line f(1,y) = 1-2(y+1)-2+3 = -2y is wrong (true value 2-2y) and its text calls "
-            "(0,0) the unique critical point (it is (0,-1)); the final max 6 and min 0 are correct (sympy); "
-            "needs Adir's decision how to ship",
-})
+r"""מהסעיף הקודם נובע שבנקודה הקריטית היחידה $(0,-1)$, שנמצאת בתוך $D$, אין קיצון מקומי; ערך הפונקציה בה הוא $f(0,-1)=3$.
+נטפל בנקודות של שפת $\partial D$, זה משולש $ABC$ שבו $A(1,1)$; $B(1,-2)$, $C(-2,-2)$.
+1) נמצא נקודות קריטיות בקטע $[A,B]$:
+$$x=1,\ y\in[-2,1]$$
+$$f(1,y)=1-2(y+1)+3=2-2y$$
+פונקציה ליניארית, ולכן הנקודות הקריטיות הן $A(1,1)$ ו-$B(1,-2)$.
+2) נמצא נקודות קריטיות בקטע $[B,C]$:
+$$x\in[-2,1];\ y=-2.$$
+$$f(x,-2)=x^2+2x+3=g(x).$$
+$$g'(x)=2x+2,\quad x_0=-1$$
+נקודות קריטיות $B(1,-2)$, $C(-2,-2)$, $D(-1,-2)$.
+3) נמצא נקודות קריטיות בקטע $[A,C]$:
+$$y=x,\ x\in[-2,1]$$
+$$f(x,x)=-x^2-2x+3=:h(x)$$
+$$h'(x)=-2x-2=0\ \Rightarrow\ x_1=-1,\ y_1=-1$$
+נקודות קריטיות $A(1,1)$, $C(-2,-2)$, $E(-1,-1)$.
+$$f(A)=0,\ f(B)=6,\ f(C)=3,\ f(D)=2,\ f(E)=4,\ f(0,-1)=3$$
+ערך מקסימלי
+$$f_{max}=f(1,-2)=6.$$
+ערך מינימלי
+$$f_{min}=f(1,1)=0.$$""", part="ד", points=10))
 
 # ===== Q4 =====
 questions.append(Q(4, "computation", "chain_rule_identity", r"""חשבו את $\dfrac{\partial z}{\partial x},\dfrac{\partial z}{\partial y}$ בנקודה $x_0=\pi,\ y_0=-\pi$ כאשר
@@ -125,13 +140,31 @@ $$u(\pi,-\pi)=1,\quad u'_x(\pi,-\pi)=u'_y(\pi,-\pi)=0$$
 $$z'_x(\pi,-\pi)=4\cdot0+14\cdot5=70$$
 $$z'_y(\pi,-\pi)=4\cdot0+14\cdot4=56$$""", part="א", points=10))
 
-questions.append({
-    "num": 4, "part": "ב", "kind": "computation", "topic": "power_series", "points": 15,
-    "question": r"""עבור אילו ערכי $x$ הטור מתכנס (מצאו רדיוס התכנסות ותחום התכנסות):
+questions.append(Q(4, "computation", "power_series", r"""עבור אילו ערכי $x$ הטור מתכנס (מצאו רדיוס התכנסות ותחום התכנסות):
 $$\sum_{n=1}^{\infty}\frac{2^n}{\sqrt{n+4}}(x-1)^n.$$""",
-    "hold": "the official key's final domain [-1/2; 3/2) has the wrong left endpoint (its own endpoint work gives "
-            "[1/2, 3/2)) and its text says the x=3/2 series converges; needs Adir's decision",
-})
+r"""**הפתרון הרשמי עם תיקון:** בפתרון הרשמי נכתב בסוף שהטור ב-$x=\frac32$ "הוא גם מתכנס", ותחום ההתכנסות נכתב $[-\frac12;\frac32)$. אבל לפי מבחן ההשוואה הגבולי עם $\sum\frac{1}{\sqrt n}$, שמתבדר, הטור ב-$x=\frac32$ **מתבדר**, והקצה השמאלי הוא $x=1-\frac12=\frac12$ (לא $-\frac12$). תחום ההתכנסות הנכון הוא $[\frac12,\frac32)$. יתר השורות כבפתרון הרשמי.
+
+נסמן $a_n:=\dfrac{2^n}{\sqrt{n+4}}$
+$$\frac1R=\lim_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|=\lim_{n\to\infty}\frac{2^{n+1}}{\sqrt{n+5}}\cdot\frac{\sqrt{n+4}}{2^n}=2$$
+**רדיוס התכנסות $R=0.5$**,
+אם $|x-1|<0.5$, טור מתכנס, אם $|x-1|>0.5$, טור מתבדר, נטפל בנקודות שבהן $|x-1|=\frac12$.
+אם $x=\frac12$ אז מקבלים
+$$\sum_{n=1}^{\infty}\frac{2^n}{\sqrt{n+4}}\left(-\frac12\right)^n=\sum_{n=1}^{\infty}\frac{(-1)^n}{\sqrt{n+4}}.$$
+נסמן $c_n=\frac{1}{\sqrt{n+4}}$. נשים לב ש
+1. $c_n>0$ לכל $n\in\mathbb N$.
+2. $c_{n+1}=\frac{1}{\sqrt{n+5}}<\frac{1}{\sqrt{n+4}}=c_n$ לכל $n\in\mathbb N$.
+3. $\lim_{n\to\infty}c_n=\lim_{n\to\infty}\frac{1}{\sqrt{n+4}}=0$.
+
+מכאן נובע (לפי משפט לייבניץ) שהטור $\sum_{n=1}^{\infty}\frac{(-1)^n}{\sqrt{n+4}}$ מתכנס.
+אם $x=\frac32$ אז מקבלים
+$$\sum_{n=1}^{\infty}\frac{2^n}{\sqrt{n+4}}\left(\frac12\right)^n=\sum_{n=1}^{\infty}\frac{1}{\sqrt{n+4}}.$$
+נסמן $c_n=\frac{1}{\sqrt{n+4}},\ b_n=\frac{1}{\sqrt n}$, $c_n\ge0,\ b_n\ge0$
+$$\lim_{n\to\infty}\frac{c_n}{b_n}=1$$
+הטור $\sum_{n=1}^{\infty}b_n=\sum_{n=1}^{\infty}\frac{1}{\sqrt n}$ מתבדר (כי $\alpha=\frac12\le1$).
+לכן לפי מבחן ההשוואה הגבולי $\sum_{n=1}^{\infty}\frac{1}{\sqrt{n+4}}$ הוא גם **מתבדר** (תיקון).
+
+**תחום התכנסות $[\frac12;\frac32)$** (תיקון).""", part="ב", points=15,
+    solutionSource="solved", official=False))
 
 # ===== Q5 =====
 F5 = r"""נתונה הפונקציה $f(x)=\ln(6x^2+5x+1)$.

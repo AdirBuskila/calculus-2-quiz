@@ -16,10 +16,12 @@ Transcription notes
 - Q5a: handwritten; the Hessian determinant is called Delta and written Delta(2,1) etc.
 - Q5b: the handwritten value reads 3^21 in the last line (the exponent is badly formed); sympy confirms 3^21.
 
-HOLD
-- Q3b: the exam prints the right-hand side as z*x^2/v, and the official solution's own computation reaches
-  e^{x^2 y} x^2 / v (sympy: the identity holds with RHS z*x^2/v), but the final printed line is "= z x^2/v^2".
-  The official final line therefore disagrees with the printed statement. Held; see docs/ASK_ADIR.md.
+Corrected by the solver (standing ruling, wrong final answer)
+- Q3b: the exam prints the right-hand side as z*x^2/v. The official solution's penultimate line
+  x^2 v e^{x^2y}/v^2 is right, but its concluding line "= e^{x^2y} x^2/v^2 = z x^2/v^2" simplifies it wrongly, so the
+  proof as printed concludes a false identity. For a proof the concluding line is the final answer, so this is
+  treated as a wrong final answer: minimal fix of that line, solutionSource "solved", official False, prefix
+  "הפתרון הרשמי עם תיקון". Verified in tools/verify/26A-A/solve_26A-A.py (sympy + numeric).
 
 Checks (tools/verify/26A-A/check.py, sympy + numeric): every integral, limit, partial derivative, Hessian,
 Lagrange point, Jacobian, series coefficient matches the official answers, except the Q3b final line above.
@@ -100,15 +102,20 @@ $$\sum_{n=0}^{\infty}a_n(x+2)^n$$""",
 r"""בואו נכתוב $y=x+2$, מכיוון שהטור $\sum_{n=0}^{\infty}a_ny^n$ מתכנס עבור $-3\le y<3$ הטור $\sum_{n=0}^{\infty}a_n(x+2)^n$ מתכנס עבור $-3\le x+2<3$, כלומר $-5\le x<1$.
 התחום ההתכנסות הוא $[-5,1)$.""", part="א", points=12))
 
-# ===== Q3b (HELD) =====
-questions.append({
-    "num": 3, "part": "ב", "kind": "proof", "topic": "chain_rule_identity", "points": 13,
-    "question": r"""הוכיחו כי השוויון הבא מתקיים:
+# ===== Q3b (official key with a corrected final line; solver) =====
+questions.append(Q(3, "proof", "chain_rule_identity", r"""הוכיחו כי השוויון הבא מתקיים:
 $$u\cdot\frac{\partial z}{\partial u}-v\cdot\frac{\partial z}{\partial v}=z\,\frac{x^2}{v}$$
 כאשר: $y=\dfrac{1}{v}$ , $x=\sqrt{uv}$ , $z=e^{x^2y}$""",
-    "hold": "the official solution's final line is z x^2/v^2, which disagrees with the printed right-hand side z x^2/v "
-            "(sympy confirms the printed identity); needs Adir's decision",
-})
+r"""**הפתרון הרשמי עם תיקון:** בשורה האחרונה של הפתרון הרשמי נכתב $e^{x^2y}\frac{x^2}{v^2}=z\frac{x^2}{v^2}$, וזו טעות בצמצום: $x^2v\,e^{x^2y}\frac{1}{v^2}=e^{x^2y}\frac{x^2}{v}$, כלומר מתקבל בדיוק אגף ימין של השוויון שבשאלה. יתר השורות כבפתרון הרשמי.
+$$\frac{\partial x}{\partial u}=\frac{v}{2\sqrt{uv}};\qquad\frac{\partial x}{\partial v}=\frac{u}{2\sqrt{uv}};\qquad\frac{\partial y}{\partial u}=0;\qquad\frac{\partial y}{\partial v}=-\frac{1}{v^2};$$
+$$\frac{\partial z}{\partial x}=2xye^{x^2y};\qquad\frac{\partial z}{\partial y}=x^2e^{x^2y};$$
+לכן
+$$\frac{\partial z}{\partial u}=\frac{\partial z}{\partial x}\frac{\partial x}{\partial u}+\frac{\partial z}{\partial y}\frac{\partial y}{\partial u}=2xye^{x^2y}\frac{v}{2\sqrt{uv}}+x^2e^{x^2y}\cdot0=2xye^{x^2y}\frac{v}{2\sqrt{uv}};$$
+$$\frac{\partial z}{\partial v}=\frac{\partial z}{\partial x}\frac{\partial x}{\partial v}+\frac{\partial z}{\partial y}\frac{\partial y}{\partial v}=2xye^{x^2y}\frac{u}{2\sqrt{uv}}-x^2e^{x^2y}\frac{1}{v^2}$$
+ומכאן
+$$u\frac{\partial z}{\partial u}-v\frac{\partial z}{\partial v}=2xye^{x^2y}\frac{uv}{2\sqrt{uv}}-2xye^{x^2y}\frac{uv}{2\sqrt{uv}}+x^2v\,e^{x^2y}\frac{1}{v^2}=$$
+$$=e^{x^2y}\frac{x^2}{v}=z\,\frac{x^2}{v}.$$""", part="ב", points=13,
+    solutionSource="solved", official=False))
 
 # ===== Q4a =====
 questions.append(Q(4, "computation", "change_of_variables", r"""חשבו את האינטגרל $\iint_D(x^2-y^2)\,dx\,dy$ כאשר $D$ חסום ע"י הקווים הבאים: $y-x=1;\ y=x;\ xy=1;\ xy=2$ $\ (x>0,\ y>0)$""",

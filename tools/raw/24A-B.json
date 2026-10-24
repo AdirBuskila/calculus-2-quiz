@@ -56,12 +56,15 @@
   },
   {
    "num": 3,
-   "part": "א",
    "kind": "computation",
    "topic": "power_series",
-   "points": 12,
    "question": "עבור אילו ערכי $x$ הטור מתכנס (מצאו רדיוס התכנסות ותחום התכנסות):\n$$\\sum_{n=1}^{\\infty}\\frac{(x+5)^n}{\\sqrt[3]{n+1}\\sqrt{n^2+1}}$$",
-   "hold": "the key's R=1 and final domain [-6,-4] are right (sympy), but its endpoint step compares with 1/cuberoot(n^2) (ratio tends to 0, not 1) and then cites sum 1/n^(3/2); the terms behave like n^(-4/3). The official comparison is inconsistent; needs Adir's decision"
+   "solution": "נציב $t=x+5$ ונבחן את הטור $\\sum_{n=1}^{\\infty}\\dfrac{t^n}{\\sqrt[3]{n+1}\\sqrt{n^2+1}}$.\n$$\\frac{a_n}{a_{n+1}}=\\frac{\\frac{1}{\\sqrt[3]{n+1}\\sqrt{n^2+1}}}{\\frac{1}{\\sqrt[3]{n+2}\\sqrt{(n+1)^2+1}}}=\\frac{\\sqrt[3]{n+2}\\sqrt{n^2+2n+2}}{\\sqrt[3]{n+1}\\sqrt{n^2+1}}=\\frac{\\sqrt[3]{\\frac1n(n+2)}\\sqrt{\\frac{1}{n^2}\\left(n^2+2n+2\\right)}}{\\sqrt[3]{\\frac1n(n+1)}\\sqrt{\\frac{1}{n^2}\\left(n^2+1\\right)}}$$\n$$\\lim_{n\\to\\infty}\\frac{\\sqrt[3]{1+\\frac2n}\\sqrt{1+\\frac2n+\\frac{2}{n^2}}}{\\sqrt[3]{1+\\frac1n}\\sqrt{1+\\frac{1}{n^2}}}=1=R$$\nלכן $R=1$ הוא רדיוס ההתכנסות, והטור מתכנס עבור $|x+5|<1$.\n\n**נקודות הקצה $t=\\pm1$.** עבור $t=1$ (כלומר $x=-4$) מקבלים את הטור החיובי $\\sum_{n=1}^{\\infty}\\frac{1}{\\sqrt[3]{n+1}\\sqrt{n^2+1}}$. האיבר מתנהג כמו $\\frac{1}{n^{1/3}\\cdot n}=\\frac{1}{n^{4/3}}$, ובמבחן ההשוואה הגבולי:\n$$\\lim_{n\\to\\infty}\\frac{\\frac{1}{\\sqrt[3]{n+1}\\sqrt{n^2+1}}}{\\frac{1}{n\\sqrt[3]{n}}}=\\lim_{n\\to\\infty}\\frac{n\\sqrt[3]{n}}{\\sqrt[3]{n+1}\\sqrt{n^2+1}}=\\lim_{n\\to\\infty}\\frac{1}{\\sqrt[3]{1+\\frac1n}\\sqrt{1+\\frac{1}{n^2}}}=1.$$\nהטור $\\sum_{n=1}^{\\infty}\\frac{1}{n^{4/3}}$ מתכנס ($p=\\frac43>1$), ולכן הטור מתכנס ב-$x=-4$.\nעבור $t=-1$ (כלומר $x=-6$) מקבלים $\\sum_{n=1}^{\\infty}\\frac{(-1)^n}{\\sqrt[3]{n+1}\\sqrt{n^2+1}}$, שטור הערכים המוחלטים שלו הוא הטור של $x=-4$, שמתכנס; לכן הטור מתכנס בהחלט ב-$x=-6$.\n\n**תחום ההתכנסות:** $-1\\le x+5\\le1$, כלומר $[-6,-4]$.",
+   "solutionSource": "student-solution",
+   "official": false,
+   "confidence": "high",
+   "part": "א",
+   "points": 12
   },
   {
    "num": 3,
