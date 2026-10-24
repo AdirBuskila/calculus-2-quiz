@@ -1,0 +1,135 @@
+{
+ "answers": {
+  "C01-Q1": {
+   "answer": "c"
+  },
+  "C01-Q2": {
+   "answer": 2.5
+  },
+  "C01-Q3": {
+   "answer": 0.16666666666666666
+  },
+  "C01-Q4": {
+   "answer": "d"
+  },
+  "C01-Q5": {
+   "answer": "a"
+  },
+  "C01-Q6": {
+   "answer": 2
+  },
+  "C02-Q1": {
+   "answer": "d"
+  },
+  "C02-Q2": {
+   "answer": 2
+  },
+  "C02-Q3": {
+   "answer": "b"
+  },
+  "C02-Q4": {
+   "answer": "c"
+  },
+  "C02-Q5": {
+   "answer": 3
+  },
+  "C02-Q6": {
+   "answer": "c"
+  },
+  "C03-Q1": {
+   "answer": 0.5
+  },
+  "C03-Q2": {
+   "answer": "a"
+  },
+  "C03-Q3": {
+   "answer": "d"
+  },
+  "C03-Q4": {
+   "answer": "d"
+  },
+  "C03-Q5": {
+   "answer": "c"
+  },
+  "C03-Q6": {
+   "answer": [
+    "נגדיר $f(x)=\\frac1{x\\ln x}$ ב-$[2,\\infty)$: היא חיובית, רציפה ויורדת, ו-$f(n)=a_n$.",
+    "נחשב $\\int_2^M\\frac{dx}{x\\ln x}=\\ln\\ln M-\\ln\\ln2$.",
+    "כש-$M\\to\\infty$ מתקבל $\\ln\\ln M\\to\\infty$, כלומר האינטגרל $\\int_2^{\\infty}f$ מתבדר.",
+    "לפי מבחן האינטגרל גם הטור $\\sum_{n=2}^{\\infty}\\frac1{n\\ln n}$ מתבדר."
+   ]
+  },
+  "C04-Q1": {
+   "answer": "c"
+  },
+  "C04-Q2": {
+   "answer": "c"
+  },
+  "C04-Q3": {
+   "answer": "b"
+  },
+  "C04-Q4": {
+   "answer": "c"
+  },
+  "C04-Q5": {
+   "answer": 9
+  },
+  "C04-Q6": {
+   "answer": 2
+  },
+  "C05-Q1": {
+   "answer": 3
+  },
+  "C05-Q2": {
+   "answer": "c"
+  },
+  "C05-Q3": {
+   "answer": 1.25
+  },
+  "C05-Q4": {
+   "answer": "c"
+  },
+  "C05-Q5": {
+   "answer": "c"
+  },
+  "C05-Q6": {
+   "answer": "d"
+  },
+  "C06-Q1": {
+   "answer": "c"
+  },
+  "C06-Q2": {
+   "answer": "b"
+  },
+  "C06-Q3": {
+   "answer": "d"
+  },
+  "C06-Q4": {
+   "answer": "d"
+  },
+  "C06-Q5": {
+   "answer": "d"
+  },
+  "C06-Q6": {
+   "answer": 3
+  },
+  "C07-Q1": {
+   "answer": "d"
+  },
+  "C07-Q2": {
+   "answer": 20
+  },
+  "C07-Q3": {
+   "answer": -120
+  },
+  "C07-Q4": {
+   "answer": "c"
+  },
+  "C07-Q5": {
+   "answer": 744
+  },
+  "C07-Q6": {
+   "answer": "c"
+  }
+ }
+}

@@ -1,0 +1,120 @@
+{
+ "answers": {
+  "C01-Q1": {
+   "answer": "a"
+  },
+  "C01-Q2": {
+   "answer": "a"
+  },
+  "C01-Q3": {
+   "answer": 12
+  },
+  "C01-Q4": {
+   "answer": "a"
+  },
+  "C01-Q5": {
+   "answer": "a"
+  },
+  "C02-Q1": {
+   "answer": "a"
+  },
+  "C02-Q2": {
+   "answer": 24
+  },
+  "C02-Q3": {
+   "answer": "a"
+  },
+  "C02-Q4": {
+   "answer": 3
+  },
+  "C02-Q5": {
+   "answer": -6
+  },
+  "C02-Q6": {
+   "answer": "a"
+  },
+  "C03-Q1": {
+   "answer": "a"
+  },
+  "C03-Q2": {
+   "answer": "a"
+  },
+  "C03-Q3": {
+   "answer": 12
+  },
+  "C03-Q4": {
+   "answer": 1
+  },
+  "C03-Q5": {
+   "answer": "a"
+  },
+  "C03-Q6": {
+   "answer": 2.33
+  },
+  "C04-Q1": {
+   "answer": [
+    "נסמן $t=\\dfrac yx$. אז $z=x^2g(t)$, $t_x=-\\dfrac{y}{x^2}$ ו-$t_y=\\dfrac1x$.",
+    "גוזרים: $z_x=2x\\,g(t)-y\\,g'(t)$ וגם $z_y=x\\,g'(t)$.",
+    "מציבים באגף שמאל: $x\\,z_x+y\\,z_y=2x^2g(t)-xy\\,g'(t)+xy\\,g'(t)$.",
+    "המחוברים עם $g'$ מתבטלים ונשאר $2x^2g(t)=2z$, כנדרש."
+   ]
+  },
+  "C04-Q2": {
+   "answer": "a"
+  },
+  "C04-Q3": {
+   "answer": 1
+  },
+  "C04-Q4": {
+   "answer": 3
+  },
+  "C05-Q1": {
+   "answer": "a"
+  },
+  "C05-Q2": {
+   "answer": 36
+  },
+  "C05-Q3": {
+   "answer": "a"
+  },
+  "C05-Q4": {
+   "answer": 1
+  },
+  "C05-Q5": {
+   "answer": "a"
+  },
+  "C06-Q1": {
+   "answer": "a"
+  },
+  "C06-Q2": {
+   "answer": "a"
+  },
+  "C06-Q3": {
+   "answer": 7
+  },
+  "C06-Q4": {
+   "answer": 2
+  },
+  "C06-Q5": {
+   "answer": "a"
+  },
+  "C06-Q6": {
+   "answer": "a"
+  },
+  "C07-Q1": {
+   "answer": 7
+  },
+  "C07-Q2": {
+   "answer": -1
+  },
+  "C07-Q3": {
+   "answer": -4
+  },
+  "C07-Q4": {
+   "answer": "a"
+  },
+  "C07-Q5": {
+   "answer": 1
+  }
+ }
+}
