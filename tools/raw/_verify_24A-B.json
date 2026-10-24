@@ -1,0 +1,251 @@
+{
+ "examCode": "24A-B",
+ "refuter": "calculus-2 refute 24B-B/24A-B",
+ "scripts": [
+  "tools/verify/24A-B/refute_blind.py"
+ ],
+ "items": [
+  {
+   "item": "1א",
+   "solution": "agree",
+   "rubric": "agree (sums to points)",
+   "pitfalls": "disagree (wording reversed in pitfall 2)",
+   "steps": [
+    {
+     "i": 0,
+     "verdict": "agree"
+    },
+    {
+     "i": 1,
+     "verdict": "agree"
+    },
+    {
+     "i": 2,
+     "verdict": "agree"
+    }
+   ],
+   "note": "agree on conclusion (discontinuous; y=kx ->0, y=x^2 -> 1/2). f undefined on y=-x^2 (x!=0) which passes through origin (limit along y=-x^2+x^4 is infinite): recommend a VISIBLE הערה that f is defined only off that curve and paths used lie in the domain. Pitfall 2 wording 'לא לבחור מסלול שבו המכנה מאוזן' says the opposite of the intent (should be: do not skip the balanced path)."
+  },
+  {
+   "item": "1ב",
+   "solution": "agree",
+   "rubric": "agree (sums to points)",
+   "pitfalls": "agree",
+   "steps": [
+    {
+     "i": 0,
+     "verdict": "agree"
+    },
+    {
+     "i": 1,
+     "verdict": "agree"
+    },
+    {
+     "i": 2,
+     "verdict": "agree"
+    },
+    {
+     "i": 3,
+     "verdict": "agree"
+    }
+   ],
+   "note": ""
+  },
+  {
+   "item": "2א",
+   "solution": "agree",
+   "rubric": "agree (sums to points)",
+   "pitfalls": "agree",
+   "steps": [
+    {
+     "i": 0,
+     "verdict": "agree"
+    },
+    {
+     "i": 1,
+     "verdict": "agree"
+    },
+    {
+     "i": 2,
+     "verdict": "agree"
+    }
+   ],
+   "note": ""
+  },
+  {
+   "item": "2ב",
+   "solution": "agree",
+   "rubric": "agree (sums to points)",
+   "pitfalls": "agree",
+   "steps": [
+    {
+     "i": 0,
+     "verdict": "agree"
+    },
+    {
+     "i": 1,
+     "verdict": "agree"
+    },
+    {
+     "i": 2,
+     "verdict": "agree"
+    },
+    {
+     "i": 3,
+     "verdict": "agree"
+    }
+   ],
+   "note": "agree. eps limit along dy=k dx is -(k^2+4k)/(2(2+k^2)sqrt(1+k^2)) for dx->0+, and with dx->0- it is the negation; nonzero/k-dependent both ways, so the added 'Δx→0+' is harmless and exact. k=1 value -0.5893 correct."
+  },
+  {
+   "item": "3א",
+   "solution": "agree",
+   "rubric": "agree (sums to points)",
+   "pitfalls": "agree",
+   "steps": [
+    {
+     "i": 0,
+     "verdict": "agree"
+    },
+    {
+     "i": 1,
+     "verdict": "agree"
+    },
+    {
+     "i": 2,
+     "verdict": "agree"
+    },
+    {
+     "i": 3,
+     "verdict": "agree"
+    }
+   ],
+   "note": "agree: R=1, [-6,-4], term ~ n^(-4/3). Key page 6 (typo 1/cuberoot(n^2) in the comparison denominator, then n*cuberoot(n)=n^(4/3) in the working) and page 7 (cites sum 1/n^(3/2) converges; handwriting clearly 3/2). Intent was clearly comparison with n*cuberoot(n)=n^(4/3); concluding convergence at both ends and [-6,-4]. Note: direct comparison with n^(-3/2) would be the wrong direction (terms ~ n^(-4/3) > n^(-3/2)), so silent fix to 4/3 matches what the working computed. Fix is faithful."
+  },
+  {
+   "item": "3ב",
+   "solution": "agree",
+   "rubric": "agree (sums to points)",
+   "pitfalls": "agree",
+   "steps": [
+    {
+     "i": 0,
+     "verdict": "agree"
+    },
+    {
+     "i": 1,
+     "verdict": "agree"
+    },
+    {
+     "i": 2,
+     "verdict": "agree"
+    }
+   ],
+   "note": ""
+  },
+  {
+   "item": "4א",
+   "solution": "agree",
+   "rubric": "agree (sums to points)",
+   "pitfalls": "agree",
+   "steps": [
+    {
+     "i": 0,
+     "verdict": "agree"
+    },
+    {
+     "i": 1,
+     "verdict": "agree"
+    },
+    {
+     "i": 2,
+     "verdict": "agree"
+    }
+   ],
+   "note": ""
+  },
+  {
+   "item": "4ב",
+   "solution": "agree",
+   "rubric": "agree (sums to points)",
+   "pitfalls": "agree",
+   "steps": [
+    {
+     "i": 0,
+     "verdict": "agree"
+    },
+    {
+     "i": 1,
+     "verdict": "agree"
+    },
+    {
+     "i": 2,
+     "verdict": "agree"
+    },
+    {
+     "i": 3,
+     "verdict": "agree"
+    },
+    {
+     "i": 4,
+     "verdict": "agree"
+    }
+   ],
+   "note": ""
+  },
+  {
+   "item": "5א",
+   "solution": "agree",
+   "rubric": "agree (sums to points)",
+   "pitfalls": "agree",
+   "steps": [
+    {
+     "i": 0,
+     "verdict": "agree"
+    },
+    {
+     "i": 1,
+     "verdict": "agree"
+    },
+    {
+     "i": 2,
+     "verdict": "agree"
+    },
+    {
+     "i": 3,
+     "verdict": "agree"
+    }
+   ],
+   "note": ""
+  },
+  {
+   "item": "5ב",
+   "solution": "agree",
+   "rubric": "agree (sums to points)",
+   "pitfalls": "agree",
+   "steps": [
+    {
+     "i": 0,
+     "verdict": "agree"
+    },
+    {
+     "i": 1,
+     "verdict": "agree"
+    },
+    {
+     "i": 2,
+     "verdict": "agree"
+    },
+    {
+     "i": 3,
+     "verdict": "agree"
+    }
+   ],
+   "note": ""
+  }
+ ],
+ "flags": [
+  "1א needs a visible הערה (judgment) about y=-x^2; pitfall 2 wording reversed.",
+  "No 'הפתרון הרשמי' in any 24A-B text; no option cites another by position."
+ ]
+}

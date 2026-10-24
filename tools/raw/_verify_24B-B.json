@@ -1,0 +1,347 @@
+{
+ "examCode": "24B-B",
+ "refuter": "calculus-2 refute 24B-B/24A-B",
+ "scripts": [
+  "tools/verify/24B-B/refute_blind.py"
+ ],
+ "items": [
+  {
+   "item": "1א",
+   "solution": "agree",
+   "rubric": "agree (sums to points)",
+   "pitfalls": "agree",
+   "steps": [
+    {
+     "i": 0,
+     "verdict": "agree"
+    },
+    {
+     "i": 1,
+     "verdict": "agree"
+    },
+    {
+     "i": 2,
+     "verdict": "agree"
+    }
+   ],
+   "note": "agree; minor: solution opens with 'סביב נקודה (1,0)' odd phrasing, harmless."
+  },
+  {
+   "item": "1ב",
+   "solution": "agree",
+   "rubric": "agree (sums to points)",
+   "pitfalls": "agree",
+   "steps": [
+    {
+     "i": 0,
+     "verdict": "agree"
+    },
+    {
+     "i": 1,
+     "verdict": "agree"
+    },
+    {
+     "i": 2,
+     "verdict": "agree"
+    },
+    {
+     "i": 3,
+     "verdict": "agree"
+    }
+   ],
+   "note": ""
+  },
+  {
+   "item": "1ג",
+   "solution": "agree",
+   "rubric": "agree (sums to points)",
+   "pitfalls": "agree",
+   "steps": [
+    {
+     "i": 0,
+     "verdict": "agree"
+    },
+    {
+     "i": 1,
+     "verdict": "agree"
+    },
+    {
+     "i": 2,
+     "verdict": "agree"
+    },
+    {
+     "i": 3,
+     "verdict": "agree"
+    },
+    {
+     "i": 4,
+     "verdict": "agree"
+    }
+   ],
+   "note": ""
+  },
+  {
+   "item": "2א",
+   "solution": "agree",
+   "rubric": "agree (sums to points)",
+   "pitfalls": "agree",
+   "steps": [
+    {
+     "i": 0,
+     "verdict": "agree"
+    },
+    {
+     "i": 1,
+     "verdict": "agree"
+    },
+    {
+     "i": 2,
+     "verdict": "agree"
+    }
+   ],
+   "note": ""
+  },
+  {
+   "item": "2ב",
+   "solution": "agree",
+   "rubric": "agree (sums to points)",
+   "pitfalls": "agree",
+   "steps": [
+    {
+     "i": 0,
+     "verdict": "agree"
+    },
+    {
+     "i": 1,
+     "verdict": "agree"
+    },
+    {
+     "i": 2,
+     "verdict": "agree"
+    },
+    {
+     "i": 3,
+     "verdict": "agree"
+    }
+   ],
+   "note": ""
+  },
+  {
+   "item": "3א",
+   "solution": "agree",
+   "rubric": "agree (sums to points)",
+   "pitfalls": "agree",
+   "steps": [
+    {
+     "i": 0,
+     "verdict": "agree"
+    },
+    {
+     "i": 1,
+     "verdict": "agree"
+    },
+    {
+     "i": 2,
+     "verdict": "agree"
+    }
+   ],
+   "note": ""
+  },
+  {
+   "item": "3ב",
+   "solution": "agree",
+   "rubric": "agree (sums to points)",
+   "pitfalls": "agree",
+   "steps": [
+    {
+     "i": 0,
+     "verdict": "agree"
+    },
+    {
+     "i": 1,
+     "verdict": "agree"
+    },
+    {
+     "i": 2,
+     "verdict": "agree"
+    }
+   ],
+   "note": ""
+  },
+  {
+   "item": "3ג",
+   "solution": "agree",
+   "rubric": "agree (sums to points)",
+   "pitfalls": "agree",
+   "steps": [
+    {
+     "i": 0,
+     "verdict": "agree"
+    },
+    {
+     "i": 1,
+     "verdict": "agree"
+    },
+    {
+     "i": 2,
+     "verdict": "agree"
+    }
+   ],
+   "note": ""
+  },
+  {
+   "item": "3ד",
+   "solution": "agree",
+   "rubric": "agree (sums to points)",
+   "pitfalls": "agree",
+   "steps": [
+    {
+     "i": 0,
+     "verdict": "agree"
+    },
+    {
+     "i": 1,
+     "verdict": "agree"
+    },
+    {
+     "i": 2,
+     "verdict": "agree"
+    },
+    {
+     "i": 3,
+     "verdict": "agree"
+    },
+    {
+     "i": 4,
+     "verdict": "agree"
+    }
+   ],
+   "note": "Blind: min 0 at (1,1), max 6 at (1,-2), saddle (0,-1) f=3 interior; grid-confirmed. Page 4 of key prints f(1,y)=1-2(y+1)-2+3=-2y (stray -2); item shows 2-2y, which is the correct value and is consistent with the key's own f(A)=0,f(B)=6. Silent fix is sound; a visible note is optional."
+  },
+  {
+   "item": "4א",
+   "solution": "agree",
+   "rubric": "agree (sums to points)",
+   "pitfalls": "agree",
+   "steps": [
+    {
+     "i": 0,
+     "verdict": "agree"
+    },
+    {
+     "i": 1,
+     "verdict": "agree"
+    },
+    {
+     "i": 2,
+     "verdict": "agree"
+    },
+    {
+     "i": 3,
+     "verdict": "agree"
+    }
+   ],
+   "note": ""
+  },
+  {
+   "item": "4ב",
+   "solution": "agree",
+   "rubric": "agree (sums to points)",
+   "pitfalls": "agree",
+   "steps": [
+    {
+     "i": 0,
+     "verdict": "agree"
+    },
+    {
+     "i": 1,
+     "verdict": "agree"
+    },
+    {
+     "i": 2,
+     "verdict": "agree"
+    },
+    {
+     "i": 3,
+     "verdict": "agree"
+    },
+    {
+     "i": 4,
+     "verdict": "agree"
+    }
+   ],
+   "note": "Correction attacked and confirmed: R=1/2, x=1/2 Leibniz conditional, x=3/2 sum 1/sqrt(n+4) diverges, domain [1/2,3/2). Page 5 shows official 'also converges' and [-1/2;3/2). LABEL CONFLICT: item is official:False/solved yet text starts with 'הפתרון הרשמי עם תיקון' (QA 4b forbids that phrase on non-official items)."
+  },
+  {
+   "item": "5א",
+   "solution": "agree",
+   "rubric": "agree (sums to points)",
+   "pitfalls": "agree",
+   "steps": [
+    {
+     "i": 0,
+     "verdict": "agree"
+    },
+    {
+     "i": 1,
+     "verdict": "agree"
+    },
+    {
+     "i": 2,
+     "verdict": "agree"
+    },
+    {
+     "i": 3,
+     "verdict": "agree"
+    }
+   ],
+   "note": ""
+  },
+  {
+   "item": "5ב",
+   "solution": "agree",
+   "rubric": "agree (sums to points)",
+   "pitfalls": "agree",
+   "steps": [
+    {
+     "i": 0,
+     "verdict": "agree"
+    },
+    {
+     "i": 1,
+     "verdict": "agree"
+    },
+    {
+     "i": 2,
+     "verdict": "agree"
+    }
+   ],
+   "note": ""
+  },
+  {
+   "item": "5ג",
+   "solution": "agree",
+   "rubric": "agree (sums to points)",
+   "pitfalls": "agree",
+   "steps": [
+    {
+     "i": 0,
+     "verdict": "agree"
+    },
+    {
+     "i": 1,
+     "verdict": "agree"
+    },
+    {
+     "i": 2,
+     "verdict": "agree"
+    }
+   ],
+   "note": ""
+  }
+ ],
+ "flags": [
+  "4ב: official:False + 'הפתרון הרשמי' phrase violates QA 4b; either use 'תיקון לפתרון שבקובץ' or mark consistently with GATE1 ruling (official source -> prefix ok, but item flag says non-official).",
+  "No option cites another by position; no other item says 'הפתרון הרשמי' except 2ב step (official item, fine)."
+ ]
+}
