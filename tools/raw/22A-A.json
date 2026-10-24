@@ -15,7 +15,75 @@
    "solutionSource": "student-solution",
    "official": false,
    "confidence": "high",
-   "part": "א"
+   "part": "א",
+   "rubric": [
+    {
+     "text": "ציון שהנגזרת הכיוונית מקסימלית בכיוון הגרדיאנט",
+     "points": 3
+    },
+    {
+     "text": "חישוב הנגזרות החלקיות $f_x=f_y=4\\cos(2x+2y)$ והצבה בנקודה: $\\nabla f=(4,4)$",
+     "points": 4
+    },
+    {
+     "text": "ניסוח הכיוון: וקטור היחידה $\\frac{(4,4)}{\\sqrt{32}}$",
+     "points": 2
+    },
+    {
+     "text": "הערך המקסימלי הוא נורמת הגרדיאנט, $\\sqrt{32}$",
+     "points": 3
+    }
+   ],
+   "pitfalls": [
+    "לתת כתשובה את ערך הגרדיאנט $(4,4)$ כערך המקסימלי, במקום את הנורמה שלו.",
+    "טעות בגזירת פונקציה מורכבת: הנגזרת של $\\sin(2x+2y)$ לפי $x$ היא $2\\cos(2x+2y)$, ועם המקדם $2$ שלפני הסינוס מקבלים $4\\cos$."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "חשבו את $f_x\\left(\\frac\\pi2,\\frac\\pi2\\right)$ עבור $f=2\\sin(2x+2y)$.",
+     "answer": 4,
+     "tol": 0,
+     "explain": "$f_x=4\\cos(2x+2y)$ ובנקודה $2x+2y=2\\pi$, ולכן $f_x=4\\cos2\\pi=4$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו הערך המקסימלי של הנגזרת הכיוונית (תשובה עשרונית, דיוק $0.001$)?",
+     "answer": 5.657,
+     "tol": 0.001,
+     "explain": "הערך המקסימלי הוא $|\\nabla f|=\\sqrt{4^2+4^2}=\\sqrt{32}\\approx5.657$."
+    },
+    {
+     "type": "choice",
+     "prompt": "איזה וקטור יחידה נותן את הנגזרת הכיוונית המקסימלית?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$\\frac1{\\sqrt2}(1,1)$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$\\frac1{\\sqrt2}(1,-1)$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$(1,0)$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$\\frac1{\\sqrt2}(-1,-1)$"
+      }
+     ],
+     "correctId": "a",
+     "explain": "הכיוון הוא כיוון הגרדיאנט $(4,4)$, כלומר $\\frac{(4,4)}{\\sqrt{32}}=\\frac1{\\sqrt2}(1,1)$."
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "stepsSource": "ai-draft"
   },
   {
    "num": 1,
@@ -26,7 +94,95 @@
    "solutionSource": "student-solution",
    "official": false,
    "confidence": "high",
-   "part": "ב"
+   "part": "ב",
+   "rubric": [
+    {
+     "text": "הגדרת $t=xy$ וכתיבת $z=\\frac{y}{3x}+g(t)$",
+     "points": 2
+    },
+    {
+     "text": "חישוב $z_x=-\\frac{y}{3x^2}+g'(t)y$",
+     "points": 3
+    },
+    {
+     "text": "חישוב $z_y=\\frac1{3x}+g'(t)x$",
+     "points": 3
+    },
+    {
+     "text": "הצבה במשוואה: האיברים עם $g'$ מצטמצמים",
+     "points": 3
+    },
+    {
+     "text": "קבלת $-\\frac{2y}{3}+\\frac{2y}{3}=0$",
+     "points": 2
+    }
+   ],
+   "pitfalls": [
+    "לשכוח את גורם השרשרת $\\frac{\\partial t}{\\partial x}=y$ ו-$\\frac{\\partial t}{\\partial y}=x$ בגזירת $g(xy)$.",
+    "טעות בגזירת $\\frac{y}{3x}$ לפי $x$: הנגזרת היא $-\\frac{y}{3x^2}$ ולא $\\frac{y}{3}$."
+   ],
+   "steps": [
+    {
+     "type": "choice",
+     "prompt": "מהי $\\frac{\\partial z}{\\partial x}$?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$\\frac{1}{3x}+x\\,g'(xy)$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$-\\frac{y}{3x^2}+y\\,g'(xy)$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$-\\frac{y}{3x^2}+g'(xy)$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$\\frac{y}{3x}+y\\,g'(xy)$"
+      }
+     ],
+     "correctId": "b",
+     "explain": "הגורם $\\frac{y}{3x}$ גוזרים לפי $x$ ומקבלים $-\\frac{y}{3x^2}$, ואת $g(xy)$ בכלל השרשרת: $g'(xy)\\cdot y$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "אחרי ההצבה במשוואה, האיברים בלי $g'$ מקבלים צורה $c\\cdot y$. מהו $c$ בסכום $x^2\\cdot\\left(-\\frac{y}{3x^2}\\right)-xy\\cdot\\frac1{3x}$ (תשובה עשרונית, דיוק $0.001$)?",
+     "answer": -0.6667,
+     "tol": 0.001,
+     "explain": "$-\\frac y3-\\frac y3=-\\frac{2y}{3}$, ולכן המקדם הוא $-\\frac23$, והוא מצטמצם עם $+\\frac{2y}{3}$ שבמשוואה."
+    },
+    {
+     "type": "order",
+     "prompt": "סדרו את שלבי ההוכחה.",
+     "lines": [
+      "נגדיר $t=xy$ וכך $z=\\frac{y}{3x}+g(t)$.",
+      "$z_x=-\\frac{y}{3x^2}+g'(t)\\,y$ ו-$z_y=\\frac1{3x}+g'(t)\\,x$.",
+      "מציבים במשוואה: $x^2\\left(-\\frac{y}{3x^2}+g'(t)y\\right)-xy\\left(\\frac1{3x}+g'(t)x\\right)+\\frac{2y}{3}$.",
+      "האיברים עם $g'(t)$ מצטמצמים ונשאר $-\\frac{2y}{3}+\\frac{2y}{3}=0$."
+     ],
+     "explain": "מגדירים את המשתנה הפנימי, גוזרים, מציבים במשוואה, ובסוף מצמצמים."
+    },
+    {
+     "type": "findbug",
+     "prompt": "בהוכחה הבאה שורה אחת שגויה. מצאו אותה.",
+     "lines": [
+      "נגדיר $t=xy$ וכך $z=\\frac{y}{3x}+g(t)$.",
+      "$z_x=-\\frac{y}{3x^2}+g'(t)\\,y$",
+      "$z_y=-\\frac1{3x}+g'(t)\\,x$",
+      "האיברים עם $g'(t)$ מצטמצמים ונשאר $-\\frac{2y}{3}+\\frac{2y}{3}=0$."
+     ],
+     "bugIndex": 2,
+     "explain": "הנגזרת של $\\frac{y}{3x}$ לפי $y$ היא $+\\frac1{3x}$. עם סימן מינוס לא מתקבל הצמצום $-\\frac{2y}{3}$."
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "stepsSource": "ai-draft"
   },
   {
    "num": 2,
@@ -37,7 +193,75 @@
    "solutionSource": "student-solution",
    "official": false,
    "confidence": "high",
-   "part": "א"
+   "part": "א",
+   "rubric": [
+    {
+     "text": "הערכה $\\left|\\frac{\\sin n}{n(\\ln n)^2}\\right|\\le\\frac1{n(\\ln n)^2}$",
+     "points": 3
+    },
+    {
+     "text": "מבחן האינטגרל: חישוב $\\int_2^\\infty\\frac{dx}{x(\\ln x)^2}=\\frac1{\\ln2}$ ומסקנה שהטור החיובי מתכנס",
+     "points": 4
+    },
+    {
+     "text": "התכנסות בהחלט של הטור עם $\\sin n$",
+     "points": 1
+    },
+    {
+     "text": "הטור $\\sum\\frac{(-1)^n+n}{3^n}$: פיצול לשני טורים; $\\sum\\frac{(-1)^n}{3^n}$ מתכנס ו-$\\sum\\frac n{3^n}$ מתכנס לפי דלמבר (היחס $\\frac13$)",
+     "points": 4
+    }
+   ],
+   "pitfalls": [
+    "להשתמש במבחן ההשוואה עם $\\sin n$ כאילו הוא חיובי. צריך להעביר לערך מוחלט כדי לחסום ב-$1$.",
+    "להשתמש בדלמבר על הטור $\\sum\\frac{\\sin n}{n(\\ln n)^2}$: היחס בין איברים עוקבים שואף ל-$1$ ואינו מכריע."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "מהו $\\int_2^{\\infty}\\frac{dx}{x(\\ln x)^2}$ (תשובה עשרונית, דיוק $0.001$)?",
+     "answer": 1.4427,
+     "tol": 0.001,
+     "explain": "$\\left.-\\frac1{\\ln x}\\right|_2^{\\infty}=\\frac1{\\ln2}\\approx1.4427$. האינטגרל סופי ולכן הטור $\\sum\\frac1{n(\\ln n)^2}$ מתכנס."
+    },
+    {
+     "type": "numeric",
+     "prompt": "בטור $\\sum\\frac{n}{3^n}$, לְמה שואף היחס $\\dfrac{a_{n+1}}{a_n}$ (תשובה עשרונית, דיוק $0.001$)?",
+     "answer": 0.3333,
+     "tol": 0.001,
+     "explain": "$\\frac{(n+1)3^n}{3^{n+1}n}=\\frac13\\cdot\\frac{n+1}{n}\\to\\frac13<1$."
+    },
+    {
+     "type": "choice",
+     "prompt": "מה מסקנת הפתרון לגבי שני הטורים?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "הטור עם $\\sin n$ מתכנס בהחלט, והטור עם $(-1)^n+n$ מתכנס"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "שני הטורים מתבדרים"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "הטור עם $\\sin n$ מתבדר, והטור עם $(-1)^n+n$ מתכנס"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "הטור עם $\\sin n$ מתכנס בתנאי בלבד, והטור עם $(-1)^n+n$ מתבדר"
+      }
+     ],
+     "correctId": "a",
+     "explain": "הטור עם $\\sin n$ נחסם בערכו המוחלט על ידי טור מתכנס. הטור השני הוא סכום של שני טורים מתכנסים."
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "stepsSource": "ai-draft"
   },
   {
    "num": 2,
@@ -48,7 +272,75 @@
    "solutionSource": "student-solution",
    "official": false,
    "confidence": "high",
-   "part": "ב"
+   "part": "ב",
+   "rubric": [
+    {
+     "text": "רציפות: $r^2\\sin\\frac1r\\to0=f(0,0)$ (אפס כפול פונקציה חסומה)",
+     "points": 3
+    },
+    {
+     "text": "נגזרות חלקיות מההגדרה: $f'_x(0,0)=h\\sin\\frac1{|h|}\\to0$ וכן $f'_y(0,0)=0$",
+     "points": 4
+    },
+    {
+     "text": "הצבה בהגדרת הדיפרנציאביליות והגעה לגבול $\\sqrt{h^2+k^2}\\sin\\frac1{\\sqrt{h^2+k^2}}$",
+     "points": 3
+    },
+    {
+     "text": "מסקנה: הגבול $0$, ולכן הפונקציה דיפרנציאבילית",
+     "points": 3
+    }
+   ],
+   "pitfalls": [
+    "לשכוח לחלק ב-$h$ בהגדרת הנגזרת החלקית.",
+    "להניח שפונקציה עם $\\sin\\frac1r$ אינה דיפרנציאבילית. הגורם $r$ שלפניו מכריע ומאפס את הגבול."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "מהו $f'_x(0,0)$?",
+     "answer": 0,
+     "tol": 0,
+     "explain": "$\\frac{f(h,0)-f(0,0)}{h}=h\\sin\\frac1{|h|}\\to0$ (אפס כפול פונקציה חסומה)."
+    },
+    {
+     "type": "numeric",
+     "prompt": "בבדיקת הדיפרנציאביליות מקבלים $\\dfrac{\\left(h^2+k^2\\right)\\sin\\frac1{\\sqrt{h^2+k^2}}}{\\sqrt{h^2+k^2}}=r^m\\sin\\frac1r$. מהו $m$?",
+     "answer": 1,
+     "tol": 0,
+     "explain": "$\\frac{r^2}{r}=r$, ולכן $m=1$."
+    },
+    {
+     "type": "choice",
+     "prompt": "מה מסקנת הפתרון לגבי הפונקציה ב-$(0,0)$?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "רציפה אך אינה דיפרנציאבילית"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "אינה רציפה"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "רציפה, בעלת נגזרות חלקיות השוות ל-$0$, ודיפרנציאבילית"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "אינה דיפרנציאבילית כי $\\sin\\frac1r$ אינו מוגדר ב-$r=0$"
+      }
+     ],
+     "correctId": "c",
+     "explain": "הגבול $r\\sin\\frac1r\\to0$, ולכן הפונקציה דיפרנציאבילית. הגורם $\\sin\\frac1r$ חסום ואינו משפיע על הגבול."
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "stepsSource": "ai-draft"
   },
   {
    "num": 3,
@@ -59,7 +351,82 @@
    "solutionSource": "student-solution",
    "official": false,
    "confidence": "high",
-   "part": "א"
+   "part": "א",
+   "rubric": [
+    {
+     "text": "הצבה $X=x+1$ וחישוב הרדיוס $R=1$",
+     "points": 4
+    },
+    {
+     "text": "הקצה $X=1$: השוואה גבולית ל-$\\sum\\frac1{\\sqrt n}$ המתבדר",
+     "points": 3
+    },
+    {
+     "text": "הקצה $X=-1$: מבחן לייבניץ (הסדרה יורדת מ-$n=4$ ושואפת ל-$0$), התכנסות בתנאי",
+     "points": 3
+    },
+    {
+     "text": "מסקנה: $-1\\le x+1<1$, כלומר $-2\\le x<0$",
+     "points": 2
+    }
+   ],
+   "pitfalls": [
+    "לכתוב את התחום ב-$X$ ולא לחזור ל-$x$ (המרכז הוא $x=-1$).",
+    "לטעות בקצה: ב-$X=1$ הטור מתבדר וב-$X=-1$ הוא מתכנס, ולכן התחום חצי פתוח."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "מהו רדיוס ההתכנסות של $\\sum X^n\\sin\\frac{\\pi}{\\sqrt n}$?",
+     "answer": 1,
+     "tol": 0,
+     "explain": "היחס $\\left|\\frac{a_n}{a_{n+1}}\\right|\\to1$, ולכן $R=1$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "בקצה $X=1$ משווים ל-$\\sum\\frac1{\\sqrt n}$. מהו הגבול $\\lim\\dfrac{\\sin\\frac\\pi{\\sqrt n}}{\\frac1{\\sqrt n}}$ (תשובה עשרונית, דיוק $0.001$)?",
+     "answer": 3.1416,
+     "tol": 0.001,
+     "explain": "הגבול הוא $\\pi$, חיובי וסופי, ו-$\\sum\\frac1{\\sqrt n}$ מתבדר, ולכן גם הטור בקצה זה מתבדר."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מאיזה $n$ הסדרה $a_n=\\sin\\frac{\\pi}{\\sqrt n}$ יורדת? (נדרש לשימוש במבחן לייבניץ בקצה $X=-1$.)",
+     "answer": 4,
+     "tol": 0,
+     "explain": "$\\sin$ עולה בקטע $\\left[0,\\frac\\pi2\\right]$, והארגומנט $\\frac{\\pi}{\\sqrt n}\\le\\frac\\pi2$ מ-$n=4$. לכן הסדרה יורדת החל מ-$n=4$."
+    },
+    {
+     "type": "choice",
+     "prompt": "מהו תחום ההתכנסות?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$-2<x<0$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$-2<x\\le0$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$-2\\le x\\le0$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$-2\\le x<0$"
+      }
+     ],
+     "correctId": "d",
+     "explain": "ב-$X=-1$ (כלומר $x=-2$) הטור מתכנס, וב-$X=1$ (כלומר $x=0$) הוא מתבדר."
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "stepsSource": "ai-draft"
   },
   {
    "num": 3,
@@ -70,7 +437,75 @@
    "solutionSource": "student-solution",
    "official": false,
    "confidence": "high",
-   "part": "ב"
+   "part": "ב",
+   "rubric": [
+    {
+     "text": "הגדרת $F(x,y,z)=y^3+xz+y^2+e^z-3$ ובדיקה ש-$F(1,1,0)=0$",
+     "points": 3
+    },
+    {
+     "text": "בדיקת תנאי המשפט: $F$ בעלת נגזרות חלקיות רציפות ו-$F_z(1,1,0)=2\\neq0$",
+     "points": 4
+    },
+    {
+     "text": "חישוב $f_x(1,1)=0$ ו-$f_y(1,1)=-\\frac52$",
+     "points": 3
+    },
+    {
+     "text": "משוואת המישור המשיק: $5y+2z=5$",
+     "points": 3
+    }
+   ],
+   "pitfalls": [
+    "לשכוח לבדוק ש-$F_z\\neq0$ בנקודה, שהוא התנאי המרכזי של משפט הפונקציה הסתומה.",
+    "טעות סימן בנוסחה $f_y=-\\frac{F_y}{F_z}$ (המינוס חובה)."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "חשבו את $F_z(1,1,0)$ עבור $F=y^3+xz+y^2+e^z-3$.",
+     "answer": 2,
+     "tol": 0,
+     "explain": "$F_z=x+e^z$ ובנקודה $1+1=2\\neq0$, ולכן משפט הפונקציה הסתומה חל."
+    },
+    {
+     "type": "numeric",
+     "prompt": "חשבו את $f_y(1,1)$ (תשובה עשרונית, דיוק $0.001$).",
+     "answer": -2.5,
+     "tol": 0.001,
+     "explain": "$f_y=-\\frac{F_y}{F_z}=-\\frac{3y^2+2y}{e^z+x}=-\\frac52$."
+    },
+    {
+     "type": "choice",
+     "prompt": "מהי משוואת המישור המשיק בנקודה $(1,1,0)$?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$5y-2z=5$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$2y+5z=5$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$5y+2z=5$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$5y+2z=-5$"
+      }
+     ],
+     "correctId": "c",
+     "explain": "$f_x=0$ ו-$f_y=-\\frac52$, ולכן $z-0=-\\frac52(y-1)$, כלומר $2z=5-5y$."
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "stepsSource": "ai-draft"
   },
   {
    "num": 4,
@@ -81,18 +516,172 @@
    "solutionSource": "student-solution",
    "official": false,
    "confidence": "high",
-   "part": "א"
+   "part": "א",
+   "rubric": [
+    {
+     "text": "בחירת ההעתקה $u=y-x$, $v=y^2+4x$",
+     "points": 3
+    },
+    {
+     "text": "קביעת התחום $1\\le u\\le2$, $0\\le v\\le9$",
+     "points": 3
+    },
+    {
+     "text": "חישוב היעקוביאן: $\\left|J^{-1}\\right|=2y+4$",
+     "points": 3
+    },
+    {
+     "text": "צמצום האינטגרנד ל-$e^u$ וחישוב $9e(e-1)$",
+     "points": 3
+    }
+   ],
+   "pitfalls": [
+    "לשכוח לעבור לערך מוחלט של היעקוביאן.",
+    "לקבוע את הגבולות של $v$ לא נכון: העקומה $y^2=-4x$ היא $v=0$ והעקומה $y^2=-4x+9$ היא $v=9$."
+   ],
+   "steps": [
+    {
+     "type": "choice",
+     "prompt": "מהו הערך המוחלט של $\\begin{vmatrix}u'_x&u'_y\\\\v'_x&v'_y\\end{vmatrix}$ עבור $u=y-x$, $v=y^2+4x$?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$2y+4$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$2y-4$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$y+4$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$4$"
+      }
+     ],
+     "correctId": "a",
+     "explain": "הדטרמיננט הוא $\\begin{vmatrix}-1&1\\\\4&2y\\end{vmatrix}=-2y-4$, וערכו המוחלט (עבור $y\\ge0$) הוא $2y+4$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $\\int_1^2e^u\\,du$ (תשובה עשרונית, דיוק $0.001$)?",
+     "answer": 4.6708,
+     "tol": 0.001,
+     "explain": "$e^2-e\\approx4.6708$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $\\int_0^9dv$?",
+     "answer": 9,
+     "tol": 0,
+     "explain": "$9-0=9$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו ערך האינטגרל הכפול (תשובה עשרונית, דיוק $0.01$)?",
+     "answer": 42.04,
+     "tol": 0.01,
+     "explain": "האינטגרנד $e^{u}(2y+4)\\cdot\\frac1{2y+4}=e^u$, ולכן הערך $9e(e-1)\\approx42.04$."
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "stepsSource": "ai-draft"
   },
   {
    "num": 4,
    "kind": "computation",
    "topic": "absolute_extrema",
    "question": "מצאו אקסטרמומים מוחלטים של הפונקציה\n$$f(x,y)=2x^4+y^4-x^2-2y^2$$\nבתחום $\\left\\{(x,y):x^2+y^2\\le2\\right\\}$",
-   "solution": "**תיקון לפתרון שבקובץ:** בפתרון שבקובץ לא נבדקו נקודות הקצה $x=\\pm\\sqrt{2}$ של הפרמטריזציה של השפה (הנקודות $(\\pm\\sqrt{2},0)$), ולכן הערך המקסימלי $0$ שם אינו נכון. להלן הפתרון עם הוספת הבדיקה הזו (ערך המקסימום הנכון הוא $6$); יתר השורות כבפתרון שבקובץ.\n\n**בתוך התחום:**\n$$\\begin{cases}\\dfrac{\\partial f}{\\partial x}=8x^3-2x=0\\\\[2mm]\\dfrac{\\partial f}{\\partial y}=4y^3-4y=0\\end{cases}\\iff\\begin{cases}x\\left(4x^2-1\\right)=0\\\\ y\\left(y^2-1\\right)=0\\end{cases}$$\n$$x\\in\\left\\{0,\\pm\\tfrac{1}{2}\\right\\},\\qquad y\\in\\{0,\\pm1\\}$$\nמקבלים תשע נקודות חשודות: $A(0,0)$, $B(0,1)$, $C(0,-1)$, $D\\left(\\tfrac{1}{2},0\\right)$, $E\\left(\\tfrac{1}{2},1\\right)$, $F\\left(\\tfrac{1}{2},-1\\right)$, $G\\left(-\\tfrac{1}{2},0\\right)$, $H\\left(-\\tfrac{1}{2},1\\right)$, $J\\left(-\\tfrac{1}{2},-1\\right)$.\nכולן מקיימות $x^2+y^2\\le2$, ולכן כולן בתחום. הערכים:\n$$f(A)=0,\\qquad f(B)=f(C)=-1,\\qquad f(D)=f(G)=-\\frac{1}{8},\\qquad f(E)=f(F)=f(H)=f(J)=-\\frac{9}{8}$$\n**על השפה** $x^2+y^2=2$, נציב $y^2=2-x^2$:\n$$\\tilde f(x)=2x^4+(2-x^2)^2-x^2-2\\left(2-x^2\\right)=3x^4-3x^2,\\qquad-\\sqrt{2}\\le x\\le\\sqrt{2}$$\n$$\\tilde f'(x)=12x^3-6x=6x\\left(2x^2-1\\right)=0\\ \\Longrightarrow\\ x=0,\\ y=\\pm\\sqrt{2}$$\nאו\n$$x=\\pm\\frac{1}{\\sqrt{2}},\\ y=\\pm\\sqrt{\\frac{3}{2}}$$\n$$f\\left(0,\\pm\\sqrt{2}\\right)=\\tilde f(0)=0$$\n$$f\\left(\\pm\\frac{1}{\\sqrt{2}},\\pm\\sqrt{\\frac{3}{2}}\\right)=\\tilde f\\left(\\pm\\frac{1}{\\sqrt{2}}\\right)=-\\frac{3}{4}$$\n**נקודות הקצה** של הקטע $-\\sqrt{2}\\le x\\le\\sqrt{2}$ (התיקון):\n$$f\\left(\\pm\\sqrt{2},0\\right)=\\tilde f\\left(\\pm\\sqrt{2}\\right)=3\\cdot4-3\\cdot2=6$$\n**מסקנה:** בנקודות $E,F,H,J$ מתקבל מינימום מוחלט, $\\min f=-\\dfrac{9}{8}$.\nבנקודות $\\left(\\pm\\sqrt{2},0\\right)$ מתקבל מקסימום מוחלט, $\\max f=6$ (בפתרון הרשמי נרשם, בטעות, $\\max f=0$ ב-$A$ ובנקודות $\\left(0,\\pm\\sqrt{2}\\right)$).",
+   "solution": "**תיקון לפתרון שבקובץ:** בפתרון שבקובץ לא נבדקו נקודות הקצה $x=\\pm\\sqrt{2}$ של הפרמטריזציה של השפה (הנקודות $(\\pm\\sqrt{2},0)$), ולכן הערך המקסימלי $0$ שם אינו נכון. להלן הפתרון עם הוספת הבדיקה הזו (ערך המקסימום הנכון הוא $6$); יתר השורות כבפתרון שבקובץ.\n\n**בתוך התחום:**\n$$\\begin{cases}\\dfrac{\\partial f}{\\partial x}=8x^3-2x=0\\\\[2mm]\\dfrac{\\partial f}{\\partial y}=4y^3-4y=0\\end{cases}\\iff\\begin{cases}x\\left(4x^2-1\\right)=0\\\\ y\\left(y^2-1\\right)=0\\end{cases}$$\n$$x\\in\\left\\{0,\\pm\\tfrac{1}{2}\\right\\},\\qquad y\\in\\{0,\\pm1\\}$$\nמקבלים תשע נקודות חשודות: $A(0,0)$, $B(0,1)$, $C(0,-1)$, $D\\left(\\tfrac{1}{2},0\\right)$, $E\\left(\\tfrac{1}{2},1\\right)$, $F\\left(\\tfrac{1}{2},-1\\right)$, $G\\left(-\\tfrac{1}{2},0\\right)$, $H\\left(-\\tfrac{1}{2},1\\right)$, $J\\left(-\\tfrac{1}{2},-1\\right)$.\nכולן מקיימות $x^2+y^2\\le2$, ולכן כולן בתחום. הערכים:\n$$f(A)=0,\\qquad f(B)=f(C)=-1,\\qquad f(D)=f(G)=-\\frac{1}{8},\\qquad f(E)=f(F)=f(H)=f(J)=-\\frac{9}{8}$$\n**על השפה** $x^2+y^2=2$, נציב $y^2=2-x^2$:\n$$\\tilde f(x)=2x^4+(2-x^2)^2-x^2-2\\left(2-x^2\\right)=3x^4-3x^2,\\qquad-\\sqrt{2}\\le x\\le\\sqrt{2}$$\n$$\\tilde f'(x)=12x^3-6x=6x\\left(2x^2-1\\right)=0\\ \\Longrightarrow\\ x=0,\\ y=\\pm\\sqrt{2}$$\nאו\n$$x=\\pm\\frac{1}{\\sqrt{2}},\\ y=\\pm\\sqrt{\\frac{3}{2}}$$\n$$f\\left(0,\\pm\\sqrt{2}\\right)=\\tilde f(0)=0$$\n$$f\\left(\\pm\\frac{1}{\\sqrt{2}},\\pm\\sqrt{\\frac{3}{2}}\\right)=\\tilde f\\left(\\pm\\frac{1}{\\sqrt{2}}\\right)=-\\frac{3}{4}$$\n**נקודות הקצה** של הקטע $-\\sqrt{2}\\le x\\le\\sqrt{2}$ (התיקון):\n$$f\\left(\\pm\\sqrt{2},0\\right)=\\tilde f\\left(\\pm\\sqrt{2}\\right)=3\\cdot4-3\\cdot2=6$$\n**מסקנה:** בנקודות $E,F,H,J$ מתקבל מינימום מוחלט, $\\min f=-\\dfrac{9}{8}$.\nבנקודות $\\left(\\pm\\sqrt{2},0\\right)$ מתקבל מקסימום מוחלט, $\\max f=6$ (בפתרון שבקובץ נרשם, בטעות, $\\max f=0$ ב-$A$ ובנקודות $\\left(0,\\pm\\sqrt{2}\\right)$).",
    "solutionSource": "solved",
    "official": false,
    "confidence": "high",
-   "part": "ב"
+   "part": "ב",
+   "rubric": [
+    {
+     "text": "נקודות קריטיות בפנים התחום: תשע נקודות, כולן בתוך הדיסקה",
+     "points": 3
+    },
+    {
+     "text": "ערכי הפונקציה בפנים: המינימום $-\\frac98$",
+     "points": 3
+    },
+    {
+     "text": "על השפה: הצבה $y^2=2-x^2$ וקבלת $\\tilde f(x)=3x^4-3x^2$",
+     "points": 3
+    },
+    {
+     "text": "תיקון: בדיקת נקודות הקצה $(\\pm\\sqrt2,0)$ שבהן $f=6$",
+     "points": 3
+    },
+    {
+     "text": "מסקנה: $\\min f=-\\frac98$ ו-$\\max f=6$",
+     "points": 1
+    }
+   ],
+   "pitfalls": [
+    "לשכוח לבדוק את נקודות הקצה $x=\\pm\\sqrt2$ של הפרמטריזציה של השפה, ולהחמיץ את המקסימום $6$.",
+    "לא לוודא שכל הנקודות הקריטיות שבפנים אכן מקיימות $x^2+y^2\\le2$."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "כמה נקודות קריטיות יש בפנים התחום?",
+     "answer": 9,
+     "tol": 0,
+     "explain": "$x\\in\\left\\{0,\\pm\\frac12\\right\\}$ ו-$y\\in\\{0,\\pm1\\}$, ובסך הכול $3\\cdot3=9$ נקודות, וכולן מקיימות $x^2+y^2\\le2$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו הערך המינימלי של $f$ בתחום (תשובה עשרונית, דיוק $0.001$)?",
+     "answer": -1.125,
+     "tol": 0.001,
+     "explain": "בארבע הנקודות $\\left(\\pm\\frac12,\\pm1\\right)$ מתקבל $f=-\\frac98=-1.125$."
+    },
+    {
+     "type": "choice",
+     "prompt": "אילו נקודות על השפה לא נבדקו בפתרון שבקובץ?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "הנקודות $\\left(0,\\pm\\sqrt2\\right)$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "נקודות הקצה $(\\pm\\sqrt2,0)$ של הפרמטריזציה"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "הנקודה $(0,0)$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "הנקודות $\\left(\\pm\\frac{1}{\\sqrt2},\\pm\\sqrt{\\frac32}\\right)$"
+      }
+     ],
+     "correctId": "b",
+     "explain": "הפתרון בדק את הנקודות הקריטיות של $\\tilde f$ אך לא את קצות הקטע $x=\\pm\\sqrt2$. שם $\\tilde f=3\\cdot4-3\\cdot2=6$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו הערך המקסימלי של $f$ בתחום?",
+     "answer": 6,
+     "tol": 0,
+     "explain": "$f\\left(\\pm\\sqrt2,0\\right)=2\\cdot4-2=6$, והוא גדול מכל שאר הערכים."
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "stepsSource": "ai-draft"
   },
   {
    "num": 5,
@@ -103,7 +692,82 @@
    "solutionSource": "student-solution",
    "official": false,
    "confidence": "high",
-   "part": "א"
+   "part": "א",
+   "rubric": [
+    {
+     "text": "פירוק לשברים חלקיים: $\\frac13\\left(\\frac1{x-1}-\\frac1{x+2}\\right)$",
+     "points": 4
+    },
+    {
+     "text": "שימוש בטורים של $\\frac1{1-x}$ ו-$\\frac1{1+x}$",
+     "points": 3
+    },
+    {
+     "text": "איחוד לטור יחיד: $-\\frac13\\sum\\left(\\frac{(-1)^n}{2^{n+1}}+1\\right)x^n$",
+     "points": 3
+    },
+    {
+     "text": "תחום ההתכנסות $-1<x<1$",
+     "points": 2
+    }
+   ],
+   "pitfalls": [
+    "לכתוב את תחום ההתכנסות כ-$|x|<2$. הפיתוח של $\\frac1{1-x}$ מתכנס רק ל-$|x|<1$.",
+    "טעות סימן בפירוק לשברים חלקיים."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "מהו המקדם החופשי $c_0$ של הטור (תשובה עשרונית, דיוק $0.001$)?",
+     "answer": -0.5,
+     "tol": 0.001,
+     "explain": "$c_0=-\\frac13\\left(\\frac12+1\\right)=-\\frac12$, וזה שווה ל-$f(0)=\\frac1{-2}$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו המקדם $c_1$ של $x$ (תשובה עשרונית, דיוק $0.001$)?",
+     "answer": -0.25,
+     "tol": 0.001,
+     "explain": "$c_1=-\\frac13\\left(-\\frac14+1\\right)=-\\frac14$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו המקדם $c_2$ של $x^2$ (תשובה עשרונית, דיוק $0.001$)?",
+     "answer": -0.375,
+     "tol": 0.001,
+     "explain": "$c_2=-\\frac13\\left(\\frac18+1\\right)=-\\frac38$."
+    },
+    {
+     "type": "choice",
+     "prompt": "מהו תחום ההתכנסות של הטור?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$-2<x<2$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$-\\frac12<x<\\frac12$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "כל $x$ ממשי"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$-1<x<1$"
+      }
+     ],
+     "correctId": "d",
+     "explain": "קטבי הפונקציה הם $x=1$ ו-$x=-2$, והקרוב ביותר לראשית הוא $x=1$. לכן הרדיוס הוא $1$."
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "stepsSource": "ai-draft"
   },
   {
    "num": 5,
@@ -114,7 +778,82 @@
    "solutionSource": "student-solution",
    "official": false,
    "confidence": "high",
-   "part": "ב"
+   "part": "ב",
+   "rubric": [
+    {
+     "text": "כתיבת מערכת $f_x=0$, $f_y=0$ ופירוק משוואה (II) ל-$2y(x-1)=0$",
+     "points": 4
+    },
+    {
+     "text": "מציאת שלוש הנקודות הקריטיות $(-2,0)$, $\\left(1,\\pm\\sqrt3\\right)$",
+     "points": 3
+    },
+    {
+     "text": "חישוב $f_{xx},f_{yy},f_{xy}$ ו-$D$ בכל נקודה",
+     "points": 3
+    },
+    {
+     "text": "סיווג: מקסימום מקומי ב-$(-2,0)$ ושתי נקודות אוכף",
+     "points": 3
+    }
+   ],
+   "pitfalls": [
+    "לחלק במשוואה $2y(x-1)=0$ ב-$y$ ולאבד את המקרה $y=0$.",
+    "להסיק סוג נקודה מסימן $f_{xx}$ בלבד, בלי לחשב את $D$."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "כמה נקודות קריטיות יש לפונקציה?",
+     "answer": 3,
+     "tol": 0,
+     "explain": "אם $y=0$ אז $x=-2$; אם $x=1$ אז $y^2=3$, כלומר $y=\\pm\\sqrt3$. בסך הכול שלוש נקודות."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $D=f_{xx}f_{yy}-f_{xy}^2$ בנקודה $(-2,0)$?",
+     "answer": 6,
+     "tol": 0,
+     "explain": "$f_{xx}=-1$, $f_{yy}=2x-2=-6$, $f_{xy}=2y=0$, ולכן $D=6$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $D$ בנקודה $\\left(1,\\sqrt3\\right)$?",
+     "answer": -12,
+     "tol": 0,
+     "explain": "$f_{yy}=0$ ו-$f_{xy}=2\\sqrt3$, ולכן $D=-12$."
+    },
+    {
+     "type": "choice",
+     "prompt": "איך מסווגים את הנקודות הקריטיות?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$(-2,0)$ מינימום מקומי, ושתי הנקודות האחרות נקודות אוכף"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$(-2,0)$ מקסימום מקומי, ושתי הנקודות $\\left(1,\\pm\\sqrt3\\right)$ נקודות אוכף"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$(-2,0)$ נקודת אוכף, ושתי הנקודות האחרות מקסימום מקומי"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "שלוש הנקודות הן נקודות אוכף"
+      }
+     ],
+     "correctId": "b",
+     "explain": "ב-$(-2,0)$ מתקבל $D>0$ ו-$f_{xx}<0$ (מקסימום). בשתי הנקודות האחרות $D<0$ (אוכף)."
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "stepsSource": "ai-draft"
   }
  ]
 }
