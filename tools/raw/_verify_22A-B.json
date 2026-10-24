@@ -1,0 +1,155 @@
+{
+ "examCode": "22A-B",
+ "refuter": "calculus-2 22A-B",
+ "summary": {
+  "agree": 10,
+  "disagree": 0,
+  "unclear": 0
+ },
+ "transcription": "matches page renders for all items (tools/raw/22A-B-SRC)",
+ "optionText": "no option text cites another option by position; no 'הפתרון הרשמי' anywhere",
+ "flags": {
+  "3a": "agree: solver-written, solutionSource solved/official False. R=3, divergence at 3 (limit comparison with 1/n), conditional convergence at -3 (Leibniz, monotone for n>=1: g'=(1-t^2)/(t^2+1)^2<=0, checked numerically too) re-derived; domain [-3,3) correct; rubric 4+3+3+2=12.",
+  "rubric_split_estimate": "ESTIMATE: the exam prints only 25 points per question (page images checked), no per-part points. Raw items have points=None and the rubric splits every question 12+13 (sums verified 12/13). The split is an invented convention, not exam data; label it as an estimate in the UI/notes.",
+  "5a_rigor": "Low: the solution differentiates termwise, valid only for |x|<1, then states the sum equals arctan x on the whole [-1,1]; the endpoints x=+-1 need Abel's theorem or continuity (convergence by Leibniz). Step 1 (f'(1)=1/2) and step 3 (sum at x=1 = pi/4) rely on this and are numerically correct but not justified by the shown argument.",
+  "2a_note": "Low: series 1 is absolutely convergent (1/(n-ln n)^3 ~ 1/n^3); key proves only convergence via Leibniz, which is valid and answers 'בדקו התכנסות'.",
+  "labels": "all items student-solution/official:false except 3a solved: correct under the 2026-10-24 ruling; no 'הפתרון הרשמי' anywhere.",
+  "regions_json": "Q1b half disk, polar bounds and value agree. Q4a parallelogram vertices all satisfy y-x in {1,4} and y+2x in {6,8}, all in the first quadrant, |J|=1/3, value agrees.",
+  "contours_json": "Q4b both points on the constraint circle with the stated f; Q5b (0,0) f=1 saddle, (1,1/2) f=0 local min, gradients zero, agree.",
+  "transcription": "checked against page-01..03 renders: all ten parts match, including 'ברביע הראשון' in 4a."
+ },
+ "items": [
+  {
+   "item": "1a",
+   "verdict": "agree",
+   "myAnswer": "grad=(1/3,2/3,1/3), max directional derivative sqrt6/3=0.8165",
+   "steps": "agree (every numeric answer/tol, choice correctId and unique-correct option, order sequence, findbug index re-derived blind)",
+   "firstDivergence": null
+  },
+  {
+   "item": "1b",
+   "verdict": "agree",
+   "myAnswer": "(pi/2)(cos2-cos11) = -0.66063 (polar + dblquad)",
+   "steps": "agree (every numeric answer/tol, choice correctId and unique-correct option, order sequence, findbug index re-derived blind)",
+   "firstDivergence": null
+  },
+  {
+   "item": "2a",
+   "verdict": "agree",
+   "myAnswer": "series1 converges (in fact absolutely, ~1/n^3; Leibniz also valid); series2 converges (<= (1/2)^n)",
+   "steps": "agree (every numeric answer/tol, choice correctId and unique-correct option, order sequence, findbug index re-derived blind)",
+   "firstDivergence": null
+  },
+  {
+   "item": "2b",
+   "verdict": "agree",
+   "myAnswer": "continuous, fx=fy=1, NOT differentiable (limit along h=k>0 = -1/sqrt2)",
+   "steps": "agree (every numeric answer/tol, choice correctId and unique-correct option, order sequence, findbug index re-derived blind)",
+   "firstDivergence": null
+  },
+  {
+   "item": "3a",
+   "verdict": "agree",
+   "myAnswer": "R=3, domain [-3,3): diverges at 3 (limit comparison with 1/n, ratio ->1), converges conditionally at -3 (Leibniz, n/(n^2+1) decreasing for n>=1)",
+   "steps": "agree (every numeric answer/tol, choice correctId and unique-correct option, order sequence, findbug index re-derived blind)",
+   "firstDivergence": null
+  },
+  {
+   "item": "3b",
+   "verdict": "agree",
+   "myAnswer": "F_z=6, z_x=-1, z_y=-2, z_xy(2,1)=1 (symbolic and mpmath finite difference)",
+   "steps": "agree (every numeric answer/tol, choice correctId and unique-correct option, order sequence, findbug index re-derived blind)",
+   "firstDivergence": null
+  },
+  {
+   "item": "4a",
+   "verdict": "agree",
+   "myAnswer": "(5/2)ln(4/3)=0.7192 (u=y-x in [1,4], v=2x+y in [6,8], |J|=1/3; grid check)",
+   "steps": "agree (every numeric answer/tol, choice correctId and unique-correct option, order sequence, findbug index re-derived blind)",
+   "firstDivergence": null
+  },
+  {
+   "item": "4b",
+   "verdict": "agree",
+   "myAnswer": "max 2sqrt2-2=0.8284 at (1-1/sqrt2,1-1/sqrt2); min -2-2sqrt2=-4.8284; interior critical (0,0) outside disk",
+   "steps": "agree (every numeric answer/tol, choice correctId and unique-correct option, order sequence, findbug index re-derived blind)",
+   "firstDivergence": null
+  },
+  {
+   "item": "5a",
+   "verdict": "agree",
+   "myAnswer": "arctan x",
+   "steps": "agree (every numeric answer/tol, choice correctId and unique-correct option, order sequence, findbug index re-derived blind)",
+   "firstDivergence": null
+  },
+  {
+   "item": "5b",
+   "verdict": "agree",
+   "myAnswer": "(0,0) saddle (D=-36), (1,1/2) local min (D=108, fxx 6)",
+   "steps": "agree (every numeric answer/tol, choice correctId and unique-correct option, order sequence, findbug index re-derived blind)",
+   "firstDivergence": null
+  }
+ ],
+ "answers": {
+  "1a": {
+   "answer": "grad=(1/3,2/3,1/3), max directional derivative sqrt6/3=0.8165",
+   "agrees": true,
+   "confident": true,
+   "transcriptionIssues": ""
+  },
+  "1b": {
+   "answer": "(pi/2)(cos2-cos11) = -0.66063 (polar + dblquad)",
+   "agrees": true,
+   "confident": true,
+   "transcriptionIssues": ""
+  },
+  "2a": {
+   "answer": "series1 converges (in fact absolutely, ~1/n^3; Leibniz also valid); series2 converges (<= (1/2)^n)",
+   "agrees": true,
+   "confident": true,
+   "transcriptionIssues": ""
+  },
+  "2b": {
+   "answer": "continuous, fx=fy=1, NOT differentiable (limit along h=k>0 = -1/sqrt2)",
+   "agrees": true,
+   "confident": true,
+   "transcriptionIssues": ""
+  },
+  "3a": {
+   "answer": "R=3, domain [-3,3): diverges at 3 (limit comparison with 1/n, ratio ->1), converges conditionally at -3 (Leibniz, n/(n^2+1) decreasing for n>=1)",
+   "agrees": true,
+   "confident": true,
+   "transcriptionIssues": ""
+  },
+  "3b": {
+   "answer": "F_z=6, z_x=-1, z_y=-2, z_xy(2,1)=1 (symbolic and mpmath finite difference)",
+   "agrees": true,
+   "confident": true,
+   "transcriptionIssues": ""
+  },
+  "4a": {
+   "answer": "(5/2)ln(4/3)=0.7192 (u=y-x in [1,4], v=2x+y in [6,8], |J|=1/3; grid check)",
+   "agrees": true,
+   "confident": true,
+   "transcriptionIssues": ""
+  },
+  "4b": {
+   "answer": "max 2sqrt2-2=0.8284 at (1-1/sqrt2,1-1/sqrt2); min -2-2sqrt2=-4.8284; interior critical (0,0) outside disk",
+   "agrees": true,
+   "confident": true,
+   "transcriptionIssues": ""
+  },
+  "5a": {
+   "answer": "arctan x",
+   "agrees": true,
+   "confident": true,
+   "transcriptionIssues": ""
+  },
+  "5b": {
+   "answer": "(0,0) saddle (D=-36), (1,1/2) local min (D=108, fxx 6)",
+   "agrees": true,
+   "confident": true,
+   "transcriptionIssues": ""
+  }
+ }
+}
