@@ -24,8 +24,8 @@ Checks (tools/verify/22A-B/check.py, sympy + numeric): all values match the key.
 import json, pathlib
 
 OUT = pathlib.Path(__file__).resolve().parents[1] / "raw" / "22A-B.json"
-SRC = "lecturer-solution"   # solution file of unclear authorship, accepted as the key
-OFFICIAL = True
+SRC = "student-solution"   # solution file of unclear authorship, accepted as the key
+OFFICIAL = False  # GATE1 ruling 2026-10-24: unnamed-author key
 
 
 def Q(num, kind, topic, question, solution, part=None, **kw):

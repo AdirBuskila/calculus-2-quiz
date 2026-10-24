@@ -28,8 +28,8 @@ the double-integral regions and the extrema data.
 import json, pathlib
 
 OUT = pathlib.Path(__file__).resolve().parents[1] / "raw" / "23A-A.json"
-SRC = "lecturer-solution"   # solution file of unclear authorship (handwritten + typed), accepted as the key
-OFFICIAL = True
+SRC = "student-solution"   # solution file of unclear authorship (handwritten + typed), accepted as the key
+OFFICIAL = False  # GATE1 ruling 2026-10-24: unnamed-author key
 
 
 def Q(num, kind, topic, question, solution, part=None, **kw):

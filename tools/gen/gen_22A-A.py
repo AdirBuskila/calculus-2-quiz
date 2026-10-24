@@ -26,8 +26,8 @@ Checks (tools/verify/22A-A/check.py, sympy + numeric): all other values match th
 import json, pathlib
 
 OUT = pathlib.Path(__file__).resolve().parents[1] / "raw" / "22A-A.json"
-SRC = "lecturer-solution"   # solution file of unclear authorship, accepted as the key
-OFFICIAL = True
+SRC = "student-solution"   # solution file of unclear authorship, accepted as the key
+OFFICIAL = False  # GATE1 ruling 2026-10-24: unnamed-author key
 
 
 def Q(num, kind, topic, question, solution, part=None, **kw):
@@ -144,7 +144,7 @@ $$\iint_De^{y-x}(2y+4)\,dx\,dy=\iint_Ge^u\,du\,dv=\int_1^2e^u\,du\int_0^9dv=\lef
 questions.append(Q(4, "computation", "absolute_extrema", r"""מצאו אקסטרמומים מוחלטים של הפונקציה
 $$f(x,y)=2x^4+y^4-x^2-2y^2$$
 בתחום $\left\{(x,y):x^2+y^2\le2\right\}$""",
-r"""**הפתרון הרשמי עם תיקון:** בפתרון הרשמי לא נבדקו נקודות הקצה $x=\pm\sqrt{2}$ של הפרמטריזציה של השפה (הנקודות $(\pm\sqrt{2},0)$), ולכן הערך המקסימלי $0$ שם אינו נכון. להלן הפתרון עם הוספת הבדיקה הזו (ערך המקסימום הנכון הוא $6$); יתר השורות כבפתרון הרשמי.
+r"""**תיקון לפתרון שבקובץ:** בפתרון שבקובץ לא נבדקו נקודות הקצה $x=\pm\sqrt{2}$ של הפרמטריזציה של השפה (הנקודות $(\pm\sqrt{2},0)$), ולכן הערך המקסימלי $0$ שם אינו נכון. להלן הפתרון עם הוספת הבדיקה הזו (ערך המקסימום הנכון הוא $6$); יתר השורות כבפתרון שבקובץ.
 
 **בתוך התחום:**
 $$\begin{cases}\dfrac{\partial f}{\partial x}=8x^3-2x=0\\[2mm]\dfrac{\partial f}{\partial y}=4y^3-4y=0\end{cases}\iff\begin{cases}x\left(4x^2-1\right)=0\\ y\left(y^2-1\right)=0\end{cases}$$
