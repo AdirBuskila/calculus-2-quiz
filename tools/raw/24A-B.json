@@ -16,7 +16,75 @@
    "official": false,
    "confidence": "high",
    "part": "א",
-   "points": 12
+   "points": 12,
+   "rubric": [
+    {
+     "text": "מסלול $y=kx$: הגבול הוא $0$",
+     "points": 3
+    },
+    {
+     "text": "מסלול $y=x^2$: הגבול הוא $\\frac12$",
+     "points": 4
+    },
+    {
+     "text": "שני גבולות שונים לאורך מסלולים שונים: הגבול הדו-ממדי אינו קיים",
+     "points": 3
+    },
+    {
+     "text": "מסקנה: $f$ אינה רציפה ב-$(0,0)$",
+     "points": 2
+    }
+   ],
+   "pitfalls": [
+    "לבדוק רק ישרים $y=kx$ ולהסיק רציפות: גבול $0$ לאורך כל ישר אינו מוכיח שהגבול קיים.",
+    "לא לבחור מסלול שבו המכנה $x^6+y^3$ מאוזן: דווקא ב-$y=x^2$ שני המחוברים שווים בסדר גודל."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "מהו הגבול של $f$ לאורך הישר $y=x$ כאשר $x\\to0^+$?",
+     "answer": 0,
+     "tol": 0,
+     "explain": "$f(x,x)=\\frac{x^4}{x^6+x^3}=\\frac{x}{x^3+1}\\to0$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו הגבול של $f$ לאורך המסלול $y=x^2$ כאשר $x\\to0^+$?",
+     "answer": 0.5,
+     "tol": 0,
+     "explain": "$f(x,x^2)=\\frac{x^2\\cdot x^4}{x^6+x^6}=\\frac{x^6}{2x^6}=\\frac12$."
+    },
+    {
+     "type": "choice",
+     "prompt": "מה דין הרציפות של $f$ ב-$(0,0)$?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "רציפה, כי הגבול לאורך כל ישר הוא $0$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "רציפה, כי $f(0,0)=0$ מוגדרת"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "לא רציפה, כי המכנה מתאפס בראשית"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "לא רציפה: לאורך מסלולים שונים מתקבלים גבולות שונים ($0$ ו-$\\frac12$)"
+      }
+     ],
+     "correctId": "d",
+     "explain": "הגבול הדו-ממדי קיים רק אם כל המסלולים נותנים אותו ערך; כאן מתקבלים $0$ ו-$\\frac12$, ולכן הגבול לא קיים והפונקציה אינה רציפה. גבול $0$ לאורך ישרים בלבד אינו מספיק, הגדרת $f(0,0)$ אינה מבטיחה רציפות, ומכנה שמתאפס לבדו אינו סיבה לאי-רציפות."
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "stepsSource": "ai-draft"
   },
   {
    "num": 1,
@@ -28,7 +96,77 @@
    "official": false,
    "confidence": "high",
    "part": "ב",
-   "points": 13
+   "points": 13,
+   "rubric": [
+    {
+     "text": "גרדיאנט $\\nabla f=(1+y,x)$ ובנקודה $(1,-1)$: $(0,1)$",
+     "points": 4
+    },
+    {
+     "text": "הנגזרת הכיוונית בכיוון $\\vec u=(a,b)$ היא $b$",
+     "points": 3
+    },
+    {
+     "text": "$b=\\frac1{\\sqrt2}$ ומהאילוץ $a^2+b^2=1$: $a=\\pm\\frac1{\\sqrt2}$",
+     "points": 4
+    },
+    {
+     "text": "שני הכיוונים",
+     "points": 2
+    }
+   ],
+   "pitfalls": [
+    "לשכוח את הפתרון $a=-\\frac1{\\sqrt2}$ ולהציג כיוון אחד בלבד.",
+    "לא לדרוש $a^2+b^2=1$ (וקטור כיוון חייב להיות וקטור יחידה)."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "מהו $f'_x(1,-1)=1+y$ בנקודה?",
+     "answer": 0,
+     "tol": 0,
+     "explain": "$1+(-1)=0$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $b$ (תשובה עשרונית, דיוק $0.001$)?",
+     "answer": 0.7071,
+     "tol": 0.001,
+     "explain": "$D_{\\vec u}f=(0,1)\\cdot(a,b)=b=\\frac1{\\sqrt2}\\approx0.7071$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $a^2$?",
+     "answer": 0.5,
+     "tol": 0,
+     "explain": "$a^2=1-b^2=1-\\frac12=\\frac12$."
+    },
+    {
+     "type": "choice",
+     "prompt": "מהם הכיוונים המתאימים?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "רק $\\left(\\frac1{\\sqrt2},\\frac1{\\sqrt2}\\right)$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$\\left(\\frac1{\\sqrt2},\\frac1{\\sqrt2}\\right)$ וגם $\\left(-\\frac1{\\sqrt2},\\frac1{\\sqrt2}\\right)$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$\\left(\\frac1{\\sqrt2},-\\frac1{\\sqrt2}\\right)$ וגם $\\left(-\\frac1{\\sqrt2},-\\frac1{\\sqrt2}\\right)$"
+      }
+     ],
+     "correctId": "b",
+     "explain": "$a$ יכול להיות חיובי או שלילי, ולכן יש שני כיוונים עם $b=\\frac1{\\sqrt2}$. כיוון יחיד מחמיץ פתרון, ובכיוונים עם $b=-\\frac1{\\sqrt2}$ הנגזרת היא $-\\frac1{\\sqrt2}$ ולא $\\frac1{\\sqrt2}$."
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "stepsSource": "ai-draft"
   },
   {
    "num": 2,
@@ -40,7 +178,86 @@
    "official": false,
    "confidence": "high",
    "part": "א",
-   "points": 12
+   "points": 12,
+   "rubric": [
+    {
+     "text": "הטור הראשון: מבחן האינטגרל לטור הערכים המוחלטים; האינטגרל מתבדר ($\\ln\\ln(b+1)\\to\\infty$)",
+     "points": 3
+    },
+    {
+     "text": "הטור הראשון: תנאי לייבניץ (האיבר יורד ושואף ל-$0$), ולכן מתכנס בתנאי",
+     "points": 3
+    },
+    {
+     "text": "הטור השני: מבחן השורש, $\\sqrt[n]{\\frac{(-1)^n+n}{3^n}}\\to\\frac13$",
+     "points": 3
+    },
+    {
+     "text": "סנדוויץ' ומסקנה: הטור החיובי מתכנס, ולכן בהחלט",
+     "points": 3
+    }
+   ],
+   "pitfalls": [
+    "להסיק התכנסות בהחלט מלייבניץ בלבד: צריך לבדוק גם את טור הערכים המוחלטים.",
+    "לחשוב ש-$(-1)^n$ משנה את הגבול בשורש: $\\sqrt[n]{n\\pm1}\\to1$, והטור כולו חיובי."
+   ],
+   "steps": [
+    {
+     "type": "choice",
+     "prompt": "מה דינו של הטור הראשון $\\sum\\frac{(-1)^n}{(n+1)\\ln(n+1)}$?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "מתכנס בהחלט"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "מתבדר"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "מתכנס בתנאי"
+      }
+     ],
+     "correctId": "c",
+     "explain": "טור הערכים המוחלטים מתבדר לפי מבחן האינטגרל ($\\int\\frac{dx}{(x+1)\\ln(x+1)}=\\ln\\ln(x+1)\\to\\infty$), אבל האיברים יורדים ושואפים ל-$0$, ולכן לפי לייבניץ הטור עצמו מתכנס."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $\\lim_{n\\to\\infty}\\sqrt[n]{\\dfrac{(-1)^n+n}{3^n}}$ (תשובה עשרונית, דיוק $0.001$)?",
+     "answer": 0.3333,
+     "tol": 0.001,
+     "explain": "$\\sqrt[n]{(-1)^n+n}\\to1$ ו-$\\sqrt[n]{3^n}=3$, ולכן הגבול $\\frac13$."
+    },
+    {
+     "type": "choice",
+     "prompt": "מה דינו של הטור השני $\\sum\\frac{(-1)^n+n}{3^n}$?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "מתכנס בתנאי בלבד"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "מתכנס בהחלט"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "מתבדר"
+      }
+     ],
+     "correctId": "b",
+     "explain": "הגבול $\\frac13<1$ ולכן הטור מתכנס; כל איבריו חיוביים ($n\\ge1$ ולכן $(-1)^n+n\\ge0$), ולכן התכנסות פירושה התכנסות בהחלט."
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "stepsSource": "ai-draft"
   },
   {
    "num": 2,
@@ -52,7 +269,81 @@
    "official": false,
    "confidence": "high",
    "part": "ב",
-   "points": 13
+   "points": 13,
+   "rubric": [
+    {
+     "text": "$f'_x(0,0)=\\frac12$ לפי הגדרת הגבול",
+     "points": 3
+    },
+    {
+     "text": "$f'_y(0,0)=1$ לפי הגדרת הגבול",
+     "points": 3
+    },
+    {
+     "text": "בניית $\\varepsilon$ והצבת המסלול $\\Delta y=k\\Delta x$",
+     "points": 3
+    },
+    {
+     "text": "הגבול תלוי ב-$k$",
+     "points": 2
+    },
+    {
+     "text": "מסקנה: $f$ לא דיפרנציאבילית ב-$(0,0)$",
+     "points": 2
+    }
+   ],
+   "pitfalls": [
+    "להסיק דיפרנציאביליות מעצם קיום הנגזרות החלקיות בראשית.",
+    "לבדוק רק את המסלול $k=0$ (ציר ה-$x$), שבו הגבול $0$: צריך מסלול נוסף כדי להראות תלות ב-$k$."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "מהו $f'_x(0,0)$?",
+     "answer": 0.5,
+     "tol": 0,
+     "explain": "$\\frac{f(\\Delta x,0)}{\\Delta x}=\\frac{\\Delta x^3/(2\\Delta x^2)}{\\Delta x}=\\frac12$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $f'_y(0,0)$?",
+     "answer": 1,
+     "tol": 0,
+     "explain": "$\\frac{f(0,\\Delta y)}{\\Delta y}=\\frac{\\Delta y^3/\\Delta y^2}{\\Delta y}=1$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו הגבול של $\\varepsilon$ לאורך $\\Delta y=\\Delta x$ ($\\Delta x\\to0^+$), כלומר $k=1$ (דיוק $0.001$)?",
+     "answer": -0.5893,
+     "tol": 0.001,
+     "explain": "$-\\frac{k^2+4k}{2(2+k^2)\\sqrt{1+k^2}}$ ב-$k=1$ נותן $-\\frac{5}{6\\sqrt2}\\approx-0.589$, בעוד שב-$k=0$ הגבול הוא $0$."
+    },
+    {
+     "type": "choice",
+     "prompt": "מה דין הדיפרנציאביליות של $f$ ב-$(0,0)$?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "דיפרנציאבילית, כי שתי הנגזרות החלקיות קיימות"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "דיפרנציאבילית, כי $f$ רציפה בראשית"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "לא דיפרנציאבילית: הגבול של $\\varepsilon$ תלוי ב-$k$"
+      }
+     ],
+     "correctId": "c",
+     "explain": "דיפרנציאביליות דורשת $\\varepsilon\\to0$ לכל מסלול. כאן הגבול משתנה עם $k$ ואינו $0$, ולכן הפונקציה אינה דיפרנציאבילית; קיום נגזרות חלקיות או רציפות אינם מספיקים."
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "stepsSource": "ai-draft"
   },
   {
    "num": 3,
@@ -64,7 +355,98 @@
    "official": false,
    "confidence": "high",
    "part": "א",
-   "points": 12
+   "points": 12,
+   "rubric": [
+    {
+     "text": "הצבה $t=x+5$ ומבחן המנה: $R=1$",
+     "points": 4
+    },
+    {
+     "text": "הקצה $x=-4$: השוואה גבולית ל-$\\frac1{n^{4/3}}$, מתכנס ($p=\\frac43>1$)",
+     "points": 4
+    },
+    {
+     "text": "הקצה $x=-6$: טור הערכים המוחלטים הוא טור הקצה הקודם, ולכן מתכנס בהחלט",
+     "points": 2
+    },
+    {
+     "text": "תחום ההתכנסות $[-6,-4]$",
+     "points": 2
+    }
+   ],
+   "pitfalls": [
+    "לחשב את החזקה של האיבר בצורה שגויה: $\\sqrt[3]{n}\\cdot\\sqrt{n^2}=n^{1/3}\\cdot n$, כלומר החזקה הכוללת היא $\\frac43$.",
+    "להסיק מ-$R=1$ משהו על הקצוות: מבחן המנה אינו מכריע שם, ובודקים כל קצה לחוד."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "מהו רדיוס ההתכנסות בהצבה $t=x+5$?",
+     "answer": 1,
+     "tol": 0,
+     "explain": "$\\frac{a_n}{a_{n+1}}\\to1$, ולכן $R=1$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "האיבר $\\frac1{\\sqrt[3]{n+1}\\sqrt{n^2+1}}$ מתנהג כמו $\\frac1{n^p}$. מהו $p$ (דיוק $0.001$)?",
+     "answer": 1.3333,
+     "tol": 0.001,
+     "explain": "$\\sqrt[3]{n+1}\\approx n^{1/3}$ ו-$\\sqrt{n^2+1}\\approx n$, ולכן $p=\\frac13+1=\\frac43\\approx1.333$."
+    },
+    {
+     "type": "choice",
+     "prompt": "מה קורה בקצה $x=-4$ (הטור החיובי)?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "מתבדר, כי האיבר דומה ל-$\\frac1{\\sqrt[3]n}$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "מתכנס, כי $p=\\frac43>1$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "מתבדר, כי $R=1$ ולכן הקצוות תמיד מתבדרים"
+      }
+     ],
+     "correctId": "b",
+     "explain": "ההשוואה הגבולית מול $\\sum\\frac1{n^{4/3}}$ נותנת גבול $1$, והטור מתכנס. האיבר קטן בהרבה מ-$\\frac1{\\sqrt[3]n}$ (יש גם גורם $\\frac1n$), ו-$R=1$ אינו קובע דבר לגבי הקצוות."
+    },
+    {
+     "type": "choice",
+     "prompt": "מהו תחום ההתכנסות?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$[-6,-4]$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$(-6,-4)$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$[-6,-4)$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$(-6,-4]$"
+      }
+     ],
+     "correctId": "a",
+     "explain": "שני הקצוות מתכנסים: ב-$x=-4$ הטור מתכנס והוא חיובי, וב-$x=-6$ טור הערכים המוחלטים שלו הוא אותו טור. לכן שני הקצוות נכללים."
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "stepsSource": "ai-draft"
   },
   {
    "num": 3,
@@ -76,7 +458,84 @@
    "official": false,
    "confidence": "high",
    "part": "ב",
-   "points": 13
+   "points": 13,
+   "rubric": [
+    {
+     "text": "הצבה $t=xy$ וגזירה בכלל השרשרת",
+     "points": 3
+    },
+    {
+     "text": "$z'_x=-\\frac{y}{3x^2}+y\\,g'(xy)$",
+     "points": 3
+    },
+    {
+     "text": "$z'_y=\\frac1{3x}+x\\,g'(xy)$",
+     "points": 3
+    },
+    {
+     "text": "הצבה באגף השמאלי, צמצום וקבלת $0$",
+     "points": 4
+    }
+   ],
+   "pitfalls": [
+    "לשכוח את הנגזרת הפנימית: $t'_x=y$ ו-$t'_y=x$.",
+    "טעות סימן בגזירת $\\frac{y}{3x}$ לפי $x$: מתקבל $-\\frac{y}{3x^2}$."
+   ],
+   "steps": [
+    {
+     "type": "choice",
+     "prompt": "מהי $\\dfrac{\\partial}{\\partial x}g(xy)$?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$g'(xy)$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$x\\,g'(xy)$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$y\\,g'(xy)$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$g'(x)\\cdot y$"
+      }
+     ],
+     "correctId": "c",
+     "explain": "לפי כלל השרשרת: $g'(xy)$ כפול הנגזרת של הפנימית $xy$ לפי $x$, שהיא $y$. הגורם $x$ הוא הנגזרת לפי $y$, ובלי הנגזרת הפנימית מקבלים תוצאה שגויה."
+    },
+    {
+     "type": "order",
+     "prompt": "סדרו את שלבי ההוכחה:",
+     "lines": [
+      "גוזרים בכלל השרשרת עם $t=xy$: $z'_x=-\\dfrac{y}{3x^2}+y\\,g'(xy)$ ו-$z'_y=\\dfrac1{3x}+x\\,g'(xy)$",
+      "מציבים באגף השמאלי: $x^2\\left(-\\dfrac{y}{3x^2}+y\\,g'(xy)\\right)-xy\\left(\\dfrac1{3x}+x\\,g'(xy)\\right)+\\dfrac{2y}3$",
+      "פותחים סוגריים: $-\\dfrac y3+x^2y\\,g'(xy)-\\dfrac y3-x^2y\\,g'(xy)+\\dfrac{2y}3$",
+      "האיברים עם $g'$ מצטמצמים ו-$-\\dfrac y3-\\dfrac y3+\\dfrac{2y}3=0$, כנדרש"
+     ],
+     "explain": "קודם מחשבים את שתי הנגזרות החלקיות, אחר כך מציבים באגף השמאלי, פותחים סוגריים ורק אז מצמצמים."
+    },
+    {
+     "type": "findbug",
+     "prompt": "באחד השלבים יש טעות. איזה?",
+     "lines": [
+      "גוזרים בכלל השרשרת עם $t=xy$: $z'_x=-\\dfrac{y}{3x^2}+y\\,g'(xy)$ ו-$z'_y=\\dfrac1{3x}+x\\,g'(xy)$",
+      "מציבים באגף השמאלי: $x^2\\left(-\\dfrac{y}{3x^2}+y\\,g'(xy)\\right)-xy\\left(\\dfrac1{3x}+x\\,g'(xy)\\right)+\\dfrac{2y}3$",
+      "פותחים סוגריים: $-\\dfrac y3+x^2y\\,g'(xy)+\\dfrac y3-x^2y\\,g'(xy)+\\dfrac{2y}3$",
+      "האיברים עם $g'$ מצטמצמים ו-$-\\dfrac y3-\\dfrac y3+\\dfrac{2y}3=0$, כנדרש"
+     ],
+     "bugIndex": 2,
+     "explain": "בפתיחת הסוגריים של $-xy\\cdot\\frac1{3x}$ מקבלים $-\\frac y3$ ולא $+\\frac y3$."
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "stepsSource": "ai-draft"
   },
   {
    "num": 4,
@@ -88,7 +547,54 @@
    "official": false,
    "confidence": "high",
    "part": "א",
-   "points": 12
+   "points": 12,
+   "rubric": [
+    {
+     "text": "סכום הטור ההנדסי $\\sum\\frac5{3^n}=\\frac52$",
+     "points": 4
+    },
+    {
+     "text": "פירוק $\\frac1{(n+3)(n+4)}=\\frac1{n+3}-\\frac1{n+4}$",
+     "points": 3
+    },
+    {
+     "text": "טור טלסקופי: הסכום $\\frac14$",
+     "points": 3
+    },
+    {
+     "text": "$S=\\frac52-4\\cdot\\frac14=\\frac32$",
+     "points": 2
+    }
+   ],
+   "pitfalls": [
+    "לחשב את הטור ההנדסי החל מ-$n=0$ ולקבל $\\frac{15}2$ במקום $\\frac52$.",
+    "לשכוח להכפיל את הסכום הטלסקופי ב-$4$ לפני החיסור."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "מהו $\\sum_{n=1}^{\\infty}\\dfrac5{3^n}$?",
+     "answer": 2.5,
+     "tol": 0,
+     "explain": "$5\\cdot\\frac{1/3}{1-1/3}=5\\cdot\\frac12=\\frac52$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $\\sum_{n=1}^{\\infty}\\dfrac1{(n+3)(n+4)}$?",
+     "answer": 0.25,
+     "tol": 0,
+     "explain": "הסכום הטלסקופי: $\\frac14-\\lim\\frac1{N+4}=\\frac14$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו סכום הטור $S$?",
+     "answer": 1.5,
+     "tol": 0,
+     "explain": "$\\frac52-4\\cdot\\frac14=\\frac52-1=\\frac32$."
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "stepsSource": "ai-draft"
   },
   {
    "num": 4,
@@ -100,7 +606,72 @@
    "official": false,
    "confidence": "high",
    "part": "ב",
-   "points": 13
+   "points": 13,
+   "rubric": [
+    {
+     "text": "נקודות קריטיות בפנים: $x\\in\\{0,\\pm\\frac12\\}$, $y\\in\\{0,\\pm1\\}$, וכולן בתוך הדיסק",
+     "points": 3
+    },
+    {
+     "text": "ערכי $f$ בפנים; המינימלי שבהם $-\\frac98$",
+     "points": 2
+    },
+    {
+     "text": "לגרנז' על השפה $x^2+y^2=2$: שלוש משפחות פתרונות",
+     "points": 4
+    },
+    {
+     "text": "ערכי $f$ בשפה: $6$, $0$ ו-$-\\frac34$",
+     "points": 2
+    },
+    {
+     "text": "מקסימום $6$ ומינימום $-\\frac98$",
+     "points": 2
+    }
+   ],
+   "pitfalls": [
+    "לשכוח לבדוק את הנקודות הקריטיות שבפנים הדיסק, או את השפה.",
+    "לא לוודא ש-$x^2+y^2<2$ בכל נקודה קריטית שנכללת כנקודה פנימית."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "כמה נקודות קריטיות יש לפונקציה בפנים הדיסק?",
+     "answer": 9,
+     "tol": 0,
+     "explain": "$x\\in\\{0,\\pm\\frac12\\}$ ו-$y\\in\\{0,\\pm1\\}$ נותנים $3\\cdot3=9$ נקודות, וכולן עם $x^2+y^2\\le\\frac14+1<2$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $f\\left(\\frac12,1\\right)$?",
+     "answer": -1.125,
+     "tol": 0,
+     "explain": "$2\\cdot\\frac1{16}+1-\\frac14-2=-\\frac98$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $f\\left(\\sqrt2,0\\right)$ (נקודה על השפה)?",
+     "answer": 6,
+     "tol": 0,
+     "explain": "$2\\cdot4-2=6$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $f\\left(\\frac1{\\sqrt2},\\sqrt{\\frac32}\\right)$ (דיוק $0.001$)?",
+     "answer": -0.75,
+     "tol": 0.001,
+     "explain": "$2\\cdot\\frac14+\\frac94-\\frac12-3=-\\frac34$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו הערך המינימלי של $f$ בדיסק?",
+     "answer": -1.125,
+     "tol": 0,
+     "explain": "הערכים: בפנים הקטן ביותר $-\\frac98$, בשפה $6$, $0$, $-\\frac34$. הקטן מכולם הוא $-\\frac98$."
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "stepsSource": "ai-draft"
   },
   {
    "num": 5,
@@ -112,7 +683,82 @@
    "official": false,
    "confidence": "high",
    "part": "א",
-   "points": 12
+   "points": 12,
+   "rubric": [
+    {
+     "text": "נגזרות חלקיות מפורקות לגורמים: $f'_x=(3-y)(6-2x-y)$, $f'_y=(3-x)(6-x-2y)$",
+     "points": 3
+    },
+    {
+     "text": "ארבע הנקודות הקריטיות $(0,3),(3,0),(3,3),(2,2)$",
+     "points": 3
+    },
+    {
+     "text": "נגזרות שניות ו-$\\Delta=4(3-y)(3-x)-(2x+2y-9)^2$",
+     "points": 3
+    },
+    {
+     "text": "סיווג: שלוש נקודות אוכף ומקסימום ב-$(2,2)$",
+     "points": 3
+    }
+   ],
+   "pitfalls": [
+    "לפספס נקודות קריטיות: כל גורם מתאפס בנפרד ($y=3$ או $x=3$), וצריך לבדוק את כל הצירופים.",
+    "לסווג לפי סימן $f''_{xx}$ בלבד כש-$\\Delta<0$: אז הנקודה אוכף בכל מקרה."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "כמה נקודות קריטיות יש לפונקציה?",
+     "answer": 4,
+     "tol": 0,
+     "explain": "מ-$(3-y)(6-2x-y)=0$ ו-$(3-x)(6-x-2y)=0$ מתקבלות $(3,3)$, $(0,3)$, $(3,0)$ ו-$(2,2)$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $\\Delta$ בנקודה $(0,3)$?",
+     "answer": -9,
+     "tol": 0,
+     "explain": "$4(3-3)(3-0)-(0+6-9)^2=-9$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $\\Delta$ בנקודה $(2,2)$?",
+     "answer": 3,
+     "tol": 0,
+     "explain": "$4\\cdot1\\cdot1-(4+4-9)^2=4-1=3$."
+    },
+    {
+     "type": "choice",
+     "prompt": "איך מסווגים את $(2,2)$?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "מינימום מקומי"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "נקודת אוכף"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "מקסימום מקומי"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "המבחן אינו מכריע"
+      }
+     ],
+     "correctId": "c",
+     "explain": "$\\Delta=3>0$ ו-$f''_{xx}(2,2)=-6+2\\cdot2=-2<0$, ולכן מקסימום. אוכף דורש $\\Delta<0$, מינימום דורש $f''_{xx}>0$, והמבחן אינו מכריע רק כש-$\\Delta=0$."
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "stepsSource": "ai-draft"
   },
   {
    "num": 5,
@@ -124,7 +770,82 @@
    "official": false,
    "confidence": "high",
    "part": "ב",
-   "points": 13
+   "points": 13,
+   "rubric": [
+    {
+     "text": "כתיבת $\\frac{x}{25+x^2}$ כסכום הנדסי עם $q=-\\left(\\frac x5\\right)^2$",
+     "points": 4
+    },
+    {
+     "text": "הטור $\\sum(-1)^n\\frac{x^{2n+1}}{5^{2n+2}}$",
+     "points": 3
+    },
+    {
+     "text": "תחום ההתכנסות $|x|<5$; בקצוות $x=\\pm5$ הטור מתבדר",
+     "points": 3
+    },
+    {
+     "text": "$f^{(5)}(0)=c_5\\cdot5!$ עם $n=2$: $\\frac{4!}{5^5}$",
+     "points": 3
+    }
+   ],
+   "pitfalls": [
+    "לקחת $n=5$ כשמחפשים את המקדם של $x^5$: החזקה היא $2n+1$, ולכן $n=2$.",
+    "לשכוח את הגורם $x$ במונה ולקבל טור בחזקות זוגיות."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "מהו רדיוס ההתכנסות?",
+     "answer": 5,
+     "tol": 0,
+     "explain": "הטור ההנדסי מתכנס כאשר $\\left|\\frac x5\\right|<1$, כלומר $|x|<5$."
+    },
+    {
+     "type": "choice",
+     "prompt": "מהו תחום ההתכנסות?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$[-5,5]$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$(-5,5)$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$[-5,5)$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$(-5,5]$"
+      }
+     ],
+     "correctId": "b",
+     "explain": "בקצוות $x=\\pm5$ האיבר הכללי הוא $\\pm\\frac15$ ואינו שואף ל-$0$, ולכן הטור מתבדר בשני הקצוות."
+    },
+    {
+     "type": "numeric",
+     "prompt": "עבור איזה $n$ מתקבלת החזקה $x^5$ בטור $\\sum(-1)^n\\frac{x^{2n+1}}{5^{2n+2}}$?",
+     "answer": 2,
+     "tol": 0,
+     "explain": "$2n+1=5$ נותן $n=2$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $f^{(5)}(0)$ (תשובה עשרונית, דיוק $0.00001$)?",
+     "answer": 0.00768,
+     "tol": 1e-05,
+     "explain": "המקדם $c_5=\\frac1{5^6}$ ולכן $f^{(5)}(0)=\\frac{5!}{5^6}=\\frac{4!}{5^5}=\\frac{24}{3125}=0.00768$."
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "stepsSource": "ai-draft"
   }
  ]
 }

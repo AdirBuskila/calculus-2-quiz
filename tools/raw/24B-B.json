@@ -16,7 +16,54 @@
    "official": true,
    "confidence": "high",
    "part": "א",
-   "points": 7
+   "points": 7,
+   "rubric": [
+    {
+     "text": "גזירת $f$ לפי $x$ בנקודה כללית בעזרת כלל המנה",
+     "points": 2
+    },
+    {
+     "text": "גזירת $f$ לפי $y$ בנקודה כללית בעזרת כלל המנה",
+     "points": 2
+    },
+    {
+     "text": "הצבת $(1,0)$ ב-$f'_x$: מתקבל $0$",
+     "points": 1
+    },
+    {
+     "text": "הצבת $(1,0)$ ב-$f'_y$: מתקבל $1$",
+     "points": 2
+    }
+   ],
+   "pitfalls": [
+    "לגזור רק את המונה ולשכוח את האיבר $-2y^2x^3$ (או $-2x^4y$) שמגיע מגזירת המכנה בכלל המנה.",
+    "להשתמש בהגדרת הגבול כאילו הנקודה היא הראשית: ב-$(1,0)$ מותר להציב בנוסחת הנגזרת הרגילה."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "מהו המונה של $f'_y(x,y)$, כלומר $x^3(x^2+y^2)-2y^2x^3$, בנקודה $(1,0)$?",
+     "answer": 1,
+     "tol": 0,
+     "explain": "$1^3\\cdot(1+0)-0=1$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $f'_y(1,0)$?",
+     "answer": 1,
+     "tol": 0,
+     "explain": "המכנה $(x^2+y^2)^2$ ב-$(1,0)$ שווה $1$, ולכן $f'_y(1,0)=\\frac11=1$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $f'_x(1,0)$?",
+     "answer": 0,
+     "tol": 0,
+     "explain": "המונה $3x^2y(x^2+y^2)-2x^4y$ מכיל את הגורם $y$, ולכן הוא מתאפס ב-$y=0$; המכנה שווה $1$, ולכן $f'_x(1,0)=0$."
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "stepsSource": "ai-draft"
   },
   {
    "num": 1,
@@ -28,7 +75,78 @@
    "official": true,
    "confidence": "high",
    "part": "ב",
-   "points": 7
+   "points": 7,
+   "rubric": [
+    {
+     "text": "שימוש בהגדרת הנגזרת החלקית בראשית: $\\lim_{h\\to0}\\frac{f(h,0)-f(0,0)}{h}$",
+     "points": 2
+    },
+    {
+     "text": "חישוב $f(h,0)=0$ וקבלת $f'_x(0,0)=0$",
+     "points": 2
+    },
+    {
+     "text": "אותו חישוב עבור $y$: $f(0,h)=0$ ולכן $f'_y(0,0)=0$",
+     "points": 3
+    }
+   ],
+   "pitfalls": [
+    "להציב $(0,0)$ בנוסחת הנגזרת הכללית: מתקבל $\\frac00$, והנוסחה לא תקפה בראשית.",
+    "לבלבל בין שתי הנגזרות: $f'_x$ נבדקת לאורך ציר ה-$x$ ו-$f'_y$ לאורך ציר ה-$y$."
+   ],
+   "steps": [
+    {
+     "type": "choice",
+     "prompt": "איזה גבול מגדיר את $f'_x(0,0)$?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$\\lim_{h\\to0}\\dfrac{f(0,h)-f(0,0)}{h}$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "הצבת $(0,0)$ בנוסחה $\\dfrac{3x^2y(x^2+y^2)-2x^4y}{(x^2+y^2)^2}$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$\\lim_{h\\to0}\\dfrac{f(h,0)-f(0,0)}{h}$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$\\lim_{(x,y)\\to(0,0)}f(x,y)$"
+      }
+     ],
+     "correctId": "c",
+     "explain": "הנגזרת החלקית לפי $x$ בראשית מוגדרת כגבול של מנת ההפרשים לאורך ציר ה-$x$. הגבול עם $f(0,h)$ הוא $f'_y(0,0)$; הצבה בנוסחה נותנת $\\frac00$; והגבול של $f$ עצמה עוסק ברציפות ולא בנגזרת."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $f(h,0)$ עבור $h\\neq0$?",
+     "answer": 0,
+     "tol": 0,
+     "explain": "$f(h,0)=\\frac{h^3\\cdot0}{h^2}=0$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $f'_x(0,0)$?",
+     "answer": 0,
+     "tol": 0,
+     "explain": "$\\lim_{h\\to0}\\frac{0-0}{h}=0$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $f'_y(0,0)$?",
+     "answer": 0,
+     "tol": 0,
+     "explain": "$f(0,h)=\\frac{0\\cdot h}{h^2}=0$, ולכן $\\lim_{h\\to0}\\frac{0-0}{h}=0$."
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "stepsSource": "ai-draft"
   },
   {
    "num": 1,
@@ -40,7 +158,103 @@
    "official": true,
    "confidence": "high",
    "part": "ג",
-   "points": 11
+   "points": 11,
+   "rubric": [
+    {
+     "text": "הצבת $f'_x(0,0)=f'_y(0,0)=0$ בהגדרת הדיפרנציאביליות",
+     "points": 2
+    },
+    {
+     "text": "מעבר לקואורדינטות קוטביות וחישוב המנה $r\\cos^3\\varphi\\sin\\varphi$",
+     "points": 4
+    },
+    {
+     "text": "חסימה $|\\cos^3\\varphi\\sin\\varphi|\\le1$ והגבול $0$",
+     "points": 2
+    },
+    {
+     "text": "מסקנה: $f$ דיפרנציאבילית ב-$(0,0)$",
+     "points": 1
+    },
+    {
+     "text": "דיפרנציאבילית גוררת רציפה, ולכן $f$ רציפה",
+     "points": 2
+    }
+   ],
+   "pitfalls": [
+    "לבדוק דיפרנציאביליות לאורך מסלולים בלבד: גבול לאורך מסלולים לא מוכיח שהגבול הדו-ממדי קיים.",
+    "לבדוק את הגבול של $f$ עצמה ולשכוח לחלק ב-$\\sqrt{\\Delta x^2+\\Delta y^2}$.",
+    "להסיק שרציפות גוררת דיפרנציאביליות; הכיוון הנכון הוא דיפרנציאביליות גוררת רציפות."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "לאחר ההצבה הקוטבית, המנה שווה ל-$r^k\\cos^3\\varphi\\sin\\varphi$. מהו $k$?",
+     "answer": 1,
+     "tol": 0,
+     "explain": "המונה $\\Delta x^3\\Delta y=r^4\\cos^3\\varphi\\sin\\varphi$, המכנה $\\Delta x^2+\\Delta y^2=r^2$, כך ש-$f=r^2\\cos^3\\varphi\\sin\\varphi$; חלוקה ב-$\\sqrt{\\Delta x^2+\\Delta y^2}=r$ נותנת $r^1$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו הגבול $\\lim_{r\\to0}r\\cos^3\\varphi\\sin\\varphi$?",
+     "answer": 0,
+     "tol": 0,
+     "explain": "הגורם $\\cos^3\\varphi\\sin\\varphi$ חסום בערך מוחלט ב-$1$ ו-$r\\to0$, ולכן הגבול $0$."
+    },
+    {
+     "type": "choice",
+     "prompt": "מה נכון לגבי $f$ ב-$(0,0)$?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "רציפה אך לא דיפרנציאבילית"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "דיפרנציאבילית, ולכן גם רציפה"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "דיפרנציאבילית אך לא רציפה"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "לא רציפה ולא דיפרנציאבילית"
+      }
+     ],
+     "correctId": "b",
+     "explain": "הגבול שחישבנו הוא $0$, וזו בדיוק ההגדרה של דיפרנציאביליות. דיפרנציאבילית גוררת רציפה, ולכן שתי האפשרויות שמתארות אי-רציפות או רציפות בלבד נפסלות."
+    },
+    {
+     "type": "order",
+     "prompt": "סדרו את שלבי בדיקת הדיפרנציאביליות:",
+     "lines": [
+      "מציבים $f'_x(0,0)=f'_y(0,0)=0$ ובודקים את הגבול $\\lim\\dfrac{f(\\Delta x,\\Delta y)}{\\sqrt{\\Delta x^2+\\Delta y^2}}$",
+      "עוברים לקואורדינטות קוטביות: $\\Delta x=r\\cos\\varphi$, $\\Delta y=r\\sin\\varphi$",
+      "מקבלים $\\lim_{r\\to0}r\\cos^3\\varphi\\sin\\varphi$",
+      "הביטוי חסום כפול $r\\to0$, ולכן הגבול הוא $0$ ו-$f$ דיפרנציאבילית ב-$(0,0)$; לכן היא גם רציפה שם"
+     ],
+     "explain": "קודם כותבים את הגבול מההגדרה, אחר כך עוברים לקוטביות, מפשטים לביטוי עם $r$, ורק אז אפשר להסיק."
+    },
+    {
+     "type": "findbug",
+     "prompt": "באחד השלבים יש טעות. איזה?",
+     "lines": [
+      "מציבים $f'_x(0,0)=f'_y(0,0)=0$ ובודקים את הגבול $\\lim\\dfrac{f(\\Delta x,\\Delta y)}{\\sqrt{\\Delta x^2+\\Delta y^2}}$",
+      "עוברים לקואורדינטות קוטביות: $\\Delta x=r\\cos\\varphi$, $\\Delta y=r\\sin\\varphi$",
+      "מקבלים $\\lim_{r\\to0}\\cos^3\\varphi\\sin\\varphi$",
+      "הביטוי חסום כפול $r\\to0$, ולכן הגבול הוא $0$ ו-$f$ דיפרנציאבילית ב-$(0,0)$; לכן היא גם רציפה שם"
+     ],
+     "bugIndex": 2,
+     "explain": "אחרי החלוקה ב-$r$ נשאר הגורם $r$: $r\\cos^3\\varphi\\sin\\varphi$. בלעדיו הגבול לא היה מתאפס."
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "stepsSource": "ai-draft"
   },
   {
    "num": 2,
@@ -52,7 +266,70 @@
    "official": true,
    "confidence": "high",
    "part": "א",
-   "points": 10
+   "points": 10,
+   "rubric": [
+    {
+     "text": "חישוב $|a_n|=\\frac{n^2+3\\ln n}{(n+1)(n+2)}$ (כי $|\\cos\\pi n|=1$)",
+     "points": 2
+    },
+    {
+     "text": "חילוק במונה ובמכנה ב-$n^2$ וחישוב הגבול $1$",
+     "points": 4
+    },
+    {
+     "text": "מסקנה: $a_n\\not\\to0$",
+     "points": 2
+    },
+    {
+     "text": "התנאי ההכרחי להתכנסות לא מתקיים, ולכן הטור מתבדר",
+     "points": 2
+    }
+   ],
+   "pitfalls": [
+    "לראות $\\cos(\\pi n)=(-1)^n$ ולהפעיל את מבחן לייבניץ בלי לבדוק שהאיבר שואף ל-$0$.",
+    "לחשב את הגבול בלי להצדיק ש-$\\frac{\\ln n}{n}\\to0$."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "מהו $\\lim_{n\\to\\infty}\\dfrac{\\ln n}{n}$?",
+     "answer": 0,
+     "tol": 0,
+     "explain": "$\\ln n$ גדל לאט מ-$n$, ולכן המנה שואפת ל-$0$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $\\lim_{n\\to\\infty}|a_n|$?",
+     "answer": 1,
+     "tol": 0,
+     "explain": "$\\frac{1+\\frac{3\\ln n}{n}}{1+\\frac3n+\\frac2{n^2}}\\to\\frac11=1$."
+    },
+    {
+     "type": "choice",
+     "prompt": "מה דינו של הטור?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "מתכנס בהחלט"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "מתכנס בתנאי"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "מתבדר"
+      }
+     ],
+     "correctId": "c",
+     "explain": "$|a_n|\\to1\\ne0$, ולכן גם $a_n\\not\\to0$; התנאי ההכרחי להתכנסות נכשל. לכן אין התכנסות כלל, לא בהחלט ולא בתנאי (בפרט, לייבניץ דורש שהאיבר ישאף ל-$0$)."
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "stepsSource": "ai-draft"
   },
   {
    "num": 2,
@@ -64,7 +341,102 @@
    "official": true,
    "confidence": "high",
    "part": "ב",
-   "points": 15
+   "points": 15,
+   "rubric": [
+    {
+     "text": "חסימת המונה: $1+\\frac1{\\sqrt n}\\le2$",
+     "points": 3
+    },
+    {
+     "text": "קבלת $|a_n|\\le\\frac2{n^3}$",
+     "points": 3
+    },
+    {
+     "text": "הטור $\\sum\\frac1{n^3}$ מתכנס (טור $p$ עם $p=3>1$)",
+     "points": 3
+    },
+    {
+     "text": "משפט ההשוואה: $\\sum|a_n|$ מתכנס",
+     "points": 3
+    },
+    {
+     "text": "מסקנה: הטור מתכנס בהחלט",
+     "points": 3
+    }
+   ],
+   "pitfalls": [
+    "להפעיל את מבחן לייבניץ ולהסיק \"מתכנס בתנאי\" בלי לבדוק את טור הערכים המוחלטים.",
+    "להשוות ל-$\\frac1{n^3}$ בלי החסם $1+\\frac1{\\sqrt n}\\le2$: האי-שוויון $|a_n|\\le\\frac1{n^3}$ שגוי."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "מהו הערך המקסימלי של $1+\\dfrac1{\\sqrt n}$ עבור $n\\ge1$?",
+     "answer": 2,
+     "tol": 0,
+     "explain": "הביטוי יורד ב-$n$, ולכן המקסימום ב-$n=1$: $1+1=2$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "עבור איזה $p$ משווים לטור $\\sum\\dfrac1{n^p}$?",
+     "answer": 3,
+     "tol": 0,
+     "explain": "$|a_n|\\le\\frac2{n^3}$, והטור $\\sum\\frac1{n^3}$ הוא טור $p$ עם $p=3>1$, שמתכנס."
+    },
+    {
+     "type": "choice",
+     "prompt": "באיזו שיטה משתמש הפתרון הרשמי?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "מבחן לייבניץ לטור החילופי"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "משפט ההשוואה של $|a_n|$ מול $\\dfrac2{n^3}$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "התנאי ההכרחי $a_n\\to0$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "מבחן האינטגרל"
+      }
+     ],
+     "correctId": "b",
+     "explain": "הפתרון חוסם את $|a_n|$ ב-$\\frac2{n^3}$ ומסיק התכנסות בהחלט לפי משפט ההשוואה. לא נעשה שימוש בלייבניץ, בתנאי ההכרחי או במבחן האינטגרל."
+    },
+    {
+     "type": "choice",
+     "prompt": "מה דינו של הטור?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "מתכנס בהחלט"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "מתכנס בתנאי בלבד"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "מתבדר"
+      }
+     ],
+     "correctId": "a",
+     "explain": "$\\sum|a_n|$ מתכנס לפי ההשוואה, ולכן הטור מתכנס בהחלט (ובפרט אינו מתכנס \\\"בתנאי בלבד\\\" ואינו מתבדר)."
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "stepsSource": "ai-draft"
   },
   {
    "num": 3,
@@ -76,7 +448,71 @@
    "official": true,
    "confidence": "high",
    "part": "א",
-   "points": 4
+   "points": 4,
+   "rubric": [
+    {
+     "text": "גרדיאנט כללי $\\nabla f=(2x-2(y+1),-2x)$",
+     "points": 2
+    },
+    {
+     "text": "הצבה ב-$(2,-1)$ ו-$\\nabla f(2,-1)=(4,-4)$",
+     "points": 1
+    },
+    {
+     "text": "הנימוק: קצב ההשתנות המקסימלי הוא בכיוון הגרדיאנט",
+     "points": 1
+    }
+   ],
+   "pitfalls": [
+    "לבחור את הכיוון $-\\nabla f$: זה כיוון הירידה המהירה ביותר, שבו הנגזרת הכיוונית מינימלית.",
+    "לשכוח את הנגזרת של $-2x(y+1)$ לפי $x$, שהיא $-2(y+1)$."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "מהו $f'_x(2,-1)$?",
+     "answer": 4,
+     "tol": 0,
+     "explain": "$f'_x=2x-2(y+1)=4-0=4$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $f'_y(2,-1)$?",
+     "answer": -4,
+     "tol": 0,
+     "explain": "$f'_y=-2x=-4$."
+    },
+    {
+     "type": "choice",
+     "prompt": "באיזה כיוון קצב ההשתנות מקסימלי?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "בכיוון $(-4,4)$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "בכיוון $(1,1)$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "בכיוון $(4,4)$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "בכיוון הגרדיאנט $(4,-4)$"
+      }
+     ],
+     "correctId": "d",
+     "explain": "הנגזרת הכיוונית בכיוון $\\vec u$ היא $\\nabla f\\cdot\\vec u$ והיא מקסימלית כש-$\\vec u$ בכיוון הגרדיאנט. בכיוון $(-4,4)$ היא שלילית (מינימלית), ובכיוונים $(1,1)$ ו-$(4,4)$ היא $0$."
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "stepsSource": "ai-draft"
   },
   {
    "num": 3,
@@ -88,7 +524,54 @@
    "official": true,
    "confidence": "high",
    "part": "ב",
-   "points": 4
+   "points": 4,
+   "rubric": [
+    {
+     "text": "נורמת הכיוון: $\\|(-3,4)\\|=5$",
+     "points": 1
+    },
+    {
+     "text": "וקטור יחידה $\\left(-\\frac35,\\frac45\\right)$",
+     "points": 1
+    },
+    {
+     "text": "מכפלה סקלרית עם $\\nabla f(2,-1)=(4,-4)$",
+     "points": 1
+    },
+    {
+     "text": "תוצאה $-\\frac{28}5$",
+     "points": 1
+    }
+   ],
+   "pitfalls": [
+    "לחשב את המכפלה הסקלרית עם הוקטור $(-3,4)$ בלי לנרמל, ולקבל $-28$.",
+    "טעות סימן במכפלה הסקלרית: $4\\cdot(-3)-4\\cdot4$."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "מהי הנורמה $\\|(-3,4)\\|$?",
+     "answer": 5,
+     "tol": 0,
+     "explain": "$\\sqrt{9+16}=5$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהי המכפלה הסקלרית $(4,-4)\\cdot(-3,4)$ (לפני הנרמול)?",
+     "answer": -28,
+     "tol": 0,
+     "explain": "$-12-16=-28$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהי הנגזרת הכיוונית $\\frac{\\partial f}{\\partial\\vec a}(2,-1)$?",
+     "answer": -5.6,
+     "tol": 0,
+     "explain": "מנרמלים: $\\frac{-28}{5}=-5.6$."
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "stepsSource": "ai-draft"
   },
   {
    "num": 3,
@@ -100,7 +583,75 @@
    "official": true,
    "confidence": "high",
    "part": "ג",
-   "points": 7
+   "points": 7,
+   "rubric": [
+    {
+     "text": "$f'_y=-2x=0$ ולכן $x=0$",
+     "points": 2
+    },
+    {
+     "text": "הצבה ב-$f'_x=0$: $y=-1$, ולכן הנקודה הקריטית היחידה היא $(0,-1)$",
+     "points": 2
+    },
+    {
+     "text": "נגזרות שניות $A=2$, $B=-2$, $C=0$",
+     "points": 1
+    },
+    {
+     "text": "$\\Delta=AC-B^2=-4<0$, ולכן נקודת אוכף",
+     "points": 2
+    }
+   ],
+   "pitfalls": [
+    "להניח ש-$y=0$ גם כן: מ-$f'_y=0$ מקבלים רק $x=0$, ואת $y$ מוצאים מ-$f'_x=0$.",
+    "לסווג לפי סימן $A$ בלבד ולא לפי $\\Delta$."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "מהו ערך $y$ של הנקודה הקריטית?",
+     "answer": -1,
+     "tol": 0,
+     "explain": "$f'_y=-2x=0$ נותן $x=0$; אז $f'_x=2x-2(y+1)=-2(y+1)=0$ נותן $y=-1$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $\\Delta=AC-B^2$ בנקודה הקריטית?",
+     "answer": -4,
+     "tol": 0,
+     "explain": "$A=2$, $B=-2$, $C=0$, ולכן $\\Delta=0-4=-4$."
+    },
+    {
+     "type": "choice",
+     "prompt": "איך מסווגים את הנקודה הקריטית?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "מינימום מקומי"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "מקסימום מקומי"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "המבחן אינו מכריע"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "נקודת אוכף"
+      }
+     ],
+     "correctId": "d",
+     "explain": "$\\Delta<0$, ולכן הנקודה היא נקודת אוכף. המבחן אינו מכריע רק כש-$\\Delta=0$, ומינימום או מקסימום דורשים $\\Delta>0$."
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "stepsSource": "ai-draft"
   },
   {
    "num": 3,
@@ -112,7 +663,72 @@
    "official": true,
    "confidence": "high",
    "part": "ד",
-   "points": 10
+   "points": 10,
+   "rubric": [
+    {
+     "text": "הנקודה הקריטית בפנים התחום $(0,-1)$ וערך הפונקציה בה $3$",
+     "points": 2
+    },
+    {
+     "text": "הצלע $x=1$: $f(1,y)=2-2y$ ליניארית, לכן הקצוות $A,B$",
+     "points": 2
+    },
+    {
+     "text": "הצלע $y=-2$: $g(x)=x^2+2x+3$ עם נקודה קריטית $x=-1$",
+     "points": 2
+    },
+    {
+     "text": "הצלע $y=x$: $h(x)=-x^2-2x+3$ עם נקודה קריטית $x=-1$",
+     "points": 2
+    },
+    {
+     "text": "השוואת הערכים: מקסימום $6$, מינימום $0$",
+     "points": 2
+    }
+   ],
+   "pitfalls": [
+    "לשכוח לבדוק את קודקודי המשולש ואת הנקודות הקריטיות של כל צלע בנפרד.",
+    "לא לבדוק שהנקודה הקריטית $(0,-1)$ אכן בתוך התחום לפני שמוסיפים אותה לרשימת המועמדים."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "מהו $f(0,-1)$?",
+     "answer": 3,
+     "tol": 0,
+     "explain": "$0-0+3=3$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "על הצלע $y=-2$ מתקבל $g(x)=x^2+2x+3$. מהו $x$ שבו $g'(x)=0$?",
+     "answer": -1,
+     "tol": 0,
+     "explain": "$g'(x)=2x+2=0$ נותן $x=-1$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $f(-1,-1)$ (הנקודה הקריטית על הצלע $y=x$)?",
+     "answer": 4,
+     "tol": 0,
+     "explain": "$f(x,x)=-x^2-2x+3$, ובהצבת $x=-1$: $-1+2+3=4$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו הערך המקסימלי של $f$ ב-$D$?",
+     "answer": 6,
+     "tol": 0,
+     "explain": "המועמדים: $f(A)=0$, $f(B)=6$, $f(C)=3$, $f(D)=2$, $f(E)=4$, $f(0,-1)=3$. הגדול ביותר הוא $6$ ב-$B(1,-2)$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו הערך המינימלי של $f$ ב-$D$?",
+     "answer": 0,
+     "tol": 0,
+     "explain": "הקטן ביותר מבין המועמדים הוא $0$ ב-$A(1,1)$."
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "stepsSource": "ai-draft"
   },
   {
    "num": 4,
@@ -124,7 +740,65 @@
    "official": true,
    "confidence": "high",
    "part": "א",
-   "points": 10
+   "points": 10,
+   "rubric": [
+    {
+     "text": "כלל השרשרת $z'_x=z'_uu'_x+z'_vv'_x$ ו-$z'_y$ באופן דומה",
+     "points": 2
+    },
+    {
+     "text": "$z'_u=2v$ ו-$z'_v=2u+6v$",
+     "points": 2
+    },
+    {
+     "text": "$u'_x=-\\sin(x-3y)$, $u'_y=3\\sin(x-3y)$, ובנקודה $u=1$ ושתי הנגזרות $0$",
+     "points": 2
+    },
+    {
+     "text": "$z'_x(\\pi,-\\pi)=70$",
+     "points": 2
+    },
+    {
+     "text": "$z'_y(\\pi,-\\pi)=56$",
+     "points": 2
+    }
+   ],
+   "pitfalls": [
+    "להתעלם מהתלות הישירה של $z$ ב-$v$ ולגזור רק דרך $u$.",
+    "בנקודה $x-3y=4\\pi$, ולכן $\\cos(4\\pi)=1$ ו-$\\sin(4\\pi)=0$; טעות בערכים אלה הורסת את שני הסעיפים."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "מהו $u(\\pi,-\\pi)=\\cos(x-3y)$ בנקודה?",
+     "answer": 1,
+     "tol": 0,
+     "explain": "$x-3y=\\pi+3\\pi=4\\pi$ ו-$\\cos4\\pi=1$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $z'_v=2u+6v$ בנקודה?",
+     "answer": 14,
+     "tol": 0,
+     "explain": "$2\\cdot1+6\\cdot2=14$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $z'_x(\\pi,-\\pi)$?",
+     "answer": 70,
+     "tol": 0,
+     "explain": "$u'_x=-\\sin4\\pi=0$, ולכן $z'_x=2v\\cdot0+14\\cdot5=70$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $z'_y(\\pi,-\\pi)$?",
+     "answer": 56,
+     "tol": 0,
+     "explain": "$u'_y=3\\sin4\\pi=0$, ולכן $z'_y=2v\\cdot0+14\\cdot4=56$."
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "stepsSource": "ai-draft"
   },
   {
    "num": 4,
@@ -136,7 +810,125 @@
    "official": false,
    "confidence": "high",
    "part": "ב",
-   "points": 15
+   "points": 15,
+   "rubric": [
+    {
+     "text": "רדיוס ההתכנסות: $\\frac1R=2$ ולכן $R=\\frac12$",
+     "points": 3
+    },
+    {
+     "text": "הקטע הפתוח $\\frac12<x<\\frac32$ ומעבר לבדיקת שני הקצוות",
+     "points": 2
+    },
+    {
+     "text": "$x=\\frac12$: טור לייבניץ $\\sum\\frac{(-1)^n}{\\sqrt{n+4}}$ מתכנס",
+     "points": 4
+    },
+    {
+     "text": "$x=\\frac32$: השוואה גבולית ל-$\\sum\\frac1{\\sqrt n}$ מראה שהטור מתבדר",
+     "points": 4
+    },
+    {
+     "text": "תחום ההתכנסות $[\\frac12,\\frac32)$",
+     "points": 2
+    }
+   ],
+   "pitfalls": [
+    "לחשב את הקצה השמאלי כ-$-\\frac12$; הקצוות הם $1\\pm\\frac12$.",
+    "להסיק שגם ב-$x=\\frac32$ הטור מתכנס; $\\sum\\frac1{\\sqrt{n+4}}$ דומה ל-$\\sum\\frac1{\\sqrt n}$, שמתבדר."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "מהו רדיוס ההתכנסות $R$?",
+     "answer": 0.5,
+     "tol": 0,
+     "explain": "$\\frac1R=\\lim\\frac{a_{n+1}}{a_n}=2$, ולכן $R=\\frac12$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו הקצה השמאלי של קטע ההתכנסות (מרכז $1$)?",
+     "answer": 0.5,
+     "tol": 0,
+     "explain": "$1-R=1-\\frac12=\\frac12$."
+    },
+    {
+     "type": "choice",
+     "prompt": "מה קורה בקצה השמאלי $x=\\frac12$ (הטור $\\sum\\frac{(-1)^n}{\\sqrt{n+4}}$)?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "מתבדר"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "מתכנס בתנאי"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "מתכנס בהחלט"
+      }
+     ],
+     "correctId": "b",
+     "explain": "האיברים $\\frac1{\\sqrt{n+4}}$ חיוביים, יורדים ושואפים ל-$0$, ולכן לפי לייבניץ הטור מתכנס. טור הערכים המוחלטים $\\sum\\frac1{\\sqrt{n+4}}$ מתבדר (כמו $\\sum\\frac1{\\sqrt n}$), ולכן ההתכנסות אינה בהחלט."
+    },
+    {
+     "type": "choice",
+     "prompt": "מה קורה בקצה הימני $x=\\frac32$ (הטור $\\sum\\frac1{\\sqrt{n+4}}$)?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "מתכנס בתנאי"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "מתכנס בהחלט"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "מתבדר"
+      }
+     ],
+     "correctId": "c",
+     "explain": "$\\lim\\frac{1/\\sqrt{n+4}}{1/\\sqrt n}=1$ ו-$\\sum\\frac1{\\sqrt n}$ מתבדר ($p=\\frac12\\le1$), ולכן הטור מתבדר. הטור חיובי, ולכן אין הבדל בין התכנסות להתכנסות בהחלט, ושתי האפשרויות האחרות נפסלות."
+    },
+    {
+     "type": "choice",
+     "prompt": "מהו תחום ההתכנסות?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$\\left[\\frac12,\\frac32\\right)$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$\\left[-\\frac12,\\frac32\\right)$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$\\left[\\frac12,\\frac32\\right]$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$\\left(\\frac12,\\frac32\\right)$"
+      }
+     ],
+     "correctId": "a",
+     "explain": "הקצה השמאלי $\\frac12$ נכלל (לייבניץ) והימני $\\frac32$ לא (התבדרות). הקצה השמאלי הוא $1-\\frac12=\\frac12$ ולא $-\\frac12$."
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "stepsSource": "ai-draft"
   },
   {
    "num": 5,
@@ -148,7 +940,78 @@
    "official": true,
    "confidence": "high",
    "part": "א",
-   "points": 8
+   "points": 8,
+   "rubric": [
+    {
+     "text": "פירוק $6x^2+5x+1=(3x+1)(2x+1)$ ופיצול הלוגריתם לסכום",
+     "points": 3
+    },
+    {
+     "text": "פיתוח $\\ln(1+t)=\\sum\\frac{(-1)^{n+1}}{n}t^n$ עם $t=3x$ ועם $t=2x$",
+     "points": 3
+    },
+    {
+     "text": "חיבור הטורים: המקדם הוא $\\frac{(-1)^{n+1}(3^n+2^n)}{n}$",
+     "points": 2
+    }
+   ],
+   "pitfalls": [
+    "לנסות לפתח את הלוגריתם של הפולינום כולו במקום לפרק אותו לגורמים.",
+    "לשכוח שהחזקות הן $3^n$ ו-$2^n$ (כי מציבים $t=3x$ ו-$t=2x$)."
+   ],
+   "steps": [
+    {
+     "type": "choice",
+     "prompt": "איך נכון לפרק את $\\ln(6x^2+5x+1)$?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$\\ln(3x+1)\\cdot\\ln(2x+1)$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$\\ln(6x+1)+\\ln(x+1)$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$\\ln(3x+1)+\\ln(2x+1)$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$\\ln(3x+2)+\\ln(2x+1)$"
+      }
+     ],
+     "correctId": "c",
+     "explain": "$(3x+1)(2x+1)=6x^2+5x+1$ והלוגריתם של מכפלה הוא סכום הלוגריתמים. ב-$(6x+1)(x+1)$ מתקבל $6x^2+7x+1$ וב-$(3x+2)(2x+1)$ מתקבל $6x^2+7x+2$; ומכפלת לוגריתמים אינה שווה ללוגריתם של מכפלה."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו מקדם $x$ בטור, כלומר $\\frac{(-1)^{2}(3+2)}{1}$?",
+     "answer": 5,
+     "tol": 0,
+     "explain": "$n=1$: $(3^1+2^1)/1=5$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו מקדם $x^2$ בטור?",
+     "answer": -6.5,
+     "tol": 0,
+     "explain": "$n=2$: $\\frac{(-1)^3(9+4)}{2}=-\\frac{13}{2}=-6.5$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו מקדם $x^3$ בטור (תשובה עשרונית, דיוק $0.001$)?",
+     "answer": 11.6667,
+     "tol": 0.001,
+     "explain": "$n=3$: $\\frac{27+8}{3}=\\frac{35}3\\approx11.667$."
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "stepsSource": "ai-draft"
   },
   {
    "num": 5,
@@ -160,7 +1023,71 @@
    "official": true,
    "confidence": "high",
    "part": "ב",
-   "points": 8
+   "points": 8,
+   "rubric": [
+    {
+     "text": "חישוב $\\sqrt[n]{\\frac{3^n+2^n}{n}}\\to3$ (הגורם $\\left(1+\\left(\\frac23\\right)^n\\right)^{1/n}\\to1$ ו-$\\sqrt[n]n\\to1$)",
+     "points": 4
+    },
+    {
+     "text": "רדיוס ההתכנסות $R=\\frac13$",
+     "points": 2
+    },
+    {
+     "text": "תחום ההתכנסות $\\left(-\\frac13,\\frac13\\right]$, כולל בדיקת הקצוות",
+     "points": 2
+    }
+   ],
+   "pitfalls": [
+    "לשכוח לבדוק את הקצוות ולכתוב את התחום כקטע פתוח.",
+    "לטעות בחישוב השורש: $\\sqrt[n]{3^n+2^n}\\to3$ ולא $\\to5$."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "מהו $\\lim_{n\\to\\infty}\\sqrt[n]{1+\\left(\\frac23\\right)^n}$?",
+     "answer": 1,
+     "tol": 0,
+     "explain": "$\\left(\\frac23\\right)^n\\to0$, ולכן $1\\le\\sqrt[n]{1+(2/3)^n}\\le\\sqrt[n]2\\to1$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו רדיוס ההתכנסות (תשובה עשרונית, דיוק $0.001$)?",
+     "answer": 0.3333,
+     "tol": 0.001,
+     "explain": "$\\frac1R=3$, ולכן $R=\\frac13\\approx0.333$."
+    },
+    {
+     "type": "choice",
+     "prompt": "מהו תחום ההתכנסות?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$\\left[-\\frac13,\\frac13\\right]$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$\\left(-\\frac13,\\frac13\\right]$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$\\left(-\\frac13,\\frac13\\right)$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$\\left[-\\frac13,\\frac13\\right)$"
+      }
+     ],
+     "correctId": "b",
+     "explain": "פיתוח $\\ln(1+t)$ תקף עבור $-1<t\\le1$, ולכן $-\\frac13<x\\le\\frac13$: הקצה הימני נכלל והשמאלי לא (שם הטור דומה לטור ההרמוני ומתבדר)."
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "stepsSource": "ai-draft"
   },
   {
    "num": 5,
@@ -172,7 +1099,50 @@
    "official": true,
    "confidence": "high",
    "part": "ג",
-   "points": 7
+   "points": 7,
+   "rubric": [
+    {
+     "text": "הקשר $\\frac{f^{(n)}(0)}{n!}=$ מקדם $x^n$ בטור",
+     "points": 2
+    },
+    {
+     "text": "הצבת $n=5$: $\\frac{3^5+2^5}{5}=55$",
+     "points": 3
+    },
+    {
+     "text": "$f^{(5)}(0)=55\\cdot5!=6600$",
+     "points": 2
+    }
+   ],
+   "pitfalls": [
+    "לשכוח להכפיל ב-$5!$ בסוף.",
+    "טעות בסימן: עבור $n=5$ הגורם $(-1)^{n+1}$ שווה $+1$."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "מהו $3^5+2^5$?",
+     "answer": 275,
+     "tol": 0,
+     "explain": "$243+32=275$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו מקדם $x^5$ בטור, כלומר $\\frac{f^{(5)}(0)}{5!}$?",
+     "answer": 55,
+     "tol": 0,
+     "explain": "$\\frac{275}{5}=55$ (הסימן $(-1)^6=+1$)."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $f^{(5)}(0)$?",
+     "answer": 6600,
+     "tol": 0,
+     "explain": "$55\\cdot120=6600$."
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "stepsSource": "ai-draft"
   }
  ]
 }
