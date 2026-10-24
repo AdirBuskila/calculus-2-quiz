@@ -16,7 +16,75 @@
    "solution": "הפונקציה גזירה ברציפות בכל המישור, ולכן הנגזרת הכיוונית בכיוון וקטור יחידה $\\vec u=(a,b)$ היא $D_{\\vec u}f=\\nabla f\\cdot\\vec u$.\n$$f'_x=-y^2\\sin(xy),\\qquad f'_y=\\cos(xy)-xy\\sin(xy)$$\n$$\\nabla f(1,0)=\\left(0,\\ \\cos0-0\\right)=(0,1)$$\nלכן\n$$D_{\\vec u}f(1,0)=0\\cdot a+1\\cdot b=b.$$\nנדרוש $b=1$ יחד עם $a^2+b^2=1$, ומכאן $a=0$.\nהכיוון היחיד הוא $\\vec u=(0,1)$, כלומר בכיוון החיובי של ציר $y$ (זה גם כיוון הגרדיאנט, ו-$1=|\\nabla f(1,0)|$ הוא הערך המקסימלי של הנגזרת הכיוונית).",
    "solutionSource": "solved",
    "official": false,
-   "confidence": "high"
+   "confidence": "high",
+   "rubric": [
+    {
+     "text": "חישוב הנגזרות החלקיות $f'_x$ ו-$f'_y$",
+     "points": 4
+    },
+    {
+     "text": "הצבה ב-$(1,0)$ וקבלת $\\nabla f(1,0)=(0,1)$",
+     "points": 3
+    },
+    {
+     "text": "שימוש ב-$D_{\\vec u}f=\\nabla f\\cdot\\vec u$ יחד עם התנאי $a^2+b^2=1$",
+     "points": 3
+    },
+    {
+     "text": "מסקנה: הכיוון היחיד הוא $\\vec u=(0,1)$",
+     "points": 2
+    }
+   ],
+   "pitfalls": [
+    "לשכוח את הגורם הפנימי בנגזרת של $\\cos(xy)$ (כלל השרשרת), ולקבל $f'_y$ שגוי.",
+    "לדרוש רק $D_{\\vec u}f=1$ ולשכוח שהווקטור $\\vec u$ חייב להיות וקטור יחידה."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "חשבו את $f'_x(1,0)$ עבור $f(x,y)=y\\cos(xy)$.",
+     "answer": 0,
+     "tol": 0,
+     "explain": "$f'_x=-y^2\\sin(xy)$, ולכן $f'_x(1,0)=0$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "חשבו את $f'_y(1,0)$.",
+     "answer": 1,
+     "tol": 0,
+     "explain": "$f'_y=\\cos(xy)-xy\\sin(xy)$, ולכן $f'_y(1,0)=\\cos0-0=1$."
+    },
+    {
+     "type": "choice",
+     "prompt": "איזה וקטור יחידה $\\vec u$ נותן $D_{\\vec u}f(1,0)=1$?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$(1,0)$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$(0,-1)$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$(0,1)$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$\\left(\\frac1{\\sqrt2},\\frac1{\\sqrt2}\\right)$"
+      }
+     ],
+     "correctId": "c",
+     "explain": "$\\nabla f(1,0)=(0,1)$, ולכן עבור $\\vec u=(a,b)$ מתקבל $D_{\\vec u}f=b$. הכיוון $(1,0)$ נותן $0$, הכיוון $(0,-1)$ נותן $-1$ והכיוון האלכסוני נותן $\\frac1{\\sqrt2}$. רק $(0,1)$ נותן $1$."
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "stepsSource": "ai-draft"
   },
   {
    "num": 1,
@@ -28,7 +96,64 @@
    "solution": "הפונקציה מוגדרת וגזירה כמה פעמים שרוצים בכל המישור.\n**לפי $x$:**\n$$z'_x=e^{x-y}\\sin(x+y)+e^{x-y}\\cos(x+y)=e^{x-y}\\left(\\sin(x+y)+\\cos(x+y)\\right)$$\n$$z''_{xx}=e^{x-y}\\left(\\sin(x+y)+\\cos(x+y)\\right)+e^{x-y}\\left(\\cos(x+y)-\\sin(x+y)\\right)=2e^{x-y}\\cos(x+y)$$\n**לפי $y$:** (הנגזרת של $e^{x-y}$ לפי $y$ היא $-e^{x-y}$)\n$$z'_y=-e^{x-y}\\sin(x+y)+e^{x-y}\\cos(x+y)=e^{x-y}\\left(\\cos(x+y)-\\sin(x+y)\\right)$$\n$$z''_{yy}=-e^{x-y}\\left(\\cos(x+y)-\\sin(x+y)\\right)+e^{x-y}\\left(-\\sin(x+y)-\\cos(x+y)\\right)=-2e^{x-y}\\cos(x+y)$$\n**סיכום:**\n$$z''_{xx}+z''_{yy}=2e^{x-y}\\cos(x+y)-2e^{x-y}\\cos(x+y)=0$$\nלכל $(x,y)$ במישור, כנדרש.",
    "solutionSource": "solved",
    "official": false,
-   "confidence": "high"
+   "confidence": "high",
+   "rubric": [
+    {
+     "text": "חישוב $z'_x$ בכלל המכפלה",
+     "points": 2
+    },
+    {
+     "text": "חישוב $z''_{xx}=2e^{x-y}\\cos(x+y)$",
+     "points": 3
+    },
+    {
+     "text": "חישוב $z'_y$ בתשומת לב לנגזרת $-e^{x-y}$ של הגורם המעריכי לפי $y$",
+     "points": 3
+    },
+    {
+     "text": "חישוב $z''_{yy}=-2e^{x-y}\\cos(x+y)$",
+     "points": 3
+    },
+    {
+     "text": "סכימה וקבלת $z''_{xx}+z''_{yy}=0$ לכל $(x,y)$",
+     "points": 2
+    }
+   ],
+   "pitfalls": [
+    "לשכוח שהנגזרת של $e^{x-y}$ לפי $y$ היא $-e^{x-y}$, וכך לקבל $z''_{yy}=+2e^{x-y}\\cos(x+y)$ במקום סימן מינוס, והסכום לא מתאפס.",
+    "להציב נקודה מסוימת בלבד. נדרש להוכיח את השוויון לכל $(x,y)$, ולכן הנגזרות מחושבות כביטויים כלליים."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "חשבו את $z''_{xx}(0,0)$ עבור $z=e^{x-y}\\sin(x+y)$.",
+     "answer": 2,
+     "tol": 0,
+     "explain": "$z''_{xx}=2e^{x-y}\\cos(x+y)$, ולכן בנקודה $(0,0)$ הערך הוא $2$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "חשבו את $z''_{yy}(0,0)$.",
+     "answer": -2,
+     "tol": 0,
+     "explain": "$z''_{yy}=-2e^{x-y}\\cos(x+y)$, ולכן בנקודה $(0,0)$ הערך הוא $-2$."
+    },
+    {
+     "type": "findbug",
+     "prompt": "בגרסה הבאה של ההוכחה שורה אחת שגויה. מצאו אותה.",
+     "lines": [
+      "$z'_x=e^{x-y}\\left(\\sin(x+y)+\\cos(x+y)\\right)$",
+      "$z''_{xx}=2e^{x-y}\\cos(x+y)$",
+      "$z'_y=e^{x-y}\\left(\\cos(x+y)-\\sin(x+y)\\right)$",
+      "$z''_{yy}=2e^{x-y}\\cos(x+y)$",
+      "$z''_{xx}+z''_{yy}=0$"
+     ],
+     "bugIndex": 3,
+     "explain": "בנגזרת לפי $y$ הגורם $e^{x-y}$ משאיר סימן מינוס: $z''_{yy}=-2e^{x-y}\\cos(x+y)$. עם הסימן השגוי הסכום היה $4e^{x-y}\\cos(x+y)$ ולא $0$."
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "stepsSource": "ai-draft"
   },
   {
    "num": 2,
@@ -40,7 +165,82 @@
    "solution": "**1. רציפות.** נעבור לקואורדינטות קוטביות $x=r\\cos\\varphi,\\ y=r\\sin\\varphi$:\n$$f=\\frac{r\\cos\\varphi\\cdot r^3\\sin^3\\varphi}{r^2}=r^2\\cos\\varphi\\sin^3\\varphi$$\n$$|f(x,y)-0|\\le r^2\\xrightarrow[r\\to0]{}0$$\nהחסם אינו תלוי ב-$\\varphi$, ולכן $\\lim_{(x,y)\\to(0,0)}f(x,y)=0=f(0,0)$ והפונקציה **רציפה** ב-$(0,0)$.\n\n**2. נגזרות חלקיות.** לפי ההגדרה, ומכיוון ש-$f(h,0)=0$ ו-$f(0,h)=0$:\n$$f'_x(0,0)=\\lim_{h\\to0}\\frac{f(h,0)-f(0,0)}{h}=\\lim_{h\\to0}\\frac{0}{h}=0$$\n$$f'_y(0,0)=\\lim_{h\\to0}\\frac{f(0,h)-f(0,0)}{h}=\\lim_{h\\to0}\\frac{0}{h}=0$$\nשתיהן קיימות ושוות ל-0.\n\n**דיפרנציאביליות.** צריך לבדוק ש\n$$\\lim_{(x,y)\\to(0,0)}\\frac{f(x,y)-f(0,0)-f'_x(0,0)x-f'_y(0,0)y}{\\sqrt{x^2+y^2}}=\\lim_{(x,y)\\to(0,0)}\\frac{f(x,y)}{\\sqrt{x^2+y^2}}=0.$$\nבקוטביות:\n$$\\left|\\frac{f(x,y)}{\\sqrt{x^2+y^2}}\\right|=\\frac{r^2|\\cos\\varphi\\sin^3\\varphi|}{r}\\le r\\xrightarrow[r\\to0]{}0$$\nהגבול שווה ל-0, ולכן הפונקציה **דיפרנציאבילית** ב-$(0,0)$.",
    "solutionSource": "solved",
    "official": false,
-   "confidence": "high"
+   "confidence": "high",
+   "rubric": [
+    {
+     "text": "מעבר לקואורדינטות קוטביות וקבלת $f=r^2\\cos\\varphi\\sin^3\\varphi$, חסם על ידי $r^2$ ומסקנה שהפונקציה רציפה ב-$(0,0)$",
+     "points": 3
+    },
+    {
+     "text": "חישוב $f'_x(0,0)=0$ ו-$f'_y(0,0)=0$ מההגדרה, כי $f(h,0)=f(0,h)=0$",
+     "points": 3
+    },
+    {
+     "text": "ניסוח תנאי הדיפרנציאביליות: הגבול של $\\frac{f(x,y)}{\\sqrt{x^2+y^2}}$ צריך להיות $0$",
+     "points": 3
+    },
+    {
+     "text": "חסם $r$ על המנה בקואורדינטות קוטביות ומסקנה שהפונקציה דיפרנציאבילית",
+     "points": 3
+    }
+   ],
+   "pitfalls": [
+    "לבדוק רציפות רק לאורך הצירים או ישרים. החסם צריך להיות בלתי תלוי בזווית $\\varphi$, ולכן עוברים לקואורדינטות קוטביות.",
+    "להסיק דיפרנציאביליות מעצם קיום הנגזרות החלקיות או מהרציפות. צריך לבדוק את הגבול של $\\frac{f(x,y)-f(0,0)-f'_x x-f'_y y}{\\sqrt{x^2+y^2}}$."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "אחרי ההצבה $x=r\\cos\\varphi,\\ y=r\\sin\\varphi$ הפונקציה שווה ל-$r^k\\cos\\varphi\\sin^3\\varphi$ בכל נקודה שונה מהראשית. מהו $k$?",
+     "answer": 2,
+     "tol": 0,
+     "explain": "המונה הוא $r^4\\cos\\varphi\\sin^3\\varphi$ והמכנה $r^2$, ולכן $k=2$. מכיוון ש-$\\left|\\cos\\varphi\\sin^3\\varphi\\right|\\le1$, מתקבל $|f|\\le r^2\\to0$ והפונקציה רציפה."
+    },
+    {
+     "type": "numeric",
+     "prompt": "חשבו את $f'_x(0,0)$ מההגדרה.",
+     "answer": 0,
+     "tol": 0,
+     "explain": "$f(h,0)=0$ לכל $h$, ולכן המנה $\\frac{f(h,0)-f(0,0)}{h}$ שווה ל-$0$ והגבול הוא $0$. באותו אופן $f'_y(0,0)=0$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "בבדיקת הדיפרנציאביליות מחלקים את $f$ ב-$\\sqrt{x^2+y^2}=r$. נקבל ביטוי שחסום בערכו המוחלט על ידי $r^m$. מהו $m$?",
+     "answer": 1,
+     "tol": 0,
+     "explain": "$\\frac{f}{r}=r\\cos\\varphi\\sin^3\\varphi$, ולכן $\\left|\\frac fr\\right|\\le r$."
+    },
+    {
+     "type": "choice",
+     "prompt": "האם $f$ דיפרנציאבילית ב-$(0,0)$?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "לא, כי הגבול של $\\frac{f(x,y)}{\\sqrt{x^2+y^2}}$ תלוי בזווית $\\varphi$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "כן, כי $\\frac{f(x,y)}{\\sqrt{x^2+y^2}}\\to0$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "לא, כי המכנה $x^2+y^2$ מתאפס בראשית"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "אי אפשר לדעת, כי לא ידוע אם הפונקציה רציפה"
+      }
+     ],
+     "correctId": "b",
+     "explain": "הנגזרות החלקיות הן $0$, ולכן הפונקציה דיפרנציאבילית בדיוק כאשר $\\frac{f}{\\sqrt{x^2+y^2}}\\to0$. החסם $r$ אינו תלוי בזווית, והפונקציה אכן רציפה כפי שנבדק קודם."
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "stepsSource": "ai-draft"
   },
   {
    "num": 2,
@@ -52,7 +252,108 @@
    "solution": "**1.** נבדוק את טור הערכים המוחלטים. מכיוון ש-$|\\cos n|\\le1$ ו-$n^5+2>n^5$:\n$$\\left|\\frac{\\cos n}{\\sqrt[4]{n^5+2}}\\right|\\le\\frac{1}{\\sqrt[4]{n^5}}=\\frac{1}{n^{5/4}}$$\nהטור $\\sum\\frac{1}{n^{5/4}}$ מתכנס (טור $p$ עם $p=\\frac54>1$), ולכן לפי מבחן ההשוואה $\\sum\\left|\\frac{\\cos n}{\\sqrt[4]{n^5+2}}\\right|$ מתכנס.\nהטור **מתכנס בהחלט**.\n\n**2.** נסמן $b_n=\\dfrac{1}{\\sqrt{n(n+1)}}>0$.\n*התכנסות בהחלט:* $\\sum|(-1)^nb_n|=\\sum b_n$. לפי מבחן ההשוואה הגבולי עם $\\frac1n$:\n$$\\lim_{n\\to\\infty}\\frac{b_n}{1/n}=\\lim_{n\\to\\infty}\\frac{n}{\\sqrt{n^2+n}}=\\lim_{n\\to\\infty}\\frac{1}{\\sqrt{1+\\frac1n}}=1$$\nהגבול סופי וחיובי ו-$\\sum\\frac1n$ מתבדר, לכן $\\sum b_n$ מתבדר: הטור **אינו** מתכנס בהחלט.\n*לייבניץ:* $n(n+1)$ עולה ממש, ולכן $b_n$ יורדת מונוטונית, ו-$b_n\\to0$. לפי משפט לייבניץ הטור $\\sum(-1)^nb_n$ מתכנס.\nהטור **מתכנס בתנאי**.",
    "solutionSource": "solved",
    "official": false,
-   "confidence": "high"
+   "confidence": "high",
+   "rubric": [
+    {
+     "text": "הסדרה $\\frac{\\cos n}{\\sqrt[4]{n^5+2}}$: חסם $\\frac1{n^{5/4}}$ באמצעות $|\\cos n|\\le1$ ו-$n^5+2>n^5$",
+     "points": 3
+    },
+    {
+     "text": "הטור $\\sum\\frac1{n^{5/4}}$ מתכנס ($p=\\frac54>1$), ולכן הטור עם $\\cos n$ מתכנס בהחלט לפי מבחן ההשוואה",
+     "points": 3
+    },
+    {
+     "text": "הטור $\\sum\\frac{(-1)^n}{\\sqrt{n(n+1)}}$: השוואה גבולית עם $\\sum\\frac1n$ (הגבול $1$), ולכן אין התכנסות בהחלט",
+     "points": 3
+    },
+    {
+     "text": "מבחן לייבניץ: $b_n$ יורדת ושואפת ל-$0$, ולכן הטור מתכנס",
+     "points": 3
+    },
+    {
+     "text": "מסקנה: הטור עם $(-1)^n$ מתכנס בתנאי",
+     "points": 1
+    }
+   ],
+   "pitfalls": [
+    "להסיק שהטור $\\sum\\frac{\\cos n}{\\sqrt[4]{n^5+2}}$ מתכנס רק בתנאי בגלל הסימנים המשתנים של $\\cos n$. כאן כבר טור הערכים המוחלטים מתכנס, ולכן ההתכנסות בהחלט.",
+    "לעצור אחרי מבחן לייבניץ ולהכריז על התכנסות בתנאי בלי לבדוק שטור הערכים המוחלטים אכן מתבדר.",
+    "להשוות את $\\sqrt{n(n+1)}$ ל-$n^2$ ולהסיק התכנסות. הסדר הנכון הוא $\\sqrt{n(n+1)}\\approx n$."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "בטור $\\sum\\frac{\\cos n}{\\sqrt[4]{n^5+2}}$ חוסמים את הערך המוחלט של האיבר על ידי $\\frac1{n^p}$. מהו $p$ (תשובה עשרונית)?",
+     "answer": 1.25,
+     "tol": 0,
+     "explain": "$\\sqrt[4]{n^5+2}>\\sqrt[4]{n^5}=n^{5/4}$ ו-$|\\cos n|\\le1$, ולכן $p=\\frac54=1.25>1$ וטור ה-$p$ מתכנס."
+    },
+    {
+     "type": "choice",
+     "prompt": "מה מסקנת הפתרון לגבי $\\sum\\frac{\\cos n}{\\sqrt[4]{n^5+2}}$?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "מתכנס בהחלט"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "מתכנס בתנאי בלבד"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "מתבדר"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "אי אפשר להכריע, כי $\\cos n$ אינו מונוטוני"
+      }
+     ],
+     "correctId": "a",
+     "explain": "טור הערכים המוחלטים חסום על ידי טור ה-$p$ המתכנס $\\sum\\frac1{n^{5/4}}$, ולכן הטור מתכנס בהחלט, בלי צורך במונוטוניות."
+    },
+    {
+     "type": "numeric",
+     "prompt": "בטור $\\sum\\frac{(-1)^n}{\\sqrt{n(n+1)}}$ משווים את $b_n=\\frac1{\\sqrt{n(n+1)}}$ ל-$\\frac1n$. מהו $\\lim\\frac{b_n}{1/n}$?",
+     "answer": 1,
+     "tol": 0,
+     "explain": "$\\frac{n}{\\sqrt{n^2+n}}=\\frac1{\\sqrt{1+\\frac1n}}\\to1$. הגבול חיובי וסופי, ו-$\\sum\\frac1n$ מתבדר, ולכן $\\sum b_n$ מתבדר."
+    },
+    {
+     "type": "choice",
+     "prompt": "מה מסקנת הפתרון לגבי $\\sum\\frac{(-1)^n}{\\sqrt{n(n+1)}}$?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "מתכנס בהחלט"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "מתכנס בתנאי"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "מתבדר"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "מתכנס בהחלט, כי $b_n\\to0$"
+      }
+     ],
+     "correctId": "b",
+     "explain": "$b_n$ יורדת ושואפת ל-$0$, ולכן הטור מתכנס לפי לייבניץ. אבל $\\sum b_n$ מתבדר (השוואה גבולית עם $\\sum\\frac1n$), ולכן ההתכנסות היא בתנאי בלבד."
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "stepsSource": "ai-draft"
   },
   {
    "num": 3,
@@ -64,7 +365,96 @@
    "solution": "זה טור חזקות סביב $x_0=2$ עם $a_n=\\dfrac{1}{n\\cdot4^n}$.\n**רדיוס:**\n$$R=\\lim_{n\\to\\infty}\\left|\\frac{a_n}{a_{n+1}}\\right|=\\lim_{n\\to\\infty}\\frac{(n+1)4^{n+1}}{n\\cdot4^n}=\\lim_{n\\to\\infty}4\\cdot\\frac{n+1}{n}=4$$\nלכן הטור מתכנס (בהחלט) עבור $|x-2|<4$, כלומר $-2<x<6$, ומתבדר עבור $|x-2|>4$.\n**קצוות:**\n* $x=6$: $(x-2)^n=4^n$ והטור הוא $\\sum_{n=1}^{\\infty}\\frac{1}{n}$, הטור ההרמוני, **מתבדר**.\n* $x=-2$: $(x-2)^n=(-4)^n$ והטור הוא $\\sum_{n=1}^{\\infty}\\frac{(-1)^n}{n}$. האיברים $\\frac1n$ יורדים מונוטונית ל-0, ולכן לפי לייבניץ הוא **מתכנס** (בתנאי).\n\nתחום ההתכנסות: $[-2,6)$.",
    "solutionSource": "solved",
    "official": false,
-   "confidence": "high"
+   "confidence": "high",
+   "rubric": [
+    {
+     "text": "חישוב רדיוס ההתכנסות $R=4$ ופירוט התחום הפתוח $-2<x<6$",
+     "points": 4
+    },
+    {
+     "text": "קצה $x=6$: מתקבל הטור ההרמוני $\\sum\\frac1n$ ולכן מתבדר",
+     "points": 3
+    },
+    {
+     "text": "קצה $x=-2$: מתקבל $\\sum\\frac{(-1)^n}{n}$ ולכן מתכנס לפי לייבניץ",
+     "points": 3
+    },
+    {
+     "text": "כתיבת תחום ההתכנסות $[-2,6)$",
+     "points": 2
+    }
+   ],
+   "pitfalls": [
+    "לשכוח לבדוק את הקצוות ולהסתפק בקטע הפתוח.",
+    "לחשב את הרדיוס בלבד ולשכוח שהמרכז הוא $x_0=2$, ולכן התחום הוא סביב $2$ ולא סביב $0$."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "מהו רדיוס ההתכנסות של $\\sum_{n=1}^{\\infty}\\frac{1}{n\\cdot4^n}(x-2)^n$?",
+     "answer": 4,
+     "tol": 0,
+     "explain": "$\\left|\\frac{a_n}{a_{n+1}}\\right|=\\frac{(n+1)4^{n+1}}{n4^n}=4\\cdot\\frac{n+1}{n}\\to4$."
+    },
+    {
+     "type": "choice",
+     "prompt": "איזה טור מתקבל בקצה הימני $x=6$ ומה דינו?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$\\sum\\frac{(-1)^n}{n}$, מתכנס"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$\\sum\\frac1{n^2}$, מתכנס"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$\\sum\\frac1n$, מתבדר"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$\\sum\\frac{4^n}{n}$, מתכנס"
+      }
+     ],
+     "correctId": "c",
+     "explain": "$(x-2)^n=4^n$, ולכן האיבר הוא $\\frac{4^n}{n4^n}=\\frac1n$, הטור ההרמוני, והוא מתבדר."
+    },
+    {
+     "type": "choice",
+     "prompt": "מהו תחום ההתכנסות של הטור?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$[-2,6)$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$(-2,6)$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$[-2,6]$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$(-2,6]$"
+      }
+     ],
+     "correctId": "a",
+     "explain": "בקצה $x=6$ הטור מתבדר, ובקצה $x=-2$ מתקבל $\\sum\\frac{(-1)^n}{n}$ שמתכנס לפי לייבניץ. לכן הקצה השמאלי כלול והימני לא."
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "stepsSource": "ai-draft"
   },
   {
    "num": 3,
@@ -76,7 +466,83 @@
    "solution": "$D$ הוא המשולש הסגור $0\\le x\\le y\\le1$ (צלעות: $AB$ על $x=0$, $BC$ על $y=1$, $AC$ על $y=x$). $f$ רציפה ו-$D$ סגור וחסום, ולכן יש מקסימום ומינימום מוחלטים.\n\n**נקודות קריטיות בפנים:**\n$$\\begin{cases}f'_x=4x+y-3=0\\\\ f'_y=-6y+x+8=0\\end{cases}\\ \\Rightarrow\\ x=6y-8,\\quad 4(6y-8)+y=3\\ \\Rightarrow\\ y=\\frac75,\\ x=\\frac25$$\nהנקודה $\\left(\\frac25,\\frac75\\right)$ אינה ב-$D$ (כי $y>1$), ולכן אין נקודות חשודות בפנים.\n\n**השפה:**\n* $AB$: $x=0,\\ 0\\le y\\le1$: $g(y)=-3y^2+8y$, $g'(y)=-6y+8=0\\Rightarrow y=\\frac43\\notin[0,1]$. נשארים הקודקודים.\n* $BC$: $y=1,\\ 0\\le x\\le1$: $g(x)=2x^2-2x+5$, $g'(x)=4x-2=0\\Rightarrow x=\\frac12$, $f\\left(\\frac12,1\\right)=\\frac92$.\n* $AC$: $y=x,\\ 0\\le x\\le1$: $g(x)=2x^2-3x^2+x^2-3x+8x=5x$, עולה ממש, ללא נקודות קריטיות פנימיות.\n\n**קודקודים:**\n$$f(A)=f(0,0)=0,\\qquad f(B)=f(0,1)=5,\\qquad f(C)=f(1,1)=2-3+1-3+8=5$$\n**השוואה** בין $0,\\ 5,\\ 5,\\ \\frac92$:\n* מקסימום מוחלט $5$, המתקבל בשתי נקודות: $B(0,1)$ ו-$C(1,1)$.\n* מינימום מוחלט $0$, המתקבל ב-$A(0,0)$.",
    "solutionSource": "solved",
    "official": false,
-   "confidence": "high"
+   "confidence": "high",
+   "rubric": [
+    {
+     "text": "מציאת הנקודה הקריטית $\\left(\\frac25,\\frac75\\right)$ וקביעה שהיא מחוץ ל-$D$",
+     "points": 3
+    },
+    {
+     "text": "בדיקת שלוש הצלעות: $g(y)$ על $AB$, $g(x)$ על $BC$ ונקודה קריטית $x=\\frac12$, $g(x)=5x$ על $AC$",
+     "points": 5
+    },
+    {
+     "text": "חישוב הערכים בקודקודים $0,5,5$ ובנקודה $\\left(\\frac12,1\\right)$",
+     "points": 2
+    },
+    {
+     "text": "השוואה: מקסימום מוחלט $5$ ב-$B$ וב-$C$, מינימום מוחלט $0$ ב-$A$",
+     "points": 3
+    }
+   ],
+   "pitfalls": [
+    "לשכוח לבדוק שהנקודה הקריטית נמצאת בתוך $D$. כאן $y=\\frac75>1$, ולכן היא מחוץ למשולש ואינה נחשבת.",
+    "לא לכלול את הקודקודים ואת הנקודות הקריטיות על הצלעות בהשוואה הסופית.",
+    "לעצור אחרי שמצאו מקסימום אחד. הערך $5$ מתקבל בשתי נקודות."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "פתרו את המערכת $f'_x=0,\\ f'_y=0$. מהו הערך של $y$ בנקודה הקריטית (תשובה עשרונית)?",
+     "answer": 1.4,
+     "tol": 0,
+     "explain": "$4x+y=3$ ו-$x-6y=-8$ נותנים $y=\\frac75=1.4$ ו-$x=\\frac25$. מכיוון ש-$y>1$ הנקודה מחוץ ל-$D$, שכולל רק $0\\le x\\le y\\le1$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "על הצלע $BC$ ($y=1$) מתקבל $g(x)=2x^2-2x+5$. מהו $f\\left(\\frac12,1\\right)$ בנקודה הקריטית $x=\\frac12$ (תשובה עשרונית)?",
+     "answer": 4.5,
+     "tol": 0,
+     "explain": "$g\\left(\\frac12\\right)=\\frac12-1+5=\\frac92=4.5$."
+    },
+    {
+     "type": "choice",
+     "prompt": "מהו המקסימום המוחלט של $f$ ב-$D$ ובאילו נקודות הוא מתקבל?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "הערך $5$, ב-$B(0,1)$ וב-$C(1,1)$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "הערך $5$, ב-$C(1,1)$ בלבד"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "הערך $\\frac92$, ב-$\\left(\\frac12,1\\right)$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "הערך $5$, ב-$B(0,1)$ בלבד"
+      }
+     ],
+     "correctId": "a",
+     "explain": "הערכים בקודקודים הם $f(A)=0$, $f(B)=5$, $f(C)=5$, ובנקודה $\\left(\\frac12,1\\right)$ הערך $\\frac92<5$. לכן המקסימום $5$ מתקבל בשתי הנקודות $B$ ו-$C$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו המינימום המוחלט של $f$ ב-$D$?",
+     "answer": 0,
+     "tol": 0,
+     "explain": "על $AC$ מתקבל $f(x,x)=5x$ שעולה ממש, ובקודקוד $A(0,0)$ הערך $0$ הוא הקטן מבין כל הערכים שנבדקו."
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "stepsSource": "ai-draft"
   },
   {
    "num": 4,
@@ -88,7 +554,75 @@
    "solution": "נסמן $x(t)=2t+1,\\ y(t)=e^t$ ו-$g(t)=f(x(t),y(t))$. נתון $g(t)=3$ לכל $t$, ולכן $g'(t)=0$.\n$f$ דיפרנציאבילית, ולכן לפי כלל השרשרת:\n$$g'(t)=f'_x(x(t),y(t))\\cdot x'(t)+f'_y(x(t),y(t))\\cdot y'(t)=2f'_x(2t+1,e^t)+e^tf'_y(2t+1,e^t)$$\nנציב את הנתון $f'_x(2t+1,e^t)=\\dfrac{e^t}{2}$:\n$$0=2\\cdot\\frac{e^t}{2}+e^tf'_y(2t+1,e^t)=e^t\\left(1+f'_y(2t+1,e^t)\\right)$$\nמכיוון ש-$e^t\\ne0$:\n$$f'_y(2t+1,e^t)=-1$$",
    "solutionSource": "solved",
    "official": false,
-   "confidence": "high"
+   "confidence": "high",
+   "rubric": [
+    {
+     "text": "הגדרת $g(t)=f(x(t),y(t))$ ונימוק ש-$g'(t)=0$ כי $g$ קבועה",
+     "points": 3
+    },
+    {
+     "text": "כלל השרשרת: $g'(t)=2f'_x+e^tf'_y$",
+     "points": 4
+    },
+    {
+     "text": "הצבת הנתון $f'_x=\\frac{e^t}{2}$ וקבלת $e^t\\left(1+f'_y\\right)=0$",
+     "points": 3
+    },
+    {
+     "text": "חילוק ב-$e^t\\ne0$ ומסקנה $f'_y(2t+1,e^t)=-1$",
+     "points": 2
+    }
+   ],
+   "pitfalls": [
+    "לגזור את $y(t)=e^t$ בטעות כ-$1$ או כ-$t$, ולשכוח את הגורם $e^t$ בכלל השרשרת.",
+    "לשכוח שהאגף הימני $3$ קבוע, ולכן נגזרתו לפי $t$ היא $0$ ולא $3$."
+   ],
+   "steps": [
+    {
+     "type": "choice",
+     "prompt": "איזו משוואה מתקבלת מגזירת $f(2t+1,e^t)=3$ לפי $t$ בכלל השרשרת?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$e^tf'_x+2f'_y=0$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$2f'_x+e^tf'_y=0$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$2f'_x+f'_y=0$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$2f'_x+e^tf'_y=3$"
+      }
+     ],
+     "correctId": "b",
+     "explain": "$x'(t)=2$ ו-$y'(t)=e^t$, ולכן $g'=f'_x\\cdot2+f'_y\\cdot e^t$. האגף הימני קבוע, ולכן נגזרתו $0$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "בנקודה $t=0$ נתון $f'_x(1,1)=\\frac12$. מהו הערך של $2f'_x(1,1)$?",
+     "answer": 1,
+     "tol": 0,
+     "explain": "$2\\cdot\\frac12=1$. בצורה כללית $2\\cdot\\frac{e^t}{2}=e^t$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $f'_y(2t+1,e^t)$?",
+     "answer": -1,
+     "tol": 0,
+     "explain": "$0=e^t+e^tf'_y$, ולכן $f'_y=-1$ לכל $t$."
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "stepsSource": "ai-draft"
   },
   {
    "num": 4,
@@ -100,7 +634,86 @@
    "solution": "תחום ההגדרה: $y\\ne0$ ו-$x+\\frac1y>0$.\n$$f'_x=\\frac{1}{x+\\frac1y},\\qquad f'_y=\\frac{-\\frac{1}{y^2}}{x+\\frac1y}$$\n**מציאת הנקודות:**\n$f'_x=1$ נותן $x+\\frac1y=1$. אז $f'_y=-\\frac{1}{y^2}$, ו-$-\\frac{1}{y^2}=-\\frac{16}{9}$ נותן $y^2=\\frac{9}{16}$, כלומר $y=\\pm\\frac34$.\n* $y=\\frac34$: $x=1-\\frac43=-\\frac13$. הנקודה $\\left(-\\frac13,\\frac34\\right)$.\n* $y=-\\frac34$: $x=1+\\frac43=\\frac73$. הנקודה $\\left(\\frac73,-\\frac34\\right)$.\nבשתיהן $x+\\frac1y=1>0$, ולכן הן בתחום, ו-$f=\\ln1=0$.\n\n**מישור משיק:** $z=f(x_0,y_0)+f'_x(x_0,y_0)(x-x_0)+f'_y(x_0,y_0)(y-y_0)$.\n* בנקודה $\\left(-\\frac13,\\frac34,0\\right)$:\n$$z=\\left(x+\\frac13\\right)-\\frac{16}{9}\\left(y-\\frac34\\right)=x-\\frac{16}{9}y+\\frac53$$\n* בנקודה $\\left(\\frac73,-\\frac34,0\\right)$:\n$$z=\\left(x-\\frac73\\right)-\\frac{16}{9}\\left(y+\\frac34\\right)=x-\\frac{16}{9}y-\\frac{11}{3}$$\n(ובכתיב שלם: $9x-16y-9z+15=0$ ו-$9x-16y-9z-33=0$.)",
    "solutionSource": "solved",
    "official": false,
-   "confidence": "high"
+   "confidence": "high",
+   "rubric": [
+    {
+     "text": "חישוב $f'_x=\\frac1{x+\\frac1y}$ ו-$f'_y=\\frac{-\\frac1{y^2}}{x+\\frac1y}$",
+     "points": 3
+    },
+    {
+     "text": "פתרון $f'_x=1$ ו-$f'_y=-\\frac{16}9$: קבלת $x+\\frac1y=1$ ו-$y=\\pm\\frac34$",
+     "points": 4
+    },
+    {
+     "text": "שתי הנקודות $\\left(-\\frac13,\\frac34\\right)$ ו-$\\left(\\frac73,-\\frac34\\right)$ ובדיקה שהן בתחום, $f=0$ בשתיהן",
+     "points": 1
+    },
+    {
+     "text": "נוסחת המישור המשיק $z=f(x_0,y_0)+f'_x(x-x_0)+f'_y(y-y_0)$",
+     "points": 2
+    },
+    {
+     "text": "שתי המשוואות $z=x-\\frac{16}9y+\\frac53$ ו-$z=x-\\frac{16}9y-\\frac{11}3$",
+     "points": 3
+    }
+   ],
+   "pitfalls": [
+    "לקבל רק את הפתרון $y=\\frac34$ ולשכוח את $y=-\\frac34$ ממשוואת $y^2=\\frac9{16}$. שתי הנקודות בתחום ההגדרה, ולכן יש שני מישורים משיקים.",
+    "לשכוח לחשב את $f(x_0,y_0)$. כאן $x_0+\\frac1{y_0}=1$, ולכן $f=\\ln1=0$."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "התנאי $f'_x=1$ נותן $\\frac{1}{x+\\frac1y}=1$. מהו הערך של $x+\\frac1y$?",
+     "answer": 1,
+     "tol": 0,
+     "explain": "$\\frac1{x+\\frac1y}=1$ אם ורק אם $x+\\frac1y=1$. לכן גם $f(x,y)=\\ln1=0$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "עם $x+\\frac1y=1$ מתקבל $f'_y=-\\frac1{y^2}=-\\frac{16}9$. מהו ערך ה-$y$ החיובי (תשובה עשרונית)?",
+     "answer": 0.75,
+     "tol": 0,
+     "explain": "$y^2=\\frac9{16}$, ולכן $y=\\pm\\frac34$. הערך החיובי הוא $0.75$."
+    },
+    {
+     "type": "choice",
+     "prompt": "בכמה נקודות של תחום ההגדרה מתקיים $\\nabla f=\\left(1,-\\frac{16}9\\right)$?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "בשתי נקודות"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "בנקודה אחת"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "בשלוש נקודות"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "באף נקודה"
+      }
+     ],
+     "correctId": "a",
+     "explain": "מ-$y=\\frac34$ מקבלים $x=-\\frac13$, ומ-$y=-\\frac34$ מקבלים $x=\\frac73$. בשתיהן $x+\\frac1y=1>0$, ולכן שתיהן בתחום ההגדרה."
+    },
+    {
+     "type": "numeric",
+     "prompt": "המישור המשיק בנקודה עם $y=\\frac34$ הוא $z=x-\\frac{16}9y+c$. מהו $c$ (תשובה עשרונית, דיוק $0.001$)?",
+     "answer": 1.6667,
+     "tol": 0.001,
+     "explain": "$z=\\left(x+\\frac13\\right)-\\frac{16}9\\left(y-\\frac34\\right)=x-\\frac{16}9y+\\frac13+\\frac43$, כלומר $c=\\frac53\\approx1.6667$."
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "stepsSource": "ai-draft"
   },
   {
    "num": 5,
@@ -112,7 +725,65 @@
    "solution": "נסמן $F(x,y,z)=5z^3+3xyz-x^2y^2+1$.\n**1.** נבדוק את תנאי משפט הפונקציה הסתומה:\n* $F(1,-1,0)=0+0-1+1=0$, כלומר הנקודה מקיימת את המשוואה.\n* $F$ פולינום, ולכן $F$ ונגזרותיה החלקיות רציפות בכל מקום.\n* $F'_z=15z^2+3xy$, ו-$F'_z(1,-1,0)=0-3=-3\\ne0$.\nלפי משפט הפונקציה הסתומה, בסביבת $(1,-1)$ קיימת פונקציה יחידה $z=z(x,y)$, גזירה ברציפות, עם $z(1,-1)=0$, המקיימת את המשוואה.\n\n**2.**\n$$F'_x=3yz-2xy^2\\ \\Rightarrow\\ F'_x(1,-1,0)=0-2=-2$$\n$$F'_y=3xz-2x^2y\\ \\Rightarrow\\ F'_y(1,-1,0)=0+2=2$$\n$$z_x(1,-1)=-\\frac{F'_x}{F'_z}=-\\frac{-2}{-3}=-\\frac23,\\qquad z_y(1,-1)=-\\frac{F'_y}{F'_z}=-\\frac{2}{-3}=\\frac23$$\n$$z_x(1,-1)+z_y(1,-1)=-\\frac23+\\frac23=0$$",
    "solutionSource": "solved",
    "official": false,
-   "confidence": "high"
+   "confidence": "high",
+   "rubric": [
+    {
+     "text": "בדיקה ש-$F(1,-1,0)=0$ ושהנגזרות החלקיות של $F$ רציפות (פולינום)",
+     "points": 3
+    },
+    {
+     "text": "חישוב $F'_z(1,-1,0)=-3\\ne0$ ומסקנה ממשפט הפונקציה הסתומה",
+     "points": 3
+    },
+    {
+     "text": "חישוב $F'_x(1,-1,0)=-2$ ו-$F'_y(1,-1,0)=2$",
+     "points": 2
+    },
+    {
+     "text": "נוסחאות $z_x=-\\frac{F'_x}{F'_z}$, $z_y=-\\frac{F'_y}{F'_z}$ וערכיהן $-\\frac23$ ו-$\\frac23$",
+     "points": 2
+    },
+    {
+     "text": "סכום: $z_x+z_y=0$",
+     "points": 2
+    }
+   ],
+   "pitfalls": [
+    "לבדוק רק ש-$F(1,-1,0)=0$ ולשכוח את תנאי המשפט $F'_z\\ne0$ בנקודה.",
+    "לשכוח את סימן המינוס בנוסחה $z_x=-\\frac{F'_x}{F'_z}$."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "עבור $F(x,y,z)=5z^3+3xyz-x^2y^2+1$ חשבו את $F'_z(1,-1,0)$.",
+     "answer": -3,
+     "tol": 0,
+     "explain": "$F'_z=15z^2+3xy$, ולכן $F'_z(1,-1,0)=0+3\\cdot1\\cdot(-1)=-3\\ne0$, ותנאי משפט הפונקציה הסתומה מתקיים."
+    },
+    {
+     "type": "numeric",
+     "prompt": "חשבו את $F'_x(1,-1,0)$.",
+     "answer": -2,
+     "tol": 0,
+     "explain": "$F'_x=3yz-2xy^2$, ולכן $F'_x(1,-1,0)=0-2=-2$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "חשבו את $z_x(1,-1)$ (תשובה עשרונית, דיוק $0.001$).",
+     "answer": -0.6667,
+     "tol": 0.001,
+     "explain": "$z_x=-\\frac{F'_x}{F'_z}=-\\frac{-2}{-3}=-\\frac23$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "חשבו את $z_x(1,-1)+z_y(1,-1)$.",
+     "answer": 0,
+     "tol": 0,
+     "explain": "$F'_y(1,-1,0)=3xz-2x^2y=2$, ולכן $z_y=-\\frac{2}{-3}=\\frac23$. הסכום הוא $-\\frac23+\\frac23=0$."
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "stepsSource": "ai-draft"
   },
   {
    "num": 5,
@@ -124,7 +795,93 @@
    "solution": "$f(x,y)=6xy-x^2y-xy^2$.\n**נקודות קריטיות:**\n$$\\begin{cases}f'_x=6y-2xy-y^2=y(6-2x-y)=0\\\\ f'_y=6x-x^2-2xy=x(6-x-2y)=0\\end{cases}$$\n* $y=0,\\ x=0$: $(0,0)$.\n* $y=0,\\ 6-x-2y=0$: $(6,0)$.\n* $6-2x-y=0,\\ x=0$: $(0,6)$.\n* $6-2x-y=0,\\ 6-x-2y=0$: מחיסור $x=y$, ואז $6-3x=0$: $(2,2)$.\n\n**נגזרות שניות:**\n$$f''_{xx}=-2y,\\qquad f''_{yy}=-2x,\\qquad f''_{xy}=6-2x-2y,\\qquad D=f''_{xx}f''_{yy}-\\left(f''_{xy}\\right)^2$$\n* $(0,0)$: $D=0\\cdot0-6^2=-36<0$, נקודת אוכף.\n* $(6,0)$: $D=0\\cdot(-12)-(-6)^2=-36<0$, נקודת אוכף.\n* $(0,6)$: $D=(-12)\\cdot0-(-6)^2=-36<0$, נקודת אוכף.\n* $(2,2)$: $D=(-4)(-4)-(-2)^2=12>0$ ו-$f''_{xx}=-4<0$, **מקסימום מקומי**, $f(2,2)=2\\cdot2\\cdot2=8$.\n\nסיכום: נקודת האקסטרמום היחידה היא מקסימום מקומי ב-$(2,2)$ עם ערך $8$. שלוש הנקודות האחרות הן נקודות אוכף.",
    "solutionSource": "solved",
    "official": false,
-   "confidence": "high"
+   "confidence": "high",
+   "rubric": [
+    {
+     "text": "קביעת הנגזרות החלקיות $f'_x=y(6-2x-y)$ ו-$f'_y=x(6-x-2y)$",
+     "points": 2
+    },
+    {
+     "text": "פתרון המערכת וקבלת ארבע הנקודות הקריטיות $(0,0),(6,0),(0,6),(2,2)$",
+     "points": 3
+    },
+    {
+     "text": "חישוב הנגזרות השניות $f''_{xx}=-2y,\\ f''_{yy}=-2x,\\ f''_{xy}=6-2x-2y$",
+     "points": 3
+    },
+    {
+     "text": "$D=-36<0$ בשלוש הנקודות, ולכן אוכף",
+     "points": 3
+    },
+    {
+     "text": "ב-$(2,2)$: $D=12>0$ ו-$f''_{xx}<0$, ולכן מקסימום מקומי עם ערך $8$",
+     "points": 2
+    }
+   ],
+   "pitfalls": [
+    "לפתור את $y(6-2x-y)=0$ ו-$x(6-x-2y)=0$ בלי לפצל למקרים, ולהחמיץ את הנקודות $(6,0)$ ו-$(0,6)$.",
+    "לסווג לפי הסימן של $f''_{xx}$ בלבד, ללא חישוב הדטרמיננטה $D$."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "כמה נקודות קריטיות יש ל-$f(x,y)=xy(6-x-y)$ במישור?",
+     "answer": 4,
+     "tol": 0,
+     "explain": "המערכת $y(6-2x-y)=0,\\ x(6-x-2y)=0$ נותנת $(0,0),(6,0),(0,6),(2,2)$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "חשבו את $D=f''_{xx}f''_{yy}-\\left(f''_{xy}\\right)^2$ בנקודה $(0,0)$.",
+     "answer": -36,
+     "tol": 0,
+     "explain": "$f''_{xx}(0,0)=f''_{yy}(0,0)=0$ ו-$f''_{xy}(0,0)=6$, ולכן $D=-36$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "חשבו את $D$ בנקודה $(2,2)$.",
+     "answer": 12,
+     "tol": 0,
+     "explain": "$f''_{xx}=f''_{yy}=-4$ ו-$f''_{xy}=6-8=-2$, ולכן $D=16-4=12$."
+    },
+    {
+     "type": "choice",
+     "prompt": "מהו סוג הנקודה הקריטית $(2,2)$?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "מינימום מקומי"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "נקודת אוכף"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "מקסימום מקומי"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "אי אפשר להכריע"
+      }
+     ],
+     "correctId": "c",
+     "explain": "$D=12>0$, ולכן יש אקסטרמום, ו-$f''_{xx}=-4<0$ קובע שזה מקסימום."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו ערך הפונקציה בנקודת המקסימום המקומי?",
+     "answer": 8,
+     "tol": 0,
+     "explain": "$f(2,2)=2\\cdot2\\cdot(6-2-2)=8$."
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "stepsSource": "ai-draft"
   }
  ]
 }
