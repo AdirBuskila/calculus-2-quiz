@@ -1,0 +1,133 @@
+{
+ "examCode": "25A-B",
+ "verifier": "refuter (blind sympy/numeric, scripts tools/verify/25A-B/refute_blind.py)",
+ "items": {
+  "Q1א": {
+   "solution": {
+    "verdict": "agree"
+   },
+   "rubric": "agree",
+   "pitfalls": "agree",
+   "steps": [
+    "agree",
+    "agree",
+    "agree"
+   ]
+  },
+  "Q1ב": {
+   "solution": {
+    "verdict": "agree"
+   },
+   "rubric": "agree",
+   "pitfalls": "agree",
+   "steps": [
+    "agree",
+    "agree",
+    "agree"
+   ]
+  },
+  "Q2א": {
+   "solution": {
+    "verdict": "agree"
+   },
+   "rubric": "agree",
+   "pitfalls": "agree",
+   "steps": [
+    "agree",
+    "agree",
+    "agree"
+   ]
+  },
+  "Q2ב": {
+   "solution": {
+    "verdict": "agree"
+   },
+   "rubric": "agree",
+   "pitfalls": "agree",
+   "steps": [
+    "agree",
+    "agree",
+    "agree",
+    "agree"
+   ],
+   "note": "'תיקון' line CONFIRMED: y=(v+2t)/3 (vertex (5/3,8/3)->t=1,v=6). step1 explain says inverse-map determinant is +1/3; it is -1/3 (abs 1/3 asked) - cosmetic"
+  },
+  "Q3א": {
+   "solution": {
+    "verdict": "agree"
+   },
+   "rubric": "agree",
+   "pitfalls": "agree",
+   "steps": [
+    "agree",
+    "agree",
+    "agree"
+   ]
+  },
+  "Q3ב": {
+   "solution": {
+    "verdict": "agree"
+   },
+   "rubric": "agree",
+   "pitfalls": "agree",
+   "steps": [
+    "agree",
+    "agree",
+    "agree"
+   ],
+   "note": "'תיקון' line CONFIRMED: d t/dy = +sin(x-y) (sympy)"
+  },
+  "Q4א": {
+   "solution": {
+    "verdict": "agree"
+   },
+   "rubric": "agree",
+   "pitfalls": "agree",
+   "steps": [
+    "agree",
+    "agree",
+    "agree"
+   ]
+  },
+  "Q4ב": {
+   "solution": {
+    "verdict": "agree"
+   },
+   "rubric": "agree",
+   "pitfalls": "agree",
+   "steps": [
+    "agree",
+    "agree",
+    "agree"
+   ]
+  },
+  "Q5א": {
+   "solution": {
+    "verdict": "agree"
+   },
+   "rubric": "agree",
+   "pitfalls": "agree",
+   "steps": [
+    "agree",
+    "agree",
+    "agree"
+   ]
+  },
+  "Q5ב": {
+   "solution": {
+    "verdict": "agree"
+   },
+   "rubric": "agree",
+   "pitfalls": "agree",
+   "steps": [
+    "agree",
+    "agree",
+    "agree",
+    "agree"
+   ],
+   "note": "'תיקון' line CONFIRMED: f^(5)(0)=3325/1944=1.71039 (sympy series); file's 1.71166 is wrong"
+  }
+ },
+ "regionsContours": "agree: all contours.json/regions.json entries (critical points, values, roles, vertices, Jacobians, swap bounds) match independent sympy/grid checks",
+ "optionText": "no option/text cites an option by position; 'שאר האפשרויות'/'רק האפשרות הזו' are relative only; no 'הפתרון הרשמי' in this sitting"
+}

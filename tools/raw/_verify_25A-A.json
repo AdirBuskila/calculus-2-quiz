@@ -1,0 +1,133 @@
+{
+ "examCode": "25A-A",
+ "verifier": "refuter (blind sympy/numeric, scripts tools/verify/25A-A/refute_blind.py)",
+ "items": {
+  "Q1א": {
+   "solution": {
+    "verdict": "agree"
+   },
+   "rubric": "agree",
+   "pitfalls": "agree",
+   "steps": [
+    "agree",
+    "agree",
+    "agree"
+   ],
+   "note": "transcriber conclusion CONFIRMED: limit along y=kx^3 is 4k/(3+2k^2), depends on k, so discontinuous"
+  },
+  "Q1ב": {
+   "solution": {
+    "verdict": "agree"
+   },
+   "rubric": "agree",
+   "pitfalls": "agree",
+   "steps": [
+    "agree",
+    "agree",
+    "agree",
+    "agree"
+   ]
+  },
+  "Q2א": {
+   "solution": {
+    "verdict": "agree"
+   },
+   "rubric": "agree",
+   "pitfalls": "agree",
+   "steps": [
+    "agree",
+    "agree",
+    "agree",
+    "agree"
+   ]
+  },
+  "Q2ב": {
+   "solution": {
+    "verdict": "agree"
+   },
+   "rubric": "agree",
+   "pitfalls": "agree",
+   "steps": [
+    "agree",
+    "agree",
+    "agree",
+    "agree"
+   ]
+  },
+  "Q3א": {
+   "solution": {
+    "verdict": "agree"
+   },
+   "rubric": "agree",
+   "pitfalls": "agree",
+   "steps": [
+    "agree",
+    "agree",
+    "agree"
+   ]
+  },
+  "Q3ב": {
+   "solution": {
+    "verdict": "agree"
+   },
+   "rubric": "agree",
+   "pitfalls": "agree",
+   "steps": [
+    "agree",
+    "agree",
+    "agree"
+   ]
+  },
+  "Q4א": {
+   "solution": {
+    "verdict": "agree"
+   },
+   "rubric": "agree",
+   "pitfalls": "agree",
+   "steps": [
+    "agree",
+    "agree",
+    "agree"
+   ]
+  },
+  "Q4ב": {
+   "solution": {
+    "verdict": "agree"
+   },
+   "rubric": "agree",
+   "pitfalls": "agree",
+   "steps": [
+    "agree",
+    "agree",
+    "agree"
+   ]
+  },
+  "Q5א": {
+   "solution": {
+    "verdict": "agree"
+   },
+   "rubric": "agree",
+   "pitfalls": "agree",
+   "steps": [
+    "agree",
+    "agree",
+    "agree"
+   ]
+  },
+  "Q5ב": {
+   "solution": {
+    "verdict": "agree"
+   },
+   "rubric": "agree",
+   "pitfalls": "agree",
+   "steps": [
+    "agree",
+    "agree",
+    "agree",
+    "agree"
+   ]
+  }
+ },
+ "regionsContours": "agree: all contours.json/regions.json entries (critical points, values, roles, vertices, Jacobians, swap bounds) match independent sympy/grid checks",
+ "optionText": "no option/text cites an option by position; 'שאר האפשרויות'/'רק האפשרות הזו' are relative only; no 'הפתרון הרשמי' in this sitting"
+}
