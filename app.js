@@ -349,10 +349,15 @@ function stepsPanel(q){
     q.steps.map((_,i)=>`<div class="step-card"><div class="step-n">${i+1}</div><div class="step-mount" data-i="${i}"></div></div>`).join("")+
     `</div></details>`;
 }
+/* calculus-2 extra: the region-of-integration (region.js) and contour (contour.js) diagrams of a bank item */
+function diagramsHtml(q){
+  return ((q.region && window.Region) ? window.Region.figure(q.region) : "") + ((q.contour && window.Contour) ? window.Contour.figure(q.contour) : "");
+}
 function solutionPanel(q){
   const open = !!P.justShow;
   const src = SOL_SRC[q.solutionSource];
   return `<details class="panel sol-panel"${open?" open":""}><summary><span class="sum-t">פתרון מלא ומחוון</span></summary><div class="panel-body">`+
+    diagramsHtml(q)+
     `<div class="solution-text">${iso(q.solutionHtml || escapeHtml(q.solution||""))}</div>`+
     (src?`<div class="src-note">${src}</div>`:"")+
     (q.confidence==="low"?`<div class="src-note warn">⚠ רמת ביטחון נמוכה בפתרון — מומלץ לאמת.</div>`:"")+
@@ -522,7 +527,7 @@ function renderResults(){
       mine = `<h4 class="sec-h">התשובה שלכם</h4>`+
         (q.kind==="truefalse"&&tf!=null?`<div class="ra">בחרתם: ${tf?"נכונה":"לא נכונה"} (הנכון: ${q.verdict?"נכונה":"לא נכונה"})</div>`:"")+
         `<div class="my-attempt">${t?textToHtml(t):"<span class=\"muted\">— לא נכתבה תשובה (אפשר לבדוק את הפתרון שעל הדף) —</span>"}</div>`+
-        `<h4 class="sec-h">פתרון</h4><div class="solution-text">${iso(q.solutionHtml||escapeHtml(q.solution||""))}</div>`+
+        `<h4 class="sec-h">פתרון</h4>${diagramsHtml(q)}<div class="solution-text">${iso(q.solutionHtml||escapeHtml(q.solution||""))}</div>`+
         rubricHtml(q)+
         ((q.pitfallsHtml||[]).length?`<h4 class="sec-h">טעויות נפוצות</h4><ul class="pitfalls">${q.pitfallsHtml.map(p=>`<li>${iso(p)}</li>`).join("")}</ul>`:"");
     }
@@ -746,7 +751,7 @@ window.CC_APP = {
   prefix: PREFIX, HE_KEYS, show, quit, shuffle, escapeHtml,
   bank: id => QS.find(q=>q.id===id) || null,
   ctx: id => CTX[id] || null,
-  contextHtml, extrasHtml, questionHtml, optionHtml, examLabelOf, acceptedIdsOf, isAccepted,
+  contextHtml, extrasHtml, diagramsHtml, questionHtml, optionHtml, examLabelOf, acceptedIdsOf, isAccepted,
   topicCount: topic => topicPool(topic).length,
   practiceTopic: startTopicPractice,
 };

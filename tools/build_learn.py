@@ -37,6 +37,7 @@ sys.path.insert(0, str(TOOLS))
 from build_questions import CFG, TOPIC_LABEL, exam_order  # noqa: E402  (single source)
 import richtext as rt  # noqa: E402
 import validate  # noqa: E402
+import extras  # noqa: E402  (calculus-2 extra: diagram fences)
 
 # (file, chapter id, topic key, kind) comes from course.config.json "briefs". Order == study order.
 # kind "topic": a per-topic brief (gets the auto question list); "cheat": a cross-topic
@@ -333,6 +334,10 @@ def main():
         h = tag_callouts(h)
         h = linkify_qids(h, known, cid)
         h = code_markup(h)
+        derr = []
+        h = extras.fences_in_html(h, cid, derr)   # ```region / ```contour fences -> diagram hooks
+        for w, t, e in derr:
+            fail(f"{w}: {e} {t}")
         cited |= set(re.findall(r'data-q="([^"]+)"', h))
         h = inject_math(h, rendered)
         h = isolate_rel(h)

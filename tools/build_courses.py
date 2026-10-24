@@ -23,6 +23,7 @@ sys.path.insert(0, str(TOOLS))
 
 import richtext as rt  # noqa: E402
 import validate  # noqa: E402
+import extras  # noqa: E402
 from build_questions import OUT, locks_order, make_option, make_step  # noqa: E402
 
 MathBank, HEB, rich_html = rt.MathBank, rt.HEB, rt.rich_html
@@ -33,6 +34,7 @@ ESC = "\x00"
 
 def lesson_html(h, bank, where, errs):
     """Author HTML with $..$ / $$..$$ -> HTML with @@M<n>@@ / @@D<n>@@ placeholders. Literal dollar: \\$ or &#36;."""
+    h = extras.resolve_hooks(h, where, errs)   # calculus-2 extra: data-region / data-contour="<id>" -> the JSON spec
     h = h.replace("\\$", ESC)
 
     def sub(m):

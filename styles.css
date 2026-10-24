@@ -915,3 +915,97 @@ pre.code-block code{font:inherit;white-space:pre;direction:ltr;text-align:left;b
   .learn-content{padding:1.2rem 1.1rem}
   .learn-content h2.learn-h{font-size:1.3rem}
 }
+
+/* ============================================================
+   Calculus-2 extras (app-local): region-of-integration diagrams (region.js) and contour plots (contour.js).
+   Palette: --ct-lo / --ct-hi colour the level curves low -> high; set in all three palette blocks.
+   ============================================================ */
+:root{ --ct-lo:#4c5bd4; --ct-hi:#fcd34d; --ct-cons:#f472b6; --ct-min:#60a5fa; }
+:root[data-theme="light"]{ --ct-lo:#1e3a8a; --ct-hi:#f59e0b; --ct-cons:#be185d; --ct-min:#2563eb; }
+@media (prefers-color-scheme: light){ :root:not([data-theme]){ --ct-lo:#1e3a8a; --ct-hi:#f59e0b; --ct-cons:#be185d; --ct-min:#2563eb; } }
+
+.region-fig,.contour-fig{margin:.4rem auto 1rem;max-width:420px;min-width:0;padding:.65rem .6rem .6rem;
+  border:1px solid var(--line-strong);border-radius:var(--radius-sm);background:var(--card2)}
+.rg-title,.ct-title{font-size:.9rem;font-weight:700;text-align:center;margin:0 0 .4rem;overflow-wrap:anywhere}
+.rg-math,.ct-math{unicode-bidi:isolate;direction:ltr;white-space:nowrap}
+.ct-title .ct-math{white-space:normal}
+.rg-plot,.ct-plot{direction:ltr;text-align:center}
+.rg-svg,.ct-svg{display:block;width:100%;height:auto;max-width:100%;margin:0 auto;font-family:inherit}
+.rg-space,.ct-space{fill:var(--card-solid)}
+.rg-grid,.ct-grid{stroke:var(--line);stroke-width:1}
+.rg-axis,.ct-axis{stroke:var(--muted);stroke-opacity:.7;stroke-width:1.1}
+.rg-frame,.ct-frame{fill:none;stroke:var(--muted);stroke-width:1.1}
+.rg-tl,.ct-tl{fill:var(--muted);font-size:10px}
+.rg-ax,.ct-ax{fill:var(--ink);font-size:12px;font-weight:700;font-style:italic}
+.rg-region{fill:var(--brand);fill-opacity:.30}
+.rg-outline{fill:none;stroke:var(--brand);stroke-width:2.2;stroke-linecap:round}
+.rg-curve{fill:none;stroke:var(--ink);stroke-opacity:.35;stroke-width:1;stroke-dasharray:4 3}
+.rg-l{display:none}
+.region-fig[data-view="v"] .rg-l-v,.region-fig[data-view="h"] .rg-l-h,
+.region-fig[data-view="p"] .rg-l-p,.region-fig[data-view="uv"] .rg-l-uv{display:inline}
+.rg-strip{fill:var(--brand2);fill-opacity:.55;stroke:var(--brand2);stroke-width:.8}
+.rg-end{fill:var(--ink)}
+.rg-rstrip{stroke:var(--brand2);stroke-width:3.2;stroke-linecap:round}
+.rg-ray{fill:none;stroke:var(--brand2);stroke-width:1.1;stroke-dasharray:5 4;stroke-opacity:.8}
+.rg-origin{fill:var(--brand2)}
+.rg-ucurve{fill:none;stroke:var(--brand2);stroke-width:1.8}
+.rg-vcurve{fill:none;stroke:var(--ok);stroke-width:1.8;stroke-dasharray:5 3}
+.rg-tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:.35rem;margin:0 0 .45rem}
+.rg-tab{font:inherit;font-size:.82rem;padding:.3rem .7rem;min-height:34px;border-radius:999px;cursor:pointer;
+  border:1px solid var(--line-strong);background:transparent;color:var(--ink)}
+.rg-tab[aria-pressed="true"]{background:var(--brand);border-color:var(--brand);color:var(--brand-ink);font-weight:700}
+.rg-tab:focus-visible{outline:none;box-shadow:var(--ring)}
+.rg-rows{display:flex;flex-direction:column;gap:.3rem;margin-top:.5rem}
+.rg-row{display:flex;flex-wrap:wrap;align-items:baseline;gap:.15rem .6rem;padding:.3rem .5rem;border-radius:var(--radius-xs);
+  border:1px solid transparent;font-size:.86rem;line-height:1.5}
+.rg-rl{font-weight:600;color:var(--muted)}
+.rg-rx{display:flex;flex-direction:column;align-items:flex-start;gap:.05rem;min-width:0;max-width:100%}
+.rg-rx .rg-math{white-space:normal}
+.rg-cup{padding-inline-end:.35rem;color:var(--muted)}
+.rg-none{color:var(--muted);font-size:.8rem}
+.rg-derived{font-weight:400;font-size:.76rem}
+.region-fig[data-view="v"] .rg-row[data-view="v"],.region-fig[data-view="h"] .rg-row[data-view="h"],
+.region-fig[data-view="p"] .rg-row[data-view="p"],.region-fig[data-view="uv"] .rg-row[data-view="uv"]{
+  border-color:color-mix(in srgb,var(--brand2) 55%,transparent);background:color-mix(in srgb,var(--brand2) 10%,transparent)}
+.region-fig[data-view] .rg-row[data-view] .rg-rl{color:var(--ink)}
+.rg-curves,.rg-val{font-size:.82rem;color:var(--muted);margin-top:.4rem;padding:0 .5rem;line-height:1.6}
+.rg-curves{display:flex;flex-wrap:wrap;gap:.1rem .9rem}
+.rg-val{color:var(--ink);font-weight:600}
+.rg-cl{font-weight:600}
+.rg-error,.ct-error{color:var(--bad);font-size:.85rem}
+
+.ct-level{fill:none;stroke-width:1.15;stroke-opacity:.95}
+.ct-level.ct-crit{stroke-width:1.7;stroke-dasharray:6 3}
+.ct-cons{fill:none;stroke:var(--ct-cons);stroke-width:2.6;stroke-linecap:round}
+.ct-region{fill:var(--ct-cons);fill-opacity:.13}
+.ct-gf{stroke:var(--ok);stroke-width:2.2}
+.ct-gf-head{fill:var(--ok)}
+.ct-gg{stroke:var(--ink);stroke-width:1.6;stroke-dasharray:3 2}
+.ct-gg-head{fill:var(--ink)}
+.ct-pt{stroke:var(--card-solid);stroke-width:1.2}
+.ct-absmax,.ct-max{fill:var(--bad)}
+.ct-absmin,.ct-min{fill:var(--ct-min)}
+.ct-absmax,.ct-absmin{stroke:var(--ink);stroke-width:1.4}
+.ct-saddle{fill:var(--warn)}
+.ct-other{fill:var(--card-solid);stroke:var(--ink);stroke-width:1.6}
+.ct-num{fill:var(--ink);font-size:10.5px;font-weight:700;paint-order:stroke;stroke:var(--card-solid);stroke-width:3px}
+.ct-legend{display:flex;flex-wrap:wrap;gap:.25rem .9rem;font-size:.8rem;color:var(--muted);margin:.45rem .3rem 0;line-height:1.5}
+.ct-key{display:inline-flex;align-items:center;gap:.35rem;flex-wrap:wrap;min-width:0}
+.ct-key .ct-math{white-space:normal}
+.ct-sw{display:inline-block;width:18px;height:0;border-top:2.4px solid;flex:none}
+.ct-sw-lv{border-image:linear-gradient(90deg,var(--ct-lo),var(--ct-hi)) 1}
+.ct-sw-cons{border-color:var(--ct-cons)}
+.ct-sw-gf{border-color:var(--ok)}
+.ct-sw-gg{border-top-style:dashed;border-color:var(--ink)}
+.ct-pts{margin:.5rem 0 0;padding-inline-start:1.6rem;font-size:.84rem;line-height:1.55}
+.ct-pts li{margin:.1rem 0}
+.ct-li-role{font-weight:600}
+.ct-li-f{margin-inline-start:.5rem;color:var(--muted)}
+.ct-r-absmax,.ct-r-max{color:var(--bad)}
+.ct-r-absmin,.ct-r-min{color:var(--ct-min)}
+.ct-r-saddle{color:var(--warn)}
+:root[data-theme="light"] .ct-r-saddle{color:#b45309}
+@media (prefers-color-scheme: light){ :root:not([data-theme]) .ct-r-saddle{color:#b45309} }
+.s-prompt .region-fig,.s-prompt .contour-fig,.s-explain .region-fig,.s-explain .contour-fig{margin:.5rem auto}
+.rg-nw{white-space:nowrap}
+.rg-derived{display:block;font-weight:400;font-size:.76rem}

@@ -196,3 +196,64 @@ prompt is the stem). A `bankId` question renders by its bank kind: `mcq` as an M
 button counts as a miss), anything else (steps stripped as ai-draft, say) as reveal-the-solution then a
 self-mark. `--compare` answers for steps: option id (choice/fillblank), number (numeric), string (text), the lines in
 order (order), the line index (findbug).
+
+## Region and contour diagrams (calculus-2 extra: `region.js`, `contour.js`)
+App-local, dependency-free SVG figures, mobile-first (390px) and themed by the palette variables (light + dark).
+f and every bound are evaluated by a small expression parser (numbers, `x y theta`, `+ - * / ^`, parentheses,
+`sqrt exp ln log sin cos tan atan abs sinh cosh`, `pi`, `e`); never `eval` / `Function`.
+
+**Data** -- the source of truth is each sitting's `tools/verify/<CODE>/regions.json` / `contours.json` (written by its
+`check.py`), one entry per question id (`<CODE>-Q<num><part>`). `build_questions.py` (via `tools/extras.py`) attaches
+them to the bank item with that id as `region` / `contour` (a list); never put them in `tools/raw`. The build report
+lists ids with no bank question.
+```jsonc
+// regions.json entry: the region is the AND of `inequalities` (the only required key)
+{ "id": "26A-A-Q1a", "inequalities": ["x>=0", "y>=0", "y<=2-x^2"], "boundary_curves": ["y=2-x^2", "x=0", "y=0"],
+  "orderXY": {"x": [0, "sqrt(2)"], "y": [0, "2-x^2"]},        // an order: the OUTER variable is the one with constant
+  "orderYX": {"y": [0, 2], "x": [0, "sqrt(2-y)"]},             //   bounds (the key name is not trusted); a sum of
+                                                               //   iterated integrals: {"pieces": [{..}, {..}]}
+  "polar": {"r": ["2*cos(theta)", "4*cos(theta)"], "theta": ["-pi/2", "pi/2"]},
+  "substitution": {"u": "y-x", "v": "x*y", "u_range": [0, 1], "v_range": [1, 2], "abs_jacobian_xy_over_uv": "1/(x+y)"},
+  "vertices": [[0, 0], ["sqrt(2)", 0], [0, 2]], "integrand": "x*exp(x^2)", "value": "(e^2-3)/2", "area": "3*pi",
+  "view": {"x": [-1, 2], "y": [-1, 3]} }                       // optional plot box (default: the region's bounding box)
+// contours.json entry
+{ "id": "26A-A-Q4b", "f": "x^3+x^2-3*x+y^2", "domain": [[-3, 3], [-3, 3]],
+  "kind": "lagrange",                                          // unconstrained | lagrange | closed_region
+  "constraint": "x^2+y^2=4",                                   // lagrange: g=c; closed_region: may be an inequality
+  "region": "x>=0, y<=1, y>=x",                                // closed_region (string or list); else the inequality
+                                                               //   constraint, else the regions.json entry of the same id
+  "critical_points": [{"x": 2, "y": 0, "f": 6, "role": "abs max"}] }   // role: abs/local max|min, saddle, boundary ...
+```
+The region figure shades the inequalities, outlines them and offers a view toggle: vertical strips (`dy dx`),
+horizontal strips (`dx dy`), polar rays (`r, θ`, with `polar`) and the u,v grid (with `substitution`). Under it, the
+bounds of every description; an order the data does not give is computed from `vertices` for a polygon (marked as
+such) or reported missing. The contour figure draws level curves of f, the constraint / shaded closed region, each
+critical point (marker by role, numbered, listed with its value) and, at every point on the constraint or one
+boundary edge, the arrows grad f (solid) and grad g (dashed).
+
+**Embedding** (solutions, steps, learn briefs, guided courses):
+- Bank items: automatic -- every item with `region` / `contour` shows its figures at the top of the solution panel
+  (practice, exam review, guided-course solution).
+- Rich text (`question`, `solution`, step `prompt` / `explain`, course question text): a fence whose body is an id from
+  the verify files or an inline JSON spec. An unknown id or bad JSON fails the build, naming the item id.
+  ````
+  ```region
+  26A-A-Q1a
+  ```
+  ```contour
+  {"f": "x*y", "kind": "lagrange", "constraint": "x^2+y^2=2", "domain": [[-2,2],[-2,2]], "critical_points": [{"x":1,"y":1,"f":1,"role":"abs max"}]}
+  ```
+  ````
+- Learn briefs (`docs/briefs/*.md`): the same fences.
+- Guided-course lesson HTML: `<div class="region-fig" data-region="26A-A-Q1a"></div>` /
+  `<div class="contour-fig" data-contour="26A-A-Q4b"></div>` (an id or JSON; `build_courses.py` inlines the JSON).
+  At run time `Region.hydrate` / `Contour.hydrate` draw every such hook as it appears (MutationObserver); an id is
+  also looked up in the bank's `region` / `contour`.
+
+**Checks**: `PYTHONUTF8=1 py tools/verify/extras_check.py` -- sympy: every description of a region (orders, pieces,
+polar, substitution with its Jacobian) gives the same area exactly and describes the same set as the inequalities,
+integrates to `value`, vertices lie on the boundary; every critical point has grad f = 0 or satisfies the Lagrange
+system, its f and Hessian class match, abs extrema match a dense sampling (warns about missing critical points).
+`node tools/test_extras.js` -- renders every spec headlessly (verify data, bank, hooks in built files), checks the SVG,
+the views, the areas of every description, hydrate + toggle, fences through the build, and that the parsers refuse
+anything but arithmetic.

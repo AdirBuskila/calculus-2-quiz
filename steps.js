@@ -32,6 +32,8 @@
   }
   const bidi = h => (typeof window !== "undefined" && window.Bidi) ? window.Bidi.render(h) : h;   // normalize.js
   const promptHtml = step => bidi(step.promptHtml != null ? step.promptHtml : esc(step.prompt || ""));
+  /* calculus-2 extra: a ```region / ```contour fence in a prompt or explanation (region.js / contour.js) */
+  const hydrateDiagrams = el => { if (root.Region) root.Region.hydrate(el); if (root.Contour) root.Contour.hydrate(el); };
   /* canonical index: lines with identical text are interchangeable */
   const canonOf = lines => lines.map(l => lines.indexOf(l));
 
@@ -49,6 +51,7 @@
     const fb = doc.createElement("div"); fb.className = "s-feedback"; fb.setAttribute("aria-live", "polite");
     body.append(prompt, work, fb);
     mountEl.appendChild(body);
+    hydrateDiagrams(body);
 
     /* settle the step: verdict, optional reveal of the right answer, explanation, one callback */
     function finish(ok, revealHtml) {
@@ -59,6 +62,7 @@
       if (!ok && revealHtml) h += `<div class="s-reveal">${bidi(revealHtml)}</div>`;
       if (step.explainHtml || step.explain) h += `<div class="s-explain">${bidi(step.explainHtml != null ? step.explainHtml : esc(step.explain))}</div>`;
       fb.innerHTML = h;
+      hydrateDiagrams(fb);
       fb.className = "s-feedback " + (ok ? "good" : "bad");
       if (typeof onResult === "function") onResult({ ok });
     }

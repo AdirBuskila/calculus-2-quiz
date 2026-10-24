@@ -227,6 +227,10 @@ def rich_html(s, bank, where, math_errors):
             out.append(f"@@{'D' if kind == 'dmath' else 'M'}{i}@@")
         elif kind == "code":
             out.append(f'<code class="tok" dir="ltr">{html.escape(p, quote=False)}</code>')
+        elif kind == "fence" and p[0] in ("region", "contour"):   # calculus-2 extra: a diagram hook (tools/extras.py)
+            import extras
+            fences.append(extras.fence_html(p[0], p[1], where, math_errors))
+            out.append(f"\x01F{len(fences) - 1}\x01")
         elif kind == "fence":
             lang, body = p
             la = f' data-lang="{html.escape(lang, quote=True)}"' if lang else ""

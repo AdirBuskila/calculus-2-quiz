@@ -35,8 +35,10 @@ sys.path.insert(0, str(TOOLS))
 from course_config import load as _load_cfg  # noqa: E402
 import richtext as rt  # noqa: E402
 import validate  # noqa: E402
+import extras  # noqa: E402  (calculus-2 extra: region / contour diagram data)
 
 CFG = _load_cfg()
+EXTRAS = ({}, {})
 TOPIC_LABEL = {k: v for k, v in CFG["topics"]}
 HEB_LETTER = "א-ת"
 
@@ -78,6 +80,8 @@ def fail(lines, header):
 
 def main():
     raw_files = [p for p in sorted(RAW.glob("*.json")) if EXAM_RE.match(p.name)]
+    global EXTRAS
+    EXTRAS = extras.load()
     bank = rt.MathBank()
     math_errors = []
     contexts, questions = {}, []
@@ -168,6 +172,7 @@ def main():
             if q.get("steps"):
                 q["steps"] = [make_step(s, f"{qid} step[{i}]", bank, math_errors)
                               for i, s in enumerate(q["steps"])]
+            extras.attach(q, EXTRAS)   # region / contour diagrams from tools/verify/<CODE>/*.json
             questions.append(q)
 
     math_errors += bank.render()
@@ -228,6 +233,9 @@ def main():
          f"- Math spans rendered (distinct): **{len(bank.items)}**",
          f"- Guided steps: **{sum(n_steps.values())}** {dict(n_steps)}",
          f"- includeDrafts: **{CFG['includeDrafts']}**",
+         f"- Diagrams: region on **{sum(1 for q in questions if q.get('region'))}** questions, contour on "
+         f"**{sum(1 for q in questions if q.get('contour'))}**; verify ids with no bank question: "
+         + (", ".join(sorted((set(EXTRAS[0]) | set(EXTRAS[1])) - {q['id'] for q in questions})) or "none"),
          f"- **ai-draft parts stripped: {len(drafts)}** " + ", ".join(drafts),
          f"- **On hold (not in bank): {len(held)}**", ""] + [f"  - {h}" for h in held] + ["",
          "## By kind", ""] + [f"- {k}: {by_kind.get(k, 0)}" for k in validate.KINDS] + ["",
