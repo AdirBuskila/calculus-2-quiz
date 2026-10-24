@@ -1,0 +1,150 @@
+{
+ "examCode": "24A-A",
+ "refuter": "calculus-2 24A-A",
+ "summary": {
+  "agree": 10,
+  "disagree": 0,
+  "unclear": 0
+ },
+ "transcription": "matches page renders for all items (tools/raw/24A-A-SRC)",
+ "optionText": "no positional option citations; no 'הפתרון הרשמי' in any item (all non-official); every choice has exactly one correct option and a valid correctId; rubric sums = 12/13 per part",
+ "flags": {
+  "rubric_points": "24A-A raw 'points' 12/13 and rubric sums match.",
+  "regions_json": "none needed (no double integral in 24A-A); no regions.json exists, which is correct.",
+  "contours_json": "Q4b (xy on the circle: +-1) and Q5a (saddle f=1, min f=0) agree."
+ },
+ "items": [
+  {
+   "item": "1א",
+   "verdict": "agree",
+   "myAnswer": "continuous (|f|<=r^2/4 -> 0 = f(0,0))",
+   "steps": "agree (every numeric answer/tol, choice correctId and unique-correct option, order sequence, findbug index re-derived)",
+   "firstDivergence": null
+  },
+  {
+   "item": "1ב",
+   "verdict": "agree",
+   "myAnswer": "direction (-1,0) (grad = (-4/e,0))",
+   "steps": "agree (every numeric answer/tol, choice correctId and unique-correct option, order sequence, findbug index re-derived)",
+   "firstDivergence": null
+  },
+  {
+   "item": "2א",
+   "verdict": "agree",
+   "myAnswer": "both series conditionally convergent (Leibniz; abs terms ~1/sqrt n and ~1/(2 sqrt n) diverge)",
+   "steps": "agree (every numeric answer/tol, choice correctId and unique-correct option, order sequence, findbug index re-derived)",
+   "firstDivergence": null
+  },
+  {
+   "item": "2ב",
+   "verdict": "agree",
+   "myAnswer": "fx=fy=0; differentiable (eps = rho*sin(4 theta)/4 -> 0)",
+   "steps": "agree (every numeric answer/tol, choice correctId and unique-correct option, order sequence, findbug index re-derived)",
+   "firstDivergence": null
+  },
+  {
+   "item": "3א",
+   "verdict": "agree",
+   "myAnswer": "R=1/2 in s=x+1; both endpoints converge; domain [-3/2,-1/2]",
+   "steps": "agree (every numeric answer/tol, choice correctId and unique-correct option, order sequence, findbug index re-derived)",
+   "firstDivergence": null
+  },
+  {
+   "item": "3ב",
+   "verdict": "agree",
+   "myAnswer": "Euler homogeneity identity holds: x u_x+y u_y+z u_z = k u (chain+product rule; the F_s, F_t terms cancel; sympy leaves Subs forms, cancellation checked by inspection)",
+   "steps": "agree (every numeric answer/tol, choice correctId and unique-correct option, order sequence, findbug index re-derived)",
+   "firstDivergence": null
+  },
+  {
+   "item": "4א",
+   "verdict": "agree",
+   "myAnswer": "7/24 (telescoping; sympy sum 7/24)",
+   "steps": "agree (every numeric answer/tol, choice correctId and unique-correct option, order sequence, findbug index re-derived)",
+   "firstDivergence": null
+  },
+  {
+   "item": "4ב",
+   "verdict": "agree",
+   "myAnswer": "max 1 at (1,1),(-1,-1); min -1 at (1,-1),(-1,1)",
+   "steps": "agree (every numeric answer/tol, choice correctId and unique-correct option, order sequence, findbug index re-derived)",
+   "firstDivergence": null
+  },
+  {
+   "item": "5א",
+   "verdict": "agree",
+   "myAnswer": "(0,0) saddle (D=-36); (1,1/2) local min (D=108, f_xx=6), f=0",
+   "steps": "agree (every numeric answer/tol, choice correctId and unique-correct option, order sequence, findbug index re-derived)",
+   "firstDivergence": null
+  },
+  {
+   "item": "5ב",
+   "verdict": "agree",
+   "myAnswer": "sum 3^n x^(2n), |x|<1/sqrt3 (ends diverge); f^(5)(0)=0",
+   "steps": "agree (every numeric answer/tol, choice correctId and unique-correct option, order sequence, findbug index re-derived)",
+   "firstDivergence": null
+  }
+ ],
+ "answers": {
+  "1a": {
+   "answer": null,
+   "agrees": true,
+   "confident": true,
+   "transcriptionIssues": ""
+  },
+  "1b": {
+   "answer": null,
+   "agrees": true,
+   "confident": true,
+   "transcriptionIssues": ""
+  },
+  "2a": {
+   "answer": null,
+   "agrees": true,
+   "confident": true,
+   "transcriptionIssues": ""
+  },
+  "2b": {
+   "answer": null,
+   "agrees": true,
+   "confident": true,
+   "transcriptionIssues": ""
+  },
+  "3a": {
+   "answer": null,
+   "agrees": true,
+   "confident": true,
+   "transcriptionIssues": ""
+  },
+  "3b": {
+   "answer": null,
+   "agrees": true,
+   "confident": true,
+   "transcriptionIssues": ""
+  },
+  "4a": {
+   "answer": null,
+   "agrees": true,
+   "confident": true,
+   "transcriptionIssues": ""
+  },
+  "4b": {
+   "answer": null,
+   "agrees": true,
+   "confident": true,
+   "transcriptionIssues": ""
+  },
+  "5a": {
+   "answer": null,
+   "agrees": true,
+   "confident": true,
+   "transcriptionIssues": ""
+  },
+  "5b": {
+   "answer": null,
+   "agrees": true,
+   "confident": true,
+   "transcriptionIssues": ""
+  }
+ }
+}

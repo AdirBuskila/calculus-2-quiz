@@ -1,0 +1,163 @@
+{
+ "examCode": "22A-A",
+ "refuter": "calculus-2 22A-A",
+ "summary": {
+  "agree": 10,
+  "disagree": 0,
+  "unclear": 0
+ },
+ "transcription": "matches page renders for all items (tools/raw/22A-A-SRC)",
+ "optionText": "no positional option citations; no 'הפתרון הרשמי' in any item (all non-official); every choice has exactly one correct option and a valid correctId; rubric sums = 12/13 per part",
+ "flags": {
+  "Q4a_ambiguity": {
+   "finding": "Read literally, y-x=1, y=x+2, y^2=-4x, y^2=-4x+9 bound TWO pieces: y>=0.83 (the key's piece, integral +9e(e-1)=42.037) and y in [-6.58,-4.83] (there 2y+4<0, signed integral -9e(e-1)). Nothing in the statement picks one. The key's hand note (circled) says 'y>=0 in D', and the app solution carries it only as the parenthetical '(ב-D מתקיים y≥0.)', an unmarked assumption.",
+   "needsVisibleNote": true,
+   "noteText": "הערה: ארבעת העקומים חוסמים שני תחומים נפרדים, אחד עם y ≥ 0 ואחד עם y < −4.8 בקירוב. כמו בפתרון המקורי, מחשבים כאן את התחום העליון (y ≥ 0). באינטגרל על התחום התחתון מתקבל −9e(e−1).",
+   "placement": "visible in Q4a (question or head of the solution); regions.json description already says 'the part with y>=0', keep the diagram and value consistent with the note"
+  },
+  "rubric_points": "22A-A prints '25 נק'' per question and no per-part split. 12/13 (a/b) is reasonable and matches the 12/13 printed in 23A-A, but it is an estimate (rubricSource ai-draft) and must not be shown as the exam's own split. Every rubric sums to 12 or 13 as claimed.",
+  "contours_json": "All f values and Hessian classes are correct. INCOMPLETE: 22A-A-Q4b omits interior critical points (+-1/2,0) f=-1/8 (saddle) and (0,+-1) f=-1 (saddle) and the boundary local min -3/4 at (+-1/sqrt2,+-sqrt(3/2)); nothing wrong, but 'every critical point' is not literally true.",
+  "regions_json": "22A-A-Q4a: inequalities, substitution and value correct for the y>=0 piece (grid 42.025 vs 42.037). Should mention the second piece like the app note.",
+  "docs_stale": "docs/ASK_ADIR.md (22A-A Q4b entry) says the prefix is 'הפתרון הרשמי עם תיקון' while the raw correctly uses 'תיקון לפתרון שבקובץ' (GATE1 ruling, QA 4b). The doc text is stale. Item solutionSource is 'solved' (not 'student-solution'), acceptable because the shown solution is the corrected one."
+ },
+ "items": [
+  {
+   "item": "1א",
+   "verdict": "agree",
+   "myAnswer": "direction (1,1)/sqrt2, max D_u = 4*sqrt2 = sqrt32 ~5.657",
+   "steps": "agree (every numeric answer/tol, choice correctId and unique-correct option, order sequence, findbug index re-derived)",
+   "firstDivergence": null
+  },
+  {
+   "item": "1ב",
+   "verdict": "agree",
+   "myAnswer": "identity holds (z_x=-y/(3x^2)+y g', z_y=1/(3x)+x g'; sum = -2y/3 + 2y/3 = 0; sympy simplify = 0)",
+   "steps": "agree (every numeric answer/tol, choice correctId and unique-correct option, order sequence, findbug index re-derived)",
+   "firstDivergence": null,
+   "note": "silent fix confirmed: key's '+y^2' should be '+2y/3'; raw has +2y/3, correct"
+  },
+  {
+   "item": "2א",
+   "verdict": "agree",
+   "myAnswer": "series 1 absolutely convergent (integral test, 1/ln2); series 2 absolutely convergent (sum = 1/2)",
+   "steps": "agree (every numeric answer/tol, choice correctId and unique-correct option, order sequence, findbug index re-derived)",
+   "firstDivergence": null,
+   "note": "key only says 'converges' for series 2 (true: it is absolutely convergent); not wrong"
+  },
+  {
+   "item": "2ב",
+   "verdict": "agree",
+   "myAnswer": "continuous; fx=fy=0; differentiable (f/r = r sin(1/r) -> 0)",
+   "steps": "agree (every numeric answer/tol, choice correctId and unique-correct option, order sequence, findbug index re-derived)",
+   "firstDivergence": null,
+   "note": "silent fix confirmed: division by h present in raw"
+  },
+  {
+   "item": "3א",
+   "verdict": "agree",
+   "myAnswer": "R=1; x+1=1 diverges (~pi/sqrt n); x+1=-1 converges (Leibniz, decreasing from n=4); domain -2<=x<0",
+   "steps": "agree (every numeric answer/tol, choice correctId and unique-correct option, order sequence, findbug index re-derived)",
+   "firstDivergence": null,
+   "note": "silent fix confirmed: a_3=0.971 < a_4=1.000, so decreasing starts at n=4 (n=2 in the key file is wrong; page 4 of the key shows 'from n=2'); numeric partial sums checked"
+  },
+  {
+   "item": "3ב",
+   "verdict": "agree",
+   "myAnswer": "F_z=2!=0 at (1,1,0), z_x=0, z_y=-5/2; tangent plane 5y+2z=5",
+   "steps": "agree (every numeric answer/tol, choice correctId and unique-correct option, order sequence, findbug index re-derived)",
+   "firstDivergence": null
+  },
+  {
+   "item": "4א",
+   "verdict": "agree",
+   "myAnswer": "9e(e-1)=42.037 for the y>=0 piece; the y<=-4.83 piece gives -9e(e-1); whole D (both pieces) = 0",
+   "steps": "agree (every numeric answer/tol, choice correctId and unique-correct option, order sequence, findbug index re-derived); step answers all refer to the y>=0 piece",
+   "firstDivergence": null,
+   "note": "VALUE AGREES BUT THE STATEMENT IS AMBIGUOUS: see flags.Q4a_ambiguity. A visible 'הערה:' is required."
+  },
+  {
+   "item": "4ב",
+   "verdict": "agree",
+   "myAnswer": "abs max 6 at (+-sqrt2,0); abs min -9/8 at (+-1/2,+-1)",
+   "steps": "agree (every numeric answer/tol, choice correctId and unique-correct option, order sequence, findbug index re-derived)",
+   "firstDivergence": null,
+   "note": "corrected values confirmed (sympy; boundary in t=y^2 is 3t^2-9t+6, max 6 at t=0, min -3/4; interior values 0,-1,-1/8,-9/8; dense grid max 5.9958, min -1.125). Prefix 'תיקון לפתרון שבקובץ' is correct (official:false, no 'הפתרון הרשמי')."
+  },
+  {
+   "item": "5א",
+   "verdict": "agree",
+   "myAnswer": "-(1/3) sum (1 + (-1)^n/2^(n+1)) x^n, |x|<1 (coefficients checked to n=7)",
+   "steps": "agree (every numeric answer/tol, choice correctId and unique-correct option, order sequence, findbug index re-derived)",
+   "firstDivergence": null
+  },
+  {
+   "item": "5ב",
+   "verdict": "agree",
+   "myAnswer": "(-2,0) local max f=5; (1,+-sqrt3) saddles f=1/2",
+   "steps": "agree (every numeric answer/tol, choice correctId and unique-correct option, order sequence, findbug index re-derived)",
+   "firstDivergence": null
+  }
+ ],
+ "answers": {
+  "1a": {
+   "answer": null,
+   "agrees": true,
+   "confident": true,
+   "transcriptionIssues": ""
+  },
+  "1b": {
+   "answer": null,
+   "agrees": true,
+   "confident": true,
+   "transcriptionIssues": ""
+  },
+  "2a": {
+   "answer": null,
+   "agrees": true,
+   "confident": true,
+   "transcriptionIssues": ""
+  },
+  "2b": {
+   "answer": null,
+   "agrees": true,
+   "confident": true,
+   "transcriptionIssues": ""
+  },
+  "3a": {
+   "answer": null,
+   "agrees": true,
+   "confident": true,
+   "transcriptionIssues": ""
+  },
+  "3b": {
+   "answer": null,
+   "agrees": true,
+   "confident": true,
+   "transcriptionIssues": ""
+  },
+  "4a": {
+   "answer": null,
+   "agrees": true,
+   "confident": true,
+   "transcriptionIssues": ""
+  },
+  "4b": {
+   "answer": null,
+   "agrees": true,
+   "confident": true,
+   "transcriptionIssues": ""
+  },
+  "5a": {
+   "answer": null,
+   "agrees": true,
+   "confident": true,
+   "transcriptionIssues": ""
+  },
+  "5b": {
+   "answer": null,
+   "agrees": true,
+   "confident": true,
+   "transcriptionIssues": ""
+  }
+ }
+}
