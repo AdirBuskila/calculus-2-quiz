@@ -1,0 +1,84 @@
+{
+ "examCode": "23A-C",
+ "refuter": "calculus-2 23A-C",
+ "summary": {
+  "agree": 10,
+  "disagree": 0,
+  "unclear": 0
+ },
+ "transcription": "matches page renders for all 10 items",
+ "optionText": "no positional option citations; no 'הפתרון הרשמי'; rubric sums match points; all choice correctIds valid",
+ "regions_contours": "regions.json (Q1a, Q4a) and contours.json (Q4b, Q5a) agree with independent math",
+ "items": [
+  {
+   "item": "1א",
+   "verdict": "agree",
+   "myAnswer": "3π",
+   "steps": "agree (all step answers, choice keys, findbug index 3 in 3ב, numeric values re-derived)",
+   "firstDivergence": null
+  },
+  {
+   "item": "1ב",
+   "verdict": "agree",
+   "myAnswer": "9/8 (grad (4,4,2), |grad|=6, D_u=16/3)",
+   "steps": "agree (all step answers, choice keys, findbug index 3 in 3ב, numeric values re-derived)",
+   "firstDivergence": null
+  },
+  {
+   "item": "2א",
+   "verdict": "agree",
+   "myAnswer": "both absolutely convergent (ratio 2/3; root test limit π/4)",
+   "steps": "agree (all step answers, choice keys, findbug index 3 in 3ב, numeric values re-derived)",
+   "firstDivergence": null
+  },
+  {
+   "item": "2ב",
+   "verdict": "agree",
+   "myAnswer": "not differentiable (fx=1/2, fy=1; along y=x remainder/r -> -5/(6√2))",
+   "steps": "agree (all step answers, choice keys, findbug index 3 in 3ב, numeric values re-derived)",
+   "firstDivergence": null
+  },
+  {
+   "item": "3א",
+   "verdict": "agree",
+   "myAnswer": "R=3, (-3,3)",
+   "steps": "agree (all step answers, choice keys, findbug index 3 in 3ב, numeric values re-derived)",
+   "firstDivergence": null
+  },
+  {
+   "item": "3ב",
+   "verdict": "agree",
+   "myAnswer": "identity holds, both sides g(t)/y",
+   "steps": "agree (all step answers, choice keys, findbug index 3 in 3ב, numeric values re-derived)",
+   "firstDivergence": null
+  },
+  {
+   "item": "4א",
+   "verdict": "agree",
+   "myAnswer": "∫0^2 dy ∫_{y²-4}^{2-y} f dx (area 22/3 both ways)",
+   "steps": "agree (all step answers, choice keys, findbug index 3 in 3ב, numeric values re-derived)",
+   "firstDivergence": null
+  },
+  {
+   "item": "4ב",
+   "verdict": "agree",
+   "myAnswer": "max 3 at (1/√2,1/√2); min 0 at (0,0)",
+   "steps": "agree (all step answers, choice keys, findbug index 3 in 3ב, numeric values re-derived)",
+   "firstDivergence": null
+  },
+  {
+   "item": "5א",
+   "verdict": "agree",
+   "myAnswer": "saddle (0,0); local max (-4,-2) value 8/e²",
+   "steps": "agree (all step answers, choice keys, findbug index 3 in 3ב, numeric values re-derived)",
+   "firstDivergence": null
+  },
+  {
+   "item": "5ב",
+   "verdict": "agree",
+   "myAnswer": "f^(10)(0)=-9681525/8, domain (-1,1)",
+   "steps": "agree (all step answers, choice keys, findbug index 3 in 3ב, numeric values re-derived)",
+   "firstDivergence": null
+  }
+ ]
+}
