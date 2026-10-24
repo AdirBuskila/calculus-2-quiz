@@ -18,7 +18,7 @@
    "part": "א",
    "rubric": [
     {
-     "text": "הנימוק שהכיוון של הנגזרת הכיוונית הגדולה ביותר הוא כיוון הגרדיאנט",
+     "text": "הנימוק שהכיוון של הנגזרת הכיוונית הגדולה ביותר הוא כיוון הגרדיאנט (הערה: המבחן מדפיס 25 נקודות לשאלה בלי חלוקה לסעיפים, ולכן חלוקת הנקודות כאן היא הערכה בלבד.)",
      "points": 2
     },
     {
@@ -82,8 +82,8 @@
      "explain": "נורמת הגרדיאנט: $\\sqrt{\\frac19+\\frac49+\\frac19}=\\frac{\\sqrt6}{3}\\approx0.8165$."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 1,
@@ -97,7 +97,7 @@
    "part": "ב",
    "rubric": [
     {
-     "text": "זיהוי התחום כחצי עיגול $x^2+y^2\\le9,\\ y\\ge0$",
+     "text": "זיהוי התחום כחצי עיגול $x^2+y^2\\le9,\\ y\\ge0$ (הערה: המבחן מדפיס 25 נקודות לשאלה בלי חלוקה לסעיפים, ולכן חלוקת הנקודות כאן היא הערכה בלבד.)",
      "points": 3
     },
     {
@@ -161,22 +161,22 @@
      "explain": "$\\pi\\cdot\\frac12(\\cos2-\\cos11)\\approx-0.6606$."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 2,
    "kind": "computation",
    "topic": "numeric_series",
    "question": "בדקו התכנסות הטורים הבאים:\n$$\\sum_{n=2}^{\\infty}\\frac{(-1)^n}{(n-\\ln n)^3}$$\n$$\\sum_{n=1}^{\\infty}\\frac{1+\\cos(n)}{2^{n+1}}$$",
-   "solution": "**הטור הראשון.** נבחן את הפונקציה $f_1(x)=x-\\ln x$, שהנגזרת שלה $f_1'(x)=1-\\dfrac{1}{x}>0$ עבור כל $x\\ge2$. אזי $f_1(x)$ היא פונקציה עולה ולכן הפונקציה $f_2(x)=\\dfrac{1}{(x-\\ln x)^3}$ יורדת, זה אומר שהסדרה $\\left\\{\\dfrac{1}{(n-\\ln n)^3}\\right\\}$ יורדת (ושואפת ל-0). הטור המקורי הוא טור מחליף סימן ולפי משפט לייבניץ הטור מתכנס.\n\n**הטור השני.** נציין תחילה שהטור הוא טור חיובי, כי לכל $n\\in\\mathbb{N}$ מתקיים $1+\\cos n\\ge0$, ויש לנו גם ש-\n$$\\frac{1+\\cos n}{2^{n+1}}\\le\\frac{2}{2^{n+1}}=\\left(\\frac{1}{2}\\right)^n.$$\nאנחנו יודעים שהטור $\\sum_{n=1}^{\\infty}\\left(\\dfrac{1}{2}\\right)^n$ מתכנס, אזי גם הטור המקורי מתכנס.",
+   "solution": "**הטור הראשון.** נבחן את הפונקציה $f_1(x)=x-\\ln x$, שהנגזרת שלה $f_1'(x)=1-\\dfrac{1}{x}>0$ עבור כל $x\\ge2$. אזי $f_1(x)$ היא פונקציה עולה ולכן הפונקציה $f_2(x)=\\dfrac{1}{(x-\\ln x)^3}$ יורדת, זה אומר שהסדרה $\\left\\{\\dfrac{1}{(n-\\ln n)^3}\\right\\}$ יורדת (ושואפת ל-0). הטור המקורי הוא טור מחליף סימן ולפי משפט לייבניץ הטור מתכנס.\n\n**הערה:** הטור הראשון מתכנס אפילו בהחלט, כי $\\dfrac{1}{(n-\\ln n)^3}\\sim\\dfrac{1}{n^3}$ (השוואה גבולית לטור $\\sum\\dfrac{1}{n^3}$ המתכנס). משפט לייבניץ, כמו בפתרון, הוא דרך חלופית ותקפה להראות התכנסות.\n\n**הטור השני.** נציין תחילה שהטור הוא טור חיובי, כי לכל $n\\in\\mathbb{N}$ מתקיים $1+\\cos n\\ge0$, ויש לנו גם ש-\n$$\\frac{1+\\cos n}{2^{n+1}}\\le\\frac{2}{2^{n+1}}=\\left(\\frac{1}{2}\\right)^n.$$\nאנחנו יודעים שהטור $\\sum_{n=1}^{\\infty}\\left(\\dfrac{1}{2}\\right)^n$ מתכנס, אזי גם הטור המקורי מתכנס.",
    "solutionSource": "student-solution",
    "official": false,
    "confidence": "high",
    "part": "א",
    "rubric": [
     {
-     "text": "הטור הראשון: $f_1(x)=x-\\ln x$ עולה כי $f_1'(x)=1-\\frac1x>0$ עבור $x\\ge2$",
+     "text": "הטור הראשון: $f_1(x)=x-\\ln x$ עולה כי $f_1'(x)=1-\\frac1x>0$ עבור $x\\ge2$ (הערה: המבחן מדפיס 25 נקודות לשאלה בלי חלוקה לסעיפים, ולכן חלוקת הנקודות כאן היא הערכה בלבד.)",
      "points": 3
     },
     {
@@ -268,8 +268,8 @@
      "explain": "הראשון מתכנס לפי לייבניץ, והשני חסום על ידי טור הנדסי מתכנס."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 2,
@@ -283,7 +283,7 @@
    "part": "ב",
    "rubric": [
     {
-     "text": "רציפות: בקואורדינטות קוטביות $r\\left(\\cos^3\\theta+\\sin^3\\theta\\right)\\to0=f(0,0)$",
+     "text": "רציפות: בקואורדינטות קוטביות $r\\left(\\cos^3\\theta+\\sin^3\\theta\\right)\\to0=f(0,0)$ (הערה: המבחן מדפיס 25 נקודות לשאלה בלי חלוקה לסעיפים, ולכן חלוקת הנקודות כאן היא הערכה בלבד.)",
      "points": 3
     },
     {
@@ -354,8 +354,8 @@
      "explain": "הרציפות נובעת מהגבול $r\\left(\\cos^3\\theta+\\sin^3\\theta\\right)\\to0$ והנגזרות החלקיות שוות $1$, אך הגבול בהגדרת הדיפרנציאביליות שונה מ-$0$."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 3,
@@ -369,7 +369,7 @@
    "part": "א",
    "rubric": [
     {
-     "text": "מבחן המנה: $\\left|\\frac{a_{n+1}}{a_n}\\right|\\to\\frac13$, ולכן $R=3$",
+     "text": "מבחן המנה: $\\left|\\frac{a_{n+1}}{a_n}\\right|\\to\\frac13$, ולכן $R=3$ (הערה: המבחן מדפיס 25 נקודות לשאלה בלי חלוקה לסעיפים, ולכן חלוקת הנקודות כאן היא הערכה בלבד.)",
      "points": 4
     },
     {
@@ -461,8 +461,8 @@
      "explain": "הקצה $-3$ כלול והקצה $3$ אינו כלול."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 3,
@@ -476,7 +476,7 @@
    "part": "ב",
    "rubric": [
     {
-     "text": "הגדרת $F=z^3-3xyz-4$ ובדיקת תנאי משפט הפונקציה הסתומה: $F(2,1,-2)=0$ ו-$F_z(2,1,-2)\\ne0$",
+     "text": "הגדרת $F=z^3-3xyz-4$ ובדיקת תנאי משפט הפונקציה הסתומה: $F(2,1,-2)=0$ ו-$F_z(2,1,-2)\\ne0$ (הערה: המבחן מדפיס 25 נקודות לשאלה בלי חלוקה לסעיפים, ולכן חלוקת הנקודות כאן היא הערכה בלבד.)",
      "points": 3
     },
     {
@@ -526,8 +526,8 @@
      "explain": "גוזרים את $\\frac{yz}{z^2-yx}$ לפי $y$ עם $z'_y=-2$ ומקבלים $\\frac{-4\\cdot2-6\\cdot(-2)}{2^2}=1$."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 4,
@@ -541,7 +541,7 @@
    "part": "א",
    "rubric": [
     {
-     "text": "בחירת ההחלפה $u=y-x$, $v=y+2x$ ותמונת התחום $1\\le u\\le4$, $6\\le v\\le8$",
+     "text": "בחירת ההחלפה $u=y-x$, $v=y+2x$ ותמונת התחום $1\\le u\\le4$, $6\\le v\\le8$ (הערה: המבחן מדפיס 25 נקודות לשאלה בלי חלוקה לסעיפים, ולכן חלוקת הנקודות כאן היא הערכה בלבד.)",
      "points": 4
     },
     {
@@ -612,8 +612,8 @@
      "explain": "$\\frac13\\cdot\\frac{15}{2}\\cdot\\ln\\frac86=\\frac52\\ln\\frac43\\approx0.7192$."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 4,
@@ -627,7 +627,7 @@
    "part": "ב",
    "rubric": [
     {
-     "text": "נקודה קריטית פנימית: $\\nabla f=0$ ב-$(0,0)$, שאינה בתחום",
+     "text": "נקודה קריטית פנימית: $\\nabla f=0$ ב-$(0,0)$, שאינה בתחום (הערה: המבחן מדפיס 25 נקודות לשאלה בלי חלוקה לסעיפים, ולכן חלוקת הנקודות כאן היא הערכה בלבד.)",
      "points": 3
     },
     {
@@ -677,22 +677,22 @@
      "explain": "$-2\\left(\\sqrt2+1\\right)\\approx-4.8284$."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 5,
    "kind": "computation",
    "topic": "power_series",
    "question": "מצאו את הפונקציה אליה הטור מתכנס בתחום $-1\\le x\\le1$ :\n$$\\sum_{n=1}^{\\infty}\\frac{(-1)^{1+n}x^{2n-1}}{2n-1}$$",
-   "solution": "תחום ההתכנסות של הטור הוא $-1\\le x\\le1$ (קל לבדוק).\nעבור $x$ בתחום זה הטור מתכנס ל-$f(x)$.\n$$f'(x)=\\left(\\sum_{n=1}^{\\infty}\\frac{(-1)^{n+1}x^{2n-1}}{2n-1}\\right)'=\\sum_{n=1}^{\\infty}(-1)^{n+1}x^{2n-2}=\\sum_{n=1}^{\\infty}(-1)^{n+1}\\left(x^2\\right)^{n-1}$$\n$$=\\sum_{n=0}^{\\infty}(-1)^n\\left(x^2\\right)^n=\\frac{1}{1+x^2}$$\nמכאן\n$$f(x)=\\int_0^xf'(t)\\,dt=\\int_0^x\\frac{dt}{1+t^2}=\\arctan x$$\nולבסוף\n$$\\sum_{n=1}^{\\infty}\\frac{(-1)^{n+1}x^{2n-1}}{2n-1}=\\arctan x.$$",
+   "solution": "תחום ההתכנסות של הטור הוא $-1\\le x\\le1$ (קל לבדוק).\nעבור $x$ בתחום זה הטור מתכנס ל-$f(x)$.\n$$f'(x)=\\left(\\sum_{n=1}^{\\infty}\\frac{(-1)^{n+1}x^{2n-1}}{2n-1}\\right)'=\\sum_{n=1}^{\\infty}(-1)^{n+1}x^{2n-2}=\\sum_{n=1}^{\\infty}(-1)^{n+1}\\left(x^2\\right)^{n-1}$$\n$$=\\sum_{n=0}^{\\infty}(-1)^n\\left(x^2\\right)^n=\\frac{1}{1+x^2}$$\nמכאן\n$$f(x)=\\int_0^xf'(t)\\,dt=\\int_0^x\\frac{dt}{1+t^2}=\\arctan x$$\nולבסוף\n$$\\sum_{n=1}^{\\infty}\\frac{(-1)^{n+1}x^{2n-1}}{2n-1}=\\arctan x.$$\n**הערה (נקודות הקצה $x=\\pm1$):** הגזירה איבר-איבר תקפה רק עבור $|x|<1$, ולכן השוויון הוכח כך בקטע הפתוח. בנקודות הקצה הטור מתכנס (לפי לייבניץ), ולפי משפט אבל סכום טור חזקות הוא פונקציה רציפה בנקודת קצה שבה הטור מתכנס (רציפות חד-צדדית מתוך הקטע). לכן\n$$\\sum_{n=1}^{\\infty}\\frac{(-1)^{n+1}(\\pm1)^{2n-1}}{2n-1}=\\lim_{x\\to\\pm1}\\arctan x=\\pm\\frac{\\pi}{4}=\\arctan(\\pm1),$$\nוהשוויון מתקיים בכל הקטע $-1\\le x\\le1$.",
    "solutionSource": "student-solution",
    "official": false,
    "confidence": "high",
    "part": "א",
    "rubric": [
     {
-     "text": "גזירה איבר-איבר: $f'(x)=\\sum_{n=1}^{\\infty}(-1)^{n+1}x^{2n-2}$",
+     "text": "גזירה איבר-איבר: $f'(x)=\\sum_{n=1}^{\\infty}(-1)^{n+1}x^{2n-2}$ (הערה: המבחן מדפיס 25 נקודות לשאלה בלי חלוקה לסעיפים, ולכן חלוקת הנקודות כאן היא הערכה בלבד.)",
      "points": 3
     },
     {
@@ -784,8 +784,8 @@
      "explain": "$\\arctan1=\\frac\\pi4\\approx0.7854$."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 5,
@@ -799,7 +799,7 @@
    "part": "ב",
    "rubric": [
     {
-     "text": "מערכת הנגזרות החלקיות והביטוי $y=\\frac{x^2}{2}$",
+     "text": "מערכת הנגזרות החלקיות והביטוי $y=\\frac{x^2}{2}$ (הערה: המבחן מדפיס 25 נקודות לשאלה בלי חלוקה לסעיפים, ולכן חלוקת הנקודות כאן היא הערכה בלבד.)",
      "points": 3
     },
     {
@@ -891,8 +891,8 @@
      "explain": "ב-$A$ מתקבל $D<0$, אוכף. ב-$B$ מתקבל $D>0$ ו-$z''_{xx}=6>0$, מינימום מקומי."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   }
  ]
 }

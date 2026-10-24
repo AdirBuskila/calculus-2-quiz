@@ -187,7 +187,7 @@ r"""$$\frac{f^{(n)}(0)}{n!}=\frac{(-1)^{n+1}\left(3^n+2^n\right)}{n}$$
 $$\frac{f^{(5)}(0)}{5!}=\frac{(-1)^{5+1}\left(3^5+2^5\right)}{5}=\frac{275}{5}=55$$
 $$f^{(5)}(0)=55\cdot5!=6600.$$""", part="ג", points=7))
 
-# ---- rubric / pitfalls / steps (ai-draft). Every expected value is re-computed in tools/verify/24B-B/steps_24B-B.py ----
+# ---- rubric / pitfalls / steps (ai-verified). Every expected value is re-computed in tools/verify/24B-B/steps_24B-B.py ----
 IDS = "abcdefgh"
 
 
@@ -221,8 +221,8 @@ def add(n, part, **kw):
     for q in questions:
         if q["num"] == n and q.get("part") == part:
             q.update(kw)
-            q["rubricSource"] = "ai-draft"
-            q["stepsSource"] = "ai-draft"
+            q["rubricSource"] = "ai-verified"
+            q["stepsSource"] = "ai-verified"
             return
     raise KeyError((n, part))
 

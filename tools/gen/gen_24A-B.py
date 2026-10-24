@@ -54,7 +54,9 @@ r"""לפי המסלולים $x\to0^+$, $y=kx$:
 $$\lim_{x\to0}f(x,y)=0$$
 לפי המסלולים $x\to0^+$, $y=x^2$:
 $$\lim_{x\to0}f(x,y)=\frac{1}{2}$$
-ולכן הגבול של $f(x,y)$ כאשר $(x,y)\to(0,0)$ אינו קיים, ומכאן $f$ אינה רציפה ב-$(0,0)$.""", part="א", points=12))
+ולכן הגבול של $f(x,y)$ כאשר $(x,y)\to(0,0)$ אינו קיים, ומכאן $f$ אינה רציפה ב-$(0,0)$.
+
+**הערה:** הפונקציה אינה מוגדרת על העקום $y=-x^2$ (עבור $x\neq0$), שבו המכנה $x^6+y^3$ מתאפס, והעקום הזה עובר דרך הראשית. לאורך העקום $y=-x^2+x^4$ הפונקציה גדלה בלי גבול כשהנקודה מתקרבת לראשית. המסלולים בפתרון ($y=kx$ ו-$y=x^2$) נמצאים בתחום ההגדרה, ולכן המסקנה נשארת: הגבול אינו קיים.""", part="א", points=12))
 
 # ===== Q1b =====
 questions.append(Q(1, "computation", "gradient_directional", r"""מצאו את הכיוון שבו נגזרת הפונקציה $f(x)=x+xy$ בנקודה $(1,-1)$ שווה ל-$\dfrac{1}{\sqrt{2}}$.""",
@@ -187,7 +189,7 @@ r"""$$f(x)=\frac{x}{25+x^2}=\frac{x}{25\left(1+\left(\frac{x}{5}\right)^2\right)
 $$f(x)=\sum_{n=0}^{\infty}\frac{f^{(n)}(0)}{n!}x^n=\sum_{n=0}^{\infty}c_nx^n$$
 $$f^{(5)}(0)=c_5\cdot5!\ \{n=2\}=\frac{1}{5^6}\cdot5!=\frac{4!}{5^5}$$""", part="ב", points=13))
 
-# ---- rubric / pitfalls / steps (ai-draft). Every expected value is re-computed in tools/verify/24A-B/steps_24A-B.py ----
+# ---- rubric / pitfalls / steps (ai-verified). Every expected value is re-computed in tools/verify/24A-B/steps_24A-B.py ----
 IDS = "abcdefgh"
 
 
@@ -221,8 +223,8 @@ def add(n, part, **kw):
     for q in questions:
         if q["num"] == n and q.get("part") == part:
             q.update(kw)
-            q["rubricSource"] = "ai-draft"
-            q["stepsSource"] = "ai-draft"
+            q["rubricSource"] = "ai-verified"
+            q["stepsSource"] = "ai-verified"
             return
     raise KeyError((n, part))
 
@@ -232,7 +234,7 @@ add(1, "א",
                ("שני גבולות שונים לאורך מסלולים שונים: הגבול הדו-ממדי אינו קיים", 3),
                ("מסקנה: $f$ אינה רציפה ב-$(0,0)$", 2)),
     pitfalls=["לבדוק רק ישרים $y=kx$ ולהסיק רציפות: גבול $0$ לאורך כל ישר אינו מוכיח שהגבול קיים.",
-              "לא לבחור מסלול שבו המכנה $x^6+y^3$ מאוזן: דווקא ב-$y=x^2$ שני המחוברים שווים בסדר גודל."],
+              "לבדוק רק מסלולים שבהם אחד ממחוברי המכנה $x^6+y^3$ שולט, ולדלג על מסלול מאוזן: דווקא ב-$y=x^2$ שני המחוברים שווים בסדר גודל, ושם מתקבל גבול שונה."],
     steps=[
         num(r"מהו הגבול של $f$ לאורך הישר $y=x$ כאשר $x\to0^+$?", 0,
             r"$f(x,x)=\frac{x^4}{x^6+x^3}=\frac{x}{x^3+1}\to0$."),

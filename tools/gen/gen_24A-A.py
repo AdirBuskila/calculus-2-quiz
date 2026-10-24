@@ -169,7 +169,7 @@ r"""$$f(x)=\frac{1}{1-3x^2}=\sum_{n=0}^{\infty}\left(3x^2\right)^n=\sum_{n=0}^{\
 $$f(x)=\sum_{n=0}^{\infty}\frac{f^{(n)}(0)}{n!}x^n=\sum_{n=0}^{\infty}c_nx^n$$
 (ישנן חזקות זוגיות בלבד) $0=5!\,c_5=f^{(5)}(0)$.""", part="ב", points=13))
 
-# ---- rubric / pitfalls / steps (ai-draft). Every expected value is re-computed in tools/verify/24A-A/steps_24A-A.py ----
+# ---- rubric / pitfalls / steps (ai-verified). Every expected value is re-computed in tools/verify/24A-A/steps_24A-A.py ----
 IDS = "abcdefgh"
 
 
@@ -195,8 +195,8 @@ def add(n, part, **kw):
     for q in questions:
         if q["num"] == n and q.get("part") == part:
             q.update(kw)
-            q["rubricSource"] = "ai-draft"
-            q["stepsSource"] = "ai-draft"
+            q["rubricSource"] = "ai-verified"
+            q["stepsSource"] = "ai-verified"
             return
     raise KeyError((n, part))
 

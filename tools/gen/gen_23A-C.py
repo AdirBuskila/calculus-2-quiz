@@ -185,7 +185,7 @@ $$f(x)=-\frac13\sum_{n=0}^{\infty}\left(1+\frac{(-1)^n}{2^{n+1}}\right)x^n.$$
 $$\frac{f^{(10)}(0)}{10!}=-\frac13\left(1+\frac{1}{2^{11}}\right)=-\frac{2049}{6144},$$
 $$f^{(10)}(0)=-\frac{10!}{3}\left(1+\frac{1}{2^{11}}\right)=-\frac{10!\cdot2049}{3\cdot2^{11}}=-\frac{9681525}{8}=-1210190.625.$$""", 13))
 
-# ---- rubric / pitfalls / steps (ai-draft). Every expected value is re-computed in tools/verify/23A-C/steps_23A-C.py ----
+# ---- rubric / pitfalls / steps (ai-verified). Every expected value is re-computed in tools/verify/23A-C/steps_23A-C.py ----
 IDS = "abcdefgh"
 
 
@@ -211,8 +211,8 @@ def add(n, part, **kw):
     for q in questions:
         if q["num"] == n and q.get("part") == part:
             q.update(kw)
-            q["rubricSource"] = "ai-draft"
-            q["stepsSource"] = "ai-draft"
+            q["rubricSource"] = "ai-verified"
+            q["stepsSource"] = "ai-verified"
             return
     raise KeyError((n, part))
 

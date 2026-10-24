@@ -79,8 +79,8 @@
      "explain": "הגבול הוא $r^2$ כפול פונקציה חסומה, כלומר $0$, והוא שווה ל-$f(0,0)=0$. המכנה מתאפס רק בנקודה עצמה והפונקציה מוגדרת שם בנפרד."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 1,
@@ -159,8 +159,8 @@
      "explain": "הגרדיאנט הוא $\\left(-\\frac4e,0\\right)$, כלומר מצביע בכיוון השלילי של ציר $x$, ולכן וקטור היחידה בכיוונו הוא $(-1,0)$."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 2,
@@ -239,8 +239,8 @@
      "explain": "בשני הטורים סדרת הגורמים יורדת ושואפת ל-$0$ (מתכנס לפי לייבניץ), אבל טור הערכים המוחלטים מתבדר בהשוואה ל-$\\sum\\frac1{\\sqrt n}$. לכן שניהם מתכנסים בתנאי בלבד."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 2,
@@ -319,8 +319,8 @@
      "explain": "תנאי הדיפרנציאביליות הוא $\\varepsilon\\to0$. כאן $\\varepsilon=\\frac{\\rho}{4}\\sin4\\theta\\to0$ ללא תלות בזווית. קיום הנגזרות החלקיות בלבד אינו מספיק."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 3,
@@ -420,8 +420,8 @@
      "explain": "שני הקצוות $s=\\pm\\frac12$ מתכנסים, ולכן התחום ב-$s$ הוא $\\left[-\\frac12,\\frac12\\right]$. מכיוון ש-$x=s-1$ מקבלים $\\left[-\\frac32,-\\frac12\\right]$."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 3,
@@ -512,8 +512,8 @@
      "explain": "$u_x=kx^{k-1}F+x^k F_x$, ו-$F_x$ שלילי, ולכן האיבר $x^{k-2}\\left(zF_s+yF_t\\right)$ צריך להופיע עם סימן מינוס. עם סימן פלוס האיברים לא מצטמצמים."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 4,
@@ -567,8 +567,8 @@
      "explain": "כש-$n\\to\\infty$ האיברים $\\frac1{n+3},\\frac1{n+4}$ שואפים ל-$0$, ולכן $S=\\frac12\\cdot\\frac7{12}=\\frac7{24}\\approx0.2917$."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 4,
@@ -654,8 +654,8 @@
      "explain": "$f(1,-1)=f(-1,1)=-1$."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 5,
@@ -734,8 +734,8 @@
      "explain": "ב-$(0,0)$ מתקבל $\\Delta<0$ (אוכף). ב-$\\left(1,\\frac12\\right)$ מתקבל $\\Delta>0$ ו-$f''_{xx}=6>0$ (מינימום)."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 5,
@@ -821,8 +821,8 @@
      "explain": "בפיתוח יש רק חזקות זוגיות, ולכן $c_5=0$ ו-$f^{(5)}(0)=5!\\,c_5=0$."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   }
  ]
 }

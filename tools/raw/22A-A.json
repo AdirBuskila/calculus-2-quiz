@@ -18,7 +18,7 @@
    "part": "א",
    "rubric": [
     {
-     "text": "ציון שהנגזרת הכיוונית מקסימלית בכיוון הגרדיאנט",
+     "text": "ציון שהנגזרת הכיוונית מקסימלית בכיוון הגרדיאנט (הערה: המבחן מדפיס 25 נקודות לשאלה בלי חלוקה לסעיפים, ולכן חלוקת הנקודות כאן היא הערכה בלבד.)",
      "points": 3
     },
     {
@@ -82,8 +82,8 @@
      "explain": "הכיוון הוא כיוון הגרדיאנט $(4,4)$, כלומר $\\frac{(4,4)}{\\sqrt{32}}=\\frac1{\\sqrt2}(1,1)$."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 1,
@@ -97,7 +97,7 @@
    "part": "ב",
    "rubric": [
     {
-     "text": "הגדרת $t=xy$ וכתיבת $z=\\frac{y}{3x}+g(t)$",
+     "text": "הגדרת $t=xy$ וכתיבת $z=\\frac{y}{3x}+g(t)$ (הערה: המבחן מדפיס 25 נקודות לשאלה בלי חלוקה לסעיפים, ולכן חלוקת הנקודות כאן היא הערכה בלבד.)",
      "points": 2
     },
     {
@@ -181,8 +181,8 @@
      "explain": "הנגזרת של $\\frac{y}{3x}$ לפי $y$ היא $+\\frac1{3x}$. עם סימן מינוס לא מתקבל הצמצום $-\\frac{2y}{3}$."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 2,
@@ -196,7 +196,7 @@
    "part": "א",
    "rubric": [
     {
-     "text": "הערכה $\\left|\\frac{\\sin n}{n(\\ln n)^2}\\right|\\le\\frac1{n(\\ln n)^2}$",
+     "text": "הערכה $\\left|\\frac{\\sin n}{n(\\ln n)^2}\\right|\\le\\frac1{n(\\ln n)^2}$ (הערה: המבחן מדפיס 25 נקודות לשאלה בלי חלוקה לסעיפים, ולכן חלוקת הנקודות כאן היא הערכה בלבד.)",
      "points": 3
     },
     {
@@ -260,8 +260,8 @@
      "explain": "הטור עם $\\sin n$ נחסם בערכו המוחלט על ידי טור מתכנס. הטור השני הוא סכום של שני טורים מתכנסים."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 2,
@@ -275,7 +275,7 @@
    "part": "ב",
    "rubric": [
     {
-     "text": "רציפות: $r^2\\sin\\frac1r\\to0=f(0,0)$ (אפס כפול פונקציה חסומה)",
+     "text": "רציפות: $r^2\\sin\\frac1r\\to0=f(0,0)$ (אפס כפול פונקציה חסומה) (הערה: המבחן מדפיס 25 נקודות לשאלה בלי חלוקה לסעיפים, ולכן חלוקת הנקודות כאן היא הערכה בלבד.)",
      "points": 3
     },
     {
@@ -339,8 +339,8 @@
      "explain": "הגבול $r\\sin\\frac1r\\to0$, ולכן הפונקציה דיפרנציאבילית. הגורם $\\sin\\frac1r$ חסום ואינו משפיע על הגבול."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 3,
@@ -354,7 +354,7 @@
    "part": "א",
    "rubric": [
     {
-     "text": "הצבה $X=x+1$ וחישוב הרדיוס $R=1$",
+     "text": "הצבה $X=x+1$ וחישוב הרדיוס $R=1$ (הערה: המבחן מדפיס 25 נקודות לשאלה בלי חלוקה לסעיפים, ולכן חלוקת הנקודות כאן היא הערכה בלבד.)",
      "points": 4
     },
     {
@@ -425,8 +425,8 @@
      "explain": "ב-$X=-1$ (כלומר $x=-2$) הטור מתכנס, וב-$X=1$ (כלומר $x=0$) הוא מתבדר."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 3,
@@ -440,7 +440,7 @@
    "part": "ב",
    "rubric": [
     {
-     "text": "הגדרת $F(x,y,z)=y^3+xz+y^2+e^z-3$ ובדיקה ש-$F(1,1,0)=0$",
+     "text": "הגדרת $F(x,y,z)=y^3+xz+y^2+e^z-3$ ובדיקה ש-$F(1,1,0)=0$ (הערה: המבחן מדפיס 25 נקודות לשאלה בלי חלוקה לסעיפים, ולכן חלוקת הנקודות כאן היא הערכה בלבד.)",
      "points": 3
     },
     {
@@ -504,22 +504,22 @@
      "explain": "$f_x=0$ ו-$f_y=-\\frac52$, ולכן $z-0=-\\frac52(y-1)$, כלומר $2z=5-5y$."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 4,
    "kind": "computation",
    "topic": "change_of_variables",
    "question": "חשבו את האינטגרל $\\iint_De^{y-x}(2y+4)\\,dx\\,dy$ כאשר $D$ חסום ע\"י הקווים הבאים: $y-x=1;\\ y=x+2;\\ y^2=-4x;\\ y^2=-4x+9$",
-   "solution": "נגדיר את ההעתקה $T$:\n$$u=y-x,\\qquad v=y^2+4x$$\n(ב-$D$ מתקיים $y\\ge0$.)\n$$G=\\left\\{(u,v):\\ 1\\le u\\le2,\\ 0\\le v\\le9\\right\\},\\qquad T(D)=G$$\n$$J^{-1}=\\begin{vmatrix}\\frac{\\partial u}{\\partial x}&\\frac{\\partial u}{\\partial y}\\\\ \\frac{\\partial v}{\\partial x}&\\frac{\\partial v}{\\partial y}\\end{vmatrix}=\\begin{vmatrix}-1&1\\\\4&2y\\end{vmatrix}=-2y-4$$\n$$|J|=\\left|\\frac{1}{-2y-4}\\right|=\\frac{1}{2y+4}$$\n$$\\iint_De^{y-x}(2y+4)\\,dx\\,dy=\\iint_Ge^u\\,du\\,dv=\\int_1^2e^u\\,du\\int_0^9dv=\\left(\\left.e^u\\right|_1^2\\right)\\left(\\left.v\\right|_0^9\\right)=9e(e-1).$$",
+   "solution": "נגדיר את ההעתקה $T$:\n$$u=y-x,\\qquad v=y^2+4x$$\n**הערה:** ארבעת העקומים חוסמים שני תחומים נפרדים, אחד עם $y\\ge0$ ואחד עם $y<-4.8$ בקירוב. כמו בפתרון המקורי, מחשבים כאן את התחום העליון ($y\\ge0$). באינטגרל על התחום התחתון מתקבל $-9e(e-1)$.\n$$G=\\left\\{(u,v):\\ 1\\le u\\le2,\\ 0\\le v\\le9\\right\\},\\qquad T(D)=G$$\n$$J^{-1}=\\begin{vmatrix}\\frac{\\partial u}{\\partial x}&\\frac{\\partial u}{\\partial y}\\\\ \\frac{\\partial v}{\\partial x}&\\frac{\\partial v}{\\partial y}\\end{vmatrix}=\\begin{vmatrix}-1&1\\\\4&2y\\end{vmatrix}=-2y-4$$\n$$|J|=\\left|\\frac{1}{-2y-4}\\right|=\\frac{1}{2y+4}$$\n$$\\iint_De^{y-x}(2y+4)\\,dx\\,dy=\\iint_Ge^u\\,du\\,dv=\\int_1^2e^u\\,du\\int_0^9dv=\\left(\\left.e^u\\right|_1^2\\right)\\left(\\left.v\\right|_0^9\\right)=9e(e-1).$$",
    "solutionSource": "student-solution",
    "official": false,
    "confidence": "high",
    "part": "א",
    "rubric": [
     {
-     "text": "בחירת ההעתקה $u=y-x$, $v=y^2+4x$",
+     "text": "בחירת ההעתקה $u=y-x$, $v=y^2+4x$ (הערה: המבחן מדפיס 25 נקודות לשאלה בלי חלוקה לסעיפים, ולכן חלוקת הנקודות כאן היא הערכה בלבד.)",
      "points": 3
     },
     {
@@ -590,8 +590,8 @@
      "explain": "האינטגרנד $e^{u}(2y+4)\\cdot\\frac1{2y+4}=e^u$, ולכן הערך $9e(e-1)\\approx42.04$."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 4,
@@ -605,7 +605,7 @@
    "part": "ב",
    "rubric": [
     {
-     "text": "נקודות קריטיות בפנים התחום: תשע נקודות, כולן בתוך הדיסקה",
+     "text": "נקודות קריטיות בפנים התחום: תשע נקודות, כולן בתוך הדיסקה (הערה: המבחן מדפיס 25 נקודות לשאלה בלי חלוקה לסעיפים, ולכן חלוקת הנקודות כאן היא הערכה בלבד.)",
      "points": 3
     },
     {
@@ -680,8 +680,8 @@
      "explain": "$f\\left(\\pm\\sqrt2,0\\right)=2\\cdot4-2=6$, והוא גדול מכל שאר הערכים."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 5,
@@ -695,7 +695,7 @@
    "part": "א",
    "rubric": [
     {
-     "text": "פירוק לשברים חלקיים: $\\frac13\\left(\\frac1{x-1}-\\frac1{x+2}\\right)$",
+     "text": "פירוק לשברים חלקיים: $\\frac13\\left(\\frac1{x-1}-\\frac1{x+2}\\right)$ (הערה: המבחן מדפיס 25 נקודות לשאלה בלי חלוקה לסעיפים, ולכן חלוקת הנקודות כאן היא הערכה בלבד.)",
      "points": 4
     },
     {
@@ -766,8 +766,8 @@
      "explain": "קטבי הפונקציה הם $x=1$ ו-$x=-2$, והקרוב ביותר לראשית הוא $x=1$. לכן הרדיוס הוא $1$."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 5,
@@ -781,7 +781,7 @@
    "part": "ב",
    "rubric": [
     {
-     "text": "כתיבת מערכת $f_x=0$, $f_y=0$ ופירוק משוואה (II) ל-$2y(x-1)=0$",
+     "text": "כתיבת מערכת $f_x=0$, $f_y=0$ ופירוק משוואה (II) ל-$2y(x-1)=0$ (הערה: המבחן מדפיס 25 נקודות לשאלה בלי חלוקה לסעיפים, ולכן חלוקת הנקודות כאן היא הערכה בלבד.)",
      "points": 4
     },
     {
@@ -852,8 +852,8 @@
      "explain": "ב-$(-2,0)$ מתקבל $D>0$ ו-$f_{xx}<0$ (מקסימום). בשתי הנקודות האחרות $D<0$ (אוכף)."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   }
  ]
 }

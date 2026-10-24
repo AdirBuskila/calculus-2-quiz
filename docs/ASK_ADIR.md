@@ -24,7 +24,7 @@ Open questions for Adir. One entry per item; the orchestrator moves it to Resolv
 ### 22A-A p.7 Q4b - official maximum is wrong (boundary endpoints missed)
 - Path: calculus-2 solution for sitting 22A-A, pages 6-7
 - Page: 7
-- Question: the key reports max f = 0 but never evaluates f at (+-sqrt2, 0), where f = 6 (sympy + dense grid). Shipped with the standing-ruling minimal fix: solved, official:false, prefix "הפתרון הרשמי עם תיקון".
+- Question: the key reports max f = 0 but never evaluates f at (+-sqrt2, 0), where f = 6 (sympy + dense grid). Shipped with the standing-ruling minimal fix: solved, official:false, prefix "תיקון לפתרון שבקובץ" (the source is an unnamed-author key, not official, so GATE1 ruling 2026-10-24 applies).
 - Needed: FYI only (no decision needed unless you want it held instead).
 - Status: shipped-with-fix
 
@@ -40,6 +40,8 @@ Open questions for Adir. One entry per item; the orchestrator moves it to Resolv
 - 23A-A Q3b p.7: f_t written for f_u. 23A-A Q5a p.11: critical point (6,-6) later written (-6,6). 23A-A Q5b p.12: convergence domain |x|<2 never stated (added).
 - 22A-B Q1a p.1: df/dx written for df/dz. 22A-B Q2a p.2: second series printed with 2^n+1 in the heading, exam has 2^(n+1); exponent 2 for 3.
 - 22A-A Q1b p.1: "+y^2" for "+2y/3". 22A-A Q2b p.3: division by h dropped in f_x(0,0). 22A-A Q3a p.4: "decreasing from n=2" should be n=4.
+- 24B-A Q2b: after t=ln(x+1) the key writes the integrand dt/(t ln t); the correct integrand is dt/t (the divergence conclusion is unchanged). Fixed silently (refuter confirmed on the page).
+- 25A-B Q2b: the explanation of the inverse-map Jacobian now says the determinant is -1/3 (absolute value 1/3), not +1/3 (explanation text only, not the key).
 
 ### 24B-B p.3-4 Q3d - key's boundary line and critical-point name are wrong
 - Path: calculus-2 typed solution for sitting 24B-B (question embedded), pages 3-4

@@ -147,6 +147,8 @@ contours = [
      "domain": [[-1.6, 1.6], [-1.6, 1.6]],
      "critical_points": [
          {"x": 0, "y": 0, "f": 0, "role": "local max"},
+         {"x": "1/2", "y": 0, "f": -1/8, "role": "saddle"}, {"x": "-1/2", "y": 0, "f": -1/8, "role": "saddle"},
+         {"x": 0, "y": 1, "f": -1, "role": "saddle"}, {"x": 0, "y": -1, "f": -1, "role": "saddle"},
          {"x": "1/2", "y": 1, "f": -9/8, "role": "abs min"}, {"x": "1/2", "y": -1, "f": -9/8, "role": "abs min"},
          {"x": "-1/2", "y": 1, "f": -9/8, "role": "abs min"}, {"x": "-1/2", "y": -1, "f": -9/8, "role": "abs min"},
          {"x": "sqrt(2)", "y": 0, "f": 6, "role": "abs max (boundary endpoint; the key missed it)"},

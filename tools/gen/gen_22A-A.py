@@ -134,7 +134,7 @@ $$f_y(1,1)=-\frac{5}{2},\qquad f_x(1,1)=0$$
 questions.append(Q(4, "computation", "change_of_variables", r"""חשבו את האינטגרל $\iint_De^{y-x}(2y+4)\,dx\,dy$ כאשר $D$ חסום ע"י הקווים הבאים: $y-x=1;\ y=x+2;\ y^2=-4x;\ y^2=-4x+9$""",
 r"""נגדיר את ההעתקה $T$:
 $$u=y-x,\qquad v=y^2+4x$$
-(ב-$D$ מתקיים $y\ge0$.)
+**הערה:** ארבעת העקומים חוסמים שני תחומים נפרדים, אחד עם $y\ge0$ ואחד עם $y<-4.8$ בקירוב. כמו בפתרון המקורי, מחשבים כאן את התחום העליון ($y\ge0$). באינטגרל על התחום התחתון מתקבל $-9e(e-1)$.
 $$G=\left\{(u,v):\ 1\le u\le2,\ 0\le v\le9\right\},\qquad T(D)=G$$
 $$J^{-1}=\begin{vmatrix}\frac{\partial u}{\partial x}&\frac{\partial u}{\partial y}\\ \frac{\partial v}{\partial x}&\frac{\partial v}{\partial y}\end{vmatrix}=\begin{vmatrix}-1&1\\4&2y\end{vmatrix}=-2y-4$$
 $$|J|=\left|\frac{1}{-2y-4}\right|=\frac{1}{2y+4}$$
@@ -192,7 +192,7 @@ $$f_{xx}=-1,\qquad f_{yy}=2x-2,\qquad f_{xy}=2y$$
 * הנקודה $\left(1,\sqrt{3}\right)$: $D=(-1)\cdot0-\left(2\sqrt{3}\right)^2=-12<0$, לכן נקודת אוכף.
 * הנקודה $\left(1,-\sqrt{3}\right)$: $D=(-1)\cdot0-\left(-2\sqrt{3}\right)^2=-12<0$, לכן נקודת אוכף.""", part="ב"))
 
-# ---- rubric / pitfalls / steps (ai-draft). Every expected value is re-computed in tools/verify/22A-A/steps_22A-A.py ----
+# ---- rubric / pitfalls / steps (ai-verified). Every expected value is re-computed in tools/verify/22A-A/steps_22A-A.py ----
 # Per-part points are not printed on this exam; rubric points use the usual 12 / 13 split of the 25-point question.
 IDS = "abcdefgh"
 
@@ -219,8 +219,10 @@ def add(n, part, **kw):
     for q in questions:
         if q["num"] == n and q.get("part") == part:
             q.update(kw)
-            q["rubricSource"] = "ai-draft"
-            q["stepsSource"] = "ai-draft"
+            if q.get("rubric"):
+                q["rubric"][0]["text"] += " (הערה: המבחן מדפיס 25 נקודות לשאלה בלי חלוקה לסעיפים, ולכן חלוקת הנקודות כאן היא הערכה בלבד.)"
+            q["rubricSource"] = "ai-verified"
+            q["stepsSource"] = "ai-verified"
             return
     raise KeyError((n, part))
 

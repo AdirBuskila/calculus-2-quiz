@@ -83,8 +83,8 @@
      "explain": "$6\\int_{-\\pi/2}^{\\pi/2}\\cos^2\\theta\\,d\\theta=6\\cdot\\frac{\\pi}{2}=3\\pi$. זה גם שטח העיגול הגדול פחות שטח העיגול הקטן, $4\\pi-\\pi$."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 1,
@@ -153,8 +153,8 @@
      "explain": "$\\frac{6}{16/3}=\\frac{18}{16}=\\frac98=1.125$."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 2,
@@ -237,8 +237,8 @@
      "explain": "בטור הראשון מתקבל חסם הנדסי מתכנס, ובשני הגבול $\\frac{\\pi}{4}<1$. בשני הטורים האיברים בערך מוחלט מתכנסים, ולכן ההתכנסות בהחלט."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 2,
@@ -328,8 +328,8 @@
      "explain": "קיום נגזרות חלקיות ורציפות אינם מבטיחים דיפרנציאביליות. כאן הגבול של השארית מחולקת ב-$\\sqrt{x^2+y^2}$ אינו קיים, ולכן $f$ אינה דיפרנציאבילית. בנוסף $f$ רציפה בראשית, כי $|f|\\le|x|+|y|$."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 3,
@@ -408,8 +408,8 @@
      "explain": "בשני הקצוות האיבר הכללי אינו שואף ל-$0$ (הערך המוחלט שלו שואף ל-$1$), ולכן הטור מתבדר בהם והקצוות אינם בתחום."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 3,
@@ -484,8 +484,8 @@
      "explain": "בפתיחת הסוגריים $\\frac1y\\cdot\\left(-2y^2g'(t)\\right)=-2y\\,g'(t)$, ולא $+2y\\,g'(t)$. רק עם הסימן הנכון האיברים של $g'(t)$ מצטמצמים ונשאר $\\frac{g(t)}{y}$."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 4,
@@ -560,8 +560,8 @@
      "explain": "$\\int_0^2\\left(6-y-y^2\\right)dy=\\frac{22}{3}$. זהה לשטח בסדר המקורי, $\\frac{16}{3}+2$."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 4,
@@ -630,8 +630,8 @@
      "explain": "הערך הקטן ביותר מבין הערכים המועמדים הוא $f(0,0)=0$."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 5,
@@ -724,8 +724,8 @@
      "explain": "$(16-8)e^{-2}=\\frac{8}{e^2}\\approx1.083$."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 5,
@@ -815,8 +815,8 @@
      "explain": "$f^{(10)}(0)=10!\\,c_{10}=-\\frac{10!}{3}\\left(1+\\frac1{2^{11}}\\right)=-\\frac{9681525}{8}=-1210190.625$."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   }
  ]
 }

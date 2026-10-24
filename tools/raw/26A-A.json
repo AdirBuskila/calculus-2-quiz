@@ -11,7 +11,7 @@
    "kind": "computation",
    "topic": "double_integrals",
    "question": "החליפו את סדר האינטגרציה וחשבו את האינטגרל\n$$\\int_0^{\\sqrt{2}}\\left(\\int_0^{2-x^2}xe^{x^2}\\,dy\\right)dx$$",
-   "solution": "תחום האינטגרציה הוא $0\\le y\\le 2-x^2,\\ 0\\le x\\le\\sqrt{2}$.\nזה אותו דבר ש-$0\\le x\\le\\sqrt{2-y},\\ 0\\le y\\le 2$.\n![תחום האינטגרציה: מתחת לפרבולה y=2-x^2 ברביע הראשון](images/exams/26A-A-Q1a-region.png)\nאז\n$$\\int_0^{\\sqrt{2}}\\left(\\int_0^{2-x^2}xe^{x^2}dy\\right)dx=\\int_0^{2}\\left(\\int_0^{\\sqrt{2-y}}xe^{x^2}dx\\right)dy$$\n$$=\\int_0^{2}\\left(\\left.\\frac{e^{x^2}}{2}\\right|_0^{\\sqrt{2-y}}\\right)dy=\\int_0^{2}\\frac{1}{2}\\left(e^{2-y}-1\\right)dy=\\frac{1}{2}\\left.\\left(-e^{2-y}-y\\right)\\right|_0^2$$\n$$=\\frac{1}{2}\\left((-1-2)-(-e^2)\\right)=\\frac{e^2-3}{2}.$$",
+   "solution": "תחום האינטגרציה הוא $0\\le y\\le 2-x^2,\\ 0\\le x\\le\\sqrt{2}$.\nזה אותו דבר ש-$0\\le x\\le\\sqrt{2-y},\\ 0\\le y\\le 2$.\n![תחום האינטגרציה: מתחת לפרבולה הפוכה ברביע הראשון](images/exams/26A-A-Q1a-region.png)\nאז\n$$\\int_0^{\\sqrt{2}}\\left(\\int_0^{2-x^2}xe^{x^2}dy\\right)dx=\\int_0^{2}\\left(\\int_0^{\\sqrt{2-y}}xe^{x^2}dx\\right)dy$$\n$$=\\int_0^{2}\\left(\\left.\\frac{e^{x^2}}{2}\\right|_0^{\\sqrt{2-y}}\\right)dy=\\int_0^{2}\\frac{1}{2}\\left(e^{2-y}-1\\right)dy=\\frac{1}{2}\\left.\\left(-e^{2-y}-y\\right)\\right|_0^2$$\n$$=\\frac{1}{2}\\left((-1-2)-(-e^2)\\right)=\\frac{e^2-3}{2}.$$",
    "solutionSource": "official-pdf",
    "official": true,
    "confidence": "high",
@@ -83,8 +83,8 @@
      "explain": "$\\frac12\\int_0^2\\left(e^{2-y}-1\\right)dy=\\frac12\\left(e^2-3\\right)\\approx2.1945$."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 1,
@@ -163,8 +163,8 @@
      "explain": "שני מסלולים נותנים $0$ ו-$\\frac12$. אילו הגבול היה קיים כל מסלול היה נותן את אותו ערך."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 2,
@@ -251,8 +251,8 @@
      "explain": "הראשון חסום בערך מוחלט על ידי טור הנדסי מתכנס. השני הוא $\\sum\\frac{(-1)^n}{n}$: מתכנס לפי לייבניץ, וטור הערכים המוחלטים $\\sum\\frac1n$ מתבדר."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 2,
@@ -338,8 +338,8 @@
      "explain": "הגבול לאורך $y=x$ שונה מ-$0$ (בערך מוחלט $\\frac{5}{6\\sqrt2}$), ולכן המנה אינה שואפת ל-$0$. שתי הנגזרות החלקיות כן קיימות."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 3,
@@ -418,8 +418,8 @@
      "explain": "הקצה $y=-3$ כלול והקצה $y=3$ אינו כלול, ולכן $x=-5$ כלול ו-$x=1$ אינו כלול."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 3,
@@ -457,7 +457,7 @@
    "steps": [
     {
      "type": "choice",
-     "prompt": "באיזו שיטה הפתרון מוכיח את השוויון?",
+     "prompt": "באיזו שיטה בנויה ההוכחה בפתרון שבקובץ?",
      "options": [
       {
        "id": "a",
@@ -467,7 +467,7 @@
       {
        "id": "b",
        "type": "text",
-       "value": "הצבה ישירה של $x,y$ ב-$z$ וגזירה של $z$ כפונקציה של $u$ ו-$v$"
+       "value": "אינטגרציה של $z$ לפי $u$ ולפי $v$ והשוואת התוצאות"
       },
       {
        "id": "c",
@@ -523,8 +523,8 @@
      "explain": "השורה האחרונה שגויה: $x^2v\\,e^{x^2y}\\frac1{v^2}=e^{x^2y}\\frac{x^2}{v}$ ולא $e^{x^2y}\\frac{x^2}{v^2}$. כך מתקבל $z\\frac{x^2}{v}$, בדיוק אגף ימין של הטענה."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 4,
@@ -610,8 +610,8 @@
      "explain": "$\\int_1^2dv\\cdot\\int_0^1(-u)\\,du=1\\cdot\\left(-\\frac12\\right)=-\\frac12$."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 4,
@@ -704,8 +704,8 @@
      "explain": "הערך $\\tilde f(1)=\\tilde f(-2)=2$ הוא הקטן מבין הערכים $2,6,6,2$."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 5,
@@ -812,8 +812,8 @@
      "explain": "ב-$(2,1)$ מתקבל $\\Delta<0$, כלומר אוכף. ב-$(0,1)$ מתקבל $\\Delta>0$ ו-$f''_{xx}<0$, כלומר מקסימום מקומי."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 5,
@@ -900,8 +900,8 @@
      "explain": "מתקיים $a_{20}=\\frac{f^{(20)}(0)}{20!}$, ולכן $f^{(20)}(0)=20!\\,a_{20}$ עם $a_{20}=\\frac3{2^{20}}-\\frac1{3^{21}}$."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   }
  ]
 }

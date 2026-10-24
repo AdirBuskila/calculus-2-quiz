@@ -11,7 +11,7 @@
    "kind": "computation",
    "topic": "limits_continuity",
    "question": "נתונה פונקציה\n$$f(x,y)=\\begin{cases}\\dfrac{x^2y^2}{x^6+y^3}, & (x,y)\\neq(0,0)\\\\[2mm] 0, & (x,y)=(0,0)\\end{cases}$$\nהאם היא רציפה בנקודה $(x,y)=(0,0)$? נמקו את תשובתכם.",
-   "solution": "לפי המסלולים $x\\to0^+$, $y=kx$:\n$$\\lim_{x\\to0}f(x,y)=0$$\nלפי המסלולים $x\\to0^+$, $y=x^2$:\n$$\\lim_{x\\to0}f(x,y)=\\frac{1}{2}$$\nולכן הגבול של $f(x,y)$ כאשר $(x,y)\\to(0,0)$ אינו קיים, ומכאן $f$ אינה רציפה ב-$(0,0)$.",
+   "solution": "לפי המסלולים $x\\to0^+$, $y=kx$:\n$$\\lim_{x\\to0}f(x,y)=0$$\nלפי המסלולים $x\\to0^+$, $y=x^2$:\n$$\\lim_{x\\to0}f(x,y)=\\frac{1}{2}$$\nולכן הגבול של $f(x,y)$ כאשר $(x,y)\\to(0,0)$ אינו קיים, ומכאן $f$ אינה רציפה ב-$(0,0)$.\n\n**הערה:** הפונקציה אינה מוגדרת על העקום $y=-x^2$ (עבור $x\\neq0$), שבו המכנה $x^6+y^3$ מתאפס, והעקום הזה עובר דרך הראשית. לאורך העקום $y=-x^2+x^4$ הפונקציה גדלה בלי גבול כשהנקודה מתקרבת לראשית. המסלולים בפתרון ($y=kx$ ו-$y=x^2$) נמצאים בתחום ההגדרה, ולכן המסקנה נשארת: הגבול אינו קיים.",
    "solutionSource": "student-solution",
    "official": false,
    "confidence": "high",
@@ -37,7 +37,7 @@
    ],
    "pitfalls": [
     "לבדוק רק ישרים $y=kx$ ולהסיק רציפות: גבול $0$ לאורך כל ישר אינו מוכיח שהגבול קיים.",
-    "לא לבחור מסלול שבו המכנה $x^6+y^3$ מאוזן: דווקא ב-$y=x^2$ שני המחוברים שווים בסדר גודל."
+    "לבדוק רק מסלולים שבהם אחד ממחוברי המכנה $x^6+y^3$ שולט, ולדלג על מסלול מאוזן: דווקא ב-$y=x^2$ שני המחוברים שווים בסדר גודל, ושם מתקבל גבול שונה."
    ],
    "steps": [
     {
@@ -83,8 +83,8 @@
      "explain": "הגבול הדו-ממדי קיים רק אם כל המסלולים נותנים אותו ערך; כאן מתקבלים $0$ ו-$\\frac12$, ולכן הגבול לא קיים והפונקציה אינה רציפה. גבול $0$ לאורך ישרים בלבד אינו מספיק, הגדרת $f(0,0)$ אינה מבטיחה רציפות, ומכנה שמתאפס לבדו אינו סיבה לאי-רציפות."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 1,
@@ -165,8 +165,8 @@
      "explain": "$a$ יכול להיות חיובי או שלילי, ולכן יש שני כיוונים עם $b=\\frac1{\\sqrt2}$. כיוון יחיד מחמיץ פתרון, ובכיוונים עם $b=-\\frac1{\\sqrt2}$ הנגזרת היא $-\\frac1{\\sqrt2}$ ולא $\\frac1{\\sqrt2}$."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 2,
@@ -256,8 +256,8 @@
      "explain": "הגבול $\\frac13<1$ ולכן הטור מתכנס; כל איבריו חיוביים ($n\\ge1$ ולכן $(-1)^n+n\\ge0$), ולכן התכנסות פירושה התכנסות בהחלט."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 2,
@@ -342,8 +342,8 @@
      "explain": "דיפרנציאביליות דורשת $\\varepsilon\\to0$ לכל מסלול. כאן הגבול משתנה עם $k$ ואינו $0$, ולכן הפונקציה אינה דיפרנציאבילית; קיום נגזרות חלקיות או רציפות אינם מספיקים."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 3,
@@ -445,8 +445,8 @@
      "explain": "שני הקצוות מתכנסים: ב-$x=-4$ הטור מתכנס והוא חיובי, וב-$x=-6$ טור הערכים המוחלטים שלו הוא אותו טור. לכן שני הקצוות נכללים."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 3,
@@ -534,8 +534,8 @@
      "explain": "בפתיחת הסוגריים של $-xy\\cdot\\frac1{3x}$ מקבלים $-\\frac y3$ ולא $+\\frac y3$."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 4,
@@ -593,8 +593,8 @@
      "explain": "$\\frac52-4\\cdot\\frac14=\\frac52-1=\\frac32$."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 4,
@@ -670,8 +670,8 @@
      "explain": "הערכים: בפנים הקטן ביותר $-\\frac98$, בשפה $6$, $0$, $-\\frac34$. הקטן מכולם הוא $-\\frac98$."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 5,
@@ -757,8 +757,8 @@
      "explain": "$\\Delta=3>0$ ו-$f''_{xx}(2,2)=-6+2\\cdot2=-2<0$, ולכן מקסימום. אוכף דורש $\\Delta<0$, מינימום דורש $f''_{xx}>0$, והמבחן אינו מכריע רק כש-$\\Delta=0$."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 5,
@@ -844,8 +844,8 @@
      "explain": "המקדם $c_5=\\frac1{5^6}$ ולכן $f^{(5)}(0)=\\frac{5!}{5^6}=\\frac{4!}{5^5}=\\frac{24}{3125}=0.00768$."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   }
  ]
 }

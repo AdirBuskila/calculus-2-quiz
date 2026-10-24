@@ -193,7 +193,7 @@ $n=10\ \Longrightarrow$
 $$\frac{f^{(10)}(0)}{10!}=\left(-\frac{1}{5}\right)\left(\frac{(-1)^{10}}{3^{11}}+\frac{1}{2^{11}}\right)=-\frac{1}{5}\left(\frac{1}{3^{11}}+\frac{1}{2^{11}}\right)$$
 $$\Longrightarrow\ f^{(10)}(0)=-\frac{10!}{5}\left(\frac{1}{3^{11}}+\frac{1}{2^{11}}\right)$$""", part="ב", points=13))
 
-# ---- rubric / pitfalls / steps (ai-draft). Every expected value is re-computed in tools/verify/23A-A/steps_23A-A.py ----
+# ---- rubric / pitfalls / steps (ai-verified). Every expected value is re-computed in tools/verify/23A-A/steps_23A-A.py ----
 IDS = "abcdefgh"
 
 
@@ -219,8 +219,8 @@ def add(n, part, **kw):
     for q in questions:
         if q["num"] == n and q.get("part") == part:
             q.update(kw)
-            q["rubricSource"] = "ai-draft"
-            q["stepsSource"] = "ai-draft"
+            q["rubricSource"] = "ai-verified"
+            q["stepsSource"] = "ai-verified"
             return
     raise KeyError((n, part))
 

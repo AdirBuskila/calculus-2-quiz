@@ -195,7 +195,7 @@ $$f''_{xx}=-2y,\qquad f''_{yy}=-2x,\qquad f''_{xy}=6-2x-2y,\qquad D=f''_{xx}f''_
 
 סיכום: נקודת האקסטרמום היחידה היא מקסימום מקומי ב-$(2,2)$ עם ערך $8$. שלוש הנקודות האחרות הן נקודות אוכף.""", "ב", 13))
 
-# ---- rubric / pitfalls / steps (ai-draft). Every expected value is re-computed in tools/verify/24S-A/steps_24S-A.py ----
+# ---- rubric / pitfalls / steps (ai-verified). Every expected value is re-computed in tools/verify/24S-A/steps_24S-A.py ----
 IDS = "abcdefgh"
 
 
@@ -225,8 +225,8 @@ def add(n, part, **kw):
     for q in questions:
         if q["num"] == n and q.get("part") == part:
             q.update(kw)
-            q["rubricSource"] = "ai-draft"
-            q["stepsSource"] = "ai-draft"
+            q["rubricSource"] = "ai-verified"
+            q["stepsSource"] = "ai-verified"
             return
     raise KeyError((n, part))
 

@@ -47,7 +47,7 @@ questions.append(Q(1, "computation", "double_integrals", r"""החליפו את �
 $$\int_0^{\sqrt{2}}\left(\int_0^{2-x^2}xe^{x^2}\,dy\right)dx$$""",
 r"""תחום האינטגרציה הוא $0\le y\le 2-x^2,\ 0\le x\le\sqrt{2}$.
 זה אותו דבר ש-$0\le x\le\sqrt{2-y},\ 0\le y\le 2$.
-![תחום האינטגרציה: מתחת לפרבולה y=2-x^2 ברביע הראשון](images/exams/26A-A-Q1a-region.png)
+![תחום האינטגרציה: מתחת לפרבולה הפוכה ברביע הראשון](images/exams/26A-A-Q1a-region.png)
 אז
 $$\int_0^{\sqrt{2}}\left(\int_0^{2-x^2}xe^{x^2}dy\right)dx=\int_0^{2}\left(\int_0^{\sqrt{2-y}}xe^{x^2}dx\right)dy$$
 $$=\int_0^{2}\left(\left.\frac{e^{x^2}}{2}\right|_0^{\sqrt{2-y}}\right)dy=\int_0^{2}\frac{1}{2}\left(e^{2-y}-1\right)dy=\frac{1}{2}\left.\left(-e^{2-y}-y\right)\right|_0^2$$
@@ -173,7 +173,7 @@ $$-\frac{1}{3-x}=-\frac{1}{3\left(1-\frac{x}{3}\right)}=-\frac{1}{3}\sum_{n=0}^{
 $$f(x)=\sum_{n=0}^{\infty}\left(\frac{3}{2^n}-\frac{1}{3^{n+1}}\right)x^n,\qquad|x|<2$$
 $$a_{20}=\frac{f^{(20)}(0)}{20!}\ \Rightarrow\ f^{(20)}(0)=a_{20}\cdot20!=20!\left(\frac{3}{2^{20}}-\frac{1}{3^{21}}\right)$$""", part="ב", points=13))
 
-# ---- rubric / pitfalls / steps (ai-draft). Every expected value is re-computed in tools/verify/26A-A/steps_26A-A.py ----
+# ---- rubric / pitfalls / steps (ai-verified). Every expected value is re-computed in tools/verify/26A-A/steps_26A-A.py ----
 IDS = "abcdefgh"
 
 
@@ -199,8 +199,8 @@ def add(n, part, **kw):
     for q in questions:
         if q["num"] == n and q.get("part") == part:
             q.update(kw)
-            q["rubricSource"] = "ai-draft"
-            q["stepsSource"] = "ai-draft"
+            q["rubricSource"] = "ai-verified"
+            q["stepsSource"] = "ai-verified"
             return
     raise KeyError((n, part))
 
@@ -314,9 +314,9 @@ add(3, "ב",
     pitfalls=[r"שגיאת צמצום בשורה האחרונה: $x^2v\cdot\frac1{v^2}=\frac{x^2}{v}$ ולא $\frac{x^2}{v^2}$. כך מתקבל $z\frac{x^2}{v^2}$, שאינו אגף ימין של הטענה.",
               r"לשכוח את האיבר $\frac{\partial z}{\partial y}\frac{\partial y}{\partial v}$ ב-$\frac{\partial z}{\partial v}$, בעוד ש-$\frac{\partial y}{\partial u}=0$ מבטל את האיבר המקביל ב-$\frac{\partial z}{\partial u}$."],
     steps=[
-        choice("באיזו שיטה הפתרון מוכיח את השוויון?",
+        choice("באיזו שיטה בנויה ההוכחה בפתרון שבקובץ?",
                r"כלל השרשרת: $z$ תלוי ב-$x,y$, ואלה תלויים ב-$u,v$",
-               [r"הצבה ישירה של $x,y$ ב-$z$ וגזירה של $z$ כפונקציה של $u$ ו-$v$",
+               [r"אינטגרציה של $z$ לפי $u$ ולפי $v$ והשוואת התוצאות",
                 r"גזירה סתומה של המשוואה $z=e^{x^2y}$ לפי $u$ ו-$v$",
                 r"גזירה לוגריתמית של $z$ לפי $u$ ובנפרד לפי $v$"],
                r"הפתרון מחשב את $\frac{\partial z}{\partial x},\frac{\partial z}{\partial y}$ ואת הנגזרות של $x,y$ לפי $u,v$, ומרכיב אותן לפי כלל השרשרת.", pos=0),

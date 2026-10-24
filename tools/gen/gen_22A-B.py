@@ -63,6 +63,8 @@ $$\sum_{n=2}^{\infty}\frac{(-1)^n}{(n-\ln n)^3}$$
 $$\sum_{n=1}^{\infty}\frac{1+\cos(n)}{2^{n+1}}$$""",
 r"""**הטור הראשון.** נבחן את הפונקציה $f_1(x)=x-\ln x$, שהנגזרת שלה $f_1'(x)=1-\dfrac{1}{x}>0$ עבור כל $x\ge2$. אזי $f_1(x)$ היא פונקציה עולה ולכן הפונקציה $f_2(x)=\dfrac{1}{(x-\ln x)^3}$ יורדת, זה אומר שהסדרה $\left\{\dfrac{1}{(n-\ln n)^3}\right\}$ יורדת (ושואפת ל-0). הטור המקורי הוא טור מחליף סימן ולפי משפט לייבניץ הטור מתכנס.
 
+**הערה:** הטור הראשון מתכנס אפילו בהחלט, כי $\dfrac{1}{(n-\ln n)^3}\sim\dfrac{1}{n^3}$ (השוואה גבולית לטור $\sum\dfrac{1}{n^3}$ המתכנס). משפט לייבניץ, כמו בפתרון, הוא דרך חלופית ותקפה להראות התכנסות.
+
 **הטור השני.** נציין תחילה שהטור הוא טור חיובי, כי לכל $n\in\mathbb{N}$ מתקיים $1+\cos n\ge0$, ויש לנו גם ש-
 $$\frac{1+\cos n}{2^{n+1}}\le\frac{2}{2^{n+1}}=\left(\frac{1}{2}\right)^n.$$
 אנחנו יודעים שהטור $\sum_{n=1}^{\infty}\left(\dfrac{1}{2}\right)^n$ מתכנס, אזי גם הטור המקורי מתכנס.""", part="א"))
@@ -168,7 +170,10 @@ $$=\sum_{n=0}^{\infty}(-1)^n\left(x^2\right)^n=\frac{1}{1+x^2}$$
 מכאן
 $$f(x)=\int_0^xf'(t)\,dt=\int_0^x\frac{dt}{1+t^2}=\arctan x$$
 ולבסוף
-$$\sum_{n=1}^{\infty}\frac{(-1)^{n+1}x^{2n-1}}{2n-1}=\arctan x.$$""", part="א"))
+$$\sum_{n=1}^{\infty}\frac{(-1)^{n+1}x^{2n-1}}{2n-1}=\arctan x.$$
+**הערה (נקודות הקצה $x=\pm1$):** הגזירה איבר-איבר תקפה רק עבור $|x|<1$, ולכן השוויון הוכח כך בקטע הפתוח. בנקודות הקצה הטור מתכנס (לפי לייבניץ), ולפי משפט אבל סכום טור חזקות הוא פונקציה רציפה בנקודת קצה שבה הטור מתכנס (רציפות חד-צדדית מתוך הקטע). לכן
+$$\sum_{n=1}^{\infty}\frac{(-1)^{n+1}(\pm1)^{2n-1}}{2n-1}=\lim_{x\to\pm1}\arctan x=\pm\frac{\pi}{4}=\arctan(\pm1),$$
+והשוויון מתקיים בכל הקטע $-1\le x\le1$.""", part="א"))
 
 # ===== Q5b =====
 questions.append(Q(5, "computation", "local_extrema", r"""מצאו וסווגו את נקודות האקסטרמום של הפונקציה:
@@ -185,7 +190,7 @@ $$z''_{xx}\big|_B=6,\qquad z''_{yy}\big|_B=24$$
 $$D=6\cdot24-36>0,\quad z''_{xx}>0$$
 לכן נקודת מינימום מקומי ב-$B$.""", part="ב"))
 
-# ---- rubric / pitfalls / steps (ai-draft). Every expected value is re-computed in tools/verify/22A-B/steps_22A-B.py ----
+# ---- rubric / pitfalls / steps (ai-verified). Every expected value is re-computed in tools/verify/22A-B/steps_22A-B.py ----
 # Per-part points are not printed on this exam; the rubric splits each 25-point question as 12 + 13 (a + b).
 IDS = "abcdefgh"
 
@@ -212,8 +217,10 @@ def add(n, part, **kw):
     for q in questions:
         if q["num"] == n and q.get("part") == part:
             q.update(kw)
-            q["rubricSource"] = "ai-draft"
-            q["stepsSource"] = "ai-draft"
+            if q.get("rubric"):
+                q["rubric"][0]["text"] += " (הערה: המבחן מדפיס 25 נקודות לשאלה בלי חלוקה לסעיפים, ולכן חלוקת הנקודות כאן היא הערכה בלבד.)"
+            q["rubricSource"] = "ai-verified"
+            q["stepsSource"] = "ai-verified"
             return
     raise KeyError((n, part))
 

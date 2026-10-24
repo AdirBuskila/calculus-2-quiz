@@ -62,8 +62,8 @@
      "explain": "המונה $3x^2y(x^2+y^2)-2x^4y$ מכיל את הגורם $y$, ולכן הוא מתאפס ב-$y=0$; המכנה שווה $1$, ולכן $f'_x(1,0)=0$."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 1,
@@ -145,8 +145,8 @@
      "explain": "$f(0,h)=\\frac{0\\cdot h}{h^2}=0$, ולכן $\\lim_{h\\to0}\\frac{0-0}{h}=0$."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 1,
@@ -253,8 +253,8 @@
      "explain": "אחרי החלוקה ב-$r$ נשאר הגורם $r$: $r\\cos^3\\varphi\\sin\\varphi$. בלעדיו הגבול לא היה מתאפס."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 2,
@@ -328,8 +328,8 @@
      "explain": "$|a_n|\\to1\\ne0$, ולכן גם $a_n\\not\\to0$; התנאי ההכרחי להתכנסות נכשל. לכן אין התכנסות כלל, לא בהחלט ולא בתנאי (בפרט, לייבניץ דורש שהאיבר ישאף ל-$0$)."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 2,
@@ -435,8 +435,8 @@
      "explain": "$\\sum|a_n|$ מתכנס לפי ההשוואה, ולכן הטור מתכנס בהחלט (ובפרט אינו מתכנס \\\"בתנאי בלבד\\\" ואינו מתבדר)."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 3,
@@ -511,8 +511,8 @@
      "explain": "הנגזרת הכיוונית בכיוון $\\vec u$ היא $\\nabla f\\cdot\\vec u$ והיא מקסימלית כש-$\\vec u$ בכיוון הגרדיאנט. בכיוון $(-4,4)$ היא שלילית (מינימלית), ובכיוונים $(1,1)$ ו-$(4,4)$ היא $0$."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 3,
@@ -570,8 +570,8 @@
      "explain": "מנרמלים: $\\frac{-28}{5}=-5.6$."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 3,
@@ -650,8 +650,8 @@
      "explain": "$\\Delta<0$, ולכן הנקודה היא נקודת אוכף. המבחן אינו מכריע רק כש-$\\Delta=0$, ומינימום או מקסימום דורשים $\\Delta>0$."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 3,
@@ -727,8 +727,8 @@
      "explain": "הקטן ביותר מבין המועמדים הוא $0$ ב-$A(1,1)$."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 4,
@@ -797,8 +797,8 @@
      "explain": "$u'_y=3\\sin4\\pi=0$, ולכן $z'_y=2v\\cdot0+14\\cdot4=56$."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 4,
@@ -927,8 +927,8 @@
      "explain": "הקצה השמאלי $\\frac12$ נכלל (לייבניץ) והימני $\\frac32$ לא (התבדרות). הקצה השמאלי הוא $1-\\frac12=\\frac12$ ולא $-\\frac12$."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 5,
@@ -1010,8 +1010,8 @@
      "explain": "$n=3$: $\\frac{27+8}{3}=\\frac{35}3\\approx11.667$."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 5,
@@ -1086,8 +1086,8 @@
      "explain": "פיתוח $\\ln(1+t)$ תקף עבור $-1<t\\le1$, ולכן $-\\frac13<x\\le\\frac13$: הקצה הימני נכלל והשמאלי לא (שם הטור דומה לטור ההרמוני ומתבדר)."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 5,
@@ -1141,8 +1141,8 @@
      "explain": "$55\\cdot120=6600$."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   }
  ]
 }

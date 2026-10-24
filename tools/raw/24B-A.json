@@ -31,7 +31,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לבדוק רק ישרים $y=kx$: לאורכם הגבול הוא $0$ ומתקבלת מסקנה שגויה של רציפות.",
     "לסיים אחרי מציאת גבול שונה בלי להשוות במפורש ל-$f(0,0)=0$.",
@@ -74,7 +74,7 @@
      "explain": "מסלול אחד שנותן ערך שונה מ-$f(0,0)=0$ מספיק כדי להפריך רציפות."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 1,
@@ -101,7 +101,7 @@
      "points": 3
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "להסיק דיפרנציאביליות מעצם קיום הנגזרות החלקיות.",
     "לחשב את הנגזרת החלקית בראשית בנוסחאות גזירה רגילות במקום לפי ההגדרה.",
@@ -137,14 +137,14 @@
       {
        "id": "d",
        "type": "text",
-       "value": "לא, כי הנגזרות החלקיות אינן רציפות בראשית ולכן אין דיפרנציאביליות"
+       "value": "כן, כי $f$ רציפה בראשית וגם הנגזרות החלקיות קיימות"
       }
      ],
      "correctId": "a",
      "explain": "דיפרנציאביליות גוררת רציפות, ו-$f$ אינה רציפה (הסעיף הקודם). קיום הנגזרות החלקיות אינו מספיק."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 1,
@@ -175,7 +175,7 @@
      "points": 3
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לשכוח את הנגזרת הפנימית $12x^3$ של המכנה בגזירה לפי $x$.",
     "להחליף בין המקדמים של $dx$ ו-$dy$.",
@@ -225,7 +225,7 @@
      "explain": "$df=f'_x\\,dx+f'_y\\,dy$ עם $f'_x(1,1)=-\\frac2{25}$ ו-$f'_y(1,1)=\\frac1{25}$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 2,
@@ -252,7 +252,7 @@
      "points": 3
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "להשוות ל-$\\frac4n$: החסם נכון אבל הטור ההרמוני מתבדר, ולכן אין מסקנה.",
     "להשתמש במבחן לייבניץ ולהסיק רק התכנסות בתנאי, בלי לבדוק התכנסות בהחלט.",
@@ -323,14 +323,14 @@
      "explain": "$\\sum|a_n|$ מתכנס לפי מבחן ההשוואה, ולכן הטור מתכנס בהחלט."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 2,
    "kind": "computation",
    "topic": "numeric_series",
    "question": "בדקו התכנסות בהחלט, בתנאי או התבדרות של הטור הבא:\n$$\\sum_{n=1}^{\\infty}\\frac{(-1)^n}{(n+1)\\ln(n+1)}$$",
-   "solution": "נסמן $a_n:=\\dfrac{1}{(n+1)\\ln(n+1)}$.\nנשים לב ש:\n1. $n\\in\\mathbb{N},\\ a_n>0$.\n2. $n\\in\\mathbb{N},\\ a_{n+1}=\\dfrac{1}{(n+2)\\ln(n+2)}<\\dfrac{1}{(n+1)\\ln(n+1)}=a_n$.\n3. $\\displaystyle\\lim_{n\\to\\infty}a_n=\\lim_{n\\to\\infty}\\frac{1}{(n+1)\\ln(n+1)}=0$.\n\nמכאן נובע (לפי משפט לייבניץ) שהטור $\\sum_{n=1}^{\\infty}\\frac{(-1)^{n+1}}{(n+1)\\ln(n+1)}$ מתכנס.\nהאם הוא מתכנס בהחלט או בתנאי? נגדיר $f(x)=\\dfrac{1}{(x+1)\\ln(x+1)}$, היא פונקציה חיובית ומונוטונית יורדת עבור $x>1$.\n$$\\int_1^{\\infty}\\frac{dx}{(x+1)\\ln(x+1)}=\\left|\\,t=\\ln(x+1),\\ dt=\\frac{dx}{x+1}\\right|=\\int_{\\ln2}^{\\infty}\\frac{dt}{t\\ln t}=\\infty$$\nלפי מבחן אינטגרלי הטור $\\sum\\frac{1}{(n+1)\\ln(n+1)}$ הוא מתבדר, מקבלים שהטור $\\sum\\frac{(-1)^n}{(n+1)\\ln(n+1)}$ **מתכנס בתנאי**.",
+   "solution": "נסמן $a_n:=\\dfrac{1}{(n+1)\\ln(n+1)}$.\nנשים לב ש:\n1. $n\\in\\mathbb{N},\\ a_n>0$.\n2. $n\\in\\mathbb{N},\\ a_{n+1}=\\dfrac{1}{(n+2)\\ln(n+2)}<\\dfrac{1}{(n+1)\\ln(n+1)}=a_n$.\n3. $\\displaystyle\\lim_{n\\to\\infty}a_n=\\lim_{n\\to\\infty}\\frac{1}{(n+1)\\ln(n+1)}=0$.\n\nמכאן נובע (לפי משפט לייבניץ) שהטור $\\sum_{n=1}^{\\infty}\\frac{(-1)^{n+1}}{(n+1)\\ln(n+1)}$ מתכנס.\nהאם הוא מתכנס בהחלט או בתנאי? נגדיר $f(x)=\\dfrac{1}{(x+1)\\ln(x+1)}$, היא פונקציה חיובית ומונוטונית יורדת עבור $x>1$.\n$$\\int_1^{\\infty}\\frac{dx}{(x+1)\\ln(x+1)}=\\left|\\,t=\\ln(x+1),\\ dt=\\frac{dx}{x+1}\\right|=\\int_{\\ln2}^{\\infty}\\frac{dt}{t}=\\infty$$\nלפי מבחן אינטגרלי הטור $\\sum\\frac{1}{(n+1)\\ln(n+1)}$ הוא מתבדר, מקבלים שהטור $\\sum\\frac{(-1)^n}{(n+1)\\ln(n+1)}$ **מתכנס בתנאי**.",
    "solutionSource": "official-pdf",
    "official": true,
    "confidence": "high",
@@ -358,7 +358,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "להסתפק במבחן לייבניץ ולהסיק התכנסות בלי לבדוק אם היא בהחלט או בתנאי.",
     "להשתמש במבחן המנה על הטור בערכים מוחלטים: המנה שואפת ל-$1$ ואין מסקנה.",
@@ -450,7 +450,7 @@
      "explain": "הטור המתחלף מתכנס, אך הטור בערכים מוחלטים מתבדר."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 3,
@@ -473,7 +473,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לטעות בסימן המרכיב השני: $f_y=-2y=-6$.",
     "להשאיר את הגרדיאנט כפונקציה בלי להציב את הנקודה $(2,3)$."
@@ -494,7 +494,7 @@
      "explain": "$f'_y=-2y=-6$, ולכן הגרדיאנט הוא $(8,-6)$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 3,
@@ -517,7 +517,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לענות בווקטור הגרדיאנט במקום באורכו.",
     "לשכוח את השורש ולענות $100$."
@@ -559,7 +559,7 @@
      "explain": "$\\sqrt{64+36}=10$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 3,
@@ -586,7 +586,7 @@
      "points": 3
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לסווג לפי הסימן של $A$ בלבד, בלי הדטרמיננטה.",
     "לטעות ב-$C=f_{yy}=-2$ (ולא $-2y$).",
@@ -636,7 +636,7 @@
      "explain": "$\\Delta<0$ ולכן נקודת אוכף."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 3,
@@ -671,7 +671,7 @@
      "points": 1
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לבדוק רק את הנקודה הקריטית שבפנים ולשכוח את השפה.",
     "לאבד את הפתרון $y=0$ או את שתי הנקודות עם $x=\\frac13$ בפתרון המערכת.",
@@ -700,7 +700,7 @@
      "explain": "$\\frac29-\\frac59+1=\\frac23$, וזהו הערך המינימלי. בנקודה $(0,0)$ הערך הוא $1$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 4,
@@ -731,7 +731,7 @@
      "points": 3
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "להציב את הנקודה בסימן שגוי: $y=-1$ נותן $-2y=+2$.",
     "לכתוב $(x+1)$ במקום $(x-1)$ במשוואת המישור.",
@@ -781,7 +781,7 @@
      "explain": "הוקטור הנורמלי הוא $(4,2,4)$ והמישור עובר דרך הנקודה $(1,-1,2)$. שאר האפשרויות הן עם נורמל אחר או שאינן עוברות בנקודה (נבדק ב-sympy)."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 4,
@@ -812,7 +812,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לפרוס את $(2n+2)!$ בצורה שגויה ולשכוח את הגורם $(2n+1)$.",
     "להפוך את המנה (לחשב $\\frac{a_{n+1}}{a_n}$ ולהסיק $R=0$).",
@@ -862,7 +862,7 @@
      "explain": "$\\lim(2n+1)=\\infty$, ולכן הרדיוס אינסופי והטור מתכנס לכל $x$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 5,
@@ -889,7 +889,7 @@
      "points": 3
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לנסות לפתח ישירות את הלוגריתם של הפולינום בלי לפרק אותו למכפלה.",
     "לשכוח להעלות את $2$ בחזקת $n$ בטור של $\\ln(1+2x)$.",
@@ -939,7 +939,7 @@
      "explain": "$\\frac{1+2^3}{3}=3$ (נבדק מול הטור של sympy)."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 5,
@@ -966,7 +966,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לקחת את הרדיוס $1$ של $\\ln(1+x)$ בלבד: הגורם $\\ln(1+2x)$ מקטין אותו ל-$\\frac12$.",
     "לא לבדוק את הקצוות, או להניח שהטור מתכנס בשניהם.",
@@ -1009,7 +1009,7 @@
      "explain": "ב-$x=\\frac12$ הטור המתחלף מתכנס (לייבניץ, ערכו $\\ln3$), וב-$x=-\\frac12$ האיברים מתנהגים כמו $\\frac1n$ והטור מתבדר."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 5,
@@ -1036,7 +1036,7 @@
      "points": 3
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לשכוח להכפיל ב-$5!$ ולהסתפק ב-$\\frac{33}5$.",
     "לטעות בסימן: עבור $n=5$ מתקבל $(-1)^{6}=+1$.",
@@ -1058,7 +1058,7 @@
      "explain": "$5!\\cdot\\frac{33}5=792$ (נבדק גם בגזירה ישירה ב-sympy)."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   }
  ]
 }

@@ -90,8 +90,8 @@
      "explain": "המכפלה $\\frac32\\cdot\\frac{7\\pi^2}{288}=\\frac{7\\pi^2}{192}\\approx0.3598$."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 1,
@@ -170,8 +170,8 @@
      "explain": "הגרדיאנט הוא $\\frac13(1,2,1)$, והכיוון המקסימלי הוא כיוונו. אורך $(1,2,1)$ הוא $\\sqrt6$, ולכן מחלקים ב-$\\sqrt6$."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 2,
@@ -250,8 +250,8 @@
      "explain": "טור הערכים המוחלטים של הטור עם $\\sin$ דומה ל-$\\sum\\frac1n$ ומתבדר, ולכן רק בתנאי. טור הערכים המוחלטים של הטור עם $\\ln$ דומה ל-$\\sum n^{-4/3}$ ומתכנס."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 2,
@@ -330,8 +330,8 @@
      "explain": "הגבול $r\\sin\\frac1r\\to0$, ולכן המנה בהגדרת הדיפרנציאביליות שואפת ל-$0$. הרציפות נובעת מ-$r^2\\sin\\frac1r\\to0$."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 3,
@@ -431,8 +431,8 @@
      "explain": "שני הקצוות מתכנסים (בקצה השלילי הטור מתכנס בהחלט), ולכן התחום סגור."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 3,
@@ -520,8 +520,8 @@
      "explain": "הנגזרת של $u=\\frac1y-\\frac1x$ לפי $y$ היא $-\\frac1{y^2}$, ולא $+\\frac1{y^2}$. עם הסימן השגוי האיברים עם $f'_u$ לא מצטמצמים."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 4,
@@ -600,8 +600,8 @@
      "explain": "האינטגרנד $\\left(x^2+2xy\\right)\\cdot\\frac1{2xy+x^2}=1$, ולכן האינטגרל הוא שטח המלבן: $3\\cdot2=6$."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 4,
@@ -659,8 +659,8 @@
      "explain": "$f(M_1)=-2-2\\sqrt2\\approx-4.8284$."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 5,
@@ -739,8 +739,8 @@
      "explain": "$\\Delta<0$, ולכן הנקודה היא נקודת אוכף."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   },
   {
    "num": 5,
@@ -819,8 +819,8 @@
      "explain": "$f^{(10)}(0)=-\\frac{10!}{5}\\left(\\frac1{3^{11}}+\\frac1{2^{11}}\\right)\\approx-358.47$."
     }
    ],
-   "rubricSource": "ai-draft",
-   "stepsSource": "ai-draft"
+   "rubricSource": "ai-verified",
+   "stepsSource": "ai-verified"
   }
  ]
 }

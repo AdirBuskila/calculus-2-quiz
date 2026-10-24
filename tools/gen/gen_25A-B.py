@@ -119,7 +119,7 @@ $$\frac{\partial z}{\partial x}+\frac{\partial z}{\partial y}=y\cdot\frac{dg}{dt
 questions.append(Q(4, "computation", "double_integrals", r"""החליפו את סדר האינטגרציה באינטגרל
 $$\int_{-4}^0dx\int_0^{\sqrt{x+4}}f(x,y)\,dy+\int_0^2dx\int_0^{2-x}f(x,y)\,dy$$""",
 r"""נתחיל עם ציור התחום:
-![תחום האינטגרציה: מתחת ל-$y=\sqrt{x+4}$ עבור $-4\le x\le0$, ומתחת ל-$y=2-x$ עבור $0\le x\le2$](images/exams/25A-B-Q4a-region.png)
+![תחום האינטגרציה: מתחת לעקום שורש משמאל לציר הצירים ומתחת לישר יורד מימינו](images/exams/25A-B-Q4a-region.png)
 כאשר נשנה את סדר האינטגרציה, גבולות האינטגרציה ישתנו בהתאם:
 שטח ראשון:
 $$0\le y\le\sqrt{x+4},\qquad-4\le x\le0$$
@@ -183,7 +183,7 @@ $$\frac{f^{(5)}(0)}{5!}=\frac{1}{2^{5+1}}-\frac{1}{3^{5+1}}=\frac{1}{2^6}-\frac{
 $$f^{(5)}(0)=5!\left(\frac{1}{2^6}-\frac{1}{3^6}\right)=5!\left(\frac{1}{64}-\frac{1}{729}\right)=\frac{3325}{1944}.$$
 תיקון לפתרון שבקובץ: בפתרון שבקובץ מופיע הקירוב $\approx1.71166$, אך הערך המדויק הוא $\frac{3325}{1944}\approx1.7104$.""", part="ב", points=13))
 
-# ---- rubric / pitfalls / steps (ai-draft); expected values are machine-checked in tools/verify/25A-B/steps_25A-B.py ----
+# ---- rubric / pitfalls / steps (ai-verified); expected values are machine-checked in tools/verify/25A-B/steps_25A-B.py ----
 IDS = "abcdefgh"
 
 
@@ -209,7 +209,7 @@ add(1, "א",
                ("שתי הנגזרות החלקיות בנקודה: $-2$ ו-$-\\frac34$", 4),
                ("נוסחת הדיפרנציאל הראשון עם $\\Delta x=0.1$ ו-$\\Delta y=-0.1$", 2),
                ("הצבה והתוצאה $3.875$", 2)),
-    rubricSource="ai-draft",
+    rubricSource="ai-verified",
     pitfalls=["לשכוח ש-$\\Delta y=2.9-3=-0.1$ שלילי, ולהציב $+0.1$.",
               "לטעות בנגזרת הפנימית של השורש: הנגזרת של $41-4x^2-y^2$ לפי $x$ היא $-8x$ ולפי $y$ היא $-2y$.",
               "להציב ישירות במחשבון במקום להשתמש בדיפרנציאל: הערך המדויק הוא בערך $3.8665$, והשאלה מבקשת קירוב ליניארי."],
@@ -221,7 +221,7 @@ add(1, "א",
         {"type": "numeric", "prompt": "מהו הקירוב $f(2.1,2.9)\\approx f(2,3)+f'_x\\Delta x+f'_y\\Delta y$?", "answer": 3.875, "tol": 0.0005,
          "explain": "$4-2(0.1)+\\left(-\\frac34\\right)(-0.1)=3.875$."},
     ],
-    stepsSource="ai-draft")
+    stepsSource="ai-verified")
 
 add(1, "ב",
     rubric=rub(("בניית $L=xy+\\lambda(x^2+y^2-2)$", 3),
@@ -229,7 +229,7 @@ add(1, "ב",
                ("קבלת $x^2=y^2$ והצבה באילוץ שנותנת $x=\\pm1$", 3),
                ("ארבע הנקודות $(\\pm1,\\pm1)$", 2),
                ("ערכי $f$: מקסימום $1$ ומינימום $-1$ ומיקומם", 2)),
-    rubricSource="ai-draft",
+    rubricSource="ai-verified",
     pitfalls=["לחלק ב-$x$ או ב-$y$ בלי לוודא שהם שונים מ-$0$ (כאן הם אינם $0$ על המעגל).",
               "לקחת רק את הנקודה $(1,1)$ ולשכוח את $(-1,-1)$, או לשכוח שהמינימום מתקבל בנקודות עם סימנים הפוכים.",
               "לחפש נקודות קריטיות של $f$ בפנים: האילוץ הוא המעגל $x^2+y^2=2$ בלבד."],
@@ -243,13 +243,13 @@ add(1, "ב",
         {"type": "numeric", "prompt": "מהו הערך המינימלי של $f$ על המעגל?", "answer": -1, "tol": 0,
          "explain": "$f(1,-1)=f(-1,1)=-1$ (נבדק גם על דגימה צפופה של המעגל)."},
     ],
-    stepsSource="ai-draft")
+    stepsSource="ai-verified")
 
 add(2, "א",
     rubric=rub(("פירוק לשברים חלקיים $\\frac1{k(k-1)}=\\frac1{k-1}-\\frac1k$", 4),
                ("סכום חלקי טלסקופי $S_n=1-\\frac1n$", 4),
                ("הגבול $\\lim S_n=1$ ולכן הטור מתכנס וסכומו $1$", 4)),
-    rubricSource="ai-draft",
+    rubricSource="ai-verified",
     pitfalls=["לבדוק רק התכנסות (השוואה ל-$\\frac1{n^2}$) ולא לחשב את הסכום, כשהשאלה מבקשת גם סכום.",
               "טעות באינדקס: האיבר האחרון בסכום הטלסקופי הוא $-\\frac1n$ ולכן $S_n=1-\\frac1n$ ולא $1-\\frac1{n+1}$.",
               "להתחיל את הסכום מ-$n=1$: אז המכנה $n(n-1)$ מתאפס."],
@@ -263,7 +263,7 @@ add(2, "א",
         {"type": "numeric", "prompt": "מהו סכום הטור?", "answer": 1, "tol": 0,
          "explain": "$\\lim\\left(1-\\frac1n\\right)=1$."},
     ],
-    stepsSource="ai-draft")
+    stepsSource="ai-verified")
 
 add(2, "ב",
     rubric=rub(("הצבה $t=y-x,\\ v=y+2x$ וחישוב ההעתקה ההפוכה", 3),
@@ -271,7 +271,7 @@ add(2, "ב",
                ("גבולות בתחום החדש $1\\le t\\le4$ ו-$6\\le v\\le8$", 3),
                ("האינטגרנד $\\frac tv$ והפרדת המשתנים", 2),
                ("חישוב והתוצאה $\\frac52\\ln\\frac43$", 3)),
-    rubricSource="ai-draft",
+    rubricSource="ai-verified",
     pitfalls=["להציב $|J|=3$ (היעקוביאן של ההעתקה הישרה) במקום $\\frac13$ של ההעתקה ההפוכה.",
               "לטעות בהעתקה ההפוכה: $y=\\frac{v+2t}{3}$ ולא $\\frac{v+t}{3}$. אפשר לבדוק על קודקוד, למשל $(\\frac53,\\frac83)$ נותן $t=1,\\ v=6$.",
               "לבלבל בין הקווים: $y-x=1,4$ הם גבולות של $t$ ו-$y+2x=6,8$ הם גבולות של $v$."],
@@ -282,20 +282,20 @@ add(2, "ב",
          "correctId": "a",
          "explain": "תיקון לפתרון שבקובץ: בקובץ נכתב $y=\\frac13(v+1t)$ (טעות הקלדה). בקודקוד $\\left(\\frac53,\\frac83\\right)$ מתקבל $t=1,\\ v=6$, ורק $y=\\frac{v+2t}{3}$ מחזיר $\\frac83$ (sympy)."},
         {"type": "numeric", "prompt": "מהו הערך המוחלט של היעקוביאן $\\left|\\frac{\\partial(x,y)}{\\partial(t,v)}\\right|$ (עשרוני)?", "answer": 0.3333, "tol": 0.001,
-         "explain": "הדטרמיננטה של ההעתקה ההפוכה היא $\\frac13$ (ושל ההעתקה הישרה $-3$)."},
+         "explain": "הדטרמיננטה של ההעתקה ההפוכה היא $-\\frac13$ (ושל ההעתקה הישרה $-3$), וערכה המוחלט הוא $\\frac13$."},
         {"type": "numeric", "prompt": "בתחום החדש $1\\le t\\le4$. מהו $\\int_1^4t\\,dt$ (עשרוני)?", "answer": 7.5, "tol": 0.001,
          "explain": "$\\frac{16-1}{2}=7.5$, וזה הגורם בציר $t$ אחרי הפרדת המשתנים."},
         {"type": "numeric", "prompt": "מהו ערך האינטגרל (עשרוני)?", "answer": 0.7192, "tol": 0.001,
          "explain": "$\\frac13\\cdot\\frac{15}{2}\\ln\\frac86=\\frac52\\ln\\frac43\\approx0.7192$."},
     ],
-    stepsSource="ai-draft")
+    stepsSource="ai-verified")
 
 add(3, "א",
     rubric=rub(("רדיוס ההתכנסות $R=1$ בעזרת דלמבר והשקילות $\\sin\\frac1n\\sim\\frac1n$", 4),
                ("קצה $x=2$: הטור $\\sum\\sin^2\\frac1n$ מתכנס בהשוואה גבולית עם $\\frac1{n^2}$", 3),
                ("קצה $x=0$: מתכנס כי הטור בערכים מוחלטים מתכנס", 3),
                ("תחום ההתכנסות $0\\le x\\le2$", 2)),
-    rubricSource="ai-draft",
+    rubricSource="ai-verified",
     pitfalls=["במבחן המנה לא להשתמש בכך ש-$\\sin\\frac1n\\sim\\frac1n$ ולהיתקע על ביטוי שמתאפס.",
               "לשכוח שהמרכז הוא $x=1$ ולרשום את התחום סביב $0$.",
               "להניח שבקצוות הטור מתבדר רק כי הרדיוס הוא $1$: כאן שני הקצוות מתכנסים."],
@@ -309,14 +309,14 @@ add(3, "א",
          "correctId": "a",
          "explain": "בשני הקצוות $x=0$ ו-$x=2$ הטור מתכנס (בהחלט), ולכן התחום סגור."},
     ],
-    stepsSource="ai-draft")
+    stepsSource="ai-verified")
 
 add(3, "ב",
     rubric=rub(("סימון $t=\\cos(x-y)$ ושימוש בכלל השרשרת", 3),
                ("$z_x=-y\\sin(x-y)\\,g'(t)$", 3),
                ("$z_y=g(t)+y\\sin(x-y)\\,g'(t)$ בעזרת כלל המכפלה", 4),
                ("הצבה בסכום וצמצום לקבלת $g(t)=\\frac zy$", 3)),
-    rubricSource="ai-draft",
+    rubricSource="ai-verified",
     pitfalls=["לשכוח את כלל המכפלה ב-$z_y$ ולהשמיט את האיבר $g(t)$.",
               "טעות בסימן הנגזרת הפנימית: $\\frac{\\partial t}{\\partial x}=-\\sin(x-y)$ אבל $\\frac{\\partial t}{\\partial y}=+\\sin(x-y)$.",
               "להשתמש ב-$\\frac{\\partial t}{\\partial x}$ בשורת הנגזרת לפי $y$ (תיקון לפתרון שבקובץ: צריך $\\frac{\\partial t}{\\partial y}$)."],
@@ -339,7 +339,7 @@ add(3, "ב",
          "bugIndex": 1,
          "explain": "הסימן של $z_x$ שגוי: $\\frac{\\partial t}{\\partial x}=-\\sin(x-y)$. עם הסימן השגוי האיברים עם $g'(t)$ לא מצטמצמים (נבדק ב-sympy)."},
     ],
-    stepsSource="ai-draft")
+    stepsSource="ai-verified")
 
 add(4, "א",
     rubric=rub(("שרטוט התחום: מתחת ל-$y=\\sqrt{x+4}$ ומתחת ל-$y=2-x$ מעל $y=0$", 3),
@@ -347,7 +347,7 @@ add(4, "א",
                ("הצד הימני: $x\\le2-y$", 2),
                ("איחוד שני החלקים לתחום אחד $y^2-4\\le x\\le2-y$", 2),
                ("כתיבת האינטגרל $\\int_0^2\\int_{y^2-4}^{2-y}f\\,dx\\,dy$", 2)),
-    rubricSource="ai-draft",
+    rubricSource="ai-verified",
     pitfalls=["לשכוח את הריבוע בהיפוך העקומה ולכתוב $x=y-4$.",
               "להשאיר שני אינטגרלים נפרדים: בסדר החדש הגבולות של שני החלקים מתאחדים לגבול אחד.",
               "לטעות בגבול העליון של $y$: העקומה פוגשת את ציר $y$ ב-$y=2$."],
@@ -362,7 +362,7 @@ add(4, "א",
         {"type": "numeric", "prompt": "מהו שטח התחום, כלומר האינטגרל כש-$f=1$ (עשרוני)?", "answer": 7.3333, "tol": 0.001,
          "explain": "$\\int_0^2(6-y-y^2)\\,dy=\\frac{22}{3}$, וזהו גם סכום השטחים בסדר המקורי."},
     ],
-    stepsSource="ai-draft")
+    stepsSource="ai-verified")
 
 add(4, "ב",
     rubric=rub(("הנגזרות הראשונות ומערכת $x^2=2y$ ו-$4y^2=x$", 3),
@@ -370,7 +370,7 @@ add(4, "ב",
                ("בדיקה שהנקודה $\\left(-1,\\frac12\\right)$ אינה פתרון של שתי המשוואות", 2),
                ("נגזרות שניות $6x,\\ 48y,\\ -6$", 2),
                ("סיווג: אוכף ב-$(0,0)$ ומינימום מקומי ב-$\\left(1,\\frac12\\right)$", 3)),
-    rubricSource="ai-draft",
+    rubricSource="ai-verified",
     pitfalls=["לקבל מ-$x^2=2y$ גם את $x=-1$ עבור $y=\\frac12$ בלי לבדוק במשוואה השנייה $4y^2=x$.",
               "לחלק ב-$y$ ולאבד את הנקודה $(0,0)$.",
               "לסווג לפי $f_{xx}$ בלבד: ב-$(0,0)$ מתקבל $f_{xx}=0$ וצריך את הדטרמיננטה."],
@@ -384,7 +384,7 @@ add(4, "ב",
          "correctId": "a",
          "explain": "$f_{xx}=6>0$ והדטרמיננטה $6\\cdot24-36=108>0$ (sympy), ולכן מינימום מקומי."},
     ],
-    stepsSource="ai-draft")
+    stepsSource="ai-verified")
 
 add(5, "א",
     rubric=rub(("הנגזרת הכיוונית $D_{\\mathbf v}f=\\nabla f\\cdot\\mathbf v$", 3),
@@ -392,7 +392,7 @@ add(5, "א",
                ("הצבה בנקודה: $\\nabla f(1,0)=(0,1)$", 2),
                ("התנאי $b=1$ ווקטור יחידה $a^2+b^2=1$", 2),
                ("המסקנה $\\mathbf v=(0,1)$", 2)),
-    rubricSource="ai-draft",
+    rubricSource="ai-verified",
     pitfalls=["לגזור את $y\\cos(xy)$ בלי כלל המכפלה ב-$y$.",
               "לשכוח שהכיוון חייב להיות וקטור יחידה, ולהסתפק ב-$b=1$.",
               "לחשוב שיש כמה כיוונים: כאן $\\|\\nabla f\\|=1$ ולכן הערך $1$ הוא המקסימום ומתקבל רק בכיוון הגרדיאנט."],
@@ -406,7 +406,7 @@ add(5, "א",
          "correctId": "a",
          "explain": "הנגזרת בכיוון $(a,b)$ היא $b$. הכיוונים האחרים נותנים $0$, $-1$ ו-$\\frac{\\sqrt2}{2}$ בהתאמה, ורק $(0,1)$ נותן $1$."},
     ],
-    stepsSource="ai-draft")
+    stepsSource="ai-verified")
 
 add(5, "ב",
     rubric=rub(("פירוק לשברים חלקיים $\\frac1{2-x}-\\frac1{3-x}$", 3),
@@ -414,7 +414,7 @@ add(5, "ב",
                ("רדיוס ההתכנסות $R=2$, המינימום מבין $2$ ו-$3$", 2),
                ("הקשר $f^{(n)}(0)=n!\\,a_n$", 2),
                ("הערך $f^{(5)}(0)=\\frac{3325}{1944}$", 3)),
-    rubricSource="ai-draft",
+    rubricSource="ai-verified",
     pitfalls=["לקחת את הרדיוס $3$ (המקסימום) במקום $2$: הטור מתכנס רק כשמתקיימים שני התנאים $|x|<2$ ו-$|x|<3$.",
               "לשכוח להכפיל ב-$5!$ במעבר מהמקדם לנגזרת.",
               "להסתמך על הקירוב העשרוני שבקובץ: הערך המדויק הוא $\\frac{3325}{1944}\\approx1.7104$."],
@@ -430,7 +430,7 @@ add(5, "ב",
         {"type": "numeric", "prompt": "מהו $f^{(5)}(0)$ (עשרוני, ארבע ספרות אחרי הנקודה)?", "answer": 1.7104, "tol": 0.001,
          "explain": "תיקון לפתרון שבקובץ: הערך שבקובץ הוא $\\approx1.71166$, אך $5!\\,a_5=\\frac{3325}{1944}\\approx1.7104$ (sympy)."},
     ],
-    stepsSource="ai-draft")
+    stepsSource="ai-verified")
 
 exam = {
     "examCode": "25A-B",

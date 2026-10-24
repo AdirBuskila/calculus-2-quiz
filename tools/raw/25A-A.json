@@ -35,7 +35,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לבדוק רק מסלולים ישרים $y=kx$: כולם נותנים גבול $0$, ולהסיק בטעות שהפונקציה רציפה.",
     "לחשוב שקיום שתי הנגזרות החלקיות מבטיח רציפות. כאן שתיהן קיימות ושוות $0$ והפונקציה בכל זאת אינה רציפה.",
@@ -85,7 +85,7 @@
      "explain": "$f(\\Delta x,0)=0$ לכל $\\Delta x\\neq0$, ולכן המנה היא $0$ והגבול $0$. גם $f'_y(0,0)=0$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 1,
@@ -120,7 +120,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לשכוח את הנקודות הקריטיות בפנים התחום ולבדוק רק את השפה.",
     "לחלק משוואה ב-$x$ או ב-$y$ ולאבד את הפתרונות שבהם הם שווים $0$.",
@@ -177,7 +177,7 @@
      "explain": "$f(3,0)=0-3^4=-81$, וזהו הערך הקטן ביותר (בדיקה על רשת צפופה אישרה $81$ ו-$-81$)."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 2,
@@ -208,7 +208,7 @@
      "points": 3
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "להשתמש במבחן המנה על הטור הראשון: המנה שואפת ל-$1$ והמבחן אינו מכריע.",
     "להסיק התכנסות בהחלט מכך שלייבניץ מתקיים, בלי לבדוק את הטור בערכים מוחלטים.",
@@ -286,7 +286,7 @@
      "explain": "בערכים מוחלטים הוא מתבדר, אך האיברים יורדים ושואפים ל-$0$ ולכן לפי לייבניץ הוא מתכנס."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 2,
@@ -321,7 +321,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לשכוח את גורם היעקוביאן $\\frac12$, או להשתמש ב-$2$ (היעקוביאן ההפוך).",
     "לבלבל בין הקווים: $x+y=1,3$ הם הגבולות של $v$ ו-$x-y=\\pm1$ הם הגבולות של $u$.",
@@ -399,7 +399,7 @@
      "explain": "$\\frac13\\sinh3-\\sinh1\\approx2.1642$, ותואם חישוב מספרי ישיר בקואורדינטות $x,y$."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 3,
@@ -430,7 +430,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לשכוח שמרכז הטור הוא $x=1$, ולכתוב את התחום סביב $0$.",
     "להפוך את המנה בדלמבר ולקבל $R=2$ במקום $\\frac12$.",
@@ -480,7 +480,7 @@
      "explain": "ב-$x=\\frac12$ (כלומר $x-1=-\\frac12$) הטור מתכנס לפי לייבניץ, וב-$x=\\frac32$ הוא מתבדר."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 3,
@@ -511,7 +511,7 @@
      "points": 3
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לשכוח את כלל המכפלה ב-$z_y$: גם $y$ שלפני $g$ גזור.",
     "לטעות בסימן של $\\frac{\\partial u}{\\partial y}=-2y$ ולקבל $+2y^2g'(u)$, שאז הביטויים לא מצטמצמים.",
@@ -569,14 +569,14 @@
      "explain": "הסימן של $z_y$ שגוי: $\\frac{\\partial u}{\\partial y}=-2y$ ולכן האיבר הוא $-2y^2g'(u)$. עם הסימן השגוי האיברים לא מצטמצמים (נבדק ב-sympy)."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 4,
    "kind": "computation",
    "topic": "double_integrals",
    "question": "נתון האינטגרל $\\displaystyle\\int_0^1\\int_y^1\\sin\\left(\\frac{\\pi x^2}{2}\\right)dx\\,dy$\nשרטטו את תחום האינטגרציה וחשבו את ערכו של האינטגרל, שימו לב לשינוי סדר האינטגרציה.",
-   "solution": "כפי שניתן לראות, לא ניתן לחשב את האינטגרל כפי שהוא רשום, לא ניתן לבצע אינטגרציה לפי המשתנה $x$.\nלכן, נשנה את סדר האינטגרציה, לשם כך, נשרטט את התחום:\n![תחום האינטגרציה: המשולש $0\\le y\\le x\\le1$](images/exams/25A-A-Q4a-region.png)\nלאחר שינוי סדר האינטגרל, נקבל את האינטגרל:\n$$\\int_0^1\\int_y^1\\sin\\left(\\frac{\\pi x^2}{2}\\right)dx\\,dy=\\int_0^1\\int_0^x\\sin\\left(\\frac{\\pi x^2}{2}\\right)dy\\,dx$$\n$$\\int_0^1y\\sin\\left(\\frac{\\pi x^2}{2}\\right)\\Big|_0^xdx=\\int_0^1x\\sin\\left(\\frac{\\pi x^2}{2}\\right)dx=\\int_0^{0.5}\\sin(\\pi t)\\,dt$$\n$$\\frac{-\\cos(\\pi t)}{\\pi}\\Big|_0^{0.5}=\\frac1\\pi,\\qquad t=\\frac{x^2}{2},\\ dt=x\\,dx$$",
+   "solution": "כפי שניתן לראות, לא ניתן לחשב את האינטגרל כפי שהוא רשום, לא ניתן לבצע אינטגרציה לפי המשתנה $x$.\nלכן, נשנה את סדר האינטגרציה, לשם כך, נשרטט את התחום:\n![תחום האינטגרציה: המשולש שבין הצירים לישר האלכסון](images/exams/25A-A-Q4a-region.png)\nלאחר שינוי סדר האינטגרל, נקבל את האינטגרל:\n$$\\int_0^1\\int_y^1\\sin\\left(\\frac{\\pi x^2}{2}\\right)dx\\,dy=\\int_0^1\\int_0^x\\sin\\left(\\frac{\\pi x^2}{2}\\right)dy\\,dx$$\n$$\\int_0^1y\\sin\\left(\\frac{\\pi x^2}{2}\\right)\\Big|_0^xdx=\\int_0^1x\\sin\\left(\\frac{\\pi x^2}{2}\\right)dx=\\int_0^{0.5}\\sin(\\pi t)\\,dt$$\n$$\\frac{-\\cos(\\pi t)}{\\pi}\\Big|_0^{0.5}=\\frac1\\pi,\\qquad t=\\frac{x^2}{2},\\ dt=x\\,dx$$",
    "solutionSource": "student-solution",
    "official": false,
    "confidence": "high",
@@ -604,7 +604,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לנסות לאנטגרל את $\\sin\\left(\\frac{\\pi x^2}{2}\\right)$ לפי $x$ ישירות: אין לו פונקציה קדומה אלמנטרית.",
     "גבולות שגויים אחרי ההחלפה, למשל $x\\le y\\le1$ או $0\\le x\\le y$, שנותנים תחום אחר וערך אחר.",
@@ -654,7 +654,7 @@
      "explain": "$\\int_0^{1/2}\\sin(\\pi t)\\,dt=\\frac1\\pi\\approx0.3183$ (נבדק מספרית בשני הסדרים)."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 4,
@@ -689,7 +689,7 @@
      "points": 3
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "להשמיט את כלל המכפלה כשגוזרים את $(x^2-2y^2)e^{x-y}$.",
     "בהצבת $x=2y$ לחלק ב-$y$ ולאבד את הפתרון $y=0$.",
@@ -739,7 +739,7 @@
      "explain": "בנקודה זו הדטרמיננטה חיובית ו-$f_{xx}<0$ (sympy), ולכן מקסימום מקומי."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 5,
@@ -774,7 +774,7 @@
      "points": 2
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "לתת את הגרדיאנט עצמו כתשובה לכיוון בלי לנרמל אותו לוקטור יחידה.",
     "לשכוח את הגורם $2$ בגזירת $2y$ בתוך השורש.",
@@ -824,7 +824,7 @@
      "explain": "הכיוון הוא הגרדיאנט מנורמל. הווקטור $(4,1)$ אינו וקטור יחידה, ההפוך לו נותן נגזרת שלילית, והחלפת הרכיבים נותנת נגזרת קטנה יותר (sympy)."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   },
   {
    "num": 5,
@@ -859,7 +859,7 @@
      "points": 3
     }
    ],
-   "rubricSource": "ai-draft",
+   "rubricSource": "ai-verified",
    "pitfalls": [
     "להסיק שרדיוס ההתכנסות הוא $\\infty$ בגלל האקספוננט: הרדיוס נקבע לפי $\\ln(1+x^2)$ ושווה $1$.",
     "לשכוח להכפיל ב-$6!$ במעבר מהמקדם של $x^6$ אל הנגזרת.",
@@ -895,7 +895,7 @@
      "explain": "$f^{(6)}(0)=6!\\cdot a_6=720\\cdot\\frac{11}{45}=176$ (נבדק גם בגזירה ישירה ב-sympy)."
     }
    ],
-   "stepsSource": "ai-draft"
+   "stepsSource": "ai-verified"
   }
  ]
 }
