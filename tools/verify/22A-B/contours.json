@@ -1,0 +1,62 @@
+[
+ {
+  "id": "22A-B-Q4b",
+  "f": "1-x^2-y^2",
+  "constraint": "(x-1)^2+(y-1)^2=1",
+  "kind": "lagrange",
+  "domain": [
+   [
+    -0.5,
+    2.5
+   ],
+   [
+    -0.5,
+    2.5
+   ]
+  ],
+  "critical_points": [
+   {
+    "x": "1-1/sqrt(2)",
+    "y": "1-1/sqrt(2)",
+    "f": 0.8284271247461901,
+    "role": "abs max"
+   },
+   {
+    "x": "1+1/sqrt(2)",
+    "y": "1+1/sqrt(2)",
+    "f": -4.82842712474619,
+    "role": "abs min"
+   }
+  ]
+ },
+ {
+  "id": "22A-B-Q5b",
+  "f": "x^3+8*y^3-6*x*y+1",
+  "constraint": null,
+  "kind": "unconstrained",
+  "domain": [
+   [
+    -1,
+    2
+   ],
+   [
+    -1,
+    1.5
+   ]
+  ],
+  "critical_points": [
+   {
+    "x": 0,
+    "y": 0,
+    "f": 1,
+    "role": "saddle"
+   },
+   {
+    "x": 1,
+    "y": 0.5,
+    "f": 0,
+    "role": "local min"
+   }
+  ]
+ }
+]

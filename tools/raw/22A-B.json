@@ -1,0 +1,117 @@
+{
+ "examCode": "22A-B",
+ "examLabel": "מבחן סוף סמסטר א' 2022, מועד ב'",
+ "year": 2022,
+ "examDate": "08/03/2022",
+ "sourceFile": "calculus-2/22A-B exam.pdf",
+ "solutionFile": "calculus-2/22A-B solution.pdf",
+ "questions": [
+  {
+   "num": 1,
+   "kind": "computation",
+   "topic": "gradient_directional",
+   "question": "מצאו את הכיוון בו מתקבלת הנגזרת הכיוונית הגדולה ביותר של הפונקציה $f(x,y,z)=\\ln\\left(x^2+y^2+z^2\\right)$ בנקודה $(1,2,1)$.\nמה הוא ערכה של הנגזרת המקסימאלית?",
+   "solution": "כידוע, הכיוון בו הנגזרת הכיוונית תהיה מקסימאלית נקבע ע\"י ווקטור גרדיינט של הפונקציה. לכן, נחשב את הנגזרות החלקיות בנקודה הנתונה ונקבל\n$$\\frac{\\partial f}{\\partial x}=\\left.\\frac{2x}{x^2+y^2+z^2}\\right|_{(1,2,1)}=\\frac{2}{1+4+1}=\\frac{1}{3}$$\n$$\\frac{\\partial f}{\\partial y}=\\left.\\frac{2y}{x^2+y^2+z^2}\\right|_{(1,2,1)}=\\frac{4}{1+4+1}=\\frac{2}{3}$$\n$$\\frac{\\partial f}{\\partial z}=\\left.\\frac{2z}{x^2+y^2+z^2}\\right|_{(1,2,1)}=\\frac{2}{1+4+1}=\\frac{1}{3}$$\nומכאן נובע שהכיוון הנדרש נקבע ע\"י $\\vec\\nabla f(1,2,1)=\\left(\\dfrac{1}{3},\\dfrac{2}{3},\\dfrac{1}{3}\\right)$ וערכה המקסימאלי של הנגזרת הכיוונית הוא נורמה של וקטור גרדיינט בנקודה, כלומר\n$$\\left\\|\\vec\\nabla f(1,2,1)\\right\\|=\\sqrt{\\frac{1}{9}+\\frac{4}{9}+\\frac{1}{9}}=\\frac{\\sqrt{6}}{3}.$$",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "part": "א"
+  },
+  {
+   "num": 1,
+   "kind": "computation",
+   "topic": "change_of_variables",
+   "question": "חשבו את ערך האינטגרל\n$$\\int_0^3\\int_{-\\sqrt{9-y^2}}^{\\sqrt{9-y^2}}\\sin\\left(2+x^2+y^2\\right)dx\\,dy$$",
+   "solution": "התחום הוא חצי עיגול $x^2+y^2\\le9,\\ y\\ge0$. נעבור לקואורדינטות קוטביות $x=r\\cos\\theta,\\ y=r\\sin\\theta$, $0\\le r\\le3,\\ 0\\le\\theta\\le\\pi$:\n$$\\int_0^3\\int_{-\\sqrt{9-y^2}}^{\\sqrt{9-y^2}}\\sin\\left(2+x^2+y^2\\right)dx\\,dy=\\int_0^{\\pi}\\int_0^3\\sin\\left(2+r^2\\right)r\\,dr\\,d\\theta$$\n$$=\\int_0^{\\pi}d\\theta\\cdot\\int_0^3\\sin\\left(2+r^2\\right)r\\,dr=\\left.\\theta\\right|_0^{\\pi}\\cdot\\left.\\left(-\\frac{1}{2}\\cos\\left(2+r^2\\right)\\right)\\right|_0^3=\\pi\\cdot\\left(-\\frac{1}{2}\\cos(11)+\\frac{1}{2}\\cos(2)\\right)$$\n$$=\\frac{\\pi}{2}\\left(\\cos 2-\\cos 11\\right).$$",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "part": "ב"
+  },
+  {
+   "num": 2,
+   "kind": "computation",
+   "topic": "numeric_series",
+   "question": "בדקו התכנסות הטורים הבאים:\n$$\\sum_{n=2}^{\\infty}\\frac{(-1)^n}{(n-\\ln n)^3}$$\n$$\\sum_{n=1}^{\\infty}\\frac{1+\\cos(n)}{2^{n+1}}$$",
+   "solution": "**הטור הראשון.** נבחן את הפונקציה $f_1(x)=x-\\ln x$, שהנגזרת שלה $f_1'(x)=1-\\dfrac{1}{x}>0$ עבור כל $x\\ge2$. אזי $f_1(x)$ היא פונקציה עולה ולכן הפונקציה $f_2(x)=\\dfrac{1}{(x-\\ln x)^3}$ יורדת, זה אומר שהסדרה $\\left\\{\\dfrac{1}{(n-\\ln n)^3}\\right\\}$ יורדת (ושואפת ל-0). הטור המקורי הוא טור מחליף סימן ולפי משפט לייבניץ הטור מתכנס.\n\n**הטור השני.** נציין תחילה שהטור הוא טור חיובי, כי לכל $n\\in\\mathbb{N}$ מתקיים $1+\\cos n\\ge0$, ויש לנו גם ש-\n$$\\frac{1+\\cos n}{2^{n+1}}\\le\\frac{2}{2^{n+1}}=\\left(\\frac{1}{2}\\right)^n.$$\nאנחנו יודעים שהטור $\\sum_{n=1}^{\\infty}\\left(\\dfrac{1}{2}\\right)^n$ מתכנס, אזי גם הטור המקורי מתכנס.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "part": "א"
+  },
+  {
+   "num": 2,
+   "kind": "computation",
+   "topic": "partials_differentiability",
+   "question": "נתונה הפונקציה\n$$f(x,y)=\\begin{cases}\\dfrac{x^3+y^3}{x^2+y^2}, & (x,y)\\neq(0,0)\\\\[2mm] 0, & (x,y)=(0,0)\\end{cases}$$\n* האם $f(x,y)$ רציפה ב-$(0,0)$?\n* מצאו את $f'_x(0,0)$ ו-$f'_y(0,0)$.\n* האם $f(x,y)$ דיפרנציאבילית ב-$(0,0)$?",
+   "solution": "**רציפות.** נראה שהפונקציה רציפה ב-$(0,0)$:\n$$\\lim_{(x,y)\\to(0,0)}\\frac{x^3+y^3}{x^2+y^2}=\\lim_{r\\to0}\\frac{r^3\\cos^3\\theta+r^3\\sin^3\\theta}{r^2}=\\lim_{r\\to0}r\\left(\\cos^3\\theta+\\sin^3\\theta\\right)=0=f(0,0)$$\nכי $\\cos^3\\theta+\\sin^3\\theta$ היא פונקציה חסומה.\n\n**נגזרות חלקיות** ב-$(0,0)$:\n$$f'_x(0,0)=\\lim_{h\\to0}\\frac{f(h,0)-f(0,0)}{h}=\\lim_{h\\to0}\\frac{\\frac{h^3}{h^2}}{h}=\\lim_{h\\to0}\\frac{h^3}{h^3}=1;$$\n$$f'_y(0,0)=\\lim_{k\\to0}\\frac{f(0,k)-f(0,0)}{k}=\\lim_{k\\to0}\\frac{\\frac{k^3}{k^2}}{k}=\\lim_{k\\to0}\\frac{k^3}{k^3}=1.$$\n\n**דיפרנציאביליות.** נראה אם הפונקציה דיפרנציאבילית:\n$$\\lim_{(h,k)\\to(0,0)}\\frac{f(h,k)-f(0,0)-hf'_x(0,0)-kf'_y(0,0)}{\\sqrt{h^2+k^2}}=\\lim_{(h,k)\\to(0,0)}\\frac{\\frac{h^3+k^3}{h^2+k^2}-h-k}{\\sqrt{h^2+k^2}}$$\n$$=\\lim_{(h,k)\\to(0,0)}\\frac{\\frac{h^3+k^3-h^3-hk^2-kh^2-k^3}{h^2+k^2}}{\\sqrt{h^2+k^2}}=\\lim_{(h,k)\\to(0,0)}-\\frac{hk^2+kh^2}{\\left(h^2+k^2\\right)^{1/2}\\left(h^2+k^2\\right)}=-\\lim_{(h,k)\\to(0,0)}\\frac{hk^2+kh^2}{\\left(h^2+k^2\\right)^{3/2}}$$\nעבור $h=k>0$ מקבלים ש-\n$$-\\lim_{h\\to0^+}\\frac{h^3+h^3}{\\left(2h^2\\right)^{3/2}}=-\\lim_{h\\to0^+}\\frac{2h^3}{2^{3/2}h^3}=-\\frac{2}{2^{3/2}}\\neq0$$\nלכן הפונקציה אינה דיפרנציאבילית ב-$(0,0)$.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "part": "ב"
+  },
+  {
+   "num": 3,
+   "part": "א",
+   "kind": "computation",
+   "topic": "power_series",
+   "question": "עבור אילו ערכי $x$ הטור מתכנס (מצאו רדיוס התכנסות ותחום התכנסות):\n$$\\sum_{n=1}^{\\infty}\\frac{n}{\\left(n^2+1\\right)\\cdot3^n}\\,x^n$$",
+   "hold": "no-key: the solution file for this sitting has no solution for Q3a (its page 4 starts with Q3b)"
+  },
+  {
+   "num": 3,
+   "kind": "computation",
+   "topic": "implicit_function",
+   "question": "נתונה המשוואה $z^3-3xyz=4$\nהראו כי המשוואה מגדירה פונקציה סתומה $z=f(x,y)$ בסביבת נקודה $(2,1,-2)$ וחשבו את $z''_{xy}(2,1)$.",
+   "solution": "נגדיר את הפונקציה $F(x,y,z)=z^3-3yxz-4$ ונראה כי תנאי משפט הפונקציה הסתומה מתקיימים:\nא. $F(2,1,-2)=0$.\nב. $F(x,y,z)$ רציפה ובעלת נגזרות חלקיות רציפות בסביבת הנקודה $(2,1,-2)$.\nג. $F_z(x,y,z)=3z^2-3yx$, $F_z(2,1,-2)\\neq0$.\nולכן על פי משפט הפונקציה הסתומה קיימת סביבה של הנקודה $(2,1,-2)$ כך שבסביבה זו מוגדרת פונקציה יחידה $f(x,y)$ המקיימת $F(x,y,f(x,y))=0$ כך ש:\n$f(2,1)=-2$, $f(x,y)$ רציפה ב-$(2,1)$ ו-$f(x,y)$ גזירה ומתקיים:\n$$z_x=-\\frac{F'_x}{F'_z}=-\\frac{-3yz}{3z^2-3yx}=\\frac{3yz}{3z^2-3yx}=\\frac{yz}{z^2-yx}$$\n$$\\Rightarrow\\ z'_x(2,1,-2)=\\frac{-2}{2}=-1$$\nכדי לחשב את $z''_{xy}$ נגזור את $z'_x$ לפי $y$ ונתייחס ל-$z$ כאל פונקציה של $y$. תחילה נחשב את $z'_y$ בנקודה.\n$$z'_y=-\\frac{F'_y}{F'_z}=-\\frac{-3xz}{3z^2-3yx}=\\frac{3xz}{3z^2-3yx}=\\frac{xz}{z^2-yx}$$\n$$\\Rightarrow\\ z'_y(2,1,-2)=\\frac{-4}{2}=-2$$\nמכאן:\n$$z''_{xy}=\\left(z_x\\right)'_y=\\left.\\left(\\frac{yz}{z^2-yx}\\right)\\right|'_y=\\frac{\\left(z+y\\cdot z'_y\\right)\\left(z^2-yx\\right)-\\left(2z\\cdot z'_y-x\\right)\\cdot yz}{\\left(z^2-yx\\right)^2}$$\n$$\\Rightarrow\\ z''_{xy}(2,1,-2)=\\frac{-4\\cdot2-6\\cdot(-2)}{2^2}=1$$",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "part": "ב"
+  },
+  {
+   "num": 4,
+   "kind": "computation",
+   "topic": "change_of_variables",
+   "question": "חשבו את האינטגרל $\\iint_D\\dfrac{y-x}{2x+y}\\,dx\\,dy$\nכאשר $D$ הוא התחום ברביע הראשון החסום על ידי הישרים:\n$$y=4+x,\\quad y=1+x,\\quad y=6-2x,\\quad y=8-2x$$",
+   "solution": "נגדיר את ההעתקה\n$$T:\\ \\begin{cases}u=y-x\\\\ v=y+2x\\end{cases}\\ \\Longrightarrow\\ T(D)=\\left\\{(u,v):\\ 1\\le u\\le4,\\ 6\\le v\\le8\\right\\}$$\n$$J^{-1}=\\begin{vmatrix}\\frac{\\partial u}{\\partial x}&\\frac{\\partial u}{\\partial y}\\\\ \\frac{\\partial v}{\\partial x}&\\frac{\\partial v}{\\partial y}\\end{vmatrix}=\\begin{vmatrix}-1&1\\\\2&1\\end{vmatrix}=-1-2=-3\\ \\Longrightarrow\\ |J|=\\frac{1}{3}$$\n$$\\iint_D\\frac{y-x}{2x+y}\\,dx\\,dy=\\frac{1}{3}\\iint_{T(D)}\\frac{u}{v}\\,du\\,dv=\\frac{1}{3}\\int_6^8\\frac{dv}{v}\\int_1^4u\\,du=\\frac{1}{3}\\left.\\ln v\\right|_6^8\\cdot\\left.\\frac{u^2}{2}\\right|_1^4=\\frac{1}{3}\\cdot\\frac{15}{2}\\cdot\\ln\\frac{8}{6}=\\frac{5}{2}\\ln\\frac{4}{3}.$$",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "part": "א"
+  },
+  {
+   "num": 4,
+   "kind": "computation",
+   "topic": "absolute_extrema",
+   "question": "מצאו אקסטרמומים מוחלטים של הפונקציה\n$$f(x,y)=1-x^2-y^2$$\nבתחום $\\left\\{(x,y):(x-1)^2+(y-1)^2\\le1\\right\\}$",
+   "solution": "**בתוך התחום:**\n$$\\begin{cases}\\dfrac{\\partial f}{\\partial x}=-2x=0\\\\[2mm]\\dfrac{\\partial f}{\\partial y}=-2y=0\\end{cases}\\ \\Rightarrow\\ x=y=0$$\nהנקודה $(0,0)$ אינה בתחום.\n**על השפה:** $g(x,y)=(x-1)^2+(y-1)^2-1=0$.\n$$L(x,y,\\lambda)=1-x^2-y^2-\\lambda\\left[(x-1)^2+(y-1)^2-1\\right]$$\n$$\\frac{\\partial L}{\\partial x}=-2x-2\\lambda(x-1)=0\\iff2\\lambda=2x(1+\\lambda)\\iff x=\\frac{\\lambda}{1+\\lambda}\\quad\\left(x-1=\\frac{-1}{1+\\lambda}\\right)$$\n$$\\frac{\\partial L}{\\partial y}=-2y-2\\lambda(y-1)=0\\iff y=\\frac{\\lambda}{1+\\lambda}\\quad\\left(y-1=\\frac{-1}{1+\\lambda}\\right)$$\n$$\\frac{\\partial L}{\\partial\\lambda}=(x-1)^2+(y-1)^2-1=0\\iff\\frac{1}{(1+\\lambda)^2}+\\frac{1}{(1+\\lambda)^2}=1\\iff1+\\lambda=\\pm\\sqrt{2}$$\n$$x_1=\\frac{-1+\\sqrt{2}}{\\sqrt{2}}=1-\\frac{1}{\\sqrt{2}}=y_1,\\qquad x_2=\\frac{-1-\\sqrt{2}}{-\\sqrt{2}}=1+\\frac{1}{\\sqrt{2}}=y_2$$\n$$f\\left(1-\\frac{1}{\\sqrt{2}},1-\\frac{1}{\\sqrt{2}}\\right)=1-\\left(1-\\frac{1}{\\sqrt{2}}\\right)^2-\\left(1-\\frac{1}{\\sqrt{2}}\\right)^2=1-1+\\sqrt{2}-\\frac{1}{2}-1+\\sqrt{2}-\\frac{1}{2}=2\\left(\\sqrt{2}-1\\right)$$\nזהו המקסימום.\n$$f\\left(1+\\frac{1}{\\sqrt{2}},1+\\frac{1}{\\sqrt{2}}\\right)=-2\\left(\\sqrt{2}+1\\right)$$\nזהו המינימום.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "part": "ב"
+  },
+  {
+   "num": 5,
+   "kind": "computation",
+   "topic": "power_series",
+   "question": "מצאו את הפונקציה אליה הטור מתכנס בתחום $-1\\le x\\le1$ :\n$$\\sum_{n=1}^{\\infty}\\frac{(-1)^{1+n}x^{2n-1}}{2n-1}$$",
+   "solution": "תחום ההתכנסות של הטור הוא $-1\\le x\\le1$ (קל לבדוק).\nעבור $x$ בתחום זה הטור מתכנס ל-$f(x)$.\n$$f'(x)=\\left(\\sum_{n=1}^{\\infty}\\frac{(-1)^{n+1}x^{2n-1}}{2n-1}\\right)'=\\sum_{n=1}^{\\infty}(-1)^{n+1}x^{2n-2}=\\sum_{n=1}^{\\infty}(-1)^{n+1}\\left(x^2\\right)^{n-1}$$\n$$=\\sum_{n=0}^{\\infty}(-1)^n\\left(x^2\\right)^n=\\frac{1}{1+x^2}$$\nמכאן\n$$f(x)=\\int_0^xf'(t)\\,dt=\\int_0^x\\frac{dt}{1+t^2}=\\arctan x$$\nולבסוף\n$$\\sum_{n=1}^{\\infty}\\frac{(-1)^{n+1}x^{2n-1}}{2n-1}=\\arctan x.$$",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "part": "א"
+  },
+  {
+   "num": 5,
+   "kind": "computation",
+   "topic": "local_extrema",
+   "question": "מצאו וסווגו את נקודות האקסטרמום של הפונקציה:\n$$f(x,y)=x^3+8y^3-6xy+1$$",
+   "solution": "$$f(x,y)=z=x^3+8y^3-6xy+1$$\n$$\\begin{cases}z'_x=3x^2-6y\\\\ z'_y=24y^2-6x\\end{cases}\\ \\Rightarrow\\ \\begin{cases}3x^2-6y=0\\\\ 24y^2-6x=0\\end{cases}$$\n$$\\Rightarrow\\ y=\\frac{x^2}{2}$$\n$$6x^4-6x=0,\\qquad6x\\left(x^3-1\\right)=0\\ \\Rightarrow\\ \\begin{cases}x=0,\\ y=0&A(0,0)\\\\ x=1,\\ y=\\frac{1}{2}&B\\left(1,\\frac{1}{2}\\right)\\end{cases}$$\n$$z''_{xx}=6x,\\qquad z''_{xy}=-6,\\qquad z''_{yy}=48y$$\n$$z''_{xx}\\big|_A=z''_{yy}\\big|_A=0$$\n$$D=0-36<0$$\nלכן נקודת אוכף ב-$A$.\n$$z''_{xx}\\big|_B=6,\\qquad z''_{yy}\\big|_B=24$$\n$$D=6\\cdot24-36>0,\\quad z''_{xx}>0$$\nלכן נקודת מינימום מקומי ב-$B$.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "part": "ב"
+  }
+ ]
+}

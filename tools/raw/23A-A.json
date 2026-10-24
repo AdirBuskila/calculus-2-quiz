@@ -1,0 +1,130 @@
+{
+ "examCode": "23A-A",
+ "examLabel": "מבחן סוף סמסטר א' 2023, מועד א'",
+ "year": 2023,
+ "examDate": "12/02/2023",
+ "sourceFile": "calculus-2/23A-A exam.pdf",
+ "solutionFile": "calculus-2/23A-A solution.pdf",
+ "questions": [
+  {
+   "num": 1,
+   "kind": "computation",
+   "topic": "change_of_variables",
+   "question": "חשבו את ערך האינטגרל $\\iint_D\\arctan\\dfrac{y}{x}\\,dx\\,dy$ כאשר\n$$D=\\left\\{1\\le x^2+y^2\\le4,\\ \\ x\\le y\\le\\sqrt{3}\\cdot x,\\ \\ x\\ge0\\right\\}$$",
+   "solution": "התחום $D$ הוא חלק מטבעת ברביע הראשון, בין הישרים $y=x$ ו-$y=\\sqrt{3}x$.\nנעבור לקואורדינטות קוטביות:\n$$x=r\\cos\\theta,\\quad y=r\\sin\\theta,\\qquad 1\\le r\\le2,\\qquad \\frac{\\pi}{4}\\le\\theta\\le\\frac{\\pi}{3}$$\nו-$\\arctan\\dfrac{y}{x}=\\arctan\\left(\\dfrac{r\\sin\\theta}{r\\cos\\theta}\\right)=\\theta$ בתחום זה. לכן\n$$I=\\iint_{D'}\\arctan\\left(\\frac{r\\sin\\theta}{r\\cos\\theta}\\right)r\\,dr\\,d\\theta=\\int_1^2dr\\int_{\\pi/4}^{\\pi/3}\\theta\\cdot r\\,d\\theta=\\frac{7\\pi^2}{192}.$$",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "part": "א",
+   "points": 12
+  },
+  {
+   "num": 1,
+   "kind": "computation",
+   "topic": "gradient_directional",
+   "question": "מצאו את הכיוון בו קצב ההשתנות של הפונקציה $u=\\ln\\left(x^2+y^2+z^2\\right)$ בנקודה $(1,2,1)$ הוא מקסימלי. נמקו את תשובתכם.",
+   "solution": "הנגזרת הכיוונית היא\n$$\\frac{\\partial f}{\\partial\\vec u}=\\left|\\vec\\nabla f\\right|\\cdot\\cos\\delta,$$\nכאשר $\\delta$ היא הזווית בין הווקטור $\\vec u$ לבין וקטור הגרדיאנט.\n**מסקנה:** בכיוון וקטור הגרדיאנט קצב ההשתנות הוא מקסימלי (הרי אז $\\delta=0$, כלומר $\\cos\\delta=1$).\n$$\\vec\\nabla f=\\left(\\frac{2x}{x^2+y^2+z^2},\\ \\frac{2y}{x^2+y^2+z^2},\\ \\frac{2z}{x^2+y^2+z^2}\\right)$$\n$$\\vec\\nabla f(1,2,1)=\\frac{2}{6}(1,2,1)$$\nהכיוון המבוקש הוא כיוון הווקטור $(1,2,1)$ (כיוון היחידה $\\frac{1}{\\sqrt{6}}(1,2,1)$).",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "part": "ב",
+   "points": 13
+  },
+  {
+   "num": 2,
+   "kind": "computation",
+   "topic": "numeric_series",
+   "question": "בדקו התכנסות בהחלט, בתנאי או התבדרות של הטורים הבאים:\n$$\\sum_{n=2}^{\\infty}(-1)^n\\cdot\\sin\\left(\\frac{\\pi}{n}\\right)$$\n$$\\sum_{n=1}^{\\infty}(-1)^n\\cdot\\ln\\left(1+\\frac{1}{n\\sqrt[3]{n}}\\right)$$",
+   "solution": "**הטור הראשון.** נגדיר $a_n=(-1)^n\\sin\\left(\\dfrac{\\pi}{n}\\right)$.\nתכונות:\n1) $|a_n|=\\sin\\dfrac{\\pi}{n}\\to0$ כאשר $n\\to\\infty$, וגם באופן מונוטוני כי הפונקציה $\\sin(x)$ מונוטונית בקטע $\\left[0,\\frac{\\pi}{2}\\right]$ וגם רציפה עם הערך $\\sin(0)=0$.\n2) הטור מתחלף.\nאז לפי מבחן לייבניץ הטור מתכנס.\nהטור לא מתכנס בהחלט כי הטור $\\sum_{n=2}^{\\infty}\\sin\\left(\\dfrac{\\pi}{n}\\right)$ מתבדר לפי מבחן ההשוואה הגבולי:\n$$\\lim_{n\\to\\infty}\\frac{\\sin\\left(\\frac{\\pi}{n}\\right)}{\\frac{1}{n}}=\\pi\\in(0,\\infty)$$\nו-$\\sum\\dfrac{1}{n}$ מתבדר.\n**תשובה סופית:** הטור מתכנס בתנאי.\n\n**הטור השני.** נגדיר $a_n=(-1)^n\\ln\\left(1+\\dfrac{1}{n^{4/3}}\\right)$.\n$$\\sum_{n=1}^{\\infty}|a_n|=\\sum_{n=1}^{\\infty}\\ln\\left(1+\\frac{1}{n^{4/3}}\\right)$$\nהטור $\\sum_{n=1}^{\\infty}\\dfrac{1}{n^{4/3}}$ מתכנס, ולפי מבחן ההשוואה הגבולי\n$$\\lim_{n\\to\\infty}\\frac{\\ln\\left(1+n^{-4/3}\\right)}{n^{-4/3}}=1\\in(0,\\infty)$$\nגם הטור $\\sum|a_n|$ מתכנס.\n**תשובה סופית:** הטור מתכנס בהחלט.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "part": "א",
+   "points": 12
+  },
+  {
+   "num": 2,
+   "kind": "computation",
+   "topic": "partials_differentiability",
+   "question": "נתונה הפונקציה\n$$f(x,y)=\\begin{cases}\\left(x^2+y^2\\right)\\sin\\dfrac{1}{\\sqrt{x^2+y^2}}, & (x,y)\\neq(0,0)\\\\[2mm] 0, & (x,y)=(0,0)\\end{cases}$$\n* האם $f(x,y)$ רציפה ב-$(0,0)$?\n* מצאו את $f'_x(0,0)$ ו-$f'_y(0,0)$.\n* האם $f(x,y)$ דיפרנציאבילית ב-$(0,0)$?",
+   "solution": "**רציפות.** נעבור לקואורדינטות קוטביות, $r=\\sqrt{x^2+y^2}$:\n$$\\lim_{(x,y)\\to(0,0)}\\left(x^2+y^2\\right)\\sin\\frac{1}{\\sqrt{x^2+y^2}}=\\lim_{r\\to0}r^2\\sin\\frac{1}{r}=0=f(0,0)$$\n(כפל של פונקציה שואפת ל-0 ופונקציה חסומה). אז $f(x,y)$ רציפה ב-$(0,0)$.\n\n**נגזרות חלקיות.**\n$$f'_x(0,0)=\\lim_{x\\to0}\\frac{f(x,0)-f(0,0)}{x}=\\lim_{x\\to0}x^2\\cdot\\frac{1}{x}\\sin\\frac{1}{|x|}=\\lim_{x\\to0}x\\sin\\frac{1}{|x|}=0$$\n(כפל של פונקציה שואפת ל-0 ופונקציה חסומה).\nבאופן דומה\n$$f'_y(0,0)=\\lim_{y\\to0}\\frac{f(0,y)-f(0,0)}{y}=0.$$\n\n**דיפרנציאביליות.** נבדוק:\n$$\\lim_{(x,y)\\to(0,0)}\\frac{f(x,y)-f(0,0)-f'_x(0,0)\\,x-f'_y(0,0)\\,y}{\\sqrt{x^2+y^2}}=\\lim_{(x,y)\\to(0,0)}\\frac{x^2+y^2}{\\sqrt{x^2+y^2}}\\sin\\frac{1}{\\sqrt{x^2+y^2}}$$\n$$=\\lim_{r\\to0}r\\sin\\frac{1}{r}=0$$\n**מסקנה:** הפונקציה $f(x,y)$ דיפרנציאבילית ב-$(0,0)$.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "part": "ב",
+   "points": 13
+  },
+  {
+   "num": 3,
+   "kind": "computation",
+   "topic": "power_series",
+   "question": "עבור אילו ערכי $x$ הטור מתכנס (מצאו רדיוס התכנסות ותחום התכנסות):\n$$\\sum_{n=1}^{\\infty}x^n\\,\\frac{3^n}{(2n+1)^2\\cdot\\sqrt{5^n}}$$",
+   "solution": "לפי דלמבר, רדיוס ההתכנסות הוא\n$$R=\\lim_{n\\to\\infty}\\left|\\frac{a_n}{a_{n+1}}\\right|=\\lim_{n\\to\\infty}\\frac{\\dfrac{3^n}{(2n+1)^2\\sqrt{5^n}}}{\\dfrac{3^{n+1}}{(2(n+1)+1)^2\\sqrt{5^{n+1}}}}=\\frac{\\sqrt{5}}{3}$$\n$$R=\\frac{\\sqrt{5}}{3}$$\nכדי למצוא את תחום ההתכנסות נבדוק קצוות, $x=\\pm\\dfrac{\\sqrt{5}}{3}$:\n* אם $x=\\dfrac{\\sqrt{5}}{3}$ מתקבל הטור $\\sum\\dfrac{1}{(2n+1)^2}$. הטור מתכנס לפי קריטריון ההשוואה עם הטור ההרמוני המוכלל $\\sum\\dfrac{1}{n^2}$.\n* אם $x=-\\dfrac{\\sqrt{5}}{3}$ מתקבל הטור $\\sum\\dfrac{(-1)^n}{(2n+1)^2}$. הטור מתכנס בהחלט ולכן מתכנס.\n\n**תשובה סופית:**\n* רדיוס ההתכנסות $R=\\dfrac{\\sqrt{5}}{3}$.\n* תחום ההתכנסות $-\\dfrac{\\sqrt{5}}{3}\\le x\\le\\dfrac{\\sqrt{5}}{3}$.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "part": "א",
+   "points": 12
+  },
+  {
+   "num": 3,
+   "kind": "proof",
+   "topic": "chain_rule_identity",
+   "question": "הוכיחו כי הפונקציה $g(x,y,z)=f\\left(\\dfrac{1}{y}-\\dfrac{1}{x},\\ xye^{-\\frac{z^2}{2}}\\right)$ מקיימת את המשוואה\n$$x^2\\cdot g'_x+y^2\\cdot g'_y=-\\frac{x+y}{z}\\,g'_z$$\nכאשר $x,y\\neq0$ ו-$f(u,v)$ דיפרנציאבילית עבור כל $(u,v)$",
+   "solution": "נסמן $u=\\dfrac{1}{y}-\\dfrac{1}{x}$ ו-$v=xye^{-z^2/2}$, כך ש-$g(x,y,z)=f(u,v)$. מכאן נובע ש-\n$$\\begin{cases}\\dfrac{\\partial g}{\\partial x}=\\dfrac{\\partial f}{\\partial u}\\cdot\\dfrac{1}{x^2}+\\dfrac{\\partial f}{\\partial v}\\cdot ye^{-z^2/2}\\\\[2mm]\\dfrac{\\partial g}{\\partial y}=\\dfrac{\\partial f}{\\partial u}\\cdot\\left(-\\dfrac{1}{y^2}\\right)+\\dfrac{\\partial f}{\\partial v}\\cdot xe^{-z^2/2}\\\\[2mm]\\dfrac{\\partial g}{\\partial z}=-\\dfrac{\\partial f}{\\partial v}\\cdot xyze^{-z^2/2}\\end{cases}$$\nלכן\n$$x^2\\frac{\\partial g}{\\partial x}+y^2\\frac{\\partial g}{\\partial y}=\\frac{\\partial f}{\\partial u}+\\frac{\\partial f}{\\partial v}\\cdot x^2ye^{-z^2/2}-\\frac{\\partial f}{\\partial u}+\\frac{\\partial f}{\\partial v}\\cdot xy^2e^{-z^2/2}=\\frac{\\partial f}{\\partial v}\\cdot e^{-z^2/2}\\left(x^2y+xy^2\\right)$$\n$$-\\frac{x+y}{z}\\frac{\\partial g}{\\partial z}=\\frac{\\partial f}{\\partial v}\\cdot\\frac{x+y}{z}\\,xyze^{-z^2/2}=\\frac{\\partial f}{\\partial v}\\left(x^2y+xy^2\\right)e^{-z^2/2}$$\nוהמשוואה באמת מתקיימת.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "part": "ב",
+   "points": 13
+  },
+  {
+   "num": 4,
+   "kind": "computation",
+   "topic": "change_of_variables",
+   "question": "חשבו את האינטגרל $\\iint_D\\left(x^2+2xy\\right)dx\\,dy$\nכאשר $D$ הוא התחום ברביע הראשון החסום על ידי:\n$$y=\\frac{1}{x^2},\\quad y=\\frac{4}{x^2},\\qquad y=x+1,\\quad y=x-1$$",
+   "solution": "נעשה החלפת משתנים כללית:\n$$u=y\\cdot x^2,\\qquad 1\\le u\\le4$$\n$$v=y-x,\\qquad -1\\le v\\le1$$\nהיעקוביאן ההפוך:\n$$\\frac{1}{J}=\\begin{vmatrix}u'_x&v'_x\\\\u'_y&v'_y\\end{vmatrix}=\\begin{vmatrix}2xy&-1\\\\x^2&1\\end{vmatrix}=2xy+x^2$$\n$$J=\\frac{1}{2xy+x^2}$$\n$$\\iint_D\\left(x^2+2xy\\right)dx\\,dy=\\iint_{D_{uv}}\\left(x^2+2xy\\right)\\cdot\\frac{1}{2xy+x^2}\\,du\\,dv=\\int_1^4du\\int_{-1}^{1}dv=(4-1)(1+1)=6.$$",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "part": "א",
+   "points": 12
+  },
+  {
+   "num": 4,
+   "kind": "computation",
+   "topic": "absolute_extrema",
+   "question": "מצאו אקסטרמומים מוחלטים של הפונקציה\n$$f(x,y)=1-x^2-y^2$$\nבתחום $\\left\\{(x,y):(x-1)^2+(y-1)^2\\le1\\right\\}$",
+   "solution": "$$D:\\ \\left\\{(x,y)\\ \\middle|\\ (x-1)^2+(y-1)^2\\le1\\right\\}$$\n**בתוך התחום $D$:**\n$$\\begin{cases}f'_x=-2x=0\\\\ f'_y=-2y=0\\end{cases}\\ \\Longrightarrow\\ (x,y)=(0,0)\\notin D$$\n**על השפה** $(x-1)^2+(y-1)^2=1$ נבנה פונקציית לגראנז':\n$$L(x,y,\\lambda)=1-x^2-y^2+\\lambda\\left((x-1)^2+(y-1)^2-1\\right)$$\n$$\\begin{cases}L'_x=-2x+2\\lambda(x-1)=0\\\\ L'_y=-2y+2\\lambda(y-1)=0\\\\ L'_\\lambda=(x-1)^2+(y-1)^2-1=0\\end{cases}$$\n$$\\lambda=\\frac{x}{x-1}=\\frac{y}{y-1}\\ \\Longrightarrow\\ x=y$$\nנציב באילוץ ונקבל\n$$(x-1)^2+(x-1)^2=1$$\n$$x_{1,2}=1\\pm\\frac{\\sqrt{2}}{2},\\quad y_{1,2}=1\\pm\\frac{\\sqrt{2}}{2}\\ \\Longrightarrow\\ M_1\\left(1+\\frac{\\sqrt{2}}{2},\\,1+\\frac{\\sqrt{2}}{2}\\right),\\quad M_2\\left(1-\\frac{\\sqrt{2}}{2},\\,1-\\frac{\\sqrt{2}}{2}\\right)$$\nהאילוץ מגדיר תחום סגור וחסום (כידוע, הפונקציה רציפה ולכן מקבלת מינימום ומקסימום), ולכן נבדוק את הערכים בנקודות החשודות כדי לבדוק מי נותן מקסימום מוחלט ומי מינימום מוחלט:\n$$f(M_1)=-2-2\\sqrt{2},\\qquad f(M_2)=-2+2\\sqrt{2}$$\n$\\Longleftarrow$ ב-$M_1$ מינימום מוחלט של $f$ בתחום $D$, וב-$M_2$ מקסימום מוחלט של $f$ בתחום $D$.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "part": "ב",
+   "points": 13
+  },
+  {
+   "num": 5,
+   "kind": "computation",
+   "topic": "local_extrema",
+   "question": "מצאו וסווגו את נקודות האקסטרמום של הפונקציה:\n$$f(x,y)=(x+y)^2-4y^2-48y$$",
+   "solution": "$$f_x(x,y)=2(x+y)=0\\iff x=-y$$\n$$f_y(x,y)=2(x+y)-8y-48;\\qquad x=-y\\ \\Longrightarrow$$\n$$f_y(-y,y)=-8y-48=0\\iff y=-6.$$\nקיבלנו את הנקודה $(6,-6)$.\n$$f_{xx}(x,y)=2\\ \\Longrightarrow\\ f_{xx}(6,-6)=2=A$$\n$$f_{yy}(x,y)=-6\\ \\Longrightarrow\\ f_{yy}(6,-6)=-6=C$$\n$$f_{xy}(x,y)=2\\ \\Longrightarrow\\ f_{xy}(6,-6)=2=B$$\nלכן\n$$\\Delta=AC-B^2=-12-4=-16<0$$\nומכאן הנקודה $(6,-6)$ היא נקודת אוכף.",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "part": "א",
+   "points": 12
+  },
+  {
+   "num": 5,
+   "kind": "computation",
+   "topic": "taylor_maclaurin",
+   "question": "פתחו את הפונקציה $y=\\dfrac{1}{x^2+x-6}$ לטור מקלורן. מהו תחום התכנסות הטור?\nהסיקו את הערך של $f^{10}(0)$.",
+   "solution": "$$x^2+x-6=(x+3)(x-2)$$\nבואו נתפרק לשברים חלקיים:\n$$\\frac{1}{x^2+x-6}=\\frac{A}{x+3}+\\frac{B}{x-2}\\iff 1=A(x-2)+B(x+3);$$\n$x=2\\Longrightarrow B=\\dfrac{1}{5}$;\n$x=-3\\Longrightarrow A=-\\dfrac{1}{5}$.\n$$\\Longrightarrow\\ \\frac{1}{x^2+x-6}=-\\frac{1}{5}\\cdot\\frac{1}{x+3}+\\frac{1}{5}\\cdot\\frac{1}{x-2};$$\n$$\\frac{1}{x+3}=\\frac{1}{3\\left(1+\\frac{x}{3}\\right)}=\\frac{1}{3\\left(1-\\left(-\\frac{x}{3}\\right)\\right)}=\\frac{1}{3}\\sum_{n=0}^{\\infty}(-1)^n\\frac{x^n}{3^n}=\\sum_{n=0}^{\\infty}(-1)^n\\frac{x^n}{3^{n+1}};$$\nעבור $\\left|\\dfrac{x}{3}\\right|<1\\iff|x|<3$.\n$$\\frac{1}{x-2}=\\frac{-1}{2-x}=\\frac{-1}{2\\left(1-\\frac{x}{2}\\right)}=-\\frac{1}{2}\\sum_{n=0}^{\\infty}\\frac{x^n}{2^n}=-\\sum_{n=0}^{\\infty}\\frac{x^n}{2^{n+1}};$$\nעבור $\\left|\\dfrac{x}{2}\\right|<1\\iff|x|<2$.\n$$\\Longrightarrow\\ \\frac{1}{x^2+x-6}=-\\frac{1}{5}\\left(\\sum_{n=0}^{\\infty}(-1)^n\\frac{x^n}{3^{n+1}}+\\sum_{n=0}^{\\infty}\\frac{x^n}{2^{n+1}}\\right)$$\n$$=-\\frac{1}{5}\\sum_{n=0}^{\\infty}\\left(\\frac{(-1)^n}{3^{n+1}}+\\frac{1}{2^{n+1}}\\right)x^n=\\sum_{n=0}^{\\infty}\\frac{f^{(n)}(0)}{n!}x^n$$\nשני הפיתוחים מתקיימים יחד עבור $|x|<2$, ולכן תחום ההתכנסות של הטור הוא $|x|<2$.\n$n=10\\ \\Longrightarrow$\n$$\\frac{f^{(10)}(0)}{10!}=\\left(-\\frac{1}{5}\\right)\\left(\\frac{(-1)^{10}}{3^{11}}+\\frac{1}{2^{11}}\\right)=-\\frac{1}{5}\\left(\\frac{1}{3^{11}}+\\frac{1}{2^{11}}\\right)$$\n$$\\Longrightarrow\\ f^{(10)}(0)=-\\frac{10!}{5}\\left(\\frac{1}{3^{11}}+\\frac{1}{2^{11}}\\right)$$",
+   "solutionSource": "lecturer-solution",
+   "official": true,
+   "confidence": "high",
+   "part": "ב",
+   "points": 13
+  }
+ ]
+}

@@ -1,0 +1,35 @@
+[
+ {
+  "id": "22A-A-Q4a",
+  "description": "bounded by y-x=1, y=x+2 and the parabolas y^2=-4x, y^2=-4x+9 (the part with y>=0)",
+  "type": "curvilinear",
+  "inequalities": [
+   "y-x>=1",
+   "y-x<=2",
+   "y^2+4*x>=0",
+   "y^2+4*x<=9",
+   "y>=0"
+  ],
+  "boundary_curves": [
+   "y=x+1",
+   "y=x+2",
+   "y^2=-4*x",
+   "y^2=-4*x+9"
+  ],
+  "substitution": {
+   "u": "y-x",
+   "v": "y^2+4*x",
+   "u_range": [
+    1,
+    2
+   ],
+   "v_range": [
+    0,
+    9
+   ],
+   "abs_jacobian_xy_over_uv": "1/(2*y+4)"
+  },
+  "integrand": "exp(y-x)*(2*y+4)",
+  "value": "9*e*(e-1)"
+ }
+]

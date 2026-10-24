@@ -1,0 +1,98 @@
+[
+ {
+  "id": "22A-A-Q4b",
+  "f": "2*x^4+y^4-x^2-2*y^2",
+  "constraint": "x^2+y^2<=2 (closed disk)",
+  "kind": "closed_region",
+  "domain": [
+   [
+    -1.6,
+    1.6
+   ],
+   [
+    -1.6,
+    1.6
+   ]
+  ],
+  "critical_points": [
+   {
+    "x": 0,
+    "y": 0,
+    "f": 0,
+    "role": "local max"
+   },
+   {
+    "x": "1/2",
+    "y": 1,
+    "f": -1.125,
+    "role": "abs min"
+   },
+   {
+    "x": "1/2",
+    "y": -1,
+    "f": -1.125,
+    "role": "abs min"
+   },
+   {
+    "x": "-1/2",
+    "y": 1,
+    "f": -1.125,
+    "role": "abs min"
+   },
+   {
+    "x": "-1/2",
+    "y": -1,
+    "f": -1.125,
+    "role": "abs min"
+   },
+   {
+    "x": "sqrt(2)",
+    "y": 0,
+    "f": 6,
+    "role": "abs max (boundary endpoint; the key missed it)"
+   },
+   {
+    "x": "-sqrt(2)",
+    "y": 0,
+    "f": 6,
+    "role": "abs max (boundary endpoint; the key missed it)"
+   }
+  ]
+ },
+ {
+  "id": "22A-A-Q5b",
+  "f": "x*y^2-y^2-x^2/2-2*x+3",
+  "constraint": null,
+  "kind": "unconstrained",
+  "domain": [
+   [
+    -4,
+    3
+   ],
+   [
+    -3,
+    3
+   ]
+  ],
+  "critical_points": [
+   {
+    "x": -2,
+    "y": 0,
+    "f": 5.0,
+    "role": "local max"
+   },
+   {
+    "x": 1,
+    "y": "sqrt(3)",
+    "f": 0.5,
+    "role": "saddle"
+   },
+   {
+    "x": 1,
+    "y": "-sqrt(3)",
+    "f": 0.5,
+    "role": "saddle"
+   }
+  ]
+ }
+]
