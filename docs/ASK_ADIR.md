@@ -59,7 +59,8 @@ Open questions for Adir. One entry per item; the orchestrator moves it to Resolv
 
 ### 24S-A all items - no answer key
 - The exam file for sitting 24S-A has no solution. All 10 items held "no-key" for the solver (sympy workings in tools/verify/24S-A/workings.json are not a key).
-- Status: hold
+- Solver: all 10 solved from the page renders (Q3b transcription re-checked: the "1." and stray "ב." are a page-break artefact, Q3b is correct), every computation verified in tools/verify/24S-A/solve_24S-A.py; shipped as solved, official:false. They agree with the transcriber's workings.
+- Status: resolved by solver, pending refuter
 
 ### 24A-B p.6-7 Q3a - key's endpoint comparison is inconsistent
 - Path: calculus-2 solution file for sitting 24A-B (misnamed 6.5.25), pages 6-7
@@ -67,5 +68,9 @@ Open questions for Adir. One entry per item; the orchestrator moves it to Resolv
 - Question: the key gets R=1 and the domain [-6,-4], both correct (sympy). But the endpoint step divides by 1/cuberoot(n^2) (ratio tends to 0, not 1) and then cites sum 1/n^(3/2); the terms really behave like n^(-4/3).
 - Needed: allow shipping the question with the correct comparison (n^(-4/3), p>1) in place of the key's step, or keep it held.
 - Status: hold
+
+### 23A-C all items - no answer key
+- The exam file for sitting 23A-C (27.4.23) has no solution. All 10 items solved by the solver (solved, official:false), every computation checked in tools/verify/23A-C/solve_23A-C.py (sympy + numeric).
+- Status: resolved by solver, pending refuter
 
 ## Resolved

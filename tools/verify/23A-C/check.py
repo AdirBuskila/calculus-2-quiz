@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 """Geometry checks and region/contour data for sitting 23A-C (calculus-2, semester A, moed C, 27.4.2023).
-This sitting has NO key: every item is held "no-key" in the raw file. This script only checks the geometry of the
-regions and the critical points of Q4b, so the app's region/contour figures and the later solver have verified data.
-The values below are provisional (sympy-computed, not from an official key).
+This sitting has NO key: every item is solved (solutionSource "solved", official false). This script checks the
+geometry of the regions and the critical points of Q4b/Q5a, so the app's region/contour figures have verified data.
+The values below are solver-verified (sympy, tools/verify/23A-C/solve_23A-C.py); there is no official key.
 Run: PYTHONUTF8=1 py tools/verify/23A-C/check.py
 Writes regions.json and contours.json next to this file."""
 import json, pathlib, math
@@ -56,20 +56,20 @@ check("Q4b arc values", f4.subs({x: 1, y: 0}) == 1
 gx, gy = np.meshgrid(np.linspace(0, 1, 2001), np.linspace(0, 1, 2001))
 mk = (gx**2 + gy**2 <= 1) & (gy <= math.sqrt(3)*gx)
 fv = (gx**2 + gy**2 + 4*gx*gy)[mk]
-check("Q4b numeric (provisional) max 3 min 0", abs(fv.max() - 3) < 1e-3 and abs(fv.min()) < 1e-9)
+check("Q4b numeric max 3 min 0", abs(fv.max() - 3) < 1e-3 and abs(fv.min()) < 1e-9)
 
 # ---- Q5a: f = (x^2-2y^2) e^(x-y) critical points
 f5 = (x**2 - 2*y**2)*sp.exp(x - y)
 crit = sp.solve([sp.diff(f5, x), sp.diff(f5, y)], [x, y], dict=True)
 cps = sorted((s[x], s[y]) for s in crit)
-check("Q5a critical points (0,0),(-4,-2)  [provisional, for the solver]", cps == [(-4, -2), (0, 0)])
+check("Q5a critical points (0,0),(-4,-2)  (Hessian classification in solve_23A-C.py)", cps == [(-4, -2), (0, 0)])
 
 regions = [
     {"id": "23A-C-Q1a", "description": "plane region between the circles x^2+y^2=2x (inside) and x^2+y^2=4x (outside); tangent at the origin",
      "type": "annular", "inequalities": ["x^2+y^2>=2*x", "x^2+y^2<=4*x"],
      "boundary_curves": ["x^2+y^2=2*x", "x^2+y^2=4*x"],
      "polar": {"theta": ["-pi/2", "pi/2"], "r": ["2*cos(theta)", "4*cos(theta)"]},
-     "area": "3*pi", "note": "unofficial value (no key)"},
+     "area": "3*pi", "note": "solved (no key); see solve_23A-C.py"},
     {"id": "23A-C-Q4a", "description": "region of the sum of two integrals: -4<=x<=0, 0<=y<=sqrt(x+4) and 0<=x<=2, 0<=y<=2-x",
      "type": "simple",
      "orderXY": {"pieces": [{"x": [-4, 0], "y": [0, "sqrt(x+4)"]}, {"x": [0, 2], "y": [0, "2-x"]}]},
@@ -85,15 +85,15 @@ contours = [
     {"id": "23A-C-Q4b", "f": "x^2+y^2+4*x*y", "constraint": None, "kind": "closed_region",
      "region": "x>=0, y>=0, y<=sqrt(3)*x, x^2+y^2<=1", "domain": [[-0.2, 1.2], [-0.2, 1.2]],
      "critical_points": [
-         {"x": 0, "y": 0, "f": 0, "role": "provisional min (vertex)"},
-         {"x": "1/sqrt(2)", "y": "1/sqrt(2)", "f": 3, "role": "provisional max (arc)"},
+         {"x": 0, "y": 0, "f": 0, "role": "abs min (vertex)"},
+         {"x": "1/sqrt(2)", "y": "1/sqrt(2)", "f": 3, "role": "abs max (arc)"},
          {"x": 1, "y": 0, "f": 1, "role": "boundary vertex"},
          {"x": "1/2", "y": "sqrt(3)/2", "f": "1+sqrt(3)", "role": "boundary vertex"}]},
     {"id": "23A-C-Q5a", "f": "(x^2-2*y^2)*exp(x-y)", "constraint": None, "kind": "unconstrained",
      "domain": [[-8, 3], [-6, 3]],
      "critical_points": [
-         {"x": 0, "y": 0, "f": 0, "role": "provisional, unclassified here"},
-         {"x": -4, "y": -2, "f": float(f5.subs({x: -4, y: -2})), "role": "provisional, unclassified here"}]},
+         {"x": 0, "y": 0, "f": 0, "role": "saddle"},
+         {"x": -4, "y": -2, "f": float(f5.subs({x: -4, y: -2})), "role": "local max"}]},
 ]
 (HERE / "contours.json").write_text(json.dumps(contours, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
 print("ALL OK:", len(ok), "checks")

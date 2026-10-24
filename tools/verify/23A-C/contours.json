@@ -20,13 +20,13 @@
     "x": 0,
     "y": 0,
     "f": 0,
-    "role": "provisional min (vertex)"
+    "role": "abs min (vertex)"
    },
    {
     "x": "1/sqrt(2)",
     "y": "1/sqrt(2)",
     "f": 3,
-    "role": "provisional max (arc)"
+    "role": "abs max (arc)"
    },
    {
     "x": 1,
@@ -62,13 +62,13 @@
     "x": 0,
     "y": 0,
     "f": 0,
-    "role": "provisional, unclassified here"
+    "role": "saddle"
    },
    {
     "x": -4,
     "y": -2,
     "f": 1.0826822658929016,
-    "role": "provisional, unclassified here"
+    "role": "local max"
    }
   ]
  }
