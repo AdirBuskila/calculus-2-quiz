@@ -16,7 +16,71 @@
    "official": false,
    "confidence": "high",
    "part": "א",
-   "points": 12
+   "points": 12,
+   "rubric": [
+    {
+     "text": "מעבר לקואורדינטות קוטביות והצגת הביטוי בצורה $r^2\\cdot g(\\theta)$",
+     "points": 4
+    },
+    {
+     "text": "הצדקה שהגבול הוא $0$: אפס כפול פונקציה חסומה",
+     "points": 4
+    },
+    {
+     "text": "השוואת הגבול לערך הפונקציה $f(0,0)=0$ ומסקנה שהפונקציה רציפה",
+     "points": 4
+    }
+   ],
+   "pitfalls": [
+    "לבדוק רק לאורך מסלולים בודדים (למשל ציר $x$) ולהסיק רציפות. הגבול צריך להתקיים לכל כיוון, ולכן עוברים לקואורדינטות קוטביות.",
+    "לשכוח להשוות את הגבול לערך $f(0,0)$ לפני שמסיקים רציפות."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "אחרי ההצבה $x=r\\cos\\theta,\\ y=r\\sin\\theta$ הביטוי הנתון שווה ל-$r^k\\cdot g(\\theta)$. מהו $k$?",
+     "answer": 2,
+     "tol": 0,
+     "explain": "המונה הוא $r^4\\left(\\cos^3\\theta\\sin\\theta-\\cos\\theta\\sin^3\\theta\\right)$ והמכנה $r^2$, ולכן נשאר $r^2$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "הגורם הזוויתי הוא $g(\\theta)=\\cos^3\\theta\\sin\\theta-\\cos\\theta\\sin^3\\theta$, והוא שווה ל-$\\frac14\\sin4\\theta$. מהו הערך המקסימלי של $|g(\\theta)|$?",
+     "answer": 0.25,
+     "tol": 0,
+     "explain": "$|\\sin4\\theta|\\le1$, ולכן $|g|\\le\\frac14$. הגורם הזוויתי חסום, ולכן הביטוי כולו חסום על ידי $\\frac{r^2}{4}$ ושואף ל-$0$."
+    },
+    {
+     "type": "choice",
+     "prompt": "מה מסקנת הפתרון לגבי רציפות הפונקציה ב-$(0,0)$?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "הפונקציה אינה רציפה, כי הגבול תלוי בזווית $\\theta$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "הפונקציה אינה רציפה, כי המכנה מתאפס ב-$(0,0)$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "הפונקציה רציפה, כי הגבול $0$ שווה ל-$f(0,0)$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "אי אפשר להכריע, כי הגבול לא קיים"
+      }
+     ],
+     "correctId": "c",
+     "explain": "הגבול הוא $r^2$ כפול פונקציה חסומה, כלומר $0$, והוא שווה ל-$f(0,0)=0$. המכנה מתאפס רק בנקודה עצמה והפונקציה מוגדרת שם בנפרד."
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "stepsSource": "ai-draft"
   },
   {
    "num": 1,
@@ -28,7 +92,75 @@
    "official": false,
    "confidence": "high",
    "part": "ב",
-   "points": 13
+   "points": 13,
+   "rubric": [
+    {
+     "text": "חישוב הנגזרות החלקיות $f'_x$ ו-$f'_y$",
+     "points": 4
+    },
+    {
+     "text": "הצבה ב-$(1,0)$ וקבלת $\\nabla f(1,0)=\\left(-\\frac4e,0\\right)$",
+     "points": 4
+    },
+    {
+     "text": "נימוק: $\\frac{\\partial f}{\\partial\\vec u}=|\\nabla f|\\cos\\delta$ ולכן הערך המקסימלי בכיוון הגרדיאנט",
+     "points": 3
+    },
+    {
+     "text": "ניסוח הכיוון כוקטור יחידה $(-1,0)$",
+     "points": 2
+    }
+   ],
+   "pitfalls": [
+    "לחשב את הגרדיאנט אך לשכוח לנמק מדוע הכיוון המקסימלי הוא כיוון הגרדיאנט (הזווית $\\delta=0$).",
+    "טעות סימן: הנגזרת של $e^{-x^2}$ היא $-2xe^{-x^2}$, ולכן מקבלים גרדיאנט שמצביע בכיוון השלילי של ציר $x$."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "חשבו את $f'_x(1,0)$ עבור $f(x,y)=2e^{-x^2}+e^{-3y^2}$ (תשובה עשרונית, דיוק $0.001$).",
+     "answer": -1.4715,
+     "tol": 0.001,
+     "explain": "$f'_x=-4xe^{-x^2}$, ולכן $f'_x(1,0)=-\\frac{4}{e}\\approx-1.4715$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "חשבו את $f'_y(1,0)$.",
+     "answer": 0,
+     "tol": 0,
+     "explain": "$f'_y=-6ye^{-3y^2}$, ולכן $f'_y(1,0)=0$."
+    },
+    {
+     "type": "choice",
+     "prompt": "איזה וקטור יחידה נותן את קצב ההשתנות המקסימלי ב-$(1,0)$?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$(1,0)$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$(-1,0)$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$(0,1)$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$(0,-1)$"
+      }
+     ],
+     "correctId": "b",
+     "explain": "הגרדיאנט הוא $\\left(-\\frac4e,0\\right)$, כלומר מצביע בכיוון השלילי של ציר $x$, ולכן וקטור היחידה בכיוונו הוא $(-1,0)$."
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "stepsSource": "ai-draft"
   },
   {
    "num": 2,
@@ -40,7 +172,75 @@
    "official": false,
    "confidence": "high",
    "part": "א",
-   "points": 12
+   "points": 12,
+   "rubric": [
+    {
+     "text": "הטור $\\sum(-1)^n\\sin\\frac1{\\sqrt n}$: השוואה גבולית ל-$\\sum\\frac1{\\sqrt n}$ המתבדר, ולכן אין התכנסות בהחלט",
+     "points": 3
+    },
+    {
+     "text": "הטור $\\sum(-1)^n\\sin\\frac1{\\sqrt n}$: מבחן לייבניץ (הסדרה יורדת ושואפת ל-$0$), ולכן מתכנס בתנאי",
+     "points": 3
+    },
+    {
+     "text": "הטור $\\sum(-1)^n\\left(\\sqrt n-\\sqrt{n-1}\\right)$: הצגה כ-$\\frac1{\\sqrt n+\\sqrt{n-1}}$ והשוואה גבולית ל-$\\sum\\frac1{\\sqrt n}$, ולכן אין התכנסות בהחלט",
+     "points": 3
+    },
+    {
+     "text": "הטור $\\sum(-1)^n\\left(\\sqrt n-\\sqrt{n-1}\\right)$: מבחן לייבניץ ולכן מתכנס בתנאי",
+     "points": 3
+    }
+   ],
+   "pitfalls": [
+    "לעצור אחרי מבחן לייבניץ ולהכריז על התכנסות, בלי לבדוק התכנסות בהחלט. ההבחנה בין בהחלט לבתנאי היא חלק מהשאלה.",
+    "לבלבל בין התבדרות של $\\sum|a_n|$ להתבדרות של הטור עצמו: טור מתחלף יכול להתכנס גם כשטור הערכים המוחלטים מתבדר."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "בבדיקת התכנסות בהחלט של $\\sum(-1)^n\\sin\\frac1{\\sqrt n}$ משווים את $\\sin\\frac1{\\sqrt n}$ ל-$\\frac1{\\sqrt n}$. לְמה שואף היחס $\\dfrac{\\sin\\frac1{\\sqrt n}}{\\frac1{\\sqrt n}}$?",
+     "answer": 1,
+     "tol": 0,
+     "explain": "זהו הגבול הידוע $\\frac{\\sin t}{t}\\to1$ עבור $t=\\frac1{\\sqrt n}\\to0$. הגבול חיובי וסופי, ולכן שני הטורים מתכנסים או מתבדרים יחד, והטור $\\sum\\frac1{\\sqrt n}$ מתבדר ($p=\\frac12<1$)."
+    },
+    {
+     "type": "numeric",
+     "prompt": "בטור $\\sum(-1)^n\\left(\\sqrt n-\\sqrt{n-1}\\right)$ מציגים $\\sqrt n-\\sqrt{n-1}=\\frac1{\\sqrt n+\\sqrt{n-1}}$ ומשווים ל-$\\frac1{\\sqrt n}$. לְמה שואף היחס $\\dfrac{\\frac1{\\sqrt n+\\sqrt{n-1}}}{\\frac1{\\sqrt n}}$?",
+     "answer": 0.5,
+     "tol": 0,
+     "explain": "היחס שווה ל-$\\frac{1}{1+\\sqrt{1-\\frac1n}}\\to\\frac12$. הגבול חיובי וסופי, ולכן $\\sum|a_n|$ מתבדר."
+    },
+    {
+     "type": "choice",
+     "prompt": "מה מסקנת הפתרון לגבי שני הטורים?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "שניהם מתכנסים בהחלט"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "שניהם מתבדרים"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "הטור עם $\\sin$ מתכנס בתנאי והטור עם השורשים מתכנס בהחלט"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "שניהם מתכנסים בתנאי ואינם מתכנסים בהחלט"
+      }
+     ],
+     "correctId": "d",
+     "explain": "בשני הטורים סדרת הגורמים יורדת ושואפת ל-$0$ (מתכנס לפי לייבניץ), אבל טור הערכים המוחלטים מתבדר בהשוואה ל-$\\sum\\frac1{\\sqrt n}$. לכן שניהם מתכנסים בתנאי בלבד."
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "stepsSource": "ai-draft"
   },
   {
    "num": 2,
@@ -52,7 +252,75 @@
    "official": false,
    "confidence": "high",
    "part": "ב",
-   "points": 13
+   "points": 13,
+   "rubric": [
+    {
+     "text": "חישוב $f'_x(0,0)=0$ ו-$f'_y(0,0)=0$ מההגדרה",
+     "points": 3
+    },
+    {
+     "text": "ניסוח תנאי הדיפרנציאביליות: $\\Delta f=f'_x\\Delta x+f'_y\\Delta y+\\varepsilon\\sqrt{\\Delta x^2+\\Delta y^2}$ עם $\\varepsilon\\to0$",
+     "points": 3
+    },
+    {
+     "text": "מעבר לקואורדינטות קוטביות וחישוב $\\varepsilon=\\rho\\cdot\\frac14\\sin4\\theta$",
+     "points": 4
+    },
+    {
+     "text": "אפס כפול פונקציה חסומה, ולכן $\\varepsilon\\to0$ והפונקציה דיפרנציאבילית",
+     "points": 3
+    }
+   ],
+   "pitfalls": [
+    "להסיק דיפרנציאביליות מעצם קיום הנגזרות החלקיות. קיומן הכרחי בלבד, ויש לבדוק את הגבול של $\\varepsilon$.",
+    "לבדוק את הגבול של $\\varepsilon$ רק לאורך מסלולים ספציפיים ולא לכל הזוויות."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "חשבו את $f'_x(0,0)$ מההגדרה.",
+     "answer": 0,
+     "tol": 0,
+     "explain": "$f(\\Delta x,0)=0$ לכל $\\Delta x$, ולכן המנה $\\frac{f(\\Delta x,0)-f(0,0)}{\\Delta x}=0$ וגם הגבול הוא $0$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "בקואורדינטות קוטביות $\\varepsilon=\\rho\\cdot\\sin\\theta\\cos\\theta\\cos2\\theta=\\frac{\\rho}{4}\\sin4\\theta$. מהו הערך המקסימלי האפשרי של $\\left|\\frac14\\sin4\\theta\\right|$?",
+     "answer": 0.25,
+     "tol": 0,
+     "explain": "$|\\sin4\\theta|\\le1$, ולכן הגורם הזוויתי חסום על ידי $\\frac14$, ו-$|\\varepsilon|\\le\\frac{\\rho}{4}\\to0$."
+    },
+    {
+     "type": "choice",
+     "prompt": "האם $f$ דיפרנציאבילית ב-$(0,0)$?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "לא, כי הנגזרות החלקיות ב-$(0,0)$ מתאפסות"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "כן, כי $\\varepsilon\\to0$ כאשר $\\rho\\to0$ (אפס כפול פונקציה חסומה)"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "לא, כי $\\varepsilon$ תלוי בזווית $\\theta$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "כן, כי הנגזרות החלקיות קיימות, ואין צורך בבדיקה נוספת"
+      }
+     ],
+     "correctId": "b",
+     "explain": "תנאי הדיפרנציאביליות הוא $\\varepsilon\\to0$. כאן $\\varepsilon=\\frac{\\rho}{4}\\sin4\\theta\\to0$ ללא תלות בזווית. קיום הנגזרות החלקיות בלבד אינו מספיק."
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "stepsSource": "ai-draft"
   },
   {
    "num": 3,
@@ -64,7 +332,96 @@
    "official": false,
    "confidence": "high",
    "part": "א",
-   "points": 12
+   "points": 12,
+   "rubric": [
+    {
+     "text": "הצבה $s=x+1$ ומבחן המנה לטור $\\sum\\frac{2^n}{n^2+1}s^n$, ומציאת $R=\\frac12$",
+     "points": 4
+    },
+    {
+     "text": "בדיקת הקצה $s=-\\frac12$: הטור מתכנס",
+     "points": 2
+    },
+    {
+     "text": "בדיקת הקצה $s=\\frac12$: הטור $\\sum\\frac1{n^2+1}$ מתכנס בהשוואה ל-$\\sum\\frac1{n^2}$",
+     "points": 3
+    },
+    {
+     "text": "חזרה למשתנה $x$ וכתיבת תחום ההתכנסות $\\left[-\\frac32,-\\frac12\\right]$",
+     "points": 3
+    }
+   ],
+   "pitfalls": [
+    "לשכוח לבדוק את הקצוות ולכתוב קטע פתוח.",
+    "לחשב את הרדיוס עבור $s=x+1$ ולהשאיר את התשובה במשתנה $s$, בלי לחזור ל-$x$ (המרכז הוא $x=-1$)."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "נסמן $s=x+1$ ו-$a_n=\\frac{2^n}{n^2+1}$. מהו רדיוס ההתכנסות $R=\\lim\\left|\\frac{a_n}{a_{n+1}}\\right|$?",
+     "answer": 0.5,
+     "tol": 0,
+     "explain": "$\\frac{a_n}{a_{n+1}}=\\frac12\\cdot\\frac{n^2+2n+2}{n^2+1}\\to\\frac12$."
+    },
+    {
+     "type": "choice",
+     "prompt": "איזה טור מתקבל בקצה $s=\\frac12$?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$\\sum_{n=1}^{\\infty}\\frac{2^n}{n^2+1}$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$\\sum_{n=1}^{\\infty}\\frac{1}{n}$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$\\sum_{n=1}^{\\infty}\\frac{1}{n^2+1}$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$\\sum_{n=1}^{\\infty}\\frac{(-1)^n}{n^2+1}$"
+      }
+     ],
+     "correctId": "c",
+     "explain": "מציבים $s=\\frac12$: $\\frac{2^n}{n^2+1}\\cdot\\frac1{2^n}=\\frac1{n^2+1}\\le\\frac1{n^2}$, ולכן הטור מתכנס."
+    },
+    {
+     "type": "choice",
+     "prompt": "מהו תחום ההתכנסות של הטור המקורי?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$\\left[-\\frac32,-\\frac12\\right]$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$\\left(-\\frac32,-\\frac12\\right)$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$\\left[-\\frac12,\\frac12\\right]$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$\\left[-\\frac12,\\frac32\\right]$"
+      }
+     ],
+     "correctId": "a",
+     "explain": "שני הקצוות $s=\\pm\\frac12$ מתכנסים, ולכן התחום ב-$s$ הוא $\\left[-\\frac12,\\frac12\\right]$. מכיוון ש-$x=s-1$ מקבלים $\\left[-\\frac32,-\\frac12\\right]$."
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "stepsSource": "ai-draft"
   },
   {
    "num": 3,
@@ -76,7 +433,87 @@
    "official": false,
    "confidence": "high",
    "part": "ב",
-   "points": 13
+   "points": 13,
+   "rubric": [
+    {
+     "text": "הגדרת $s=\\frac zx$, $t=\\frac yx$ וחישוב הנגזרות החלקיות שלהן",
+     "points": 3
+    },
+    {
+     "text": "כלל השרשרת: חישוב $F_x,F_y,F_z$",
+     "points": 4
+    },
+    {
+     "text": "כלל המכפלה: חישוב $u_x,u_y,u_z$",
+     "points": 3
+    },
+    {
+     "text": "הצבה ב-$xu_x+yu_y+zu_z$, צמצום האיברים עם $F_s,F_t$ וקבלת $ku$",
+     "points": 3
+    }
+   ],
+   "pitfalls": [
+    "לשכוח את האיבר $kx^{k-1}F$ שמתקבל מגזירת הגורם $x^k$ בכלל המכפלה.",
+    "לבלבל בין הנגזרות החלקיות של $s=\\frac zx$ ו-$t=\\frac yx$: רק $s$ תלוי ב-$z$ ורק $t$ תלוי ב-$y$."
+   ],
+   "steps": [
+    {
+     "type": "choice",
+     "prompt": "מהי $\\frac{\\partial s}{\\partial x}$ עבור $s=\\frac zx$?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$\\frac{1}{x}$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$-\\frac{z}{x^2}$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$\\frac{z}{x^2}$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$-\\frac{1}{x^2}$"
+      }
+     ],
+     "correctId": "b",
+     "explain": "גוזרים לפי $x$: $\\left(zx^{-1}\\right)'=-zx^{-2}$."
+    },
+    {
+     "type": "order",
+     "prompt": "סדרו את שלבי ההוכחה.",
+     "lines": [
+      "נסמן $s=\\frac zx$, $t=\\frac yx$, כך ש-$u=x^kF(s,t)$.",
+      "כלל השרשרת: $F_x=-\\frac1{x^2}\\left(zF_s+yF_t\\right)$, $F_y=\\frac1xF_t$, $F_z=\\frac1xF_s$.",
+      "כלל המכפלה: $u_x=kx^{k-1}F-x^{k-2}\\left(zF_s+yF_t\\right)$, $u_y=x^{k-1}F_t$, $u_z=x^{k-1}F_s$.",
+      "מציבים ב-$xu_x+yu_y+zu_z$: האיברים עם $F_s$ ועם $F_t$ מצטמצמים, ונשאר $kx^kF=ku$."
+     ],
+     "explain": "קודם מגדירים את המשתנים הפנימיים, אחר כך גוזרים את $F$ בכלל השרשרת, אחר כך את $u$ בכלל המכפלה, ובסוף מציבים במשוואה."
+    },
+    {
+     "type": "findbug",
+     "prompt": "בהוכחה הבאה שורה אחת שגויה. מצאו אותה.",
+     "lines": [
+      "נסמן $s=\\frac zx$, $t=\\frac yx$.",
+      "$F_x=-\\frac1{x^2}\\left(zF_s+yF_t\\right)$",
+      "$F_y=\\frac1xF_t$",
+      "$F_z=\\frac1xF_s$",
+      "$u_x=kx^{k-1}F+x^{k-2}\\left(zF_s+yF_t\\right)$",
+      "$u_y=x^{k-1}F_t,\\quad u_z=x^{k-1}F_s$",
+      "$xu_x+yu_y+zu_z=kx^kF=ku$"
+     ],
+     "bugIndex": 4,
+     "explain": "$u_x=kx^{k-1}F+x^k F_x$, ו-$F_x$ שלילי, ולכן האיבר $x^{k-2}\\left(zF_s+yF_t\\right)$ צריך להופיע עם סימן מינוס. עם סימן פלוס האיברים לא מצטמצמים."
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "stepsSource": "ai-draft"
   },
   {
    "num": 4,
@@ -88,7 +525,50 @@
    "official": false,
    "confidence": "high",
    "part": "א",
-   "points": 12
+   "points": 12,
+   "rubric": [
+    {
+     "text": "פירוק לשברים חלקיים: $\\frac1{(n+2)(n+4)}=\\frac12\\left[\\frac1{n+2}-\\frac1{n+4}\\right]$",
+     "points": 4
+    },
+    {
+     "text": "כתיבת הסכום החלקי $S_n$ וצמצום טלסקופי: נשארים ארבעה איברים",
+     "points": 5
+    },
+    {
+     "text": "מעבר לגבול: $S=\\frac7{24}$",
+     "points": 3
+    }
+   ],
+   "pitfalls": [
+    "שגיאת ההפרש בפירוק: ההפרש בין המחוברים הוא $2$, ולכן חייבים את המקדם $\\frac12$ מלפנים.",
+    "לצמצם לא נכון ולהשאיר רק איבר ראשון אחד. בטלסקופ עם הפרש $2$ נשארים שני האיברים הראשונים ושני האחרונים."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "בפירוק $\\frac1{(n+2)(n+4)}=c\\left[\\frac1{n+2}-\\frac1{n+4}\\right]$ מהו $c$?",
+     "answer": 0.5,
+     "tol": 0,
+     "explain": "$\\frac1{n+2}-\\frac1{n+4}=\\frac{2}{(n+2)(n+4)}$, ולכן $c=\\frac12$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "אחרי הצמצום הטלסקופי $S_n=\\frac12\\left(\\frac13+\\frac14-\\frac1{n+3}-\\frac1{n+4}\\right)$. מהו הערך $\\frac13+\\frac14$ (תשובה עשרונית, דיוק $0.0001$)?",
+     "answer": 0.5833,
+     "tol": 0.0001,
+     "explain": "$\\frac13+\\frac14=\\frac7{12}\\approx0.5833$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו סכום הטור $\\sum_{n=1}^{\\infty}\\frac1{n^2+6n+8}$ (תשובה עשרונית, דיוק $0.0001$)?",
+     "answer": 0.2917,
+     "tol": 0.0001,
+     "explain": "כש-$n\\to\\infty$ האיברים $\\frac1{n+3},\\frac1{n+4}$ שואפים ל-$0$, ולכן $S=\\frac12\\cdot\\frac7{12}=\\frac7{24}\\approx0.2917$."
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "stepsSource": "ai-draft"
   },
   {
    "num": 4,
@@ -100,7 +580,82 @@
    "official": false,
    "confidence": "high",
    "part": "ב",
-   "points": 13
+   "points": 13,
+   "rubric": [
+    {
+     "text": "בניית מערכת לגרנז': $y=2\\lambda x$, $x=2\\lambda y$, $x^2+y^2=2$",
+     "points": 4
+    },
+    {
+     "text": "הוכחה ש-$\\lambda\\neq0$ ומציאת הקשר $x^2=y^2$",
+     "points": 4
+    },
+    {
+     "text": "הצבה באילוץ וקבלת ארבע נקודות חשודות $(\\pm1,\\pm1)$",
+     "points": 2
+    },
+    {
+     "text": "חישוב הערכים: מקסימום $1$ ומינימום $-1$",
+     "points": 3
+    }
+   ],
+   "pitfalls": [
+    "לפסול את $\\lambda=0$ בלי נימוק. הנימוק הוא שאז $x=y=0$ והאילוץ $x^2+y^2=2$ לא מתקיים.",
+    "מהקשר $x^2=y^2$ לקחת רק $y=x$ ולהחמיץ את הנקודות $(1,-1)$ ו-$(-1,1)$, שבהן מתקבל המינימום."
+   ],
+   "steps": [
+    {
+     "type": "choice",
+     "prompt": "אחרי חלוקת שתי המשוואות $\\lambda=\\frac{y}{2x}$ ו-$\\lambda=\\frac{x}{2y}$, איזה קשר מתקבל בין $x$ ל-$y$?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$x^2=y^2$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$x=y$ בלבד"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$x=2y$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$xy=2$"
+      }
+     ],
+     "correctId": "a",
+     "explain": "משוויון המנות $\\frac y{2x}=\\frac x{2y}$ מקבלים $y^2=x^2$, כלומר $y=\\pm x$ (ולא רק $y=x$)."
+    },
+    {
+     "type": "numeric",
+     "prompt": "כמה נקודות חשודות מתקבלות על המעגל $x^2+y^2=2$?",
+     "answer": 4,
+     "tol": 0,
+     "explain": "מ-$x^2=y^2$ ומהאילוץ $x^2=1$, ולכן $x=\\pm1$ ו-$y=\\pm1$: ארבע נקודות."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו הערך המקסימלי של $f=xy$ על האילוץ?",
+     "answer": 1,
+     "tol": 0,
+     "explain": "$f(1,1)=f(-1,-1)=1$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו הערך המינימלי של $f=xy$ על האילוץ?",
+     "answer": -1,
+     "tol": 0,
+     "explain": "$f(1,-1)=f(-1,1)=-1$."
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "stepsSource": "ai-draft"
   },
   {
    "num": 5,
@@ -112,7 +667,75 @@
    "official": false,
    "confidence": "high",
    "part": "א",
-   "points": 12
+   "points": 12,
+   "rubric": [
+    {
+     "text": "פתרון מערכת $f'_x=f'_y=0$ ומציאת הנקודות $(0,0)$ ו-$\\left(1,\\frac12\\right)$",
+     "points": 4
+    },
+    {
+     "text": "חישוב $f''_{xx},f''_{xy},f''_{yy}$ ודטרמיננטת ההסיאן",
+     "points": 3
+    },
+    {
+     "text": "$\\Delta=-36<0$ ב-$(0,0)$, ולכן נקודת אוכף",
+     "points": 2
+    },
+    {
+     "text": "$\\Delta>0$ ו-$f''_{xx}>0$ ב-$\\left(1,\\frac12\\right)$, ולכן מינימום",
+     "points": 3
+    }
+   ],
+   "pitfalls": [
+    "לפתור את המערכת ולמצוא רק את הפתרון $y=0$ ולהחמיץ את $8y^3=1$.",
+    "להסיק מינימום מ-$\\Delta>0$ בלבד, בלי לבדוק את סימן $f''_{xx}$."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "מהו $\\Delta=f''_{xx}f''_{yy}-\\left(f''_{xy}\\right)^2$ בנקודה $(0,0)$?",
+     "answer": -36,
+     "tol": 0,
+     "explain": "$f''_{xx}(0,0)=0$, $f''_{yy}(0,0)=0$, $f''_{xy}=-6$, ולכן $\\Delta=0-36=-36$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $\\Delta$ בנקודה $\\left(1,\\frac12\\right)$?",
+     "answer": 108,
+     "tol": 0,
+     "explain": "$f''_{xx}=6$, $f''_{yy}=48\\cdot\\frac12=24$, $f''_{xy}=-6$, ולכן $\\Delta=144-36=108$."
+    },
+    {
+     "type": "choice",
+     "prompt": "איך מסווגים את שתי הנקודות הקריטיות?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$(0,0)$ מינימום מקומי, $\\left(1,\\frac12\\right)$ נקודת אוכף"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$(0,0)$ נקודת אוכף, $\\left(1,\\frac12\\right)$ מקסימום מקומי"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$(0,0)$ נקודת אוכף, $\\left(1,\\frac12\\right)$ מינימום מקומי"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "שתיהן נקודות אוכף"
+      }
+     ],
+     "correctId": "c",
+     "explain": "ב-$(0,0)$ מתקבל $\\Delta<0$ (אוכף). ב-$\\left(1,\\frac12\\right)$ מתקבל $\\Delta>0$ ו-$f''_{xx}=6>0$ (מינימום)."
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "stepsSource": "ai-draft"
   },
   {
    "num": 5,
@@ -124,7 +747,82 @@
    "official": false,
    "confidence": "high",
    "part": "ב",
-   "points": 13
+   "points": 13,
+   "rubric": [
+    {
+     "text": "פיתוח לטור הנדסי: $\\frac1{1-3x^2}=\\sum3^nx^{2n}$",
+     "points": 4
+    },
+    {
+     "text": "תחום ההתכנסות $|x|<\\frac1{\\sqrt3}$",
+     "points": 3
+    },
+    {
+     "text": "בדיקת שני הקצוות: הטור מתבדר בהם",
+     "points": 3
+    },
+    {
+     "text": "שימוש בכך שיש רק חזקות זוגיות: $f^{(5)}(0)=5!\\,c_5=0$",
+     "points": 3
+    }
+   ],
+   "pitfalls": [
+    "לשכוח לבדוק את הקצוות $x=\\pm\\frac1{\\sqrt3}$ (בשניהם האיברים הם $1$ והטור מתבדר).",
+    "לחשב את $f^{(5)}(0)$ מהקואורדינטה $c_2$ או $c_{10}$ במקום לשים לב שהמקדם של $x^5$ הוא $0$."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "מהו רדיוס ההתכנסות של $\\sum_{n=0}^{\\infty}3^nx^{2n}$ (תשובה עשרונית, דיוק $0.001$)?",
+     "answer": 0.5774,
+     "tol": 0.001,
+     "explain": "הטור ההנדסי מתכנס כש-$|3x^2|<1$, כלומר $|x|<\\frac1{\\sqrt3}\\approx0.5774$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו המקדם $c_4$ של $x^4$ בפיתוח?",
+     "answer": 9,
+     "tol": 0,
+     "explain": "$x^4=x^{2n}$ עבור $n=2$, ולכן $c_4=3^2=9$."
+    },
+    {
+     "type": "choice",
+     "prompt": "מה קורה בקצוות $x=\\pm\\frac1{\\sqrt3}$?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "הטור מתכנס בשניהם"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "הטור מתבדר בשניהם"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "הטור מתכנס רק ב-$x=\\frac1{\\sqrt3}$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "הטור מתכנס רק ב-$x=-\\frac1{\\sqrt3}$"
+      }
+     ],
+     "correctId": "b",
+     "explain": "בשני הקצוות $3x^2=1$, ולכן כל איברי הטור שווים ל-$1$ והטור מתבדר."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $f^{(5)}(0)$?",
+     "answer": 0,
+     "tol": 0,
+     "explain": "בפיתוח יש רק חזקות זוגיות, ולכן $c_5=0$ ו-$f^{(5)}(0)=5!\\,c_5=0$."
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "stepsSource": "ai-draft"
   }
  ]
 }
