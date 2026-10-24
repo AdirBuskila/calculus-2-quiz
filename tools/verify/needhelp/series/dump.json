@@ -1,0 +1,878 @@
+{
+ "courseId": "series",
+ "levels": [
+  {
+   "id": "C01",
+   "order": 1,
+   "boss": false,
+   "questions": [
+    {
+     "id": "C01-Q1",
+     "question": "מה הסיווג של הטור $\\displaystyle\\sum_{n=1}^{\\infty}\\frac{n^2+1}{2n^2+3}$ ?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "מתכנס בהחלט"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "מתכנס בתנאי"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "מתבדר"
+      }
+     ]
+    },
+    {
+     "id": "C01-Q2",
+     "step": {
+      "type": "numeric",
+      "prompt": "מהו הסכום $\\displaystyle\\sum_{n=1}^{\\infty}\\frac{5}{3^n}$ ?"
+     }
+    },
+    {
+     "id": "C01-Q3",
+     "step": {
+      "type": "numeric",
+      "prompt": "מהו הסכום $\\displaystyle\\sum_{n=2}^{\\infty}\\frac{1}{3^n}$ ? (שימו לב: הטור מתחיל מ-$n=2$. אפשר לכתוב שבר, למשל 1/6)."
+     }
+    },
+    {
+     "id": "C01-Q4",
+     "question": "עבור אילו ערכי $x$ מתכנס הטור $\\displaystyle\\sum_{n=0}^{\\infty}\\left(\\frac{x}{4}\\right)^n$ ?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$|x|\\le4$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$|x|<\\frac14$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$x<4$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$|x|<4$"
+      }
+     ]
+    },
+    {
+     "id": "C01-Q5",
+     "question": "איזה מהטורים הבאים מתכנס?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$\\displaystyle\\sum_{n=1}^{\\infty}\\frac{1}{n\\sqrt n}$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$\\displaystyle\\sum_{n=1}^{\\infty}\\frac{1}{\\sqrt n}$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$\\displaystyle\\sum_{n=1}^{\\infty}\\frac{1}{n}$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$\\displaystyle\\sum_{n=1}^{\\infty}\\frac{n}{n+1}$"
+      }
+     ]
+    },
+    {
+     "id": "C01-Q6",
+     "step": {
+      "type": "findbug",
+      "prompt": "בנימוק הבא מנסים להכריע בהתכנסות של $\\sum\\frac1n$. מצאו את השורה הראשונה שבה הנימוק שגוי.",
+      "lines": [
+       "נבדוק אם הטור $\\sum_{n=1}^{\\infty}\\frac1n$ מתכנס.",
+       "האיבר הכללי $\\frac1n$ שואף ל-$0$.",
+       "לפי המשפט, אם האיבר הכללי שואף ל-$0$ אז הטור מתכנס.",
+       "לכן הטור $\\sum\\frac1n$ מתכנס."
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "C02",
+   "order": 2,
+   "boss": false,
+   "questions": [
+    {
+     "id": "C02-Q1",
+     "question": "עם איזה טור כדאי להשוות גבולית את הטור $\\displaystyle\\sum_{n=1}^{\\infty}\\frac{n+1}{n^3+5}$ ?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$\\displaystyle\\sum\\frac{1}{n}$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$\\displaystyle\\sum\\frac{1}{n^3}$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$\\displaystyle\\sum\\frac{1}{n^4}$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$\\displaystyle\\sum\\frac{1}{n^2}$"
+      }
+     ]
+    },
+    {
+     "id": "C02-Q2",
+     "step": {
+      "type": "numeric",
+      "prompt": "מהו הגבול $\\displaystyle\\lim_{n\\to\\infty}\\frac{a_n}{1/n^2}$ עבור $a_n=\\dfrac{2n^2+1}{n^4+n}$ ?"
+     }
+    },
+    {
+     "id": "C02-Q3",
+     "question": "מה הסיווג של הטור $\\displaystyle\\sum_{n=1}^{\\infty}\\frac{(-1)^n(2+\\cos n)}{n^2}$ ?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "מתכנס בתנאי"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "מתכנס בהחלט"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "מתבדר"
+      }
+     ]
+    },
+    {
+     "id": "C02-Q4",
+     "question": "מה הסיווג של הטור $\\displaystyle\\sum_{n=1}^{\\infty}\\frac{1}{\\sqrt{n^2+n}}$ ?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "מתכנס בהחלט"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "מתכנס בתנאי"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "מתבדר"
+      }
+     ]
+    },
+    {
+     "id": "C02-Q5",
+     "step": {
+      "type": "findbug",
+      "prompt": "בנימוק הבא מנסים להוכיח ש-$\\sum\\frac{1}{\\sqrt n+1}$ מתבדר. מצאו את השורה הראשונה שבה הנימוק שגוי.",
+      "lines": [
+       "נבדוק את הטור $\\sum_{n=1}^{\\infty}\\frac{1}{\\sqrt n+1}$.",
+       "לכל $n\\ge1$ מתקיים $\\frac{1}{\\sqrt n+1}\\le\\frac{1}{\\sqrt n}$.",
+       "הטור $\\sum\\frac1{\\sqrt n}$ מתבדר (טור p עם $p=\\frac12\\le1$).",
+       "מכיוון שהטור הגדול מתבדר, גם הטור הקטן ממנו מתבדר.",
+       "לכן $\\sum\\frac{1}{\\sqrt n+1}$ מתבדר."
+      ]
+     }
+    },
+    {
+     "id": "C02-Q6",
+     "question": "איזה חסם מוכיח שהטור $\\sum_{n=1}^{\\infty}\\frac{\\sin n}{n^2}$ מתכנס בהחלט?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$\\dfrac{\\sin n}{n^2}\\le\\dfrac1n$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$\\dfrac{\\sin n}{n^2}\\ge-\\dfrac{1}{n^2}$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$\\left|\\dfrac{\\sin n}{n^2}\\right|\\le\\dfrac{1}{n^2}$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$\\left|\\dfrac{\\sin n}{n^2}\\right|\\ge\\dfrac{1}{n^2}$"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C03",
+   "order": 3,
+   "boss": false,
+   "questions": [
+    {
+     "id": "C03-Q1",
+     "step": {
+      "type": "numeric",
+      "prompt": "מהו $\\displaystyle D=\\lim_{n\\to\\infty}\\frac{a_{n+1}}{a_n}$ עבור $a_n=\\dfrac{n^2}{2^n}$ ?"
+     }
+    },
+    {
+     "id": "C03-Q2",
+     "question": "מה הסיווג של הטור $\\displaystyle\\sum_{n=1}^{\\infty}\\frac{(-1)^n\\,3^n}{n!}$ ?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "מתכנס בהחלט"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "מתכנס בתנאי"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "מתבדר"
+      }
+     ]
+    },
+    {
+     "id": "C03-Q3",
+     "question": "מה נותן מבחן השורש לטור $\\displaystyle\\sum_{n=1}^{\\infty}\\left(\\frac{n}{2n+1}\\right)^n$ ?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$c=2$, ולכן הטור מתבדר"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$c=1$, ולכן אין מידע"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$c=\\frac12$, ולכן הטור מתבדר"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$c=\\frac12$, ולכן הטור מתכנס"
+      }
+     ]
+    },
+    {
+     "id": "C03-Q4",
+     "question": "במבחן המנה התקבל $D=1$. מה אפשר להסיק?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "הטור מתכנס, כי $D\\le1$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "הטור מתבדר, כי $D\\ge1$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "הטור מתכנס בתנאי"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "אי אפשר להסיק: יש גם טורים מתכנסים וגם טורים מתבדרים עם $D=1$"
+      }
+     ]
+    },
+    {
+     "id": "C03-Q5",
+     "question": "מה הסיווג של הטור $\\displaystyle\\sum_{n=2}^{\\infty}\\frac{1}{n(\\ln n)^3}$ ?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "מתבדר"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "מתכנס בתנאי"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "מתכנס בהחלט"
+      }
+     ]
+    },
+    {
+     "id": "C03-Q6",
+     "step": {
+      "type": "order",
+      "prompt": "סדרו את ההוכחה ש-$\\sum_{n=2}^{\\infty}\\frac{1}{n\\ln n}$ מתבדר, לפי מבחן האינטגרל.",
+      "lines": [
+       "נחשב $\\int_2^M\\frac{dx}{x\\ln x}=\\ln\\ln M-\\ln\\ln2$.",
+       "כש-$M\\to\\infty$ מתקבל $\\ln\\ln M\\to\\infty$, כלומר האינטגרל $\\int_2^{\\infty}f$ מתבדר.",
+       "לפי מבחן האינטגרל גם הטור $\\sum_{n=2}^{\\infty}\\frac1{n\\ln n}$ מתבדר.",
+       "נגדיר $f(x)=\\frac1{x\\ln x}$ ב-$[2,\\infty)$: היא חיובית, רציפה ויורדת, ו-$f(n)=a_n$."
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "C04",
+   "order": 4,
+   "boss": false,
+   "questions": [
+    {
+     "id": "C04-Q1",
+     "question": "מה הסיווג של הטור $\\displaystyle\\sum_{n=1}^{\\infty}\\frac{(-1)^n}{n}$ ?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "מתכנס בהחלט"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "מתבדר"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "מתכנס בתנאי"
+      }
+     ]
+    },
+    {
+     "id": "C04-Q2",
+     "question": "מה הסיווג של הטור $\\displaystyle\\sum_{n=1}^{\\infty}\\frac{\\cos(\\pi n)}{n^2}$ ?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "מתכנס בתנאי"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "מתבדר"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "מתכנס בהחלט"
+      }
+     ]
+    },
+    {
+     "id": "C04-Q3",
+     "question": "מה הסיווג של הטור $\\displaystyle\\sum_{n=1}^{\\infty}(-1)^n\\frac{n}{n+1}$ ?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "מתכנס בהחלט"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "מתבדר"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "מתכנס בתנאי"
+      }
+     ]
+    },
+    {
+     "id": "C04-Q4",
+     "question": "מה הסיווג של הטור $\\displaystyle\\sum_{n=2}^{\\infty}\\frac{(-1)^n}{\\sqrt n\\,\\ln n}$ ?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "מתבדר"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "מתכנס בהחלט"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "מתכנס בתנאי"
+      }
+     ]
+    },
+    {
+     "id": "C04-Q5",
+     "step": {
+      "type": "numeric",
+      "prompt": "סוכמים את הטור $\\displaystyle\\sum_{n=1}^{\\infty}\\frac{(-1)^{n+1}}{n^2}$ בעזרת $S_N$. מהו ה-$N$ הקטן ביותר שמשפט לייבניץ מבטיח עבורו $|S-S_N|\\le0.01$ ?"
+     }
+    },
+    {
+     "id": "C04-Q6",
+     "step": {
+      "type": "findbug",
+      "prompt": "בנימוק הבא מנסים להוכיח התכנסות של טור מתחלף. מצאו את השורה הראשונה שבה הנימוק שגוי.",
+      "lines": [
+       "נבדוק את הטור $\\sum_{n=1}^{\\infty}(-1)^n a_n$ כאשר $a_n=\\frac{2+(-1)^n}{n}$.",
+       "$a_n>0$ לכל $n$, וגם $a_n\\le\\frac3n$, ולכן $a_n\\to0$.",
+       "הסדרה $a_n$ יורדת, כי המכנה $n$ גדל.",
+       "לפי משפט לייבניץ הטור מתכנס."
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "C05",
+   "order": 5,
+   "boss": false,
+   "questions": [
+    {
+     "id": "C05-Q1",
+     "step": {
+      "type": "numeric",
+      "prompt": "מהו רדיוס ההתכנסות של $\\displaystyle\\sum_{n=1}^{\\infty}\\frac{x^n}{n\\cdot3^n}$ ?"
+     }
+    },
+    {
+     "id": "C05-Q2",
+     "question": "מהו רדיוס ההתכנסות של $\\displaystyle\\sum_{n=1}^{\\infty}\\frac{n!}{n^n}\\,x^n$ ?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$\\dfrac1e$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$1$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$e$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$\\infty$"
+      }
+     ]
+    },
+    {
+     "id": "C05-Q3",
+     "step": {
+      "type": "numeric",
+      "prompt": "מהו רדיוס ההתכנסות של $\\displaystyle\\sum_{n=1}^{\\infty}\\frac{4^n+1}{5^n}\\,x^n$ ? (אפשר לכתוב שבר או עשרוני)."
+     }
+    },
+    {
+     "id": "C05-Q4",
+     "question": "מה המרכז ומה הרדיוס של הטור $\\displaystyle\\sum_{n=1}^{\\infty}\\frac{(x+1)^n}{n\\cdot2^n}$ ?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "מרכז $1$, רדיוס $2$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "מרכז $-1$, רדיוס $\\frac12$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "מרכז $-1$, רדיוס $2$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "מרכז $1$, רדיוס $\\frac12$"
+      }
+     ]
+    },
+    {
+     "id": "C05-Q5",
+     "question": "מהו רדיוס ההתכנסות של $\\displaystyle\\sum_{n=1}^{\\infty}\\frac{x^{2n}}{4^n}$ ?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$R=4$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$R=\\frac14$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$R=2$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$R=\\frac12$"
+      }
+     ]
+    },
+    {
+     "id": "C05-Q6",
+     "question": "מהו רדיוס ההתכנסות של $\\displaystyle\\sum_{n=1}^{\\infty}n^n\\,x^n$ ?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$R=\\infty$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$R=1$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$R=e$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$R=0$"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C06",
+   "order": 6,
+   "boss": false,
+   "questions": [
+    {
+     "id": "C06-Q1",
+     "question": "מהו תחום ההתכנסות של $\\displaystyle\\sum_{n=1}^{\\infty}\\frac{x^n}{n}$ ?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$[-1,1]$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$(-1,1)$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$[-1,1)$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$(-1,1]$"
+      }
+     ]
+    },
+    {
+     "id": "C06-Q2",
+     "question": "מהו תחום ההתכנסות של $\\displaystyle\\sum_{n=1}^{\\infty}\\frac{x^n}{n^2}$ ?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$[-1,1)$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$[-1,1]$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$(-1,1]$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$(-1,1)$"
+      }
+     ]
+    },
+    {
+     "id": "C06-Q3",
+     "question": "מהו תחום ההתכנסות של $\\displaystyle\\sum_{n=1}^{\\infty}\\frac{n}{n+1}\\,x^n$ ?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$[-1,1]$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$(-1,1]$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$[-1,1)$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$(-1,1)$"
+      }
+     ]
+    },
+    {
+     "id": "C06-Q4",
+     "question": "ידוע שתחום ההתכנסות של $\\sum a_nX^n$ הוא $(-3,3]$. מהו תחום ההתכנסות של $\\sum a_n(x-1)^n$ ?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$(-3,3]$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$[-2,4)$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$(-4,2]$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$(-2,4]$"
+      }
+     ]
+    },
+    {
+     "id": "C06-Q5",
+     "question": "מהו תחום ההתכנסות של $\\displaystyle\\sum_{n=1}^{\\infty}\\frac{(x-2)^n}{n\\cdot3^n}$ ?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$(-1,5]$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$[-3,3)$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$[-1,5]$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$[-1,5)$"
+      }
+     ]
+    },
+    {
+     "id": "C06-Q6",
+     "step": {
+      "type": "findbug",
+      "prompt": "בפתרון הבא מחפשים את תחום ההתכנסות של $\\sum\\frac{x^n}{\\sqrt n}$. מצאו את השורה הראשונה שבה הפתרון שגוי.",
+      "lines": [
+       "לפי דלאמבר $R=1$.",
+       "ב-$x=1$ מתקבל $\\sum\\frac1{\\sqrt n}$, טור p עם $p=\\frac12$, ולכן הוא מתבדר.",
+       "ב-$x=-1$ מתקבל $\\sum\\frac{(-1)^n}{\\sqrt n}$, ו-$\\frac1{\\sqrt n}$ יורד ל-$0$, ולכן הטור מתכנס לפי לייבניץ.",
+       "לכן תחום ההתכנסות הוא $(-1,1]$."
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "C07",
+   "order": 7,
+   "boss": false,
+   "questions": [
+    {
+     "id": "C07-Q1",
+     "question": "מהו טור מקלורן של $\\dfrac{1}{1+2x}$ ולאילו $x$ הוא מתכנס?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$\\sum_{n=0}^{\\infty}(-2)^nx^n$ עבור $|x|<2$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$\\sum_{n=0}^{\\infty}2^nx^n$ עבור $|x|<\\frac12$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$\\sum_{n=0}^{\\infty}\\frac{(-1)^n}{2^n}x^n$ עבור $|x|<2$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$\\sum_{n=0}^{\\infty}(-2)^nx^n$ עבור $|x|<\\frac12$"
+      }
+     ]
+    },
+    {
+     "id": "C07-Q2",
+     "step": {
+      "type": "numeric",
+      "prompt": "נתונה $f(x)=x^2e^x$. מהו $f^{(5)}(0)$ ?"
+     }
+    },
+    {
+     "id": "C07-Q3",
+     "step": {
+      "type": "numeric",
+      "prompt": "נתונה $f(x)=\\sin(x^2)$. מהו $f^{(6)}(0)$ ?"
+     }
+    },
+    {
+     "id": "C07-Q4",
+     "question": "לאילו $x$ מתכנס טור מקלורן של $\\ln(1+3x)$ ?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$-\\frac13\\le x\\le\\frac13$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$-1<x\\le1$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$-\\frac13<x\\le\\frac13$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$-\\frac13\\le x<\\frac13$"
+      }
+     ]
+    },
+    {
+     "id": "C07-Q5",
+     "step": {
+      "type": "numeric",
+      "prompt": "נתונה $f(x)=\\dfrac{1}{(1-x)(1-2x)}$. מהו $f^{(4)}(0)$ ? (רמז: פירוק לשברים חלקיים)."
+     }
+    },
+    {
+     "id": "C07-Q6",
+     "question": "לאילו $x$ מתכנס טור מקלורן של $f(x)=\\dfrac{1}{(1-x)(1-2x)}$ ?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$|x|\\le\\frac12$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$|x|<1$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$|x|<\\frac12$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$|x|<2$"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C08",
+   "order": 8,
+   "boss": true,
+   "questions": [
+    {
+     "id": "bank:24B-A-Q2b",
+     "bankId": "24B-A-Q2b"
+    },
+    {
+     "id": "bank:26A-A-Q2a",
+     "bankId": "26A-A-Q2a"
+    },
+    {
+     "id": "bank:24B-A-Q4b",
+     "bankId": "24B-A-Q4b"
+    },
+    {
+     "id": "bank:26A-A-Q3a",
+     "bankId": "26A-A-Q3a"
+    },
+    {
+     "id": "bank:24B-A-Q5b",
+     "bankId": "24B-A-Q5b"
+    },
+    {
+     "id": "bank:24B-A-Q5c",
+     "bankId": "24B-A-Q5c"
+    }
+   ]
+  }
+ ]
+}
