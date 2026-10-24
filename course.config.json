@@ -63,7 +63,23 @@
       "טור מקלורן ונגזרות מסדר גבוה"
     ]
   ],
-  "briefs": [],
+  "briefs": [
+    ["01 - improper_integrals.md", "improper_integrals", "improper_integrals", "topic"],
+    ["02 - functions_level_sets.md", "functions_level_sets", "functions_level_sets", "topic"],
+    ["03 - limits_continuity.md", "limits_continuity", "limits_continuity", "topic"],
+    ["04 - partials_differentiability.md", "partials_differentiability", "partials_differentiability", "topic"],
+    ["05 - chain_rule_identity.md", "chain_rule_identity", "chain_rule_identity", "topic"],
+    ["06 - gradient_directional.md", "gradient_directional", "gradient_directional", "topic"],
+    ["07 - implicit_function.md", "implicit_function", "implicit_function", "topic"],
+    ["08 - local_extrema.md", "local_extrema", "local_extrema", "topic"],
+    ["09 - absolute_extrema.md", "absolute_extrema", "absolute_extrema", "topic"],
+    ["10 - double_integrals.md", "double_integrals", "double_integrals", "topic"],
+    ["11 - change_of_variables.md", "change_of_variables", "change_of_variables", "topic"],
+    ["12 - numeric_series.md", "numeric_series", "numeric_series", "topic"],
+    ["13 - power_series.md", "power_series", "power_series", "topic"],
+    ["14 - taylor_maclaurin.md", "taylor_maclaurin", "taylor_maclaurin", "topic"],
+    ["15 - cheat_sheet.md", "cheat_sheet", "limits_continuity", "cheat"]
+  ],
   "needHelp": [
     {
       "id": "limits_diff",
