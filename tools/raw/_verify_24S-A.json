@@ -1,0 +1,78 @@
+{
+ "examCode": "24S-A",
+ "refuter": "refute_solve.py (own sympy/numpy)",
+ "items": {
+  "1a": {
+   "verdict": "agree",
+   "own_answer": "u=(0,1) unique unit vector; grad=(0,1)",
+   "first_divergence": null,
+   "steps": "all agree"
+  },
+  "1b": {
+   "verdict": "agree",
+   "own_answer": "z_xx=2e^{x-y}cos(x+y), z_yy=-2e^{x-y}cos(x+y), sum 0 (sympy)",
+   "first_divergence": null,
+   "steps": "all agree"
+  },
+  "2a": {
+   "verdict": "agree",
+   "own_answer": "continuous (|f|<=r^2), f_x=f_y=0, differentiable (|f/r|<=r); numeric polar grid agrees",
+   "first_divergence": null,
+   "steps": "all agree"
+  },
+  "2b": {
+   "verdict": "agree",
+   "own_answer": "1: abs conv (p=5/4); 2: conditional (limit-compare 1/n, alternating decreasing)",
+   "first_divergence": null,
+   "steps": "all agree"
+  },
+  "3a": {
+   "verdict": "agree",
+   "own_answer": "R=4, [-2,6)",
+   "first_divergence": null,
+   "steps": "all agree"
+  },
+  "3b": {
+   "verdict": "agree",
+   "own_answer": "interior crit (2/5,7/5) outside D; max 5 at B and C, min 0 at A; edge BC crit (1/2,1) f=9/2; 1001^2 grid max 5.0 min 0.0",
+   "first_divergence": null,
+   "steps": "all agree"
+  },
+  "4a": {
+   "verdict": "agree",
+   "own_answer": "f_y=-1",
+   "first_divergence": null,
+   "steps": "all agree"
+  },
+  "4b": {
+   "verdict": "agree",
+   "own_answer": "points (-1/3,3/4),(7/3,-3/4); planes z=x-16y/9+5/3 and z=x-16y/9-11/3 (also 9x-16y-9z+15=0 / -33=0)",
+   "first_divergence": null,
+   "steps": "all agree"
+  },
+  "5a": {
+   "verdict": "agree",
+   "own_answer": "F_z=-3, z_x=-2/3, z_y=2/3, sum 0",
+   "first_divergence": null,
+   "steps": "all agree"
+  },
+  "5b": {
+   "verdict": "agree",
+   "own_answer": "crit (0,0),(6,0),(0,6) saddles D=-36; (2,2) local max 8, D=12",
+   "first_divergence": null,
+   "steps": "all agree"
+  }
+ },
+ "checks": {
+  "contours.json": "agree (Q3b, Q5b points/values/roles)",
+  "transcription": "agree with page renders; Q3b displays stray 'ב.' at page-2 bottom and '1.' label, transcription correctly labels it 3b; Q1a 'ל-1' is Hebrew prefix hyphen so value +1 (correct); stray comma in f(x,y,) cleaned",
+  "option_text": "no positional citation of options, no 'הפתרון הרשמי'; solutionSource solved/official false consistent with GATE1",
+  "rubric_sums": "12,13,12,13,12,13,12,13,12,13 all match item points",
+  "findbug": "Q1b bugIndex 3 correct, single line changed"
+ },
+ "counts": {
+  "agree": 10,
+  "disagree": 0,
+  "unclear": 0
+ }
+}
