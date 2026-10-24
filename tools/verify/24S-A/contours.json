@@ -1,0 +1,87 @@
+[
+ {
+  "id": "24S-A-Q3b",
+  "f": "2*x^2-3*y^2+x*y-3*x+8*y",
+  "constraint": null,
+  "kind": "closed_region",
+  "region": "x>=0, y<=1, y>=x",
+  "domain": [
+   [
+    -0.2,
+    1.2
+   ],
+   [
+    -0.2,
+    1.2
+   ]
+  ],
+  "critical_points": [
+   {
+    "x": 0,
+    "y": 1,
+    "f": 5,
+    "role": "abs max (vertex B)"
+   },
+   {
+    "x": 1,
+    "y": 1,
+    "f": 5,
+    "role": "abs max (vertex C)"
+   },
+   {
+    "x": 0,
+    "y": 0,
+    "f": 0,
+    "role": "abs min (vertex A)"
+   },
+   {
+    "x": "1/2",
+    "y": 1,
+    "f": "9/2",
+    "role": "boundary critical (edge BC)"
+   }
+  ]
+ },
+ {
+  "id": "24S-A-Q5b",
+  "f": "x*y*(6-x-y)",
+  "constraint": null,
+  "kind": "unconstrained",
+  "domain": [
+   [
+    -2,
+    8
+   ],
+   [
+    -2,
+    8
+   ]
+  ],
+  "critical_points": [
+   {
+    "x": 0,
+    "y": 0,
+    "f": 0,
+    "role": "saddle"
+   },
+   {
+    "x": 0,
+    "y": 6,
+    "f": 0,
+    "role": "saddle"
+   },
+   {
+    "x": 6,
+    "y": 0,
+    "f": 0,
+    "role": "saddle"
+   },
+   {
+    "x": 2,
+    "y": 2,
+    "f": 8,
+    "role": "local max"
+   }
+  ]
+ }
+]
