@@ -16,7 +16,75 @@
    "solution": "נשלים לריבוע:\n$$x^2+y^2=2x\\iff(x-1)^2+y^2=1,\\qquad x^2+y^2=4x\\iff(x-2)^2+y^2=4.$$\nהמעגל הראשון (מרכז $(1,0)$, רדיוס $1$) נמצא בתוך המעגל השני (מרכז $(2,0)$, רדיוס $2$), ושניהם משיקים בראשית. הצורה היא התחום שבין שני המעגלים.\nנעבור לקואורדינטות קוטביות $x=r\\cos\\theta,\\ y=r\\sin\\theta$:\n$$r^2=2r\\cos\\theta\\Rightarrow r=2\\cos\\theta,\\qquad r^2=4r\\cos\\theta\\Rightarrow r=4\\cos\\theta,$$\nוהתחום הוא $-\\frac{\\pi}{2}\\le\\theta\\le\\frac{\\pi}{2},\\ 2\\cos\\theta\\le r\\le4\\cos\\theta$. היעקוביאן הוא $r$, ולכן\n$$S=\\int_{-\\pi/2}^{\\pi/2}\\int_{2\\cos\\theta}^{4\\cos\\theta}r\\,dr\\,d\\theta=\\int_{-\\pi/2}^{\\pi/2}\\frac{16\\cos^2\\theta-4\\cos^2\\theta}{2}\\,d\\theta=6\\int_{-\\pi/2}^{\\pi/2}\\cos^2\\theta\\,d\\theta$$\n$$=6\\int_{-\\pi/2}^{\\pi/2}\\frac{1+\\cos2\\theta}{2}\\,d\\theta=6\\cdot\\frac{\\pi}{2}=3\\pi.$$\nבדיקה: שטח העיגול הגדול פחות שטח העיגול הקטן הוא $4\\pi-\\pi=3\\pi$.",
    "solutionSource": "solved",
    "official": false,
-   "confidence": "high"
+   "confidence": "high",
+   "rubric": [
+    {
+     "text": "השלמה לריבוע וזיהוי שני המעגלים המשיקים בראשית",
+     "points": 3
+    },
+    {
+     "text": "מעבר לקואורדינטות קוטביות: $2\\cos\\theta\\le r\\le4\\cos\\theta$ ו-$-\\frac{\\pi}{2}\\le\\theta\\le\\frac{\\pi}{2}$",
+     "points": 3
+    },
+    {
+     "text": "בניית האינטגרל עם היעקוביאן $r$ וחישוב האינטגרל הפנימי",
+     "points": 3
+    },
+    {
+     "text": "חישוב האינטגרל על $\\theta$ וקבלת $3\\pi$",
+     "points": 3
+    }
+   ],
+   "pitfalls": [
+    "לשכוח את היעקוביאן $r$ במעבר לקואורדינטות קוטביות.",
+    "לבחור תחום זווית שגוי: עבור $\\theta$ מחוץ ל-$\\left[-\\frac{\\pi}{2},\\frac{\\pi}{2}\\right]$ מתקבל $\\cos\\theta<0$ ולכן $r<0$."
+   ],
+   "steps": [
+    {
+     "type": "choice",
+     "prompt": "מהם גבולות האינטגרציה בקואורדינטות קוטביות לתחום שבין שני המעגלים?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$0\\le\\theta\\le2\\pi,\\ 2\\cos\\theta\\le r\\le4\\cos\\theta$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$-\\frac{\\pi}{2}\\le\\theta\\le\\frac{\\pi}{2},\\ 2\\le r\\le4$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$-\\frac{\\pi}{2}\\le\\theta\\le\\frac{\\pi}{2},\\ 2\\cos\\theta\\le r\\le4\\cos\\theta$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$-\\frac{\\pi}{2}\\le\\theta\\le\\frac{\\pi}{2},\\ \\cos\\theta\\le r\\le2\\cos\\theta$"
+      }
+     ],
+     "correctId": "c",
+     "explain": "המעגל $x^2+y^2=2x$ הופך ל-$r=2\\cos\\theta$ והמעגל $x^2+y^2=4x$ ל-$r=4\\cos\\theta$. שניהם נמצאים ב-$x\\ge0$, ולכן $-\\frac{\\pi}{2}\\le\\theta\\le\\frac{\\pi}{2}$. הגבולות $2\\le r\\le4$ מתארים טבעת סביב הראשית, וזה לא התחום."
+    },
+    {
+     "type": "numeric",
+     "prompt": "האינטגרל הפנימי $\\int_{2\\cos\\theta}^{4\\cos\\theta}r\\,dr$ שווה ל-$c\\cos^2\\theta$. מהו $c$?",
+     "answer": 6,
+     "tol": 0,
+     "explain": "$\\frac{(4\\cos\\theta)^2-(2\\cos\\theta)^2}{2}=\\frac{12\\cos^2\\theta}{2}=6\\cos^2\\theta$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו השטח, מחולק ב-$\\pi$ (כלומר $S/\\pi$)?",
+     "answer": 3,
+     "tol": 0,
+     "explain": "$6\\int_{-\\pi/2}^{\\pi/2}\\cos^2\\theta\\,d\\theta=6\\cdot\\frac{\\pi}{2}=3\\pi$. זה גם שטח העיגול הגדול פחות שטח העיגול הקטן, $4\\pi-\\pi$."
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "stepsSource": "ai-draft"
   },
   {
    "num": 1,
@@ -28,7 +96,65 @@
    "solution": "הנגזרות החלקיות:\n$$f_x=2xy\\sqrt z,\\qquad f_y=x^2\\sqrt z,\\qquad f_z=\\frac{x^2y}{2\\sqrt z}.$$\nבנקודה $(2,1,1)$:\n$$\\nabla f(2,1,1)=(4,4,2).$$\nקצב השינוי המקסימלי הוא אורך הגרדיאנט:\n$$|\\nabla f(2,1,1)|=\\sqrt{16+16+4}=6.$$\nוקטור היחידה בכיוון $\\vec u$: $|\\vec u|=\\sqrt{1+4+4}=3$, ולכן $\\hat u=\\left(\\frac13,\\frac23,\\frac23\\right)$. הנגזרת הכיוונית:\n$$D_{\\hat u}f(2,1,1)=\\nabla f\\cdot\\hat u=\\frac{4+8+4}{3}=\\frac{16}{3}.$$\nהיחס:\n$$\\frac{|\\nabla f|}{D_{\\hat u}f}=\\frac{6}{16/3}=\\frac{18}{16}=\\frac98.$$\nקצב השינוי בכיוון $\\vec u$ קטן פי $\\frac98$ מקצב השינוי המקסימלי.",
    "solutionSource": "solved",
    "official": false,
-   "confidence": "high"
+   "confidence": "high",
+   "rubric": [
+    {
+     "text": "חישוב הנגזרות החלקיות $f_x,f_y,f_z$",
+     "points": 3
+    },
+    {
+     "text": "הצבה בנקודה וקבלת $\\nabla f(2,1,1)=(4,4,2)$",
+     "points": 2
+    },
+    {
+     "text": "קצב השינוי המקסימלי הוא $|\\nabla f|=6$",
+     "points": 3
+    },
+    {
+     "text": "נרמול הוקטור $\\vec u$ וחישוב הנגזרת הכיוונית $\\frac{16}{3}$",
+     "points": 3
+    },
+    {
+     "text": "היחס $\\frac{6}{16/3}=\\frac98$",
+     "points": 2
+    }
+   ],
+   "pitfalls": [
+    "לחשב את הנגזרת הכיוונית עם $\\vec u$ בלי לנרמל אותו (כאן $|\\vec u|=3$), ולקבל $16$ במקום $\\frac{16}{3}$.",
+    "להפוך את היחס: השאלה היא פי כמה הקצב בכיוון $\\vec u$ קטן מהמקסימלי, ולכן מחלקים את המקסימלי בקצב בכיוון $\\vec u$."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "מהו $f_z(2,1,1)$ עבור $f=x^2y\\sqrt z$?",
+     "answer": 2,
+     "tol": 0,
+     "explain": "$f_z=\\frac{x^2y}{2\\sqrt z}$, ולכן $f_z(2,1,1)=\\frac{4}{2}=2$. שני הרכיבים האחרים הם $f_x=f_y=4$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו קצב השינוי המקסימלי $|\\nabla f(2,1,1)|$?",
+     "answer": 6,
+     "tol": 0,
+     "explain": "$\\sqrt{4^2+4^2+2^2}=\\sqrt{36}=6$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהי הנגזרת הכיוונית בכיוון $\\vec u=\\vec i+2\\vec j+2\\vec k$ (תשובה עשרונית, דיוק $0.001$)?",
+     "answer": 5.3333,
+     "tol": 0.001,
+     "explain": "$|\\vec u|=3$, ולכן $\\hat u=\\left(\\frac13,\\frac23,\\frac23\\right)$ והנגזרת היא $\\frac{4+8+4}{3}=\\frac{16}{3}$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "פי כמה קצב השינוי בכיוון $\\vec u$ קטן מהמקסימלי (תשובה עשרונית)?",
+     "answer": 1.125,
+     "tol": 0,
+     "explain": "$\\frac{6}{16/3}=\\frac{18}{16}=\\frac98=1.125$."
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "stepsSource": "ai-draft"
   },
   {
    "num": 2,
@@ -40,7 +166,79 @@
    "solution": "**הטור הראשון.** נכתוב $\\frac{2^n\\cos n}{3^n}=\\left(\\frac23\\right)^n\\cos n$. מתקיים\n$$\\left|\\left(\\frac23\\right)^n\\cos n\\right|\\le\\left(\\frac23\\right)^n,$$\nו-$\\sum_{n=1}^{\\infty}\\left(\\frac23\\right)^n$ הוא טור הנדסי עם מנה $\\frac23<1$, ולכן מתכנס. לפי מבחן ההשוואה $\\sum\\left|\\frac{2^n\\cos n}{3^n}\\right|$ מתכנס, כלומר הטור מתכנס בהחלט.\n\n**הטור השני.** לכל $n\\ge1$ מתקיים $0<\\frac{n+2}{n+3}<1$, ולכן $0<\\arctan\\left(\\frac{n+2}{n+3}\\right)<\\frac{\\pi}{4}$ והאיברים חיוביים. נשתמש במבחן השורש (קושי):\n$$\\sqrt[n]{a_n}=\\arctan\\left(\\frac{n+2}{n+3}\\right)\\xrightarrow[n\\to\\infty]{}\\arctan1=\\frac{\\pi}{4}<1.$$\nלכן הטור מתכנס, ומכיוון שאיבריו חיוביים הוא מתכנס בהחלט.",
    "solutionSource": "solved",
    "official": false,
-   "confidence": "high"
+   "confidence": "high",
+   "rubric": [
+    {
+     "text": "הטור הראשון: חסימה $\\left|\\left(\\frac23\\right)^n\\cos n\\right|\\le\\left(\\frac23\\right)^n$",
+     "points": 3
+    },
+    {
+     "text": "הטור הראשון: טור הנדסי מתכנס ומבחן ההשוואה, ולכן התכנסות בהחלט",
+     "points": 3
+    },
+    {
+     "text": "הטור השני: האיברים חיוביים כי $0<\\arctan\\frac{n+2}{n+3}<\\frac{\\pi}{4}$",
+     "points": 2
+    },
+    {
+     "text": "הטור השני: מבחן השורש עם הגבול $\\arctan1=\\frac{\\pi}{4}<1$",
+     "points": 3
+    },
+    {
+     "text": "הטור השני: מסקנה שהטור מתכנס בהחלט",
+     "points": 1
+    }
+   ],
+   "pitfalls": [
+    "לטעות ב-$\\arctan^n$ ולהבין את זה כפונקציה הפוכה או כהרכבה, במקום חזקה $n$ של $\\arctan$.",
+    "לשכוח שהגורם $\\cos n$ חסום בערכו המוחלט על ידי $1$, ולכן אינו משנה את ההתכנסות."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "בטור הראשון מחסמים את הערך המוחלט של האיבר על ידי טור הנדסי. מהי מנת הטור ההנדסי (תשובה עשרונית, דיוק $0.001$)?",
+     "answer": 0.6667,
+     "tol": 0.001,
+     "explain": "$\\left|\\frac{2^n\\cos n}{3^n}\\right|\\le\\left(\\frac23\\right)^n$, ומנה $\\frac23<1$ נותנת טור מתכנס."
+    },
+    {
+     "type": "numeric",
+     "prompt": "במבחן השורש לטור השני, לְמה שואף $\\sqrt[n]{a_n}=\\arctan\\frac{n+2}{n+3}$ (תשובה עשרונית, דיוק $0.001$)?",
+     "answer": 0.7854,
+     "tol": 0.001,
+     "explain": "$\\frac{n+2}{n+3}\\to1$ ו-$\\arctan1=\\frac{\\pi}{4}\\approx0.7854$."
+    },
+    {
+     "type": "choice",
+     "prompt": "מה מסקנת הפתרון לגבי שני הטורים?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "הראשון מתכנס בהחלט והשני מתבדר"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "שניהם מתכנסים בהחלט"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "שניהם מתכנסים בתנאי בלבד"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "הראשון מתכנס בתנאי והשני מתכנס בהחלט"
+      }
+     ],
+     "correctId": "b",
+     "explain": "בטור הראשון מתקבל חסם הנדסי מתכנס, ובשני הגבול $\\frac{\\pi}{4}<1$. בשני הטורים האיברים בערך מוחלט מתכנסים, ולכן ההתכנסות בהחלט."
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "stepsSource": "ai-draft"
   },
   {
    "num": 2,
@@ -52,7 +250,86 @@
    "solution": "**נגזרות חלקיות בראשית (לפי ההגדרה).**\n$$f_x(0,0)=\\lim_{h\\to0}\\frac{f(h,0)-f(0,0)}{h}=\\lim_{h\\to0}\\frac{h^3/(2h^2)}{h}=\\frac12,$$\n$$f_y(0,0)=\\lim_{h\\to0}\\frac{f(0,h)-f(0,0)}{h}=\\lim_{h\\to0}\\frac{h^3/h^2}{h}=1.$$\n**תנאי הדיפרנציאביליות.** $f$ דיפרנציאבילית ב-$(0,0)$ אם ורק אם\n$$\\lim_{(x,y)\\to(0,0)}\\frac{f(x,y)-f(0,0)-\\frac12x-y}{\\sqrt{x^2+y^2}}=0.$$\nנחשב את המונה:\n$$\\frac{x^3+y^3}{2x^2+y^2}-\\frac x2-y=\\frac{2x^3+2y^3-x(2x^2+y^2)-2y(2x^2+y^2)}{2(2x^2+y^2)}=\\frac{-xy(4x+y)}{2(2x^2+y^2)}.$$\nלכן יש לבדוק את\n$$\\lim_{(x,y)\\to(0,0)}\\frac{-xy(4x+y)}{2(2x^2+y^2)\\sqrt{x^2+y^2}}.$$\nלאורך $y=0$ הביטוי שווה ל-$0$, והגבול $0$.\nלאורך $y=x$ עם $x>0$:\n$$\\frac{-x^2\\cdot5x}{2\\cdot3x^2\\cdot\\sqrt2\\,x}=-\\frac{5}{6\\sqrt2}\\neq0.$$\nקיבלנו שני גבולות שונים לאורך שני מסלולים, ולכן הגבול אינו קיים (ובפרט אינו $0$).\n**מסקנה:** $f$ אינה דיפרנציאבילית ב-$(0,0)$ (אף על פי שהיא רציפה שם ויש לה נגזרות חלקיות).",
    "solutionSource": "solved",
    "official": false,
-   "confidence": "high"
+   "confidence": "high",
+   "rubric": [
+    {
+     "text": "חישוב $f_x(0,0)=\\frac12$ ו-$f_y(0,0)=1$ מההגדרה",
+     "points": 4
+    },
+    {
+     "text": "ניסוח תנאי הדיפרנציאביליות עם הגבול של $\\frac{f-f(0,0)-f_xx-f_yy}{\\sqrt{x^2+y^2}}$",
+     "points": 3
+    },
+    {
+     "text": "פישוט המונה ל-$\\frac{-xy(4x+y)}{2(2x^2+y^2)}$",
+     "points": 2
+    },
+    {
+     "text": "שני מסלולים שונים ($y=0$ ו-$y=x$) עם גבולות שונים",
+     "points": 3
+    },
+    {
+     "text": "מסקנה: $f$ אינה דיפרנציאבילית ב-$(0,0)$",
+     "points": 1
+    }
+   ],
+   "pitfalls": [
+    "להסיק דיפרנציאביליות מעצם קיום הנגזרות החלקיות ומהרציפות. אלה תנאים הכרחיים בלבד.",
+    "לחשב את הנגזרות החלקיות בראשית בעזרת כללי גזירה במקום מההגדרה, כי הפונקציה מוגדרת בנפרד בראשית."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "מהו $f_x(0,0)$? (תשובה עשרונית)",
+     "answer": 0.5,
+     "tol": 0,
+     "explain": "$f(h,0)=\\frac{h^3}{2h^2}=\\frac h2$, ולכן $\\frac{f(h,0)-0}{h}=\\frac12$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $f_y(0,0)$?",
+     "answer": 1,
+     "tol": 0,
+     "explain": "$f(0,h)=\\frac{h^3}{h^2}=h$, ולכן $\\frac{f(0,h)-0}{h}=1$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "בבדיקת הגבול של $\\frac{-xy(4x+y)}{2(2x^2+y^2)\\sqrt{x^2+y^2}}$ לאורך $y=x$, $x>0$, מתקבל $-\\frac{5}{6\\sqrt2}$. מהו הערך העשרוני שלו (דיוק $0.001$)?",
+     "answer": -0.5893,
+     "tol": 0.001,
+     "explain": "$-\\frac{5}{6\\sqrt2}\\approx-0.5893$. הערך שונה מ-$0$, בעוד שלאורך $y=0$ הביטוי שווה ל-$0$."
+    },
+    {
+     "type": "choice",
+     "prompt": "מה מסקנת הפתרון לגבי דיפרנציאביליות $f$ ב-$(0,0)$?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$f$ אינה דיפרנציאבילית, כי הגבול הנדרש אינו קיים (שני מסלולים נותנים ערכים שונים)"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$f$ דיפרנציאבילית, כי שתי הנגזרות החלקיות קיימות בראשית"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$f$ דיפרנציאבילית, כי היא רציפה בראשית"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$f$ אינה דיפרנציאבילית, כי היא אינה רציפה בראשית"
+      }
+     ],
+     "correctId": "a",
+     "explain": "קיום נגזרות חלקיות ורציפות אינם מבטיחים דיפרנציאביליות. כאן הגבול של השארית מחולקת ב-$\\sqrt{x^2+y^2}$ אינו קיים, ולכן $f$ אינה דיפרנציאבילית. בנוסף $f$ רציפה בראשית, כי $|f|\\le|x|+|y|$."
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "stepsSource": "ai-draft"
   },
   {
    "num": 3,
@@ -64,7 +341,75 @@
    "solution": "**רדיוס ההתכנסות.** $a_n=\\frac{1}{2^n+3^n}$. לפי נוסחת קושי-הדמר:\n$$\\frac1R=\\lim_{n\\to\\infty}\\sqrt[n]{|a_n|}=\\lim_{n\\to\\infty}\\frac{1}{\\sqrt[n]{2^n+3^n}}=\\lim_{n\\to\\infty}\\frac{1}{3\\sqrt[n]{1+\\left(\\frac23\\right)^n}}=\\frac13,$$\nולכן $R=3$: הטור מתכנס בהחלט עבור $|x|<3$ ומתבדר עבור $|x|>3$.\n\n**קצוות.**\n* $x=3$: האיבר הכללי $\\frac{3^n}{2^n+3^n}=\\frac{1}{1+\\left(\\frac23\\right)^n}\\to1\\neq0$, ולכן הטור מתבדר (התנאי ההכרחי אינו מתקיים).\n* $x=-3$: האיבר הכללי $(-1)^n\\frac{3^n}{2^n+3^n}$, והערך המוחלט שלו שואף ל-$1$, ולכן הוא אינו שואף ל-$0$ והטור מתבדר.\n\n**תחום ההתכנסות:** $(-3,3)$.",
    "solutionSource": "solved",
    "official": false,
-   "confidence": "high"
+   "confidence": "high",
+   "rubric": [
+    {
+     "text": "חישוב רדיוס ההתכנסות $R=3$ בעזרת $\\sqrt[n]{|a_n|}\\to\\frac13$",
+     "points": 5
+    },
+    {
+     "text": "הקצה $x=3$: האיבר הכללי שואף ל-$1$ ולכן הטור מתבדר",
+     "points": 3
+    },
+    {
+     "text": "הקצה $x=-3$: הערך המוחלט של האיבר הכללי שואף ל-$1$ ולכן הטור מתבדר",
+     "points": 3
+    },
+    {
+     "text": "ניסוח תחום ההתכנסות $(-3,3)$",
+     "points": 1
+    }
+   ],
+   "pitfalls": [
+    "לשכוח לבדוק את הקצוות ולכתוב קטע סגור. הרדיוס אינו קובע את ההתנהגות בקצוות.",
+    "לטעות בחישוב $\\sqrt[n]{2^n+3^n}$: הגורם הגדול שולט, והגבול הוא $3$ ולא $2$ ולא $5$."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "מהו רדיוס ההתכנסות של $\\sum_{n=1}^{\\infty}\\frac{x^n}{2^n+3^n}$?",
+     "answer": 3,
+     "tol": 0,
+     "explain": "$\\sqrt[n]{2^n+3^n}=3\\sqrt[n]{1+\\left(\\frac23\\right)^n}\\to3$, ולכן $\\sqrt[n]{|a_n|}\\to\\frac13$ ו-$R=3$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "בקצה $x=3$ האיבר הכללי הוא $\\frac{3^n}{2^n+3^n}$. לְמה הוא שואף?",
+     "answer": 1,
+     "tol": 0,
+     "explain": "$\\frac{3^n}{2^n+3^n}=\\frac{1}{1+\\left(\\frac23\\right)^n}\\to1\\neq0$, ולכן התנאי ההכרחי להתכנסות אינו מתקיים."
+    },
+    {
+     "type": "choice",
+     "prompt": "מהו תחום ההתכנסות של הטור?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$[-3,3]$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$[-3,3)$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$(-3,3]$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$(-3,3)$"
+      }
+     ],
+     "correctId": "d",
+     "explain": "בשני הקצוות האיבר הכללי אינו שואף ל-$0$ (הערך המוחלט שלו שואף ל-$1$), ולכן הטור מתבדר בהם והקצוות אינם בתחום."
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "stepsSource": "ai-draft"
   },
   {
    "num": 3,
@@ -76,7 +421,71 @@
    "solution": "נסמן $t=x^2-y^2$, כך ש-$z=y\\,g(t)$, $\\frac{\\partial t}{\\partial x}=2x$ ו-$\\frac{\\partial t}{\\partial y}=-2y$.\nלפי כלל השרשרת:\n$$\\frac{\\partial z}{\\partial x}=y\\cdot\\frac{dg}{dt}\\cdot\\frac{\\partial t}{\\partial x}=2xy\\,g'(t),$$\n$$\\frac{\\partial z}{\\partial y}=g(t)+y\\cdot\\frac{dg}{dt}\\cdot\\frac{\\partial t}{\\partial y}=g(t)-2y^2g'(t).$$\nנציב באגף שמאל (מותר לחלק כי $x,y\\neq0$):\n$$\\frac1x\\cdot2xy\\,g'(t)+\\frac1y\\left(g(t)-2y^2g'(t)\\right)=2y\\,g'(t)+\\frac{g(t)}{y}-2y\\,g'(t)=\\frac{g(t)}{y}.$$\nמצד שני\n$$\\frac{z}{y^2}=\\frac{y\\,g(t)}{y^2}=\\frac{g(t)}{y}.$$\nשני האגפים שווים, כנדרש.",
    "solutionSource": "solved",
    "official": false,
-   "confidence": "high"
+   "confidence": "high",
+   "rubric": [
+    {
+     "text": "הצבת $t=x^2-y^2$ וחישוב $\\frac{\\partial t}{\\partial x}=2x$ ו-$\\frac{\\partial t}{\\partial y}=-2y$",
+     "points": 2
+    },
+    {
+     "text": "כלל השרשרת: $\\frac{\\partial z}{\\partial x}=2xy\\,g'(t)$",
+     "points": 3
+    },
+    {
+     "text": "כלל המכפלה והשרשרת: $\\frac{\\partial z}{\\partial y}=g(t)-2y^2g'(t)$",
+     "points": 3
+    },
+    {
+     "text": "הצבה באגף שמאל ופישוט ל-$\\frac{g(t)}{y}$",
+     "points": 3
+    },
+    {
+     "text": "חישוב אגף ימין $\\frac{z}{y^2}=\\frac{g(t)}{y}$ ומסקנה",
+     "points": 2
+    }
+   ],
+   "pitfalls": [
+    "לשכוח את כלל המכפלה בגזירה לפי $y$: הגורם $y$ שלפני $g$ תורם את האיבר $g(t)$.",
+    "טעות סימן ב-$\\frac{\\partial t}{\\partial y}=-2y$, שמובילה לכך שאיברי $g'(t)$ אינם מצטמצמים."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "נבחר $g(t)=t^2$ ונציב $(x,y)=(2,1)$ (כך ש-$t=3$ ו-$g'(t)=6$). מהו $\\frac{\\partial z}{\\partial x}=2xy\\,g'(t)$?",
+     "answer": 24,
+     "tol": 0,
+     "explain": "$2\\cdot2\\cdot1\\cdot6=24$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "באותה הצבה, מהו $\\frac{\\partial z}{\\partial y}=g(t)-2y^2g'(t)$?",
+     "answer": -3,
+     "tol": 0,
+     "explain": "$9-2\\cdot1\\cdot6=-3$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "באותה הצבה, מהו הערך של $\\frac1x\\frac{\\partial z}{\\partial x}+\\frac1y\\frac{\\partial z}{\\partial y}$? (הוא שווה ל-$\\frac{z}{y^2}$)",
+     "answer": 9,
+     "tol": 0,
+     "explain": "$\\frac{24}{2}+\\frac{-3}{1}=9$, וגם $\\frac{z}{y^2}=\\frac{1\\cdot9}{1}=9$. זו בדיקה מספרית של הזהות."
+    },
+    {
+     "type": "findbug",
+     "prompt": "בהוכחה הבאה שורה אחת שגויה. סמנו אותה.",
+     "lines": [
+      "$\\frac{\\partial z}{\\partial x}=2xy\\,g'(t)$",
+      "$\\frac{\\partial z}{\\partial y}=g(t)-2y^2g'(t)$",
+      "$\\frac1x\\cdot2xy\\,g'(t)+\\frac1y\\left(g(t)-2y^2g'(t)\\right)$",
+      "$=2y\\,g'(t)+\\frac{g(t)}{y}+2y\\,g'(t)$",
+      "$=\\frac{g(t)}{y}=\\frac{z}{y^2}$"
+     ],
+     "bugIndex": 3,
+     "explain": "בפתיחת הסוגריים $\\frac1y\\cdot\\left(-2y^2g'(t)\\right)=-2y\\,g'(t)$, ולא $+2y\\,g'(t)$. רק עם הסימן הנכון האיברים של $g'(t)$ מצטמצמים ונשאר $\\frac{g(t)}{y}$."
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "stepsSource": "ai-draft"
   },
   {
    "num": 4,
@@ -88,7 +497,71 @@
    "solution": "**תיאור התחום.** האינטגרל הראשון: $-4\\le x\\le0,\\ 0\\le y\\le\\sqrt{x+4}$ (מתחת לחצי העליון של הפרבולה $y^2=x+4$). האינטגרל השני: $0\\le x\\le2,\\ 0\\le y\\le2-x$ (מתחת לישר $x+y=2$). שני החלקים נפגשים בנקודה $(0,2)$, כי $\\sqrt{0+4}=2=2-0$. האיחוד הוא תחום אחד עם הקודקודים $(-4,0)$, $(2,0)$, $(0,2)$, החסום מלמטה על ידי $y=0$, משמאל על ידי הפרבולה ומימין על ידי הישר.\n**בסדר ההפוך.** עבור $y$ קבוע בין $0$ ל-$2$:\n* הגבול השמאלי הוא הפרבולה: $y=\\sqrt{x+4}\\iff x=y^2-4$ (עבור $y\\ge0$);\n* הגבול הימני הוא הישר: $y=2-x\\iff x=2-y$.\n\nלכן\n$$\\int_{-4}^{0}dx\\int_{0}^{\\sqrt{x+4}}f\\,dy+\\int_{0}^{2}dx\\int_{0}^{2-x}f\\,dy=\\int_{0}^{2}dy\\int_{y^2-4}^{2-y}f(x,y)\\,dx.$$\nבדיקה עם $f\\equiv1$: בשני הסדרים השטח הוא $\\frac{16}{3}+2=\\int_0^2\\left(6-y-y^2\\right)dy=\\frac{22}{3}$.",
    "solutionSource": "solved",
    "official": false,
-   "confidence": "high"
+   "confidence": "high",
+   "rubric": [
+    {
+     "text": "תיאור התחום משני האינטגרלים: תחת $y=\\sqrt{x+4}$ ותחת $y=2-x$, נפגשים ב-$(0,2)$",
+     "points": 4
+    },
+    {
+     "text": "הפיכת הגבולות: $x=y^2-4$ מהפרבולה ו-$x=2-y$ מהישר, עבור $0\\le y\\le2$",
+     "points": 5
+    },
+    {
+     "text": "הצגת אינטגרל יחיד $\\int_0^2dy\\int_{y^2-4}^{2-y}f\\,dx$",
+     "points": 3
+    }
+   ],
+   "pitfalls": [
+    "להחליף את סדר האינטגרציה בלי לשרטט, ולהשאיר שני אינטגרלים במקום אחד. כאן הבחירה ב-$dx$ פנימי מאחדת את שני החלקים.",
+    "לבלבל בין הגבול השמאלי לימני: הפרבולה $x=y^2-4$ משמאל והישר $x=2-y$ מימין."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "באיזה גובה $y$ נפגשים הפרבולה $y=\\sqrt{x+4}$ והישר $y=2-x$ (בנקודה שבה שני החלקים נוגעים)?",
+     "answer": 2,
+     "tol": 0,
+     "explain": "ב-$x=0$ מתקבל $\\sqrt4=2$ ו-$2-0=2$, כלומר הנקודה $(0,2)$."
+    },
+    {
+     "type": "choice",
+     "prompt": "מהו האינטגרל היחיד בסדר ההפוך ($dx$ פנימי)?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$\\int_0^2dy\\int_{y^2-4}^{2-y}f(x,y)\\,dx$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$\\int_0^2dy\\int_{4-y^2}^{2-y}f(x,y)\\,dx$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$\\int_0^2dy\\int_{-4}^{2-y}f(x,y)\\,dx$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$\\int_0^2dy\\int_{y^2-4}^{y-2}f(x,y)\\,dx$"
+      }
+     ],
+     "correctId": "a",
+     "explain": "הגבול השמאלי נובע מ-$y=\\sqrt{x+4}\\iff x=y^2-4$, והימני מ-$y=2-x\\iff x=2-y$. הגבול $4-y^2$ הוא פרבולה אחרת, הגבול $-4$ נותן תחום גדול מדי, והגבול $y-2$ אינו הישר הנתון. בכל אחת מהחלופות השטח (עבור $f\\equiv1$) שונה מ-$\\frac{22}{3}$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "בבדיקה עם $f\\equiv1$, מהו השטח של התחום (תשובה עשרונית, דיוק $0.001$)?",
+     "answer": 7.3333,
+     "tol": 0.001,
+     "explain": "$\\int_0^2\\left(6-y-y^2\\right)dy=\\frac{22}{3}$. זהה לשטח בסדר המקורי, $\\frac{16}{3}+2$."
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "stepsSource": "ai-draft"
   },
   {
    "num": 4,
@@ -100,7 +573,65 @@
    "solution": "התחום $D$ הוא גזרה של עיגול היחידה: $0\\le\\theta\\le\\frac{\\pi}{3},\\ 0\\le r\\le1$. הוא סגור וחסום ו-$f$ רציפה, ולכן לפי ויירשטראס יש לה מקסימום ומינימום מוחלטים ב-$D$. קודקודי התחום: $(0,0)$, $(1,0)$, $\\left(\\frac12,\\frac{\\sqrt3}{2}\\right)$.\n\n**פנים התחום.**\n$$f_x=2x+4y=0,\\qquad f_y=2y+4x=0\\ \\Rightarrow\\ (x,y)=(0,0),$$\nוזה קודקוד של התחום ולא נקודה פנימית. אין נקודות קריטיות בפנים.\n\n**השפה.**\n* הקטע $y=0,\\ 0\\le x\\le1$: $f=x^2$, עולה. ערכים: $f(0,0)=0$, $f(1,0)=1$.\n* הקטע $y=\\sqrt3x,\\ 0\\le x\\le\\frac12$: $f=x^2+3x^2+4\\sqrt3x^2=\\left(4+4\\sqrt3\\right)x^2$, עולה. ערכים: $0$ ו-$f\\left(\\frac12,\\frac{\\sqrt3}{2}\\right)=1+\\sqrt3$.\n* הקשת $x=\\cos\\theta,\\ y=\\sin\\theta,\\ 0\\le\\theta\\le\\frac{\\pi}{3}$:\n$$f=1+4\\sin\\theta\\cos\\theta=1+2\\sin2\\theta,\\qquad \\frac{df}{d\\theta}=4\\cos2\\theta=0\\Rightarrow\\theta=\\frac{\\pi}{4}.$$\nנקבל את הנקודה $\\left(\\frac{1}{\\sqrt2},\\frac{1}{\\sqrt2}\\right)$ עם $f=1+2=3$. (בשיטת לגראנז' $\\nabla f=\\lambda\\nabla(x^2+y^2)$ עם $x^2+y^2=1$ מתקבלים $y=\\pm x$, והנקודה היחידה בגזרה היא אותה נקודה.)\n\n**השוואת ערכים:**\n$$f(0,0)=0,\\quad f(1,0)=1,\\quad f\\left(\\tfrac12,\\tfrac{\\sqrt3}{2}\\right)=1+\\sqrt3\\approx2.73,\\quad f\\left(\\tfrac{1}{\\sqrt2},\\tfrac{1}{\\sqrt2}\\right)=3.$$\n**מסקנה:** המקסימום המוחלט הוא $3$ בנקודה $\\left(\\frac{1}{\\sqrt2},\\frac{1}{\\sqrt2}\\right)$, והמינימום המוחלט הוא $0$ בנקודה $(0,0)$.",
    "solutionSource": "solved",
    "official": false,
-   "confidence": "high"
+   "confidence": "high",
+   "rubric": [
+    {
+     "text": "הקביעה שהתחום סגור וחסום ו-$f$ רציפה, ולכן קיימים אקסטרמומים מוחלטים",
+     "points": 2
+    },
+    {
+     "text": "פנים התחום: הנקודה הקריטית היחידה היא הראשית, והיא קודקוד ולא פנימית",
+     "points": 3
+    },
+    {
+     "text": "הקטעים הישרים: $f=x^2$ ו-$f=\\left(4+4\\sqrt3\\right)x^2$ עולות, וערכי הקצוות",
+     "points": 3
+    },
+    {
+     "text": "הקשת: $f=1+2\\sin2\\theta$ והנקודה $\\theta=\\frac{\\pi}{4}$ עם הערך $3$",
+     "points": 3
+    },
+    {
+     "text": "השוואת הערכים: מקסימום $3$ ומינימום $0$",
+     "points": 2
+    }
+   ],
+   "pitfalls": [
+    "לבדוק רק את הקשת ולשכוח את שני הקטעים הישרים ואת הקודקודים.",
+    "לכלול נקודה קריטית שאינה בתחום: הנקודות על $y=-x$ משיטת לגראנז' נמצאות מחוץ לרביע הראשון."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "מהו $f$ בנקודה $\\left(\\frac12,\\frac{\\sqrt3}{2}\\right)$ (קודקוד התחום, תשובה עשרונית, דיוק $0.001$)?",
+     "answer": 2.7321,
+     "tol": 0.001,
+     "explain": "$\\frac14+\\frac34+4\\cdot\\frac12\\cdot\\frac{\\sqrt3}{2}=1+\\sqrt3\\approx2.7321$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "על הקשת $x=\\cos\\theta,\\ y=\\sin\\theta$ מתקבל $f=1+2\\sin2\\theta$. באיזו זווית $\\theta\\in\\left[0,\\frac{\\pi}{3}\\right]$ מתאפסת הנגזרת (תשובה עשרונית ברדיאנים, דיוק $0.001$)?",
+     "answer": 0.7854,
+     "tol": 0.001,
+     "explain": "$\\frac{df}{d\\theta}=4\\cos2\\theta=0$ ב-$2\\theta=\\frac{\\pi}{2}$, כלומר $\\theta=\\frac{\\pi}{4}\\approx0.7854$, והיא בתוך הקטע."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו המקסימום המוחלט של $f$ בתחום?",
+     "answer": 3,
+     "tol": 0,
+     "explain": "הערכים בנקודות המועמדות: $0$, $1$, $1+\\sqrt3\\approx2.73$ ו-$3$ בנקודה $\\left(\\frac1{\\sqrt2},\\frac1{\\sqrt2}\\right)$. הגדול ביותר הוא $3$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו המינימום המוחלט של $f$ בתחום?",
+     "answer": 0,
+     "tol": 0,
+     "explain": "הערך הקטן ביותר מבין הערכים המועמדים הוא $f(0,0)=0$."
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "stepsSource": "ai-draft"
   },
   {
    "num": 5,
@@ -112,7 +643,89 @@
    "solution": "**נקודות קריטיות.**\n$$f_x=\\left(x^2+2x-2y^2\\right)e^{x-y},\\qquad f_y=\\left(-x^2-4y+2y^2\\right)e^{x-y}.$$\nמכיוון ש-$e^{x-y}>0$, יש לפתור\n$$\\begin{cases}x^2+2x-2y^2=0&\\text{(I)}\\\\-x^2-4y+2y^2=0&\\text{(II)}\\end{cases}$$\nחיבור (I) ו-(II) נותן $2x-4y=0$, כלומר $x=2y$. נציב ב-(I): $4y^2+4y-2y^2=2y(y+2)=0$, ולכן $y=0$ או $y=-2$.\nהנקודות הקריטיות: $(0,0)$ ו-$(-4,-2)$.\n\n**נגזרות שניות.**\n$$f_{xx}=\\left(x^2+4x+2-2y^2\\right)e^{x-y},\\quad f_{yy}=\\left(x^2-2y^2+8y-4\\right)e^{x-y},\\quad f_{xy}=\\left(2y^2-x^2-2x-4y\\right)e^{x-y}.$$\n* הנקודה $(0,0)$: $f_{xx}=2,\\ f_{yy}=-4,\\ f_{xy}=0$, ולכן $D=2\\cdot(-4)-0=-8<0$: **נקודת אוכף**.\n* הנקודה $(-4,-2)$: $e^{x-y}=e^{-2}$ ו-\n$$f_{xx}=-6e^{-2},\\quad f_{yy}=-12e^{-2},\\quad f_{xy}=8e^{-2},$$\n$$D=(-6)(-12)e^{-4}-64e^{-4}=8e^{-4}>0,\\qquad f_{xx}<0,$$\nולכן זו **נקודת מקסימום מקומי**, עם $f(-4,-2)=(16-8)e^{-2}=\\frac{8}{e^2}$.",
    "solutionSource": "solved",
    "official": false,
-   "confidence": "high"
+   "confidence": "high",
+   "rubric": [
+    {
+     "text": "גזירה חלקית ופתיחת המערכת $x^2+2x-2y^2=0$, $-x^2-4y+2y^2=0$",
+     "points": 4
+    },
+    {
+     "text": "פתרון המערכת: $x=2y$ והנקודות $(0,0)$ ו-$(-4,-2)$",
+     "points": 3
+    },
+    {
+     "text": "סיווג $(0,0)$ כנקודת אוכף בעזרת $D=-8<0$",
+     "points": 2
+    },
+    {
+     "text": "סיווג $(-4,-2)$ כמקסימום מקומי ($D>0$, $f_{xx}<0$) עם הערך $\\frac{8}{e^2}$",
+     "points": 3
+    }
+   ],
+   "pitfalls": [
+    "לשכוח את הגורם $e^{x-y}$ בגזירה, או לשכוח לגזור אותו כלל השרשרת ולקבל מערכת שגויה.",
+    "לסווג לפי הסימן של $f_{xx}$ בלבד, בלי לחשב את הדטרמיננטה $D=f_{xx}f_{yy}-f_{xy}^2$."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "מהמערכת מתקבל $x=2y$, ואחרי ההצבה $2y(y+2)=0$. מהו הערך של $y$ בנקודה הקריטית שאינה הראשית?",
+     "answer": -2,
+     "tol": 0,
+     "explain": "$y=0$ נותן את הראשית, ו-$y=-2$ נותן $x=2y=-4$, כלומר הנקודה $(-4,-2)$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהי הדטרמיננטה $D=f_{xx}f_{yy}-f_{xy}^2$ בנקודה $(0,0)$?",
+     "answer": -8,
+     "tol": 0,
+     "explain": "$f_{xx}(0,0)=2$, $f_{yy}(0,0)=-4$, $f_{xy}(0,0)=0$, ולכן $D=-8$."
+    },
+    {
+     "type": "choice",
+     "prompt": "מהו סוג הנקודה הקריטית $(0,0)$?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "מינימום מקומי"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "מקסימום מקומי"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "נקודת אוכף"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "אי אפשר להכריע בעזרת מבחן הנגזרות השניות"
+      }
+     ],
+     "correctId": "c",
+     "explain": "$D=-8<0$, ולכן הנקודה אוכף. הסימן של $f_{xx}=2$ לבדו היה מטעה ומרמז על מינימום."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $f_{xx}(-4,-2)$ (תשובה עשרונית, דיוק $0.001$)?",
+     "answer": -0.812,
+     "tol": 0.001,
+     "explain": "$f_{xx}=\\left(x^2+4x+2-2y^2\\right)e^{x-y}=(16-16+2-8)e^{-2}=-6e^{-2}\\approx-0.812$. יחד עם $D=8e^{-4}>0$ זהו מקסימום מקומי."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו ערך הפונקציה במקסימום המקומי, $f(-4,-2)$ (תשובה עשרונית, דיוק $0.001$)?",
+     "answer": 1.0827,
+     "tol": 0.001,
+     "explain": "$(16-8)e^{-2}=\\frac{8}{e^2}\\approx1.083$."
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "stepsSource": "ai-draft"
   },
   {
    "num": 5,
@@ -124,7 +737,86 @@
    "solution": "**פירוק לשברים חלקיים.** $x^2+x-2=(x-1)(x+2)$, ולכן\n$$\\frac{1}{x^2+x-2}=\\frac13\\left(\\frac{1}{x-1}-\\frac{1}{x+2}\\right).$$\n**פיתוח כל שבר** בעזרת הטור ההנדסי:\n$$\\frac{1}{x-1}=-\\frac{1}{1-x}=-\\sum_{n=0}^{\\infty}x^n,\\qquad|x|<1;$$\n$$\\frac{1}{x+2}=\\frac12\\cdot\\frac{1}{1+\\frac x2}=\\frac12\\sum_{n=0}^{\\infty}(-1)^n\\frac{x^n}{2^n}=\\sum_{n=0}^{\\infty}\\frac{(-1)^n}{2^{n+1}}x^n,\\qquad|x|<2.$$\nלכן\n$$f(x)=-\\frac13\\sum_{n=0}^{\\infty}\\left(1+\\frac{(-1)^n}{2^{n+1}}\\right)x^n.$$\n**תחום ההתכנסות.** שני הטורים מתכנסים יחד עבור $|x|<1$. עבור $1\\le|x|<2$ הטור השני מתכנס והראשון מתבדר, ולכן הסכום מתבדר. בקצוות $x=\\pm1$ הערך המוחלט של האיבר הכללי שואף ל-$\\frac13\\neq0$, ולכן הטור מתבדר. תחום ההתכנסות: $(-1,1)$.\n\n**הנגזרת העשירית.** מקדם $x^{n}$ בטור מקלורן הוא $\\frac{f^{(n)}(0)}{n!}$. עבור $n=10$:\n$$\\frac{f^{(10)}(0)}{10!}=-\\frac13\\left(1+\\frac{1}{2^{11}}\\right)=-\\frac{2049}{6144},$$\n$$f^{(10)}(0)=-\\frac{10!}{3}\\left(1+\\frac{1}{2^{11}}\\right)=-\\frac{10!\\cdot2049}{3\\cdot2^{11}}=-\\frac{9681525}{8}=-1210190.625.$$",
    "solutionSource": "solved",
    "official": false,
-   "confidence": "high"
+   "confidence": "high",
+   "rubric": [
+    {
+     "text": "פירוק לשברים חלקיים $\\frac13\\left(\\frac1{x-1}-\\frac1{x+2}\\right)$",
+     "points": 3
+    },
+    {
+     "text": "פיתוח כל שבר לטור הנדסי",
+     "points": 3
+    },
+    {
+     "text": "איחוד לטור יחיד $-\\frac13\\sum\\left(1+\\frac{(-1)^n}{2^{n+1}}\\right)x^n$",
+     "points": 2
+    },
+    {
+     "text": "תחום ההתכנסות $(-1,1)$ עם נימוק לקצוות",
+     "points": 3
+    },
+    {
+     "text": "$f^{(10)}(0)=10!\\cdot c_{10}=-1210190.625$",
+     "points": 2
+    }
+   ],
+   "pitfalls": [
+    "לקבוע תחום התכנסות $|x|<2$ לפי השבר השני בלבד. הטור הכולל מתכנס רק כששני הטורים מתכנסים, כלומר ב-$|x|<1$.",
+    "לשכוח את הגורם $n!$ במעבר ממקדם הטור לנגזרת: $f^{(n)}(0)=n!\\,c_n$."
+   ],
+   "steps": [
+    {
+     "type": "numeric",
+     "prompt": "מהו $f(0)$, שהוא גם המקדם $c_0$ בטור? (תשובה עשרונית)",
+     "answer": -0.5,
+     "tol": 0,
+     "explain": "$\\frac{1}{0+0-2}=-\\frac12$, ובנוסחה $-\\frac13\\left(1+\\frac12\\right)=-\\frac12$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו המקדם $c_1$ של $x$ בטור? (תשובה עשרונית)",
+     "answer": -0.25,
+     "tol": 0,
+     "explain": "$c_1=-\\frac13\\left(1-\\frac14\\right)=-\\frac14$."
+    },
+    {
+     "type": "choice",
+     "prompt": "מהו תחום ההתכנסות של הטור?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$(-2,2)$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$(-1,1)$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$[-1,1]$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$(-2,1)$"
+      }
+     ],
+     "correctId": "b",
+     "explain": "הטור של $\\frac1{x-1}$ מתכנס רק ב-$|x|<1$ והטור של $\\frac1{x+2}$ ב-$|x|<2$, ולכן הסכום מתכנס ב-$|x|<1$. בקצוות $x=\\pm1$ האיבר הכללי אינו שואף ל-$0$."
+    },
+    {
+     "type": "numeric",
+     "prompt": "מהו $f^{(10)}(0)$ (דיוק $0.001$)?",
+     "answer": -1210190.625,
+     "tol": 0.001,
+     "explain": "$f^{(10)}(0)=10!\\,c_{10}=-\\frac{10!}{3}\\left(1+\\frac1{2^{11}}\\right)=-\\frac{9681525}{8}=-1210190.625$."
+    }
+   ],
+   "rubricSource": "ai-draft",
+   "stepsSource": "ai-draft"
   }
  ]
 }
