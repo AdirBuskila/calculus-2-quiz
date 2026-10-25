@@ -1,7 +1,7 @@
 /* Series course, level 7: Maclaurin series from the table, domain, f^(k)(0) from the coefficients */
 const R = String.raw;
 COURSE_LEVEL("series", {
-  id: "C07", order: 7, icon: "📐", title: "מקלורן מהטבלה ו-f^(k)(0) מהמקדמים",
+  id: "C07", order: 7, icon: "📐", title: "מקלורן מהטבלה ונגזרות ב-0 מהמקדמים",
   goal: "לפתח פונקציה לטור מקלורן מהטבלה, לקבוע את תחום ההתכנסות, ולחלץ נגזרת מסדר גבוה ב-0 מהמקדם.",
   source: "ai-verified",
   lesson: { html: R`

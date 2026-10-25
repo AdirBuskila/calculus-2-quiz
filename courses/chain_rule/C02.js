@@ -40,7 +40,7 @@ $$z_x=2xy\;g'(x^2y),\qquad z_y=x^2\;g'(x^2y).$$
         { id: "d", value: String.raw`$-\dfrac{x}{y^2}\,g'\!\left(-\dfrac{x}{y^2}\right)$` },
       ],
       correctId: "a",
-      explanation: String.raw`$t_y=-\dfrac{x}{y^2}$, ולכן $z_y=g'(t)\,t_y$ עם $t=\dfrac xy$. הערך $\dfrac1y\,g'$ משתמש ב-$t_x$ במקום ב-$t_y$. הערך עם $g$ (בלי גרש) לא גזר את $g$. והערך האחרון מציב את הנגזרת הפנימית גם בתוך הארגומנט של $g'$, וזה אסור.`,
+      explanation: String.raw`$t_y=-\dfrac{x}{y^2}$, ולכן $z_y=g'(t)\,t_y$ עם $t=\dfrac xy$. הערך $\dfrac1y\,g'$ משתמש ב-$t_x$ במקום ב-$t_y$. הערך עם $g$ (בלי גרש) לא גזר את $g$. והערך שבו הארגומנט של $g'$ הוא $-\dfrac{x}{y^2}$ מציב את הנגזרת הפנימית גם בתוך הארגומנט של $g'$, וזה אסור.`,
       recap: String.raw`הארגומנט של $g'$ הוא $t$ עצמו, לא $t_y$` },
     { id: "C02-Q4",
       step: { type: "findbug",
@@ -67,7 +67,7 @@ $$z_x=2xy\;g'(x^2y),\qquad z_y=x^2\;g'(x^2y).$$
         { id: "d", value: String.raw`$z_x+z_y=g'(t)$` },
       ],
       correctId: "a",
-      explanation: String.raw`$z_x\,t_y=g'\,t_x\,t_y$ ו-$z_y\,t_x=g'\,t_y\,t_x$: שניהם שווים. שלוש האחרות נכשלות כבר ב-$t=xy$ עם $g=\sin$ (למשל $z_x=y\cos(xy)$ ו-$z_y=x\cos(xy)$ שונים זה מזה).`,
+      explanation: String.raw`$z_x\,t_y=g'\,t_x\,t_y$ ו-$z_y\,t_x=g'\,t_y\,t_x$: שניהם שווים. שלוש המשוואות האחרות נכשלות כבר ב-$t=xy$ עם $g=\sin$ (למשל $z_x=y\cos(xy)$ ו-$z_y=x\cos(xy)$ שונים זה מזה).`,
       recap: String.raw`$z_x$ ו-$z_y$ חולקים את אותו $g'(t)$` },
   ],
 });

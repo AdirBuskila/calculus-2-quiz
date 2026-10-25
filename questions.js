@@ -107,7 +107,7 @@ window.OPEN_BANK = {
    "computation",
    "proof"
   ],
-  "built": "2026-10-24T23:00:00Z",
+  "built": "2026-10-25T00:06:43Z",
   "exams": [
    {
     "examCode": "22A-A",

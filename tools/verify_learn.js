@@ -56,6 +56,7 @@ const RUNS = [
         for (const el of content.querySelectorAll("*")) {
           if (el.closest(".math-block,.tbl-wrap,pre")) continue;         // meant to scroll
           if (el.closest(".math-inline") && el.tagName.toLowerCase() !== "span") continue;  // box itself is checked
+          if (el.closest("svg") && el.tagName.toLowerCase() !== "svg") continue;  // clipped by the clipPath: check the svg box, not its children (rays run past the plot on purpose)
           const b = el.getBoundingClientRect();
           if (!b.width) continue;
           if (b.right > cr.right + 1 || b.left < cr.left - 1)
