@@ -53,6 +53,7 @@ jobs:
         shell: bash
         run: |
           pip install edge-tts numpy sympy mpmath scipy
+          if [ -f videos/requirements.txt ]; then pip install -r videos/requirements.txt; fi
           choco install ffmpeg -y --no-progress
           cd tools && npm install --no-audit --no-fund --no-save hyperframes@0.8.212 katex@0.18.9 gsap@3.15.0
       - name: Render ${{ matrix.id }}
@@ -86,6 +87,7 @@ jobs:
       - name: Install tools
         run: |
           pip install edge-tts faster-whisper numpy sympy mpmath scipy
+          if [ -f videos/requirements.txt ]; then pip install -r videos/requirements.txt; fi
           which ffmpeg || (sudo apt-get update && sudo apt-get install -y ffmpeg)
       - name: STT ${{ matrix.id }}
         env: { PYTHONUTF8: "1" }
