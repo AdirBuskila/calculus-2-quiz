@@ -1,0 +1,53 @@
+/* series widgets (w_series.py), every class prefixed sr- */
+.sr-eqs{display:flex;flex-direction:column;align-items:center;width:100%;direction:ltr}
+.sr-eq{display:flex;justify-content:center;align-items:center;gap:.3em;white-space:nowrap;padding:5px 0}
+.sr-col{display:flex;flex-direction:column;align-items:center;gap:22px;width:100%}
+.sr-row{display:flex;align-items:center;justify-content:center;gap:28px;width:100%}
+.sr-big{font-size:50px;direction:ltr;text-align:center}
+.sr-mid{font-size:40px;direction:ltr;text-align:center}
+.sr-note{font-size:30px;color:var(--muted);direction:rtl;text-align:center}
+
+/* partial-sum bars */
+.sr-bars{position:relative}
+.sr-bars svg{overflow:visible;display:block}
+.sr-bars .sr-zero{stroke:#c9cdf0;stroke-width:2}
+.sr-bars .sr-bar{fill:var(--brand2);opacity:.85}
+.sr-bars .sr-bar.neg{fill:var(--bad)}
+.sr-bars .sr-bn{fill:var(--muted);font-size:22px;text-anchor:middle;font-family:"Segoe UI",Arial,sans-serif}
+.sr-bars .sr-limline{stroke:var(--warn);stroke-width:4;stroke-dasharray:14 10}
+.sr-limlab{position:absolute;white-space:nowrap;font-size:34px;color:var(--warn);direction:ltr;background:rgba(10,12,24,.85);
+  border-radius:10px;padding:0 10px}
+.sr-barlab{position:absolute;left:0;top:-48px;font-size:30px;color:var(--muted);direction:ltr}
+
+/* number line with the interval of convergence */
+.sr-nl{position:relative;height:210px}
+.sr-axis{position:absolute;left:0;right:0;top:70px;height:4px;background:#c9cdf0;border-radius:2px}
+.sr-band{position:absolute;top:62px;height:20px;background:rgba(45,212,191,.55);border-radius:4px}
+.sr-out i{position:absolute;top:66px;height:12px;display:block;
+  background:repeating-linear-gradient(90deg,var(--bad) 0 14px,transparent 14px 24px)}
+.sr-tick{position:absolute;top:58px;width:4px;height:28px;margin-left:-2px;background:#c9cdf0}
+.sr-tl{position:absolute;top:96px;transform:translateX(-50%);font-size:32px;direction:ltr;white-space:nowrap}
+.sr-qm{position:absolute;top:0;transform:translateX(-50%);font-size:40px;color:var(--warn)}
+.sr-dot{position:absolute;top:56px;width:32px;height:32px;margin-left:-16px;border-radius:50%;box-sizing:border-box;
+  border:5px solid var(--brand)}
+.sr-dot.open{background:var(--bg)}
+.sr-dot.closed{background:var(--brand)}
+.sr-ev{position:absolute;top:162px;transform:translateX(-50%);font-size:26px;font-weight:700;white-space:nowrap;
+  padding:2px 14px;border-radius:999px;direction:rtl}
+.sr-ev.ok{color:var(--ok);background:rgba(52,211,153,.13)}
+.sr-ev.bad{color:var(--bad);background:rgba(251,113,133,.13)}
+
+/* verdict pill */
+.sr-verdict{font-size:38px;font-weight:700;padding:8px 30px;border-radius:999px;direction:rtl}
+.sr-verdict.ok{color:var(--ok);background:rgba(52,211,153,.13)}
+.sr-verdict.bad{color:var(--bad);background:rgba(251,113,133,.13)}
+.sr-verdict.mid{color:var(--warn);background:rgba(251,191,36,.12)}
+
+/* a small table (Maclaurin table, test chooser) */
+table.sr-tab{border-collapse:separate;border-spacing:0;font-size:inherit;background:var(--card2);border:1px solid var(--line);
+  border-radius:14px;overflow:hidden;direction:rtl}
+table.sr-tab th,table.sr-tab td{padding:8px 22px;border-bottom:1px solid var(--line);text-align:center}
+table.sr-tab thead th{color:var(--muted);font-weight:600}
+table.sr-tab tbody tr:last-child>*{border-bottom:none}
+table.sr-tab td.l{direction:ltr}
+.qstem .sr-mid{margin-top:14px}

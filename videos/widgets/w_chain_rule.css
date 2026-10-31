@@ -1,0 +1,32 @@
+/* chain_rule video widgets (w_chain_rule.py): dependency tree, vector plot, derivation lines */
+.cr-stack{display:flex;flex-direction:column;align-items:center;gap:22px;width:100%}
+.cr-row{display:flex;align-items:center;justify-content:center;gap:40px;width:100%}
+.cr-big{font-size:50px;direction:ltr;text-align:center}
+.cr-lines{display:flex;flex-direction:column;align-items:flex-start;gap:14px;direction:ltr;font-size:38px}
+.cr-lines.c{align-items:center}
+.cr-lines.sm{font-size:33px;gap:10px}
+.cr-ln{white-space:nowrap}
+
+.cr-tree{position:relative;flex:none}
+.cr-tree .cr-tsvg{position:absolute;left:0;top:0;overflow:visible}
+.cr-edge{stroke:#c9cdf0;stroke-width:3;fill:none}
+.cr-ehi{stroke:#2dd4bf;stroke-width:9;fill:none;stroke-linecap:round}
+.cr-node{position:absolute;width:76px;height:76px;border-radius:50%;border:3px solid #c9cdf0;background:var(--card);
+  box-sizing:border-box;display:flex;align-items:center;justify-content:center;font-size:40px;direction:ltr}
+.cr-elab{position:absolute;transform:translate(-50%,-50%);font-size:31px;direction:ltr;white-space:nowrap;
+  background:rgba(10,12,24,.85);border-radius:10px;padding:0 8px;color:#fde68a}
+
+.cr-plot{position:relative;flex:none}
+.cr-plot .cr-psvg{position:absolute;left:0;top:0;overflow:visible}
+.cr-axis{stroke:rgba(255,255,255,.35);stroke-width:2}
+.cr-circ{stroke:#9aa0cf;stroke-width:2.5;stroke-dasharray:8 8;fill:none}
+.cr-arrow{stroke-width:7;stroke-linecap:round}
+.cr-arrow.grad{stroke:#2dd4bf}
+.cr-arrow.dir{stroke:#fbbf24}
+.cr-arrow.bad{stroke:#fb7185}
+.cr-alab{position:absolute;transform:translate(-50%,-50%);font-size:30px;direction:ltr;white-space:nowrap;
+  background:rgba(10,12,24,.85);border-radius:10px;padding:0 8px}
+.cr-alab.grad{color:#5eead4}
+.cr-alab.dir{color:#fde68a}
+.cr-alab.bad{color:#fda4af}
+.cr-axl{position:absolute;font-size:28px;color:var(--muted);direction:ltr}

@@ -1,0 +1,47 @@
+/* extrema widgets (w_extrema.py): contour plots, 1-D graphs, Hessian and candidate tables, formula columns */
+svg.ctr,svg.g1{overflow:visible}
+svg.ctr .bgr{fill:rgba(255,255,255,.025);stroke:var(--line);stroke-width:1.5}
+svg.ctr .ax,svg.g1 .ax{stroke:#7c82b8;stroke-width:2;fill:none}
+svg.ctr .axl,svg.g1 .axl{font-family:"Cambria Math",serif;font-style:italic;font-size:28px;fill:var(--muted)}
+svg.ctr .tk,svg.g1 .tk{font-family:"Cambria Math",serif;font-size:22px;fill:var(--muted);text-anchor:middle}
+svg.ctr .lv{fill:none;stroke-width:2.2;opacity:.8}
+svg.ctr .reg{fill:rgba(45,212,191,.16);stroke:var(--brand);stroke-width:4}
+svg.ctr .cv{fill:none;stroke:#f0abfc;stroke-width:5}
+svg.ctr .sg{stroke:var(--warn);stroke-width:7;fill:none;stroke-linecap:round}
+svg.ctr .sg.ok{stroke:var(--ok)}
+svg.ctr .ar{stroke-width:5;fill:none}
+svg.ctr .ar.gf{stroke:#2dd4bf}
+svg.ctr .ar.gg{stroke:#f0abfc;stroke-dasharray:10 7}
+.pt{stroke:#0a0c18;stroke-width:3}
+.pt.min{fill:#38bdf8}
+.pt.max{fill:#fbbf24}
+.pt.saddle{fill:#c084fc}
+.pt.cand,.pt.crit{fill:#eaedff}
+.pt.end{fill:#34d399}
+.px{stroke:var(--bad);stroke-width:5;fill:none}
+.pl{font-family:"Cambria Math",serif;font-size:27px;fill:var(--ink);paint-order:stroke;stroke:#0a0c18;stroke-width:6px;stroke-linejoin:round}
+svg.g1 .gc{fill:none;stroke:#f0abfc;stroke-width:4.5}
+svg.g1 .gd{stroke:rgba(255,255,255,.25);stroke-width:2;stroke-dasharray:5 6}
+
+table.xt{border-collapse:separate;border-spacing:0;font-size:30px;background:var(--card2);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+table.xt th,table.xt td{padding:7px 16px;text-align:center;border-bottom:1px solid var(--line);white-space:nowrap}
+table.xt thead th{color:var(--muted);font-weight:600;font-size:26px}
+table.xt tbody tr:last-child>*{border-bottom:none}
+table.xt td.wh{font-size:25px;color:var(--muted);direction:rtl}
+.vd{display:inline-block;font-size:25px;font-weight:700;border-radius:999px;padding:2px 14px;direction:rtl}
+.vd.min{color:#38bdf8;background:rgba(56,189,248,.14)}
+.vd.max{color:#fbbf24;background:rgba(251,191,36,.14)}
+.vd.saddle{color:#c084fc;background:rgba(192,132,252,.14)}
+.vd.unk{color:var(--muted);background:var(--card2)}
+
+.mlines{display:flex;flex-direction:column;gap:12px;align-items:center;font-size:36px;direction:ltr}
+.mlines.left{align-items:flex-start}
+.mlines.sm{font-size:31px;gap:8px}
+.mlines .ml{direction:ltr}
+.mlines .ml.rtl,.mlines .rtl{direction:rtl}
+.xrow{display:flex;gap:30px;align-items:center;justify-content:center;direction:ltr}
+.xcol{display:flex;flex-direction:column;gap:16px;align-items:center}
+.lgd{display:flex;gap:22px;font-size:25px;color:var(--muted);direction:rtl}
+.lgd i{display:inline-block;width:18px;height:18px;border-radius:50%;margin-inline-end:6px;vertical-align:-2px}
+.xbig{font-size:52px;direction:ltr}
+.qf{direction:ltr;text-align:center;font-size:38px;margin-top:10px}
