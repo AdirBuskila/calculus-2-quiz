@@ -298,7 +298,8 @@ window.VIDEO_COURSE = {
      "id": "S04",
      "level": "C04",
      "title": "לייבניץ: התכנסות בהחלט ובתנאי",
-     "minutes": 5
+     "minutes": 5,
+     "youtube": "N2eqf3R_Yg0"
     },
     {
      "id": "S05",
