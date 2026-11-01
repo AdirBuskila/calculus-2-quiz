@@ -242,13 +242,15 @@ window.VIDEO_COURSE = {
      "id": "E06",
      "level": "C06",
      "title": "תחום עגול: פנים ומעגל",
-     "minutes": 4
+     "minutes": 4,
+     "youtube": "dQa7a8L_kWk"
     },
     {
      "id": "E07",
      "level": "C07",
      "title": "כופלי לגראנז': אילוץ אחד",
-     "minutes": 4
+     "minutes": 4,
+     "youtube": "Vc1eZ7gXrBA"
     },
     {
      "id": "E08",
@@ -261,7 +263,8 @@ window.VIDEO_COURSE = {
      "id": "E09",
      "level": "C09",
      "title": "מבחן גמר: אקסטרמום",
-     "minutes": 4
+     "minutes": 4,
+     "youtube": "vcd9EW15U5E"
     }
    ]
   },
@@ -274,19 +277,22 @@ window.VIDEO_COURSE = {
      "id": "S01",
      "level": "C01",
      "title": "תנאי הכרחי, טור הנדסי וטור p",
-     "minutes": 6
+     "minutes": 6,
+     "youtube": "Gw8fmcu2ZGc"
     },
     {
      "id": "S02",
      "level": "C02",
      "title": "השוואה והשוואה גבולית",
-     "minutes": 5
+     "minutes": 5,
+     "youtube": "Jim9zRottXU"
     },
     {
      "id": "S03",
      "level": "C03",
      "title": "מבחן המנה, השורש והאינטגרל",
-     "minutes": 6
+     "minutes": 6,
+     "youtube": "y3mgu3_y8Jk"
     },
     {
      "id": "S04",
@@ -298,25 +304,29 @@ window.VIDEO_COURSE = {
      "id": "S05",
      "level": "C05",
      "title": "רדיוס התכנסות: דלאמבר וקושי-הדמר",
-     "minutes": 5
+     "minutes": 5,
+     "youtube": "KhlMBo60hRg"
     },
     {
      "id": "S06",
      "level": "C06",
      "title": "הקצוות: המלכודת הקלאסית",
-     "minutes": 4
+     "minutes": 4,
+     "youtube": "4InNnnOjySU"
     },
     {
      "id": "S07",
      "level": "C07",
      "title": "מקלורן מהטבלה ונגזרות ב-0 מהמקדמים",
-     "minutes": 4
+     "minutes": 4,
+     "youtube": "a0rZyVY6Bm0"
     },
     {
      "id": "S08",
      "level": "C08",
      "title": "בוס: שאלות אמיתיות מהמבחנים",
-     "minutes": 5
+     "minutes": 5,
+     "youtube": "prI46jfJyjM"
     }
    ]
   }
